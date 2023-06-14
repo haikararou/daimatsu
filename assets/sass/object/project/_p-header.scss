@@ -1,0 +1,279 @@
+@charset 'UTF-8';
+@use "../../inc/" as inc;
+/*
+p-header
+-----------------------------------------------------*/
+.p-header {
+  height: 60px!important;
+  @include inc.mq(vr) {
+    height: 100px!important;
+  }
+  overscroll-behavior: contain;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3% 0 3%;
+  &__logo {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 60px!important;
+    width: 100px;
+    @include inc.mq(vr) {
+      height: 100px!important;
+      width: 256px;
+    }
+    & > a {
+      width: 100%;
+      height: 12px;
+      // display: flex;
+      // align-items: center;
+      // justify-content: flex-start;
+      // position: relative;
+      @include inc.mq(vr) {
+        height: 30px;
+      }
+    }
+  }
+
+  &__nav-container { //グローバルナビ
+    display: none;
+    @include inc.sizingRem(font-size, wide, 16px, sp, 13px);
+    font-weight: 400;
+    height: 100px;
+    width: 33rem;
+    @include inc.mq(vr) {
+      display: flex;
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+  &__nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__nav-list {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    &.nav-list01 {
+      width: 24rem; //384
+      padding-right: 1.4rem;
+      .p-header__nav-item:first-child{
+        display: none;
+      }
+    }
+    &.nav-list02 {
+      width: 9rem; //144
+      border-left: 1px solid inc.$color-grn3;
+      .p-header__nav-item {
+        width: 100%;
+        text-align: center;
+        line-height: 1;
+      }
+    }
+  }
+  &__nav-item {
+    list-style-type: none;
+    line-height: 1;
+    a {
+      line-height: 1;
+    }
+  }
+  //========================  SP  ========================//
+  &__sp {
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    height: 60px;
+    width: 76px;
+    z-index: 101;
+    align-items: center;
+    @include inc.mq(tabs) {
+      display: flex;
+      top: 10px;
+      right: 10px;
+    }
+    @include inc.mq(vr) {
+      display: none;
+    }
+  }
+  &__menu-button {
+    display: block;
+    width: 76px;
+    height: 60px;
+    position: fixed;
+  }
+  &__menu-design {
+    position: relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width: 32px;
+    height: 12px;
+    margin: -5px 0 0 16px;
+    transform: translateZ(0);
+    z-index: -1;
+    & > span {
+      transition: transform 0.2s ease-out;
+      content: "";
+      width: 32px;
+      display: block;
+      border: 1px solid inc.$color-grn;
+      height: 1px!important;
+    }
+    & > span:nth-child(1) {
+      margin-top: 8px;
+    }
+    & > span:nth-child(2) {
+      margin-top: 5px;
+    }
+    & > span:nth-child(3) {
+      margin-top: 5px;
+    }
+  }
+  &__menu-design.active {
+    & > span:nth-child(1) {
+      transform: rotate(-30deg);
+      margin-top: 4px;
+    }
+    & > span:nth-child(2) {
+      display: none;
+    }
+    & > span:nth-child(3) {
+      transform: rotate(30deg);
+      margin-top: -1px;
+    }
+  }
+}
+
+.active.p-header {
+  .p-header__nav-container {
+    display: block;
+    position: absolute;
+    background: inc.$color-wht;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 101vh;
+    padding: 80px 0 0
+  }
+  .p-header__nav {
+    display: block;
+  }
+  .p-header__nav-list {
+    display: block;
+    &.nav-list01 {
+      width: 10rem;
+      margin: 0 auto;
+      padding-right: 0;
+      .p-header__nav-item {
+        width: 100%;
+        text-align: center;
+        line-height: 1;
+        @include inc.sizingRem(font-size, tab, 16px, sp, 14px);
+        height: 70px;
+        display:flex; flex-direction:column; justify-content:center; align-items:center;
+        border-bottom: 1px solid inc.$color-grn3;
+        &:first-child{
+          display: flex;
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+      }
+    }
+    &.nav-list02 {
+      width: 100%;
+      border-left: none;
+      background: inc.$color-grn2;
+      padding: 2rem;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      .p-header__nav-item {
+        width: 100%;
+        text-align: center;
+        line-height: 1;
+        a {
+          height: 80px;
+          background: inc.$color-wht;
+          display:flex; flex-direction:column; justify-content:center; align-items:center;
+          span {
+            position: relative;
+            @include inc.sizingRem(font-size, tab, 17px, sp, 15px);
+            &::before {
+              content: "";
+              display: block;
+              width: 28px;
+              height: 18px;
+              background: url(../img/icon/mail.svg) no-repeat 50% 50% /contain;
+              position: absolute;
+              left: -35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// @media (hover: hover) {
+//   .a-effect {
+//     position: relative;
+//   }
+//   .a-effect::after {
+//     -webkit-transition: all 0.1s ease-out;
+//     transition: all 0.1s ease-out;
+//     content: "";
+//     height: 1px;
+//     width: 100%;
+//     position: absolute;
+//     display: block;
+//     bottom: -8px;
+//     left: 0;
+//     background-color: #333;
+//     -webkit-transform: scale(0, 1);
+//     transform: scale(0, 1);
+//     -webkit-transform-origin: left top;
+//     transform-origin: left top;
+//   }
+//   .a-effect:hover::after {
+//     -webkit-transform: scale(1, 1);
+//     transform: scale(1, 1);
+//   }
+//   .a-effect::after {
+//     -webkit-transition: all 0.1s ease-out;
+//     transition: all 0.1s ease-out;
+//     content: "";
+//     height: 1px;
+//     width: 100%;
+//     position: absolute;
+//     display: block;
+//     bottom: -8px;
+//     left: 0;
+//     background-color: #333;
+//     -webkit-transform: scale(0, 1);
+//     transform: scale(0, 1);
+//     -webkit-transform-origin: left top;
+//     transform-origin: left top;
+//   }
+//   .p-footer__list-item .a-effect::after {
+//     bottom: -3px;
+//   }
+//   .l-nav .a-effect::after {
+//     bottom: -3px;
+//   }
+// }
+

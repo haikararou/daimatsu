@@ -1,0 +1,31 @@
+@charset 'UTF-8';
+@use "../inc/" as inc;
+/*
+l-wrapper
+-----------------------------------------------------*/
+
+.l-wrapper {
+  max-width: calc(82rem + 4rem); //1312
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+.l-wrapper2 {
+  max-width: calc(66rem + 4rem); //1056
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+.l-wrapper3 {
+  max-width: calc(62rem + 4rem); //992
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+.l-wrapper4 {
+  max-width: calc(58rem + 4rem); //928
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+

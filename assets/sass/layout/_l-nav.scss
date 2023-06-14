@@ -1,0 +1,40 @@
+@charset 'UTF-8';
+@use "../inc/" as inc;
+/*
+l-nav
+-----------------------------------------------------*/
+.l-nav {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        @include inc.sizing(gap, wide, 16px, sp, 14px);
+        @include inc.mq(vr) {
+            display: flex;
+            flex-direction: column;
+        }
+        li {
+            @include inc.sizingRem(font-size, wide, 14px, sp, 11px);
+            @include inc.sizing(line-height, wide, 14px, sp, 11px);
+            @include inc.sizing(padding-left, wide, 42px, sp, 36px);
+            position: relative;
+            &:before {
+                content: "";
+                display: block;
+                @include inc.sizing(width, wide, 16px, sp, 14px);
+                @include inc.sizing(height, wide, 16px, sp, 14px);
+                background: url(../img/arw/blue_down.svg) no-repeat 0 0;
+                background-size: contain;
+                position: absolute;
+                top: 0;
+                @include inc.sizing(left, wide, 16px, sp, 14px);
+            }
+        }
+    }
+    margin: 2rem 4% 4rem 4%;
+    @include inc.mq(vr) {
+        margin: 0;
+    }
+}
