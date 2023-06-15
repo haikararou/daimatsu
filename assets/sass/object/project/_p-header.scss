@@ -4,9 +4,12 @@
 p-header
 -----------------------------------------------------*/
 .p-header {
+  overflow: hidden;
   height: 60px!important;
-  @include inc.mq(vr) {
+  border-bottom: 1px solid inc.$color-grn3;
+  @include inc.mq(tabl) {
     height: 100px!important;
+    border: none;
   }
   overscroll-behavior: contain;
   overflow-y: scroll;
@@ -22,9 +25,10 @@ p-header
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 60px!important;
+    //height: 60px!important;
+    height: auto!important;
     width: 100px;
-    @include inc.mq(vr) {
+    @include inc.mq(tabl) {
       height: 100px!important;
       width: 256px;
     }
@@ -35,7 +39,7 @@ p-header
       // align-items: center;
       // justify-content: flex-start;
       // position: relative;
-      @include inc.mq(vr) {
+      @include inc.mq(tabl) {
         height: 30px;
       }
     }
@@ -47,7 +51,7 @@ p-header
     font-weight: 400;
     height: 100px;
     width: 33rem;
-    @include inc.mq(vr) {
+    @include inc.mq(tabl) {
       display: flex;
       margin-left: auto;
       margin-right: 0;
@@ -58,6 +62,10 @@ p-header
     display: flex;
     align-items: center;
     justify-content: space-between;
+    opacity: 0;
+    @include inc.mq(tabl) {
+      opacity: 1;
+    }
   }
   &__nav-list {
     padding: 0;
@@ -97,12 +105,12 @@ p-header
     width: 76px;
     z-index: 101;
     align-items: center;
-    @include inc.mq(tabs) {
-      display: flex;
-      top: 10px;
-      right: 10px;
-    }
-    @include inc.mq(vr) {
+    // @include inc.mq(tabs) {
+    //   display: flex;
+    //   top: 10px;
+    //   right: 10px;
+    // }
+    @include inc.mq(tabl) {
       display: none;
     }
   }
@@ -166,7 +174,9 @@ p-header
     right: 0;
     bottom: 0;
     height: 101vh;
-    padding: 80px 0 0
+    //padding: 80px 0 0;
+    margin-top: 60px;
+    width: 100%;
   }
   .p-header__nav {
     display: block;
@@ -211,6 +221,7 @@ p-header
           display:flex; flex-direction:column; justify-content:center; align-items:center;
           span {
             position: relative;
+            padding-left: 18px;
             @include inc.sizingRem(font-size, tab, 17px, sp, 15px);
             &::before {
               content: "";
@@ -219,7 +230,7 @@ p-header
               height: 18px;
               background: url(../img/icon/mail.svg) no-repeat 50% 50% /contain;
               position: absolute;
-              left: -35px;
+              left: -18px;
             }
           }
         }
@@ -229,51 +240,66 @@ p-header
 }
 
 
-// @media (hover: hover) {
-//   .a-effect {
-//     position: relative;
-//   }
-//   .a-effect::after {
-//     -webkit-transition: all 0.1s ease-out;
-//     transition: all 0.1s ease-out;
-//     content: "";
-//     height: 1px;
-//     width: 100%;
-//     position: absolute;
-//     display: block;
-//     bottom: -8px;
-//     left: 0;
-//     background-color: #333;
-//     -webkit-transform: scale(0, 1);
-//     transform: scale(0, 1);
-//     -webkit-transform-origin: left top;
-//     transform-origin: left top;
-//   }
-//   .a-effect:hover::after {
-//     -webkit-transform: scale(1, 1);
-//     transform: scale(1, 1);
-//   }
-//   .a-effect::after {
-//     -webkit-transition: all 0.1s ease-out;
-//     transition: all 0.1s ease-out;
-//     content: "";
-//     height: 1px;
-//     width: 100%;
-//     position: absolute;
-//     display: block;
-//     bottom: -8px;
-//     left: 0;
-//     background-color: #333;
-//     -webkit-transform: scale(0, 1);
-//     transform: scale(0, 1);
-//     -webkit-transform-origin: left top;
-//     transform-origin: left top;
-//   }
-//   .p-footer__list-item .a-effect::after {
-//     bottom: -3px;
-//   }
-//   .l-nav .a-effect::after {
-//     bottom: -3px;
-//   }
-// }
+@media (hover: hover) {
+  .a-effect {
+    position: relative;
+  }
+  .a-effect::before {
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+    content: "";
+    height: 1px;
+    width: .5rem;
+    position: absolute;
+    display: block;
+    bottom: -8px;
+    left: 50%;
+    margin-left: -.5rem;
+    background-color: inc.$color-grn;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: right top;
+    transform-origin: right top;
+  }
+  .a-effect::after {
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+    content: "";
+    height: 1px;
+    width: .5rem;
+    position: absolute;
+    display: block;
+    bottom: -8px;
+    left: 50%;
+    background-color: inc.$color-grn;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+  }
+  .a-effect:hover::before {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  .a-effect:hover::after {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  @include inc.mq(tabl) {
+    .a-effect.a-active::before {
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+    }
+    .a-effect.a-active::after {
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+    }
+  }
+  // .p-footer__list-item .a-effect::after {
+  //   bottom: -3px;
+  // }
+  // .l-nav .a-effect::after {
+  //   bottom: -3px;
+  // }
+}
 

@@ -6,9 +6,13 @@ l-wrapper
 
 .l-wrapper {
   max-width: calc(82rem + 4rem); //1312
-  width: 100%;
+  width: 90%;
   padding: 0;
   margin: 0 auto;
+  @include inc.mq(tab) {
+    width:100%;
+    padding: 0 2rem;
+  }
 }
 .l-wrapper2 {
   max-width: calc(66rem + 4rem); //1056

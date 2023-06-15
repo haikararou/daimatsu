@@ -4,208 +4,125 @@
 p-footer
 -----------------------------------------------------*/
 .p-footer {
-  padding: 0 0 2rem;
   &__banner {
+    background-color: inc.$color-grn2;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    padding: 3rem 0 6rem;
+    height: auto;
+    padding: 72px 0;
     position: relative;
-    @include inc.mq(vr) {
-      padding: 12rem 0 9rem;
-    }
-    &::after {
-      content: "";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      z-index: 0;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url(../img/footer/hand.png) no-repeat;
-      background-size: 240px;
-      background-position: -15% 150%;
-      mix-blend-mode: multiply;
-      @include inc.mq(vr) {
-        background-size: 570px 718px;
-        background-position: 90% 10%;
-      }
-    }
-    &-inner {
-      position: relative;
-      z-index: 1;
-    }
-    &-text {
-      @include inc.sizingRem(font-size, wide, 39px, sp, 24px);
-      font-weight: 700;
-      text-align: center;
-      margin: 0 auto 3rem;
-      @include inc.mq(vr) {
-        margin: 0 auto 2.5rem;
-      }
+    @include inc.mq(tab) {
+      padding: 0;
+      height: 30.5rem;
     }
     &-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: .8rem 0;
-      @include inc.mq(vr) {
-        gap:0;
+      gap: 2.5rem 0;
+      @include inc.mq(tab) {
+        gap: 0 1rem;
       }
       &-item {
-        width: 100%;
-        height: 60px;
-        border-radius: 30px;
-        list-style-type: none;
-        @include inc.mq(vr) {
-          width: 48%;
-          height: 5rem;
-          border-radius: 2.5rem;
-        }
-        span {
-          font-weight: 700;
-          width: 100%;
-          height: 100%;
-          padding: 0 2rem;
-          display:flex;
-          flex-direction:column;
-          justify-content:center;
-          @include inc.sizingRem(font-size, wide, 22px, sp, 16px);
-          @include inc.mq(vr) {
-            padding: 0 3rem;
-          }
-        }
-        &.-white {
-          -webkit-transition: all 0.1s ease-out;
-          transition: all 0.1s ease-out;
-          transition: background-color 0.3s linear;
-          position: relative;
-          &::after {
-            content: "";
-            width: 15px;
-            height: 15px;
-            background: url(../img/arw/blue_right.svg) no-repeat 50% 50%;
-            background-size: contain;
-            position: absolute;
-            right: 11%;
-            top: 50%;
-            transform: translate(0, -50%);
-            -webkit-transition: all 0.3s ease-out;
-            transition: all 0.3s ease-out;
-          }
-          @include inc.mq(vr) {
-            &::after {
-              width: 20px;
-              height: 20px;
-            }
-          }
-          @media (hover: hover) {
-            &:hover {
-              span {
-              }
-              &::after {
-                right: 10.5%;
-              }
-            }
-          }
-        }
-        &.-yellow {
-          -webkit-transition: all 0.1s ease-out;
-          transition: all 0.1s ease-out;
-          transition: background-color 0.3s linear;
-          position: relative;
-          &::after {
-            content: "";
-            width: 18px;
-            height: 18px;
-            background: url(../img/icon/blue_blank.svg) no-repeat 50% 50%;
-            background-size: contain;
-            position: absolute;
-            right: 11%;
-            top: 50%;
-            transform: translate(0, -50%);
-            -webkit-transition: all 0.3s ease-out;
-            transition: all 0.3s ease-out;
-          }
-          @include inc.mq(vr) {
-            &::after {
-              width: 20px;
-              height: 20px;
-            }
-          }
-          @media (hover: hover) {
-            &:hover {
-              &::after {
-                right: 10.5%;
-              }
-            }
-          }
-        }
-      }
-      &-faq {
-        margin: 2.5rem auto 0;
         text-align: center;
-        @include inc.mq(vr) {
-          margin: 4rem auto 0;
+        color: inc.$color-wht;
+        width: 100%;
+        list-style-type: none;
+        font-size: 14px;
+        font-family: "Futo Go B101";
+        @include inc.mq(tab) {
+          font-size: 16px;
+          width: calc(50% - 0.5rem);
         }
-        a {
+        &-green {
+          -webkit-transition: all 0.1s ease-out;
+          transition: all 0.1s ease-out;
+          margin-top: .8rem;
+          display: block;
+          border: 1px solid inc.$color-wht;
+          height: 5rem;
+          color: inc.$color-wht;
+          font-size: 24px;
+          display:flex; flex-direction:column; justify-content:center; align-items:center;
+          font-family: Helvetica, "Helvetica Neue", Arial, 'Questrial';
+          font-weight: 300;
           span {
-            color:inc.$color-wht;
-            @include inc.sizingRem(font-size, wide, 18px, sp, 14px);
-            padding: 0 1.6rem 4px 0;
-            position: relative;
-            @include inc.mq(vr) {
-              padding: 0 2rem 5px 0;
+            font-family: 'Noto Sans JP';
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+          }
+          @include inc.mq(tab) {
+            margin-top: 1rem;
+            height: 10rem;
+            font-size: 36px;
+            span {
+              font-size: 10px;
             }
-            &::after {
+          }
+          @media (hover: hover) {
+            &:hover {
+              background: inc.$color-wht;
+              color: inc.$color-grn2;
+            }
+          }
+        }
+        &-white {
+          -webkit-transition: all 0.1s ease-out;
+          transition: all 0.1s ease-out;
+          margin-top: .8rem;
+          display: block;
+          height: 5rem;
+          border: 1px solid inc.$color-wht;
+          background: inc.$color-wht;
+          color: inc.$color-grn;
+          font-size: 24px;
+          display:flex; flex-direction:column; justify-content:center; align-items:center;
+          span {
+            -webkit-transition: all 0.1s ease-out;
+            transition: all 0.1s ease-out;
+            font-family: "Futo Go B101";
+            position: relative;
+            color: inc.$color-grn2;
+            padding-left: 18px;
+            font-size: 15px;
+            &::before {
               -webkit-transition: all 0.1s ease-out;
               transition: all 0.1s ease-out;
               content: "";
-              width: 15px;
-              height: 15px;
-              background: url(../img/arw/white_right.svg) no-repeat 0 0;
-              background-size: 15px;
+              display: block;
+              width: 28px;
+              height: 18px;
+              background: url(../img/icon/mail.svg) no-repeat 50% 50% /contain;
               position: absolute;
-              right: 0;
+              left: -18px;
               top: 3px;
-              @include inc.mq(vr) {
-                width: 20px;
-                height: 20px;
-                background-size: 20px;
-                top: 5px;
-              }
-            }
-            @media (hover: hover) {
-              &::before {
-                -webkit-transition: all 0.1s ease-out;
-                transition: all 0.1s ease-out;
-                content: "";
-                height: 1px;
-                width: 100%;
-                position: absolute;
-                display: block;
-                bottom: -1px;
-                left: 0;
-                -webkit-transform: scale(0, 1);
-                transform: scale(0, 1);
-                -webkit-transform-origin: left top;
-                transform-origin: left top;
-              }
-              &:hover::before {
-                -webkit-transform: scale(1, 1);
-                transform: scale(1, 1);
-              }
             }
           }
           @media (hover: hover) {
             &:hover {
+              background: inc.$color-grn2;
               span {
-                &::after {
-                  right: -2px;
+                color: inc.$color-wht;
+                &::before {
+                  background-image: url(../img/icon/mail-wht.svg);
                 }
+              }
+            }
+          }
+          @include inc.mq(tab) {
+            margin-top: 1rem;
+            height: 10rem;
+            span {
+              padding-left: 21px;
+              font-size: 24px;
+              &::before {
+                width: 34px;
+                height: 24px;
+                left: -21px;
+                top: 8px;
               }
             }
           }
@@ -214,138 +131,145 @@ p-footer
     }
   }
   &__inner-sitemap {
-    display: block;
-    justify-content: space-between;
-    padding: 3rem 0 3.5rem;
-    @include inc.mq(vr) {
+    padding: 5rem 0 2.5rem;
+    @include inc.mq(tab) {
+      padding: 8rem 0;
       display: flex;
-      padding: 4rem 0 6rem;
-    }
-  }
-  &__inner-logo {
-    width: 100%;
-  }
-  &__logo {
-    position: relative;
-    @include inc.sizing(width, wide, 345px, tab, 345px);
-    & > img {
-      @include inc.mq(vr) {
-        height: 53px;
-      }
-      height: 31px;
-      width: auto;
-    }
-    &::after {
-      content: "採用サイト";
-      @include inc.sizingRem(font-size, wide, 18px, sp, 10px);
-      color: inc.$color-blk;
-      font-weight: 700;
-      position: absolute;
-      left: 13.5rem;
-      bottom: 0px;
-      @include inc.mq(vr) {
-        left: auto;
-        right: -6.4rem;
-        bottom: -2px;
-      }
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-direction:row-reverse;
     }
   }
   &__inner-list {
-    width: 100%;
-    justify-content: space-between;
-    @include inc.mq(vr) {
-      display: flex;
-      width: 60%;
-      margin-right: 6rem;
+    max-width: 14rem;
+    width: 70%;
+    margin: 0 auto;
+    //justify-content: space-between;
+    @include inc.mq(tab) {
+      width: 16rem;
+      margin: 0;
+      max-width: none;
     }
   }
   &__list {
     width: 100%;
-    @include inc.mq(vr) {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    &-item {
+      font-weight: 400;
+      font-size: 14px;
+    }
+    column-count: 2;
+    .div2 { margin-top: 1.2rem;}
+    .div3 { margin-top: 1.2rem;}
+    .div5 { margin-top: 1.2rem;}
+    .div6 { margin-top: 1.2rem; font-size: 10px;}
+    @include inc.mq(tab) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      grid-template-rows: 48px 48px 80px auto;
+      .div1 { grid-area: 1 / 1 / 2 / 2; width: 9.5rem;}
+      .div2 { grid-area: 2 / 1 / 3 / 2; width: 9.5rem; margin-top: 0;}
+      .div3 { grid-area: 3 / 1 / 4 / 3; margin-top: 0;}
+      .div4 { grid-area: 1 / 2 / 2 / 3; width: 6.5rem;}
+      .div5 { grid-area: 2 / 2 / 3 / 3; width: 6.5rem; margin-top: 0;}
+      .div6 { grid-area: 4 / 1 / 5 / 3; font-size: 13px; margin-top: 0;}
+    }
+  }
+
+
+
+
+  &__inner-logo {
+    // max-width: 14rem;
+    width: 70%;
+    margin: 80px auto 0;
+    text-align: center;
+    @include inc.mq(tab) {
+      width: 48%;
+      margin: 0;
+      text-align: left;
+    }
+  }
+  &__logo {
+    max-width: 14rem;
+    width: 70%;
+    position: relative;
+    margin: 0 auto;
+    //@include inc.sizing(width, wide, 345px, tab, 345px);
+    & > img {
+      @include inc.mq(tab) {
+        height: 40px;
+        margin-bottom: 32px;
+      }
+      height: 27px;
+      width: auto;
+      margin: 0 auto 16px;
+      @include inc.mq(tab) {
+        margin: 0 0 16px;
+      }
+    }
+    @include inc.mq(tab) {
+      max-width: none;
       width: auto;
     }
   }
-  &__list-item {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem 4%;
-    @include inc.mq(vr) {
+  &__inner-add {
+    max-width: 14rem;
+    width: 70%;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 0 auto;
+    @include inc.mq(tab) {
+      font-size: 18px;
+      max-width: none;
+      width: auto;
+      margin: 0;
+    }
+    address {
+      font-style: normal;
+      display: inline;
+      em {
+        padding: 0;
+        display: block;
+        font-weight: 400;
+        @include inc.mq(tab) {
+          padding-right: 1rem;
+          display: inline;
+        }
+      }
+    }
+    span {
+      font-size: 12px;
       display: block;
-    }
-    dt {
-      width: 100%;
-      margin: 1.5rem 0 0.2rem;
-      @include inc.sizingRem(font-size, wide, 20px, sp, 15px);
-      font-weight: 700;
-      @include inc.mq(vr) {
-        width: auto;
-        margin: 0;
+      @include inc.mq(tab) {
+        font-size: 16px;
+        display: inline;
       }
-    }
-    dd{
-      width: 48%;
-      @include inc.mq(vr) {
-        width: auto;
-      }
-      @include inc.sizingRem(font-size, wide, 14px, sp, 12px);
-      a {
-        color: inc.$color-gry;
-      }
-      &.-sp {
-        width: auto;
-      }
-    }
-    dt + dd {
-      margin-top: 0;
-      @include inc.mq(vr) {
-        margin-top: 1rem;
-      }
-    }
-    dd + dd {
-      @include inc.mq(vr) {
-        margin-top: .8rem;
+      & + span {
+        padding-left: 0rem;
+        @include inc.mq(tab) {
+          padding-left: 1rem;
+        }
       }
     }
   }
-  &__list-item + &__list-item {
-    @include inc.mq(vr) {
-      margin-top: 2.2rem;
-    }
-  }
-  &__inner-bottom {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between
-  }
+
   &__bottom {
-    order: 2;
-    line-height: 1;
-    @include inc.mq(vr) {
-      order: 1;
+    padding-top: 64px;
+    @include inc.mq(tab) {
+      padding-top: 48px;
     }
     & > small {
-      font-family: "Montserrat", sans-serif;
-      @include inc.sizingRem(font-size, wide, 12px, sp, 8px);
-    }
-  }
-  &__corporate {
-    @include inc.sizingRem(font-size, wide, 16px, sp, 12px);
-    display: flex;
-    justify-content: end;
-    gap: 0 1.5rem;
-    order: 1;
-    margin: 0 0 1rem!important;
-    @include inc.mq(vr) {
-      gap: 0 2rem;
-      order: 2;
-      margin-bottom: 0!important;
-      margin-right: 6rem!important;
-    }
-    li {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+      display: block;
+      font-weight: 400;
+      line-height: 2;
+      @include inc.sizingRem(font-size, wide, 10px, sp, 8px);
     }
   }
 }
