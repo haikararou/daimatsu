@@ -7,9 +7,6 @@ l-header
 html { scroll-behavior: smooth;}
 :target {
   scroll-margin-top: 80px;
-  // @include inc.mq(tabs) {
-  //   scroll-margin-top: 100px;
-  // }
   @include inc.mq(tabl) {
     scroll-margin-top: 120px;
   }
@@ -24,9 +21,6 @@ html { scroll-behavior: smooth;}
   top: 0;
   height: 60px;
   background-color: inc.$color-wht;
-  // @include inc.mq(tabs) {
-  //   height: 80px;
-  // }
   @include inc.mq(tabl) {
     height: 100px;
   }

@@ -37,19 +37,11 @@ l-wrapper
 .l-wrapper4 {
   max-width: calc(58rem + 4rem); //928
   width: 100%;
-  padding: 0;
+  padding: 0 2rem;
   margin: 0 auto;
   @include inc.mq(tab) {
     width:100%;
     padding: 0 2rem;
   }
-  // &.l-wrapper__sp---full {
-  //   width:100%;
-  //   padding: 0;
-  //   @include inc.mq(tab) {
-  //     width:100%;
-  //     padding: 0 2rem;
-  //   }
-  // }
 }
 
