@@ -19,17 +19,37 @@ l-wrapper
   width: 100%;
   padding: 0;
   margin: 0 auto;
+  @include inc.mq(tab) {
+    width:100%;
+    padding: 0 2rem;
+  }
 }
 .l-wrapper3 {
   max-width: calc(62rem + 4rem); //992
   width: 100%;
   padding: 0;
   margin: 0 auto;
+  @include inc.mq(tab) {
+    width:100%;
+    padding: 0 2rem;
+  }
 }
 .l-wrapper4 {
   max-width: calc(58rem + 4rem); //928
   width: 100%;
   padding: 0;
   margin: 0 auto;
+  @include inc.mq(tab) {
+    width:100%;
+    padding: 0 2rem;
+  }
+  // &.l-wrapper__sp---full {
+  //   width:100%;
+  //   padding: 0;
+  //   @include inc.mq(tab) {
+  //     width:100%;
+  //     padding: 0 2rem;
+  //   }
+  // }
 }
 

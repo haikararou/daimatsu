@@ -1,6 +1,8 @@
 @charset 'UTF-8';
+@use "../inc/" as inc;
 /*
 l-main
 -----------------------------------------------------*/
 .l-main {
+    @include inc.sizing(padding-bottom, wide, 384px, sp, 192px);
 }

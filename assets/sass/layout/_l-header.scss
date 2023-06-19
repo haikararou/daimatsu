@@ -16,6 +16,8 @@ html { scroll-behavior: smooth;}
 }
 
 .l-header {
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
   position: fixed;
   z-index: 11;
   width: 100%;

@@ -48,18 +48,20 @@ p-footer
           display:flex; flex-direction:column; justify-content:center; align-items:center;
           font-family: Helvetica, "Helvetica Neue", Arial, 'Questrial';
           font-weight: 300;
+          letter-spacing: .2rem;
           span {
             font-family: 'Noto Sans JP';
             display: block;
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 0;
           }
           @include inc.mq(tab) {
             margin-top: 1rem;
             height: 10rem;
             font-size: 36px;
             span {
-              font-size: 10px;
+              font-size: 14px;
             }
           }
           @media (hover: hover) {
@@ -131,7 +133,7 @@ p-footer
     }
   }
   &__inner-sitemap {
-    padding: 5rem 0 2.5rem;
+    padding: 4.5rem 0 2.5rem;
     @include inc.mq(tab) {
       padding: 8rem 0;
       display: flex;
@@ -144,7 +146,6 @@ p-footer
     max-width: 14rem;
     width: 70%;
     margin: 0 auto;
-    //justify-content: space-between;
     @include inc.mq(tab) {
       width: 16rem;
       margin: 0;
@@ -160,11 +161,22 @@ p-footer
       font-weight: 400;
       font-size: 14px;
     }
-    column-count: 2;
-    .div2 { margin-top: 1.2rem;}
-    .div3 { margin-top: 1.2rem;}
-    .div5 { margin-top: 1.2rem;}
-    .div6 { margin-top: 1.2rem; font-size: 10px;}
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    .div1 { grid-area: 1 / 1 / 2 / 2; padding: 1rem 0;}
+    .div2 { grid-area: 2 / 1 / 3 / 2; padding: 1rem 0;}
+    .div3 { grid-area: 3 / 1 / 4 / 2; padding: 1rem 0;}
+    .div4 { grid-area: 1 / 2 / 2 / 3; padding: 1rem 0;}
+    .div5 { grid-area: 2 / 2 / 3 / 3; padding: 1rem 0;}
+    .div6 { grid-area: 3 / 2 / 4 / 3; padding: 1rem 0; font-size: 10px;}
+    //column-count: 2;
+    // .div2 { margin-top: 1.2rem;}
+    // .div3 { margin-top: 1.2rem;}
+    // .div5 { margin-top: 1.2rem;}
+    // .div6 { margin-top: 1.2rem; font-size: 10px;}
     @include inc.mq(tab) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -172,12 +184,12 @@ p-footer
       grid-column-gap: 0px;
       grid-row-gap: 0px;
       grid-template-rows: 48px 48px 80px auto;
-      .div1 { grid-area: 1 / 1 / 2 / 2; width: 9.5rem;}
-      .div2 { grid-area: 2 / 1 / 3 / 2; width: 9.5rem; margin-top: 0;}
-      .div3 { grid-area: 3 / 1 / 4 / 3; margin-top: 0;}
-      .div4 { grid-area: 1 / 2 / 2 / 3; width: 6.5rem;}
-      .div5 { grid-area: 2 / 2 / 3 / 3; width: 6.5rem; margin-top: 0;}
-      .div6 { grid-area: 4 / 1 / 5 / 3; font-size: 13px; margin-top: 0;}
+      .div1 { grid-area: 1 / 1 / 2 / 2; width: 9.5rem; padding: 0;}
+      .div2 { grid-area: 2 / 1 / 3 / 2; width: 9.5rem; margin-top: 0; padding: 0;}
+      .div3 { grid-area: 3 / 1 / 4 / 3; margin-top: 0; padding: 0;}
+      .div4 { grid-area: 1 / 2 / 2 / 3; width: 6.5rem; padding: 0;}
+      .div5 { grid-area: 2 / 2 / 3 / 3; width: 6.5rem; margin-top: 0; padding: 0;}
+      .div6 { grid-area: 4 / 1 / 5 / 3; font-size: 13px; margin-top: 0; padding: 0;}
     }
   }
 
@@ -187,7 +199,7 @@ p-footer
   &__inner-logo {
     // max-width: 14rem;
     width: 70%;
-    margin: 80px auto 0;
+    margin: 4.5rem auto 0;
     text-align: center;
     @include inc.mq(tab) {
       width: 48%;
@@ -200,7 +212,6 @@ p-footer
     width: 70%;
     position: relative;
     margin: 0 auto;
-    //@include inc.sizing(width, wide, 345px, tab, 345px);
     & > img {
       @include inc.mq(tab) {
         height: 40px;
@@ -221,15 +232,16 @@ p-footer
   &__inner-add {
     max-width: 14rem;
     width: 70%;
-    font-size: 12px;
+    @include inc.sizingRem(font-size, wide, 18px, tabl, 12px);
+    //font-size: 12px;
     font-weight: 400;
     line-height: 1.8;
     margin: 0 auto;
     @include inc.mq(tab) {
-      font-size: 18px;
+      //font-size: 18px;
       max-width: none;
       width: auto;
-      margin: 0;
+      margin: 40px 0 0 0;
     }
     address {
       font-style: normal;
@@ -245,26 +257,29 @@ p-footer
       }
     }
     span {
-      font-size: 12px;
+      @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
+      //font-size: 12px;
       display: block;
       @include inc.mq(tab) {
-        font-size: 16px;
+        //font-size: 16px;
         display: inline;
       }
       & + span {
-        padding-left: 0rem;
-        @include inc.mq(tab) {
-          padding-left: 1rem;
-        }
+        @include inc.sizing(padding-left, wide, 16px, sp, 0px);
+        //padding-left: 0rem;
+        // @include inc.mq(tab) {
+        //   padding-left: 1rem;
+        // }
       }
     }
   }
 
   &__bottom {
-    padding-top: 64px;
-    @include inc.mq(tab) {
-      padding-top: 48px;
-    }
+    @include inc.sizing(padding-top, wide, 64px, sp, 32px);
+    //padding-top: 64px;
+    // @include inc.mq(tab) {
+    //   padding-top: 32px;
+    // }
     & > small {
       display: block;
       font-weight: 400;

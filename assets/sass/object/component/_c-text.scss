@@ -5,54 +5,54 @@ c-text
 -----------------------------------------------------*/
 .c-text {
   &--h1 {
-    @include inc.sizingRem(font-size, wide, 44px, sp, 24px);
-    @include inc.sizing(line-height, wide, 80px, sp, 42px);
-    @include inc.sizing(margin-bottom, wide, 112px, sp, 48px);
-    font-weight: 700;
-    padding-left: 4%;
-    @include inc.mq(vr) {
-      padding-left: 0;
-    }
+    @include inc.sizingRem(font-size, wide, 40px, sp, 25px);
+    @include inc.sizing(line-height, wide, 80px, sp, 50px);
+    @include inc.sizing(margin-bottom, wide, 195 px, sp, 100px);//2 お知らせ一覧
+    @include inc.sizing(margin-bottom, wide, 195 px, sp, 75px);//4 商品カテゴリ一覧
+    @include inc.sizing(margin-bottom, wide, 128px, sp, 48px);//7 会社概要 8 お問い合わせ 9 プライバシーポリシー
+    font-weight: 400;
     span {
-      @include inc.sizingRem(font-size, wide, 14px, sp, 12px);
-      @include inc.sizing(margin-bottom, wide, 24px, sp, 12px);
+      @include inc.sizingRem(font-size, wide, 16px, sp, 14px);
+      @include inc.sizing(margin-top, wide, 24px, sp, 12px);
       display: block;
       line-height: 1;
-      font-weight: 500;
+    }
+    &.news-title {
+      @include inc.sizing(padding-top, wide, 32px, sp, 0px);
     }
   }
   &--h2 {
-    @include inc.sizingRem(font-size, wide, 24px, sp, 20px);
+    @include inc.sizingRem(font-size, wide, 26px, sp, 18px);
     @include inc.sizing(line-height, wide, 48px, sp, 32px);
-    @include inc.sizing(margin-bottom, wide, 24px, sp, 16px);
-    font-weight: 700;
-  }
-  &--h3 {
-    @include inc.sizingRem(font-size, wide, 20px, sp, 16px);
-    @include inc.sizing(line-height, wide, 30px, sp, 24px);
-    @include inc.sizing(margin-bottom, wide, 16px, sp, 12px);
-    @include inc.sizing(padding-left, wide, 16px, sp, 12px);
+    @include inc.sizing(margin-bottom, wide, 24px, sp, 24px);
     font-weight: 500;
-    padding-bottom: 3px;
-    line-height: 1;
-    &.--peopel {
-      border: none;
-      padding-left: 0;
-      font-weight: 700;
-    }
   }
-  &--h2 + &--h3 {
-    margin-top: 40px;
-    @include inc.mq(tabs) {
-      margin-top: 54px;
-    }
-  }
-  &--h4 {
-    @include inc.sizingRem(font-size, wide, 18px, sp, 14px);
-    @include inc.sizing(line-height, wide, 32px, sp, 24px);
-    @include inc.sizing(margin-bottom, wide, 16px, sp, 12px);
-    @include inc.sizing(padding-bottom, wide, 16px, sp, 12px);
-    font-weight: 700;
-  }
+  // &--h3 {
+  //   @include inc.sizingRem(font-size, wide, 20px, sp, 16px);
+  //   @include inc.sizing(line-height, wide, 30px, sp, 24px);
+  //   @include inc.sizing(margin-bottom, wide, 16px, sp, 12px);
+  //   @include inc.sizing(padding-left, wide, 16px, sp, 12px);
+  //   font-weight: 500;
+  //   padding-bottom: 3px;
+  //   line-height: 1;
+  //   &.--peopel {
+  //     border: none;
+  //     padding-left: 0;
+  //     font-weight: 700;
+  //   }
+  // }
+  // &--h2 + &--h3 {
+  //   margin-top: 40px;
+  //   @include inc.mq(tabs) {
+  //     margin-top: 54px;
+  //   }
+  // }
+  // &--h4 {
+  //   @include inc.sizingRem(font-size, wide, 18px, sp, 14px);
+  //   @include inc.sizing(line-height, wide, 32px, sp, 24px);
+  //   @include inc.sizing(margin-bottom, wide, 16px, sp, 12px);
+  //   @include inc.sizing(padding-bottom, wide, 16px, sp, 12px);
+  //   font-weight: 700;
+  // }
 
 }

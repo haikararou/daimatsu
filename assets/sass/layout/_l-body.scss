@@ -3,13 +3,10 @@
 /*
 l-body
 -----------------------------------------------------*/
-// .l-body.active {
-//   height: 100%;
-//   overflow: hidden;
-// }
 .l-body {
-  //padding-top: var(--header-height);
   font-family: 'Noto Sans JP',"游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "MS Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: 400;
+  @include inc.sizingRem(font-size, wide, 16px, sp, 14px);
   color: inc.$color-grn;
   padding-top: 60px;
   @include inc.mq(vr) {

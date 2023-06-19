@@ -3,118 +3,29 @@
 /*
 p-text-box
 -----------------------------------------------------*/
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 200%;
+}
+
+ul.list--dot {
+  margin: 0;
+  padding: 1rem 0 1rem 1.5rem;
+  li {
+    margin: 0;
+    padding: 0;
+    & + li {
+      margin-top: .5rem
+    }
+  }
+}
+
+p + p {
+  @include inc.sizing(margin-top, wide, 32px, sp, 24px);
+}
 .p-text-box {
-  @include inc.sizing(margin-bottom, wide, 100px, sp, 80px);
-  &--bluBox {
-    border-style: solid;
-    @include inc.sizing(border-width, wide, 7px, sp, 3px);
-    @include inc.sizing(border-radius, wide, 16px, sp, 8px);
-    &--h2 {
-      @include inc.sizingRem(font-size, wide, 30px, sp, 16px);
-      @include inc.sizing(line-height, wide, 42px, sp, 28px);
-      font-weight: 700;
-      text-align: center;
-      @include inc.sizing(padding-top, wide, 24px, sp, 16px);
-      @include inc.sizing(padding-bottom, wide, 32px, sp, 20px);
-      padding-left: 1rem;
-      padding-right: 1rem;
-      span {
-        @include inc.sizingRem(font-size, wide, 14px, sp, 12px);
-        display: block;
-        font-weight: 500;
-        @include inc.sizing(margin-bottom, wide, 18px, sp, 0px);
-      }
-      br {
-        display: block;
-        @include inc.mq(tab) {
-          display: none;
-        }
-      }
-    }
-    &--inner {
-      @include inc.sizing(padding, wide, 48px, sp, 24px);
-    }
-    &--fig {
-      display: block;
-      @include inc.mq(tab) {
-        display: flex;
-        justify-content: space-between;
-        gap: 1.5rem 2.5rem;
-      }
-      figure {
-        display: block;
-        order: 1;
-        @include inc.mq(tab) {
-          display: none;
-          order: 2;
-        }
-        img {
-          margin: 0 auto 1rem;
-          height: 160px;
-          width: auto;
-          @include inc.mq(tab) {
-            margin: 0;
-            width: 100%;
-            height: auto;
-          }
-        }
-      }
-    }
-    &--dl {
-      @include inc.sizing(margin-bottom, wide, 48px, sp, 32px);
-      order: 2;
-      padding-right: 0;
-      @include inc.mq(tab) {
-        order: 1;
-        padding-right: 200px;
-      }
-    }
-    &--dl > div {
-      display: flex;
-      gap: 1rem 1.5rem;
-      & + div {
-        margin-top: 1rem;
-      }
-    }
-    &--dt span {
-      @include inc.sizingRem(font-size, wide, 14px, sp, 12px);
-      @include inc.sizing(padding-top, wide, 6px, sp, 4px);
-      @include inc.sizing(padding-bottom, wide, 6px, sp, 4px);
-      border-radius: 2rem;
-      display: inline-block;
-      width: 5.5rem;
-      text-align: center
-    }
-    &--dd {
-      @include inc.sizingRem(font-size, wide, 16px, sp, 14px);
-      line-height: 2;
-    }
-    &--flow {
-      position: relative;
-    }
-    &--flow + &--flow {
-      @include inc.sizing(margin-top, wide, 64px, sp, 48px);
-    }
-    &--flow + &--flow::before {
-      content: "";
-      width: 26px;
-      height: 16px;
-      border-style: solid;
-      border-width: 16px 13px 0 13px;
-      border-color: #1b6fc3 transparent transparent transparent;
-      position: absolute;
-      top: -26px;
-      left: calc(50% - 13px);
-      @include inc.mq(lap) {
-        width: 32px;
-        height: 22px;
-        border-width: 22px 16px 0 16px;
-        top: -32px;
-        left: calc(50% - 16px);
-      }
-    }
-    & + .p-text-box--bluBox {
-      @include inc.sizing(margin-top, wide, 32px, sp, 28px);
-    }
+  & + .p-text-box {
+    @include inc.sizing(margin-top, wide, 96px, sp, 48px);
   }
 }

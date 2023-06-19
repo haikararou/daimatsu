@@ -4,17 +4,17 @@
 c-icon
 -----------------------------------------------------*/
 .c-icon {
-  &--blank {
-    &::after {
-      content: "";
-      display: inline-block;
-      height: 10px;
-      width: 9px;
-      background-image: url(../img/icon/gray_blank.svg);
-      background-repeat: no-repeat;
-      background-position: 100% 32%;
-      background-size: contain;
-      padding-right: 1rem;
-    }
-  }
+  // &--blank {
+  //   &::after {
+  //     content: "";
+  //     display: inline-block;
+  //     height: 10px;
+  //     width: 9px;
+  //     background-image: url(../img/icon/gray_blank.svg);
+  //     background-repeat: no-repeat;
+  //     background-position: 100% 32%;
+  //     background-size: contain;
+  //     padding-right: 1rem;
+  //   }
+  // }
 }
