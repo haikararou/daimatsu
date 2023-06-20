@@ -15,7 +15,7 @@ $content-width: 375px !default;
 $breakpoints: (
   sps: 320px,
   sp: 420px,
-  spl: 520px,
+  spl: 560px,
   tab: 768px,
   tabl: 960px,
   lap: 1025px,
@@ -59,10 +59,6 @@ a, img, a img {
 //  Font
 //====================================
 body {
-  font-family: "Zen Kaku Gothic New", sans-serif;
-  font-weight: 500;
-  color: $color-blk;
-  background-color: $color-wht;
   position: relative;
   width: 100%;
   -webkit-font-smoothing: antialiased;

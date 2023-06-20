@@ -1,0 +1,136 @@
+@charset 'UTF-8';
+@use "../../inc/" as inc;
+/*
+p-product
+-----------------------------------------------------*/
+.p-product {
+    &__top {
+        @include inc.mq(tabl) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            flex-direction:row-reverse;
+        }
+        &---txt {
+            width: 100%;
+            padding: 0 4rem;
+            @include inc.mq(tabl) {
+                width: calc(100% - (61.29% + 4rem));
+                padding: 0;
+                display:flex; flex-direction:column; justify-content:center;
+            }
+            a {
+                display: block;
+                @include inc.sizing(margin-top, wide, 80px, tabl, 24px);
+            }
+        }
+        &---ph {
+            width: 100%;
+            padding-left: 4rem;
+            margin-top: 2rem;
+            @include inc.mq(tabl) {
+                padding: 0;
+                width: 61.29%;
+                margin: 0;
+            }
+        }
+        &:nth-child(2) {
+            @include inc.sizing(margin-top, wide, 256px, tabl, 100px);
+            .p-product__top---txt {
+                text-align: left;
+            }
+            .p-product__top---ph {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 4rem;
+            }
+            @include inc.mq(tabl) {
+                flex-direction:row;
+                .p-product__top---txt {
+                    text-align: right;
+                }
+                .p-product__top---ph {
+                    width: 61.29%;
+                    padding-right: 0rem;
+                }
+            }
+        }
+    }
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 66rem;
+        width: 100%;
+        margin: 0 auto;
+        gap: 0 4.61%;
+        @include inc.mq(tabl) {
+            gap: 0 9.09%;
+        }
+        padding: 0;
+        li {
+            list-style-type: none;
+            margin: 0;
+            @include inc.sizing(margin-top, wide, 128px, tabl, 52px);
+            padding: 0;
+            width: 47.69%;
+            @include inc.mq(tabl) {
+                width: 27.27%;
+            }
+            h2 {
+                @include inc.sizing(margin-top, wide, 42px, tabl, 28px);
+                @include inc.sizingRem(font-size, wide, 26px, spl, 14px);
+            }
+        }
+    }
+    &__bnr {
+        max-width: calc(800px + 4rem);
+        //padding: 0 2rem;
+        @include inc.sizing(padding-top, wide, 112px, tabl, 64px);
+        @include inc.sizing(padding-left, wide, 32px, spl, 14px);
+        @include inc.sizing(padding-right, wide, 32px, spl, 14px);
+        width: 100%;
+        margin: 0 auto;
+    }
+    &__ {
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            }
+            
+            .div1 { grid-area: 1 / 1 / 2 / 3; }
+            .div2 { grid-area: 1 / 3 / 2 / 4; }
+            .div3 { grid-area: 1 / 4 / 2 / 5; }
+            .div4 { grid-area: 1 / 5 / 2 / 6; }
+            .div5 { grid-area: 2 / 1 / 3 / 2; }
+            .div6 { grid-area: 2 / 2 / 3 / 3; }
+            .div7 { grid-area: 2 / 3 / 3 / 4; }
+            .div8 { grid-area: 2 / 4 / 3 / 5; }
+            .div9 { grid-area: 2 / 5 / 3 / 6; }
+            .div10 { grid-area: 3 / 1 / 4 / 2; }
+            .div11 { grid-area: 3 / 2 / 4 / 3; }
+            .div12 { grid-area: 3 / 3 / 4 / 4; }
+            .div13 { grid-area: 3 / 4 / 4 / 5; }
+            .div14 { grid-area: 3 / 5 / 4 / 6; }
+            .div15 { grid-area: 4 / 1 / 5 / 2; }
+            .div16 { grid-area: 4 / 2 / 5 / 3; }
+            .div17 { grid-area: 4 / 3 / 5 / 4; }
+            .div18 { grid-area: 4 / 4 / 5 / 5; }
+            .div19 { grid-area: 4 / 5 / 5 / 6; }
+            .div20 { grid-area: 5 / 1 / 6 / 2; }
+            .div21 { grid-area: 5 / 2 / 6 / 3; }
+            .div22 { grid-area: 5 / 3 / 6 / 4; }
+            .div23 { grid-area: 5 / 4 / 6 / 5; }
+            .div24 { grid-area: 5 / 5 / 6 / 6; }
+            .div25 { grid-area: 6 / 1 / 7 / 2; }
+            .div26 { grid-area: 6 / 2 / 7 / 3; }
+            .div27 { grid-area: 6 / 3 / 7 / 4; }
+            .div28 { grid-area: 6 / 4 / 7 / 5; }
+            .div29 { grid-area: 6 / 5 / 7 / 6; }
+            
+            
+    }
+}
+
