@@ -18,33 +18,33 @@ let tempHeight = 0;
 /*------------------------------------------------------------------
 ヘッダー制御
 /*------------------------------------------------------------------*/
-const headerScroll = () => {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  let windowWidth = window.innerWidth;
-  tempHeight = logoHeight - scrollTop;
-  tempTop = headerTop - scrollTop;
-  if (scrollTop <= headerTop) {
-    header.style.height = tempHeight + "px";
-    headerLogo.style.height = tempHeight + "px";
-    headerNav.style.top = tempTop + "px";
-    //headerShadow.style.height = tempHeight + "px";
-  } else if (scrollTop > headerTop && tempTop != 0) {
-    if (windowWidth >= tabl) {
-      tempHeight = 100;
-      tempTop = 0;
-    } else {
-      tempHeight = 60;
-      tempTop = 0;
-    }
-    //headerShadow.style.height = tempHeight + "px";
-    headerLogo.style.height = tempHeight + "px";
-    headerNav.style.top = tempTop + "px";
-  }
-};
+// const headerScroll = () => {
+//   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//   let windowWidth = window.innerWidth;
+//   tempHeight = logoHeight - scrollTop;
+//   tempTop = headerTop - scrollTop;
+//   if (scrollTop <= headerTop) {
+//     header.style.height = tempHeight + "px";
+//     headerLogo.style.height = tempHeight + "px";
+//     headerNav.style.top = tempTop + "px";
+//     //headerShadow.style.height = tempHeight + "px";
+//   } else if (scrollTop > headerTop && tempTop != 0) {
+//     if (windowWidth >= tabl) {
+//       //tempHeight = 100;
+//       tempTop = 0;
+//     } else {
+//       //tempHeight = 60;
+//       tempTop = 0;
+//     }
+//     //headerShadow.style.height = tempHeight + "px";
+//     headerLogo.style.height = tempHeight + "px";
+//     headerNav.style.top = tempTop + "px";
+//   }
+// };
 
-window.addEventListener("scroll", function () {
-  headerScroll();
-});
+// window.addEventListener("scroll", function () {
+//   headerScroll();
+// });
 
 /*------------------------------------------------------------------
 メニュー開閉

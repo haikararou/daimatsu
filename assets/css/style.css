@@ -42,7 +42,12 @@ l-wrapper
   padding: 0;
   margin: 0 auto;
 }
-@media screen and (min-width: 768px) {
+.l-wrapper.lead {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+}
+@media screen and (min-width: 960px) {
   .l-wrapper {
     width: 100%;
     padding: 0 2rem;
@@ -55,7 +60,7 @@ l-wrapper
   padding: 0;
   margin: 0 auto;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .l-wrapper2 {
     width: 100%;
     padding: 0 2rem;
@@ -65,10 +70,10 @@ l-wrapper
 .l-wrapper3 {
   max-width: 66rem;
   width: 100%;
-  padding: 0;
+  padding: 0 2rem;
   margin: 0 auto;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .l-wrapper3 {
     width: 100%;
     padding: 0 2rem;
@@ -78,12 +83,46 @@ l-wrapper
 .l-wrapper4 {
   max-width: 62rem;
   width: 100%;
-  padding: 0;
+  padding: 0 2rem;
   margin: 0 auto;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .l-wrapper4 {
     width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+#about .l-wrapper.lead {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+}
+@media screen and (min-width: 960px) {
+  #about .l-wrapper.lead {
+    max-width: 86rem;
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+#about .l-wrapper.lead .l-wrapper4 {
+  max-width: 100%;
+  width: 100%;
+  padding: 0 0rem;
+}
+@media screen and (min-width: 960px) {
+  #about .l-wrapper.lead .l-wrapper4 {
+    max-width: 62rem;
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+#contact .l-wrapper4 {
+  padding: 0;
+}
+@media screen and (min-width: 960px) {
+  #contact .l-wrapper4 {
     padding: 0 2rem;
   }
 }
@@ -95,7 +134,7 @@ l-section
 l-main
 -----------------------------------------------------*/
 .l-main {
-  padding-bottom: clamp(192px, 16.72vw + 121.8px, 384px);
+  padding-bottom: clamp(192px, 18.32vw + 96.7px, 384px);
 }
 
 /*
@@ -115,8 +154,8 @@ html {
 }
 
 .l-header {
-  -webkit-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
   position: fixed;
   z-index: 11;
   width: 100%;
@@ -148,7 +187,7 @@ l-body
 .l-body {
   font-family: "Noto Sans JP", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "MS Ｐゴシック", "MS PGothic", sans-serif;
   font-weight: 400;
-  font-size: clamp(0.875rem, 0.17vw + 0.83125rem, 1rem);
+  font-size: clamp(0.875rem, 0.19vw + 0.8125rem, 1rem);
   color: #104327;
   padding-top: 60px;
 }
@@ -165,25 +204,43 @@ l-hero
 c-text
 -----------------------------------------------------*/
 .c-text--h1 {
-  font-size: clamp(1.5625rem, 1.31vw + 1.21875rem, 2.5rem);
-  line-height: clamp(50px, 2.61vw + 39.1px, 80px);
-  margin-bottom: clamp(48px, 4.18vw + 30.5px, 96px);
+  font-size: clamp(1.5625rem, 1.43vw + 1.1rem, 2.5rem);
+  line-height: clamp(50px, 2.86vw + 35.2px, 80px);
   font-weight: 400;
+  font-family: "Futo Go B101";
 }
 .c-text--h1 span {
-  font-size: clamp(0.875rem, 0.17vw + 0.83125rem, 1rem);
-  margin-top: clamp(12px, 1.05vw + 7.5px, 24px);
+  font-size: clamp(0.875rem, 0.19vw + 0.8125rem, 1rem);
+  margin-top: clamp(12px, 1.15vw + 6px, 24px);
   display: block;
   line-height: 1;
 }
 .c-text--h1.news-title {
-  padding-top: clamp(0px, 2.79vw - 11.7px, 32px);
+  padding-top: clamp(0px, 3.05vw - 15.8px, 32px);
 }
 .c-text--h2 {
-  font-size: clamp(1.125rem, 0.7vw + 0.9375rem, 1.625rem);
-  line-height: clamp(32px, 1.39vw + 26.2px, 48px);
+  font-size: clamp(1.125rem, 0.76vw + 0.88125rem, 1.625rem);
+  line-height: clamp(32px, 1.53vw + 24px, 48px);
   margin-bottom: clamp(24px, 0vw + 24px, 24px);
   font-weight: 500;
+}
+
+#news .c-text--h1 {
+  margin-bottom: clamp(100px, 9.06vw + 52.9px, 195px);
+}
+
+#news.post .c-text--h1 {
+  margin-bottom: clamp(56px, 4.2vw + 34.1px, 100px);
+}
+
+#product .c-text--h1 {
+  margin-bottom: clamp(75px, 11.45vw + 15.5px, 195px);
+}
+
+#about .c-text--h1,
+#contact .c-text--h1,
+#privacy .c-text--h1 {
+  margin-bottom: clamp(48px, 7.63vw + 8.4px, 128px);
 }
 
 /*
@@ -233,7 +290,7 @@ p-footer
   padding: 72px 0;
   position: relative;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__banner {
     padding: 0;
     height: 30.5rem;
@@ -250,7 +307,7 @@ p-footer
           justify-content: space-between;
   gap: 2.5rem 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__banner-list {
     gap: 0 1rem;
   }
@@ -263,7 +320,7 @@ p-footer
   font-size: 14px;
   font-family: "Futo Go B101";
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__banner-list-item {
     font-size: 16px;
     width: calc(50% - 0.5rem);
@@ -302,7 +359,7 @@ p-footer
   font-weight: 400;
   letter-spacing: 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__banner-list-item-green {
     margin-top: 1rem;
     height: 10rem;
@@ -374,7 +431,7 @@ p-footer
     background-image: url(../img/icon/mail-wht.svg);
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__banner-list-item-white {
     margin-top: 1rem;
     height: 10rem;
@@ -393,7 +450,7 @@ p-footer
 .p-footer__inner-sitemap {
   padding: 4.5rem 0 2.5rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__inner-sitemap {
     padding: 8rem 0;
     display: -webkit-box;
@@ -415,7 +472,7 @@ p-footer
   width: 70%;
   margin: 0 auto;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__inner-list {
     width: 16rem;
     margin: 0;
@@ -513,7 +570,7 @@ p-footer
   padding: 1rem 0;
   font-size: 10px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__list {
     display: -ms-grid;
     display: grid;
@@ -621,7 +678,7 @@ p-footer
   margin: 4.5rem auto 0;
   text-align: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__inner-logo {
     width: 48%;
     margin: 0;
@@ -639,18 +696,18 @@ p-footer
   width: auto;
   margin: 0 auto 16px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__logo > img {
     height: 40px;
     margin-bottom: 32px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__logo > img {
     margin: 0 0 16px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__logo {
     max-width: none;
     width: auto;
@@ -664,7 +721,7 @@ p-footer
   line-height: 1.8;
   margin: 0 auto;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__inner-add {
     max-width: none;
     width: auto;
@@ -680,7 +737,7 @@ p-footer
   display: block;
   font-weight: 400;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__inner-add address em {
     padding-right: 1rem;
     display: inline;
@@ -690,28 +747,30 @@ p-footer
   font-size: clamp(0.75rem, 0.66vw + 0.35625rem, 1rem);
   display: block;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-footer__inner-add span {
     display: inline;
   }
 }
 .p-footer__inner-add span + span {
-  padding-left: clamp(0px, 1.39vw - 5.8px, 16px);
+  padding-left: clamp(0px, 1.53vw - 8px, 16px);
 }
 .p-footer__bottom {
-  padding-top: clamp(32px, 2.79vw + 20.3px, 64px);
+  padding-top: clamp(32px, 3.05vw + 16.2px, 64px);
 }
 .p-footer__bottom > small {
   display: block;
   font-weight: 400;
   line-height: 2;
-  font-size: clamp(0.5rem, 0.17vw + 0.45625rem, 0.625rem);
+  font-size: clamp(0.5rem, 0.19vw + 0.4375rem, 0.625rem);
 }
 
 /*
 p-header
 -----------------------------------------------------*/
 .p-header {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
   overflow: hidden;
   height: 60px !important;
   border-bottom: 1px solid rgba(16, 67, 39, 0.2);
@@ -737,6 +796,8 @@ p-header
   }
 }
 .p-header__logo {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -761,6 +822,8 @@ p-header
   }
 }
 .p-header__logo > a {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
   width: 100%;
   height: 12px;
 }
@@ -771,10 +834,13 @@ p-header
 }
 .p-header__nav-container {
   display: none;
-  font-size: clamp(0.8125rem, 0.26vw + 0.74375rem, 1rem);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  font-size: clamp(0.8125rem, 0.29vw + 0.71875rem, 1rem);
   font-weight: 400;
   height: 100px;
   width: 33rem;
+  opacity: 0;
 }
 @media screen and (min-width: 960px) {
   .p-header__nav-container {
@@ -783,9 +849,12 @@ p-header
     display: flex;
     margin-left: auto;
     margin-right: 0;
+    opacity: 1;
   }
 }
 .p-header__nav {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -945,7 +1014,7 @@ p-header
   width: 100%;
   text-align: center;
   line-height: 1;
-  font-size: clamp(0.875rem, 0.57vw + 0.725rem, 1rem);
+  font-size: clamp(0.875rem, 0.81vw + 0.6125rem, 1rem);
   height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1004,7 +1073,7 @@ p-header
 .active.p-header .p-header__nav-list.nav-list02 .p-header__nav-item a span {
   position: relative;
   padding-left: 18px;
-  font-size: clamp(0.9375rem, 0.57vw + 0.7875rem, 1.0625rem);
+  font-size: clamp(0.9375rem, 0.81vw + 0.675rem, 1.0625rem);
 }
 .active.p-header .p-header__nav-list.nav-list02 .p-header__nav-item a span::before {
   content: "";
@@ -1094,11 +1163,11 @@ ul.list--dot li + li {
 }
 
 p + p {
-  margin-top: clamp(24px, 0.7vw + 21px, 32px);
+  margin-top: clamp(24px, 0.76vw + 20.1px, 32px);
 }
 
 .p-text-box + .p-text-box {
-  margin-top: clamp(48px, 4.18vw + 30.5px, 96px);
+  margin-top: clamp(48px, 4.58vw + 24.2px, 96px);
 }
 
 /*
@@ -1112,7 +1181,7 @@ p-table
   padding: 1.5rem 0;
   display: block;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-dl-table div {
     padding: 2rem 0;
     display: -webkit-box;
@@ -1123,12 +1192,12 @@ p-table
   }
 }
 .p-dl-table div dt {
-  font-size: clamp(0.6875rem, 0.26vw + 0.61875rem, 0.875rem);
+  font-size: clamp(0.6875rem, 0.29vw + 0.59375rem, 0.875rem);
   width: 100%;
   margin: 0 0 0.5rem;
   padding: 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-dl-table div dt {
     width: 20%;
     margin: 0;
@@ -1139,7 +1208,7 @@ p-table
   width: 100%;
   line-height: 1.6;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .p-dl-table div dd {
     width: 80%;
   }
@@ -1155,9 +1224,9 @@ p-breadcrumb
   position: relative;
   width: 100%;
   overflow-x: hidden;
-  font-size: clamp(0.625rem, 0.17vw + 0.58125rem, 0.75rem);
-  margin-top: clamp(26px, 3.31vw + 12.1px, 64px);
-  margin-bottom: clamp(50px, 1.22vw + 44.9px, 64px);
+  font-size: clamp(0.625rem, 0.19vw + 0.5625rem, 0.75rem);
+  margin-top: clamp(26px, 3.63vw + 7.1px, 64px);
+  margin-bottom: clamp(50px, 1.34vw + 43px, 64px);
 }
 .p-breadcrumb__container {
   display: -webkit-box;
@@ -1177,7 +1246,7 @@ p-breadcrumb
   position: absolute;
   left: -17px;
   top: 0;
-  font-size: clamp(0.5625rem, 0.17vw + 0.51875rem, 0.6875rem);
+  font-size: clamp(0.5625rem, 0.19vw + 0.5rem, 0.6875rem);
 }
 
 /*
@@ -1199,6 +1268,7 @@ p-about
 }
 
 .p-about--philosophy {
+  margin-bottom: clamp(48px, 4.58vw + 24.2px, 96px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1213,9 +1283,19 @@ p-about
           flex-flow: column;
 }
 .p-about--philosophy---ph {
-  width: 100vw;
+  padding-left: 4rem;
+}
+@media screen and (min-width: 960px) {
+  .p-about--philosophy---ph {
+    padding-left: 0;
+  }
+}
+.p-about--philosophy---ph img {
+  width: 100%;
+  margin-bottom: clamp(32px, 3.64vw + 13.1px, 48px);
 }
 .p-about--philosophy---p {
+  padding: 0 4rem;
   width: 100%;
 }
 .p-about--philosophy---p h2 {
@@ -1235,6 +1315,7 @@ p-about
   }
   .p-about--philosophy---ph {
     width: 58%;
+    position: static;
   }
   .p-about--philosophy---p {
     width: calc(100% - (58% + 2rem));
@@ -1246,6 +1327,7 @@ p-about
 }
 .p-about--map {
   margin: 0 0 6rem;
+  margin-bottom: clamp(64px, 3.05vw + 48.2px, 96px);
   position: relative;
   width: 100%;
   height: 0;
@@ -1259,9 +1341,13 @@ p-about
   height: 100%;
 }
 .p-about--map---add {
-  text-align: right;
   padding: 0.5rem 0 0 0;
   margin: 0;
+}
+@media screen and (min-width: 960px) {
+  .p-about--map---add {
+    text-align: right;
+  }
 }
 
 /*
@@ -1392,11 +1478,11 @@ p-form
   border: none;
   width: 100%;
   border: none;
-  height: clamp(144px, 4.18vw + 126.5px, 192px);
+  height: clamp(144px, 4.58vw + 120.2px, 192px);
 }
 .p-form__input---radio {
-  margin-right: clamp(24px, 0.7vw + 21px, 32px);
-  padding-left: clamp(0px, 1.39vw - 5.8px, 16px);
+  margin-right: clamp(24px, 0.76vw + 20.1px, 32px);
+  padding-left: clamp(0px, 1.53vw - 8px, 16px);
 }
 .p-form__input---radio input[type=radio] {
   position: absolute;
@@ -1404,7 +1490,7 @@ p-form
 }
 .p-form__input---radio input[type=radio] + .radio-label {
   position: relative;
-  padding-left: clamp(32px, 0.7vw + 29px, 40px);
+  padding-left: clamp(32px, 0.76vw + 28.1px, 40px);
 }
 .p-form__input---radio input[type=radio] + .radio-label:before {
   content: "";
@@ -1462,7 +1548,7 @@ p-form
   color: #fff !important;
   width: 100%;
   border: none;
-  height: clamp(80px, 1.39vw + 74.2px, 96px);
+  height: clamp(80px, 1.53vw + 72px, 96px);
   line-height: 1;
   text-align: center;
   margin: 1.5rem auto 1rem;
@@ -1481,7 +1567,7 @@ p-form
           align-items: center;
 }
 .p-form__input---reCAPTCHA {
-  font-size: clamp(0.75rem, 0.17vw + 0.70625rem, 0.875rem);
+  font-size: clamp(0.75rem, 0.19vw + 0.6875rem, 0.875rem);
   text-align: left;
 }
 @media screen and (min-width: 960px) {
@@ -1508,7 +1594,7 @@ p-pagenav
       -ms-flex-align: center;
           align-items: center;
   gap: 0.5rem;
-  padding-top: clamp(48px, 2.79vw + 36.3px, 80px);
+  padding-top: clamp(48px, 3.05vw + 32.2px, 80px);
 }
 @media screen and (min-width: 960px) {
   .wp-pagenavi {
@@ -1593,7 +1679,7 @@ p-pagenav
 }
 
 .wp-pager {
-  padding-top: clamp(16px, 1.39vw + 10.2px, 32px);
+  padding-top: clamp(16px, 1.53vw + 8px, 32px);
 }
 .wp-pager ul {
   position: relative;
@@ -1642,3 +1728,4 @@ p-pagenav
 /*
   3.3 - Utility
 -----------------------------------------------------*/
+/*# sourceMappingURL=style.css.map */

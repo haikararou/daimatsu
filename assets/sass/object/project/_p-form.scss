@@ -99,27 +99,17 @@ p-form
       border: none;
       width: 100%;
       border: none;
-      @include inc.sizing(height, wide, 192px, sp, 144px);
+      @include inc.sizing(height, wide, 192px, spl, 144px);
     }
     &---radio {
-      @include inc.sizing(margin-right, wide, 32px, sp, 24px);
-      @include inc.sizing(padding-left, wide, 16px, sp, 0px);
-      //margin: 0 1.5rem 0 0;
-      //padding: 0;
-      // @include inc.mq(tabl) {
-      //   margin: 0 2rem 0 0;
-      //   padding: 1rem 0 0 0;
-      // }
+      @include inc.sizing(margin-right, wide, 32px, spl, 24px);
+      @include inc.sizing(padding-left, wide, 16px, spl, 0px);
       input[type="radio"] {
         position: absolute;
         opacity: 0;
         + .radio-label {
           position: relative;
-          @include inc.sizing(padding-left, wide, 40px, sp, 32px);
-          //padding-left: 2rem;
-          // @include inc.mq(tabl) {
-          //   padding-left: 2.5rem;
-          // }
+          @include inc.sizing(padding-left, wide, 40px, spl, 32px);
           &:before {
             content: '';
             background: inc.$color-wht;
@@ -129,10 +119,7 @@ p-form
             @include inc.sizing(width, wide, 32px, tabl, 26px);
             @include inc.sizing(height, wide, 32px, tabl, 26px);
             @include inc.sizing(top, wide, -4px, tabl, -1px);
-            // width: 1.6rem;
-            // height: 1.6rem;
             position: relative;
-            //top: -0.1rem;
             margin-right: 1rem;
             vertical-align: top;
             cursor: pointer;
@@ -140,12 +127,6 @@ p-form
             transition: all 250ms ease;
             position: absolute;
             left: 0;
-            //top: -1px;
-            @include inc.mq(tabl) {
-              // width: 2rem;
-              // height: 2rem;
-              //top: -4px;
-            }
           }
         }
         &:checked {
@@ -196,14 +177,14 @@ p-form
       color: inc.$color-wht!important;
       width: 100%;
       border: none;
-      @include inc.sizing(height, wide, 96px, sp, 80px);
+      @include inc.sizing(height, wide, 96px, spl, 80px);
       line-height: 1;
       text-align: center;
       margin: 1.5rem auto 1rem;
       display:flex; flex-direction:column; justify-content:center; align-items:center;
     }
     &---reCAPTCHA {
-      @include inc.sizingRem(font-size, wide, 14px, sp, 12px);
+      @include inc.sizingRem(font-size, wide, 14px, spl, 12px);
       text-align: left;
       @include inc.mq(tabl) {
         text-align: center;

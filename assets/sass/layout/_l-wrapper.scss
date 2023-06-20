@@ -9,7 +9,12 @@ l-wrapper
   width: 90%;
   padding: 0;
   margin: 0 auto;
-  @include inc.mq(tab) {
+  &.lead {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+  @include inc.mq(tabl) {
     width:100%;
     padding: 0 2rem;
   }
@@ -19,7 +24,7 @@ l-wrapper
   width: 100%;
   padding: 0;
   margin: 0 auto;
-  @include inc.mq(tab) {
+  @include inc.mq(tabl) {
     width:100%;
     padding: 0 2rem;
   }
@@ -27,9 +32,9 @@ l-wrapper
 .l-wrapper3 {
   max-width: calc(62rem + 4rem); //992
   width: 100%;
-  padding: 0;
+  padding: 0 2rem;
   margin: 0 auto;
-  @include inc.mq(tab) {
+  @include inc.mq(tabl) {
     width:100%;
     padding: 0 2rem;
   }
@@ -39,8 +44,37 @@ l-wrapper
   width: 100%;
   padding: 0 2rem;
   margin: 0 auto;
-  @include inc.mq(tab) {
+  @include inc.mq(tabl) {
     width:100%;
+    padding: 0 2rem;
+  }
+}
+
+#about .l-wrapper {
+  &.lead {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    @include inc.mq(tabl) {
+      max-width: calc(82rem + 4rem);
+      width:100%;
+      padding: 0 2rem;
+    }
+    .l-wrapper4 {
+      max-width: 100%; //928
+      width: 100%;
+      padding: 0 0rem;
+      @include inc.mq(tabl) {
+        max-width: calc(58rem + 4rem);
+        width:100%;
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+#contact .l-wrapper4 {
+  padding: 0;
+  @include inc.mq(tabl) {
     padding: 0 2rem;
   }
 }

@@ -11,14 +11,24 @@ p-about
 }
 .p-about {
     &--philosophy {
+        @include inc.sizing(margin-bottom, wide, 96px, spl, 48px);
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         flex-flow: column;
         &---ph {
-            width: 100vw;
+            padding-left: 4rem;
+            @include inc.mq(tabl) {
+                padding-left: 0;
+            }
+            //margin-bottom: 48px;
+            img {
+                width: 100%;
+                @include inc.sizing(margin-bottom, tabl, 48px, spl, 32px);
+            }
         }
         &---p {
+            padding: 0 4rem;
             width:100%;
             h2 {
                 display: block;
@@ -32,6 +42,7 @@ p-about
             flex-direction:row-reverse;
             &---ph {
                 width: 58%;
+                position: static;
             }
             &---p {
                 width: calc(100% - (58% + 2rem));
@@ -44,6 +55,7 @@ p-about
     }
     &--map {
         margin: 0 0 6rem;
+        @include inc.sizing(margin-bottom, wide, 96px, spl, 64px);
         position: relative;
         width: 100%;
         height: 0;
@@ -56,9 +68,11 @@ p-about
             height: 100%;
         }
         &---add {
-            text-align: right;
             padding: .5rem 0 0 0;
             margin: 0;
+            @include inc.mq(tabl) {
+                text-align: right;
+            }
         }
     }
 }

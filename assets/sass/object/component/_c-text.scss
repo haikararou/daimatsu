@@ -5,33 +5,34 @@ c-text
 -----------------------------------------------------*/
 .c-text {
   &--h1 {
-    @include inc.sizingRem(font-size, wide, 40px, sp, 25px);
-    @include inc.sizing(line-height, wide, 80px, sp, 50px);
-    @include inc.sizing(margin-bottom, wide, 195 px, sp, 100px);//2 お知らせ一覧
-    @include inc.sizing(margin-bottom, wide, 195 px, sp, 75px);//4 商品カテゴリ一覧
-    @include inc.sizing(margin-bottom, wide, 128px, sp, 48px);//7 会社概要 8 お問い合わせ 9 プライバシーポリシー
+    @include inc.sizingRem(font-size, wide, 40px, spl, 25px);
+    @include inc.sizing(line-height, wide, 80px, spl, 50px);
+    //@include inc.sizing(margin-bottom, wide, 195px, spl, 100px);//2 お知らせ一覧
+    //@include inc.sizing(margin-bottom, wide, 195px, spl, 75px);//4 商品カテゴリ一覧
+    //@include inc.sizing(margin-bottom, wide, 128px, spl, 48px);//7 会社概要 8 お問い合わせ 9 プライバシーポリシー
     font-weight: 400;
+    font-family: "Futo Go B101";
     span {
-      @include inc.sizingRem(font-size, wide, 16px, sp, 14px);
-      @include inc.sizing(margin-top, wide, 24px, sp, 12px);
+      @include inc.sizingRem(font-size, wide, 16px, spl, 14px);
+      @include inc.sizing(margin-top, wide, 24px, spl, 12px);
       display: block;
       line-height: 1;
     }
     &.news-title {
-      @include inc.sizing(padding-top, wide, 32px, sp, 0px);
+      @include inc.sizing(padding-top, wide, 32px, spl, 0px);
     }
   }
   &--h2 {
-    @include inc.sizingRem(font-size, wide, 26px, sp, 18px);
-    @include inc.sizing(line-height, wide, 48px, sp, 32px);
-    @include inc.sizing(margin-bottom, wide, 24px, sp, 24px);
+    @include inc.sizingRem(font-size, wide, 26px, spl, 18px);
+    @include inc.sizing(line-height, wide, 48px, spl, 32px);
+    @include inc.sizing(margin-bottom, wide, 24px, spl, 24px);
     font-weight: 500;
   }
   // &--h3 {
-  //   @include inc.sizingRem(font-size, wide, 20px, sp, 16px);
-  //   @include inc.sizing(line-height, wide, 30px, sp, 24px);
-  //   @include inc.sizing(margin-bottom, wide, 16px, sp, 12px);
-  //   @include inc.sizing(padding-left, wide, 16px, sp, 12px);
+  //   @include inc.sizingRem(font-size, wide, 20px, spl, 16px);
+  //   @include inc.sizing(line-height, wide, 30px, spl, 24px);
+  //   @include inc.sizing(margin-bottom, wide, 16px, spl, 12px);
+  //   @include inc.sizing(padding-left, wide, 16px, spl, 12px);
   //   font-weight: 500;
   //   padding-bottom: 3px;
   //   line-height: 1;
@@ -48,11 +49,33 @@ c-text
   //   }
   // }
   // &--h4 {
-  //   @include inc.sizingRem(font-size, wide, 18px, sp, 14px);
-  //   @include inc.sizing(line-height, wide, 32px, sp, 24px);
-  //   @include inc.sizing(margin-bottom, wide, 16px, sp, 12px);
-  //   @include inc.sizing(padding-bottom, wide, 16px, sp, 12px);
+  //   @include inc.sizingRem(font-size, wide, 18px, spl, 14px);
+  //   @include inc.sizing(line-height, wide, 32px, spl, 24px);
+  //   @include inc.sizing(margin-bottom, wide, 16px, spl, 12px);
+  //   @include inc.sizing(padding-bottom, wide, 16px, spl, 12px);
   //   font-weight: 700;
   // }
+}
 
+#news .c-text {
+  &--h1 {
+    @include inc.sizing(margin-bottom, wide, 195px, spl, 100px);//2 お知らせ一覧
+  }
+}
+#news.post .c-text {
+  &--h1 {
+    @include inc.sizing(margin-bottom, wide, 100px, spl, 56px);//2 お知らせ一覧
+  }
+}
+#product .c-text {
+  &--h1 {
+    @include inc.sizing(margin-bottom, wide, 195px, spl, 75px);//4 商品カテゴリ一覧
+  }
+}
+#about .c-text,
+#contact .c-text,
+#privacy .c-text {
+  &--h1 {
+    @include inc.sizing(margin-bottom, wide, 128px, spl, 48px);//7 会社概要 8 お問い合わせ 9 プライバシーポリシー
+  }
 }

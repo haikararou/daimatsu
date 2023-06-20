@@ -2,11 +2,11 @@
 @use "sass:math";
 @use "i-setting" as setting;
 
-// @include sizing(width, wide, 365px, sp, 276px);
+// @include sizing(width, wide, 365px, spl, 276px);
 //  ==> width: clamp(276px, 7.46vw + 248px, 365px);
 // （ビューポートがwide(1568px)のとき365px, sp(375px)のとき276pxになる自動補完値を設定）
 
-// @include remsizing(font-size, wide, 14px, sp, 12px);
+// @include remsizing(font-size, wide, 14px, spl, 12px);
 //  ==> font-size: clamp(0.75rem, 0.17vw + 0.70625rem, 0.875rem;
 // （ビューポートがwide(1568px)のとき14px, sp(375px)のとき12pxになる自動補完値をremに変換して設定）
 

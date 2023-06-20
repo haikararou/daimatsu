@@ -22,10 +22,10 @@ ul.list--dot {
 }
 
 p + p {
-  @include inc.sizing(margin-top, wide, 32px, sp, 24px);
+  @include inc.sizing(margin-top, wide, 32px, spl, 24px);
 }
 .p-text-box {
   & + .p-text-box {
-    @include inc.sizing(margin-top, wide, 96px, sp, 48px);
+    @include inc.sizing(margin-top, wide, 96px, spl, 48px);
   }
 }

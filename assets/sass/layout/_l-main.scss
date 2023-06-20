@@ -4,5 +4,5 @@
 l-main
 -----------------------------------------------------*/
 .l-main {
-    @include inc.sizing(padding-bottom, wide, 384px, sp, 192px);
+    @include inc.sizing(padding-bottom, wide, 384px, spl, 192px);
 }

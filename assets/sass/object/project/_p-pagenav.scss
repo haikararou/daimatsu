@@ -9,7 +9,7 @@ p-pagenav
     justify-content: center;
     align-items: center;
     gap: .5rem;
-    @include inc.sizing(padding-top, wide, 80px, sp, 48px);
+    @include inc.sizing(padding-top, wide, 80px, spl, 48px);
     @include inc.mq(tabl) {
         gap: 1rem;
     }
@@ -19,31 +19,19 @@ p-pagenav
         border: 1px solid inc.$color-wht;
         @include inc.sizing(width, wide, 64px, tabl, 48px);
         @include inc.sizing(height, wide, 64px, tabl, 48px);
-        // width: 3rem;
-        // height: 3rem;
         line-height: 1;
         display:flex; flex-direction:column; justify-content:center; align-items:center;
         background: inc.$color-wht;
-        // @include inc.mq(tabl) {
-        //     width: 4rem;
-        //     height: 4rem;
-        // }
         &.previouspostslink,
         &.nextpostslink {
         position: relative;
         color: transparent;
         @include inc.sizing(width, wide, 64px, tabl, 48px);
         @include inc.sizing(height, wide, 64px, tabl, 48px);
-        // width: 3rem;
-        // height: 3rem;
         line-height: 1;
         text-indent: -9999;
         font-size: 0;
         line-height: 0;
-        // @include inc.mq(tabl) {
-        //     width: 4rem;
-        //     height: 4rem;
-        // }
         &:before {
             content: "";
             position: absolute;
@@ -82,11 +70,7 @@ p-pagenav
 }
 
 .wp-pager {
-    @include inc.sizing(padding-top, wide, 32px, sp, 16px);
-    //padding-top: 1rem;
-    // @include inc.mq(tabl) {
-    //     padding-top: 2rem;
-    // }
+    @include inc.sizing(padding-top, wide, 32px, spl, 16px);
     ul {
         position: relative;
         clear: both;

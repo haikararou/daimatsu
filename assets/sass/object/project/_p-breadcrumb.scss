@@ -7,9 +7,9 @@ p-breadcrumb
   position: relative;
   width: 100%;
   overflow-x: hidden;
-  @include inc.sizingRem(font-size, wide, 12px, sp, 10px);
-  @include inc.sizing(margin-top, wide, 64px, sp, 26px);
-  @include inc.sizing(margin-bottom, wide, 64px, sp, 50px);
+  @include inc.sizingRem(font-size, wide, 12px, spl, 10px);
+  @include inc.sizing(margin-top, wide, 64px, spl, 26px);
+  @include inc.sizing(margin-bottom, wide, 64px, spl, 50px);
   &__container {
     display: flex;
     gap: 28px;
@@ -26,7 +26,7 @@ p-breadcrumb
           position: absolute;
           left: -17px;
           top: 0;
-          @include inc.sizingRem(font-size, wide, 11px, sp, 9px);
+          @include inc.sizingRem(font-size, wide, 11px, spl, 9px);
         }
     }
   }
