@@ -254,9 +254,13 @@ p-header
         display: flex;
         flex-direction: column;
         .p-header__nav-item {
-          padding: 2rem 0;
+          
           border-bottom: 1px solid inc.$color-grn3;
           text-align: center;
+          a {
+            display: block;
+            padding: 2rem 0;
+          }
           &:first-child {
             display: block;
           }
@@ -306,9 +310,21 @@ p-header
   }
 }
 
+//== SP  ========================//
+.sp .p-header {
+  .p-header__nav-container {
+    -webkit-transition: all 0.8s ease-out;
+    transition: all 0.8s ease-out;
+    opacity: 0;
+  }
+}
+
 //== SP展開  ========================//
 .sp.open .p-header {
   .p-header__nav-container {
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+
     display: block;
     position: absolute;
     background: inc.$color-wht;
@@ -320,6 +336,7 @@ p-header
     margin-top: 60px;
     width: 100%;
     z-index: 1;
+    opacity: 1;
   }
   .p-header__nav {
     display: block;
@@ -386,88 +403,11 @@ p-header
 }
 
 
-
-// .active.p-header {
-//   .p-header__nav-container {
-//     display: block;
-//     position: absolute;
-//     background: inc.$color-wht;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     height: 101vh;
-//     margin-top: 60px;
-//     width: 100%;
-//   }
-//   .p-header__nav {
-//     display: block;
-//   }
-//   .p-header__nav-list {
-//     display: block;
-//     //opacity: 0;
-//     &.nav-list01 {
-//       width: 10rem;
-//       margin: 0 auto;
-//       padding-right: 0;
-//       .p-header__nav-item {
-//         width: 100%;
-//         text-align: center;
-//         line-height: 1;
-//         @include inc.sizingRem(font-size, tab, 16px, spl, 14px);
-//         height: 70px;
-//         display:flex; flex-direction:column; justify-content:center; align-items:center;
-//         border-bottom: 1px solid inc.$color-grn3;
-//         &:first-child{
-//           display: flex;
-//         }
-//         &:last-child{
-//           border-bottom: none;
-//         }
-//       }
-//     }
-//     &.nav-list02 {
-//       width: 100%;
-//       border-left: none;
-//       background: inc.$color-grn2;
-//       padding: 2rem;
-//       position: fixed;
-//       left: 0;
-//       bottom: 0;
-//       .p-header__nav-item {
-//         width: 100%;
-//         text-align: center;
-//         line-height: 1;
-//         a {
-//           height: 80px;
-//           background: inc.$color-wht;
-//           display:flex; flex-direction:column; justify-content:center; align-items:center;
-//           span {
-//             position: relative;
-//             padding-left: 18px;
-//             @include inc.sizingRem(font-size, tab, 17px, spl, 15px);
-//             &::before {
-//               content: "";
-//               display: block;
-//               width: 28px;
-//               height: 18px;
-//               background: url(../img/icon/mail.svg) no-repeat 50% 50% /contain;
-//               position: absolute;
-//               left: -18px;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-
 @media (hover: hover) {
-  .a-effect {
+  .pc .a-effect {
     position: relative;
   }
-  .a-effect::before {
+  .pc .a-effect::before {
     -webkit-transition: all 0.1s ease-out;
     transition: all 0.1s ease-out;
     content: "";
@@ -484,7 +424,7 @@ p-header
     -webkit-transform-origin: right top;
     transform-origin: right top;
   }
-  .a-effect::after {
+  .pc .a-effect::after {
     -webkit-transition: all 0.1s ease-out;
     transition: all 0.1s ease-out;
     content: "";
@@ -500,23 +440,33 @@ p-header
     -webkit-transform-origin: left top;
     transform-origin: left top;
   }
-  .a-effect:hover::before {
+  .pc.open .a-effect::before {
+    display: none;
+  }
+  .pc.open .a-effect::after {
+    display: none;
+  }
+  .pc .a-effect:hover::before {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
   }
-  .a-effect:hover::after {
+  .pc .a-effect:hover::after {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
   }
   @include inc.mq(tabl) {
-    .a-effect.a-active::before {
+    .pc .a-effect.a-active::before {
       -webkit-transform: scale(1, 1);
       transform: scale(1, 1);
     }
-    .a-effect.a-active::after {
+    .pc .a-effect.a-active::after {
       -webkit-transform: scale(1, 1);
       transform: scale(1, 1);
     }
+  }
+  .pc.open .p-header__nav-list.nav-list01 .p-header__nav-item:hover a {
+    background: inc.$color-grn2;
+    color:inc.$color-wht;
   }
 }
 

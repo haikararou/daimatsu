@@ -15,32 +15,33 @@ p-pagenav
     }
     span,
     a {
+        border: none;
         display: inline-block;
         border: 1px solid inc.$color-wht;
-        @include inc.sizing(width, wide, 64px, tabl, 48px);
-        @include inc.sizing(height, wide, 64px, tabl, 48px);
+        @include inc.sizing(width, wide, 64px, tabl, 32px);
+        @include inc.sizing(height, wide, 64px, tabl, 32px);
         line-height: 1;
         display:flex; flex-direction:column; justify-content:center; align-items:center;
         background: inc.$color-wht;
         &.previouspostslink,
         &.nextpostslink {
-        position: relative;
-        color: transparent;
-        @include inc.sizing(width, wide, 64px, tabl, 48px);
-        @include inc.sizing(height, wide, 64px, tabl, 48px);
-        line-height: 1;
-        text-indent: -9999;
-        font-size: 0;
-        line-height: 0;
-        &:before {
-            content: "";
-            position: absolute;
-            top: calc(50% - 3px);
-            left: calc(50% - 3px);
-            width: 6px;
-            height: 6px;
-            transform: rotate(45deg);
-        }
+            position: relative;
+            color: transparent;
+            @include inc.sizing(width, wide, 64px, tabl, 32px);
+            @include inc.sizing(height, wide, 64px, tabl, 32px);
+            line-height: 1;
+            text-indent: -9999;
+            font-size: 0;
+            line-height: 0;
+            &:before {
+                content: "";
+                position: absolute;
+                top: calc(50% - 3px);
+                left: calc(50% - 3px);
+                width: 6px;
+                height: 6px;
+                transform: rotate(45deg);
+            }
         }
         &.previouspostslink:before {
             border-bottom: 2px solid inc.$color-grn2;
@@ -65,6 +66,7 @@ p-pagenav
         &.current {
             background: inc.$color-grn2;
             color: inc.$color-wht;
+            border: none;
         }
     }
 }

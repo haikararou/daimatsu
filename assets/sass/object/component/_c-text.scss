@@ -23,7 +23,10 @@ c-text
       @include inc.sizing(margin-bottom, wide, 100px, spl, 56px);//2 お知らせ一覧
     }
     & + p {
-      padding: 2rem 0 0 3rem;
+      padding: 1.5rem 0 0 2rem;
+      @include inc.mq(tab) {
+        padding: 2rem 0 0 4rem;
+      }
     }
   }
   &--h2 {

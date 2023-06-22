@@ -34,5 +34,35 @@ p-table
     }
   }
 }
-.p-table {
+
+#product.post .p-dl-table {
+  border-top: 1px solid inc.$color-grn3;
+  div {
+    border-bottom: 1px solid inc.$color-grn3;
+    padding: 1.5rem 0;
+    // display: block;
+    // @include inc.mq(tabl) {
+      padding: 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+    // }
+    dt {
+      @include inc.sizingRem(font-size, wide, 14px, spl, 11px);
+      width: 20%;
+      margin: 0 0 .5rem;
+      padding: 0;
+      @include inc.mq(tabl) {
+        width: 25%;
+        margin: 0;
+        //padding: 0.25rem 0 0 0;
+      }
+    }
+    dd {
+      width: 80%;
+      line-height: 1.6;
+      @include inc.mq(tabl) {
+        width: 75%;
+      }
+    }
+  }
 }

@@ -33,13 +33,13 @@
 
 <body class="l-body post" id="product">
 <!-- ?php include($_SERVER['DOCUMENT_ROOT'] . /test/a/daimatsu/assets/inc/header.php"); ?-->
-<div class="p-header__sp">
-  <button class="p-header__menu-button"></button>
-  <div class="p-header__menu-design">
-  <span></span>
-  <span></span>
-  <span></span>
-  </div>
+  <div class="p-header__burger">
+    <button class="p-header__burger---button"></button>
+    <div class="p-header__burger---design">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
   </div>
   <header class="l-header">
       <div class="p-header">
@@ -76,12 +76,12 @@
     </div>
     <section class="l-wrapper2">
       <h1 class="c-text--h1">お知らせのタイトル</h1>
-      <div>
-        <figure><img src="../assets/img/dummy/product/post.jpg" alt=""></figure>
-        <div>
-          <div>
-            <h2>商品情報</h2>
-            <dl>
+      <div class="p-product__post">
+        <figure class="p-product__post---ph" id="container"><img src="../assets/img/dummy/product/post.jpg" alt=""></figure>
+        <div class="p-product__post---txt" id="aside">
+          <div class="p-text-box">
+            <h2 class="c-text--h2">商品情報</h2>
+            <dl class="p-dl-table">
               <div>
                 <dt>商品名</dt>
                 <dd>商品名が入ります</dd>
@@ -108,9 +108,9 @@
               </div>
             </dl>
           </div>
-          <div>
-            <h2>栄養成分表示（100gあたり）</h2>
-            <dl>
+          <div class="p-text-box">
+            <h2 class="c-text--h2">栄養成分表示（100gあたり）</h2>
+            <dl class="p-dl-table">
               <div>
                 <dt>熱量:</dt>
                 <dd>166kcal</dd>
@@ -132,10 +132,10 @@
                 <dd>5.5g</dd>
               </div>
             </dl>
-            <p>※熱量・たんぱく質・脂質・炭水化物は、五訂版日本食品標準成分表に基づく、可食部100g当たりの数値です。 ※塩分は実測値です。</p>
+            <p class="p-product__annotation">※熱量・たんぱく質・脂質・炭水化物は、五訂版日本食品標準成分表に基づく、可食部100g当たりの数値です。 ※塩分は実測値です。</p>
           </div>
-          <div>
-            <h2>アレルギー情報</h2>
+          <div class="p-text-box">
+            <h2 class="c-text--h2">アレルギー情報</h2>
             <div class="p-product__allergy">
               <div class="div1">該当なし</div>
               <div class="div2 active">えび</div>
@@ -168,7 +168,7 @@
               <div class="div29">ゼラチン</div>
             </div>
             <p>この商品には<span class="p-product__allergy---active">白文字</span>で表記している原料を使用しています</p>
-            <p>荷姿: 1000g×15袋入<br>商品コード: 6131<br>JANコード: 4957888 201154</p>
+            <p class="p-product__annotation">荷姿: 1000g×15袋入<br>商品コード: 6131<br>JANコード: 4957888 201154</p>
           </div>
         </div>
 
