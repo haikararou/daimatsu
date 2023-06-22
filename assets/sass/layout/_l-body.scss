@@ -4,14 +4,15 @@
 l-body
 -----------------------------------------------------*/
 .l-body {
-  font-family: 'Noto Sans JP',"游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "MS Ｐゴシック", "MS PGothic", sans-serif;
-  font-weight: 400;
+  position: relative;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
   @include inc.sizingRem(font-size, wide, 16px, tabl, 14px);
   @include inc.sizingRem(font-size, tabl, 14px, sp, 12px);
   color: inc.$color-grn;
-  padding-top: 60px;
-  @include inc.mq(tabl) {
-    padding-top: 100px;
-  }
+  // padding-top: 60px;
+  // @include inc.mq(tabl) {
+  //   padding-top: 100px;
+  // }
 }
 

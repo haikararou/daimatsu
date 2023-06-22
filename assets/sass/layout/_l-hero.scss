@@ -9,15 +9,11 @@ l-hero
 #news .l-hero {
     @include inc.sizing(margin-bottom, wide, 195px, spl, 100px);//2 お知らせ一覧
 }
-// #news.post .l-hero {
-//     @include inc.sizing(margin-bottom, wide, 100px, spl, 56px);//2 お知らせ一覧
-// }
 #product .l-hero {
     @include inc.sizing(margin-bottom, wide, 195px, spl, 75px);//4 商品カテゴリ一覧
 }
 #product.category .l-hero {
     margin-bottom: 0;
-    //position: relative;
 }
 .l-hero__product {
     display: flex;
