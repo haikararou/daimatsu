@@ -1066,6 +1066,14 @@ p-header
   margin-top: 8px;
 }
 
+.reversal .p-header__burger---design > span {
+  border: 1px solid #fff;
+}
+
+.reversal.open .p-header__burger---design > span {
+  border: 1px solid #104327;
+}
+
 .pc .p-header__burger {
   height: 100px;
   width: 128px;

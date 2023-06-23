@@ -34,6 +34,26 @@ window.addEventListener("scroll", function () {
 });
 
 
+
+
+
+$(function() {
+    let target = $('.l-footer'); // 追従要素
+    let targetPoint = target.offset().top; // 追従要素の初期位置
+    // console.log(targetPoint);
+    $(window).on('load scroll', function() {
+        let windowScrolltop = $(window).scrollTop() + 50;
+        // console.log(windowScrolltop);
+        if (windowScrolltop >= targetPoint) {
+            $('.l-body.pc').addClass('reversal');
+        } else {
+            $('.l-body.pc').removeClass('reversal');
+        }
+    });
+});
+
+
+
 /*------------------------------------------------------------------
 読み込み時処理
 /*------------------------------------------------------------------*/
@@ -233,6 +253,7 @@ const listener = (event) => {
         $('.l-body').removeClass('open');
         $('.l-body').addClass('sp');
         $('.l-body').removeClass('pc');
+        $('.l-body').removeClass('reversal');
     }
 };
 mediaQueryList.addEventListener("change", listener);

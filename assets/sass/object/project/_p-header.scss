@@ -158,6 +158,17 @@ p-header
     }
   }
 }
+.reversal .p-header__burger---design {
+  & > span {
+    border: 1px solid inc.$color-wht;
+  }
+}
+.reversal.open .p-header__burger---design {
+  & > span {
+    border: 1px solid inc.$color-grn;
+  }
+}
+
 //==  PC  ========================//
 .pc .p-header__burger {
   height: 100px;
