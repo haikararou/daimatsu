@@ -1,22 +1,57 @@
+/*------------------------------------------------------------------
+ヘッダー制御
+/*------------------------------------------------------------------*/
+const headerScroll = () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let windowWidth = window.innerWidth;
+    let element = document.getElementsByClassName('scroll');
+    if ( scrollTop <= 130) {
+        $('.p-header__nav-container').css('right','-200px');
+    }
+    if (scrollTop <= 150) {
+        $('.l-body').removeClass('scroll');
+        $('.l-body').removeClass('open');
+        modalopen = false;
+        $('.p-header__nav-list.nav-list01').css('opacity','1');
+        $('.p-header__nav-list.nav-list02 a').css('opacity','1');
+    } else if (scrollTop > 150) {
+        $('.l-body').addClass('scroll');
+        if( element.classList.contains('scroll') == false ){
+            $('.p-header__nav-list.nav-list01').css('opacity','0');
+            $('.p-header__nav-list.nav-list02 a').css('opacity','0');
+        }
+        // if (windowWidth >= tabl) {
+        //     tempHeight = 100;
+        //     tempTop = 0;
+        // } else {
+        //     tempHeight = 60;
+        //     tempTop = 0;
+        // }
+    }
+};
+window.addEventListener("scroll", function () {
+    headerScroll();
+});
+
 
 /*------------------------------------------------------------------
 読み込み時処理
 /*------------------------------------------------------------------*/
-$(function() {
-    $(window).on('load scroll', function(){
-        if ($(this).scrollTop() > 150) {
-            $('.l-body').addClass('scroll');
-            $('.p-header__nav-list.nav-list01').css('opacity','0');
-            $('.p-header__nav-list.nav-list02 a').css('opacity','0');
-        } else {
-            $('.l-body').removeClass('scroll');
-            $('.l-body').removeClass('open');
-            modalopen = false;
-            $('.p-header__nav-list.nav-list01').css('opacity','1');
-            $('.p-header__nav-list.nav-list02 a').css('opacity','1');
-        }
-    });
-});
+// $(function() {
+//     $(window).on('load scroll', function(){
+//         if ($(this).scrollTop() > 150) {
+//             $('.l-body').addClass('scroll');
+//             $('.p-header__nav-list.nav-list01').css('opacity','0');
+//             $('.p-header__nav-list.nav-list02 a').css('opacity','0');
+//         } else {
+//             $('.l-body').removeClass('scroll');
+//             $('.l-body').removeClass('open');
+//             modalopen = false;
+//             $('.p-header__nav-list.nav-list01').css('opacity','1');
+//             $('.p-header__nav-list.nav-list02 a').css('opacity','1');
+//         }
+//     });
+// });
 
 /*------------------------------------------------------------------
 メニュー開閉
@@ -37,40 +72,85 @@ function drowerChange(bl) {
     if (bl == 'view') {
         modalopen = true;
         $('.l-body').addClass('open');
-        // TweenMax.fromTo(
-        //     $('.p-header__nav-container'),
-        //     0.4,
-        //     {},
-        //     {
-        //         opacity: '1',
-        //         delay: 0,
-        //         ease: Power2.easeOut,
-        //         onComplete: function () {},
-        //     }
-        // );
+        TweenMax.fromTo(
+            $('.p-header__nav-container'),
+            0.4,
+            {'right': '-200px'},
+            {
+                'right': '0',
+                delay: 0,
+                ease: Power2.easeOut,
+                onComplete: function () {},
+            }
+        );
         TweenMax.fromTo(
             $('.p-header__nav'),
-            0.8,
-            { 'padding-top': '0px' },
+            0,
+            {},
             {
-                'padding-top': '0px',
                 opacity: '1',
-                //display: 'block',
-                delay: 0.6,
                 ease: Power2.easeOut,
                 onComplete: function () {},
             }
         );
         TweenMax.fromTo(
             $('.p-header__nav-list.nav-list01'),
-            0.6,
-            {},
+            0,
+            {opacity: '0',},
             {
                 opacity: '1',
-                //display: 'block',
-                delay: 0.3,
                 ease: Power2.easeOut,
                 onComplete: function () {},
+            }
+        );
+        TweenMax.fromTo(
+            $('.p-header__nav-item01'),
+            2,
+            {opacity: '0',},
+            {
+                opacity: '1',
+                delay: 0.2,
+                ease: Power2.easeOut,
+            }
+        );
+        TweenMax.fromTo(
+            $('.p-header__nav-item02'),
+            2,
+            {opacity: '0',},
+            {
+                opacity: '1',
+                delay: 0.25,
+                ease: Power2.easeOut,
+            }
+        );
+        TweenMax.fromTo(
+            $('.p-header__nav-item03'),
+            2,
+            {opacity: '0',},
+            {
+                opacity: '1',
+                delay: 0.3,
+                ease: Power2.easeOut,
+            }
+        );
+        TweenMax.fromTo(
+            $('.p-header__nav-item04'),
+            2,
+            {opacity: '0',},
+            {
+                opacity: '1',
+                delay: 0.35,
+                ease: Power2.easeOut,
+            }
+        );
+        TweenMax.fromTo(
+            $('.p-header__nav-item05'),
+            2,
+            {opacity: '0',},
+            {
+                opacity: '1',
+                delay: 0.4,
+                ease: Power2.easeOut,
             }
         );
         TweenMax.fromTo(
@@ -79,7 +159,6 @@ function drowerChange(bl) {
             { opacity: '0' },
             {
                 opacity: '1',
-                //display: 'block',
                 delay: 0.3,
                 ease: Power2.easeOut,
                 onComplete: function () {},
@@ -87,59 +166,53 @@ function drowerChange(bl) {
         );
     } else if (bl == 'hiden') {
         modalopen = false;
-        //$('.l-body').removeClass('open');
-        TweenMax.fromTo(
-            $('.p-header__nav-list.nav-list02 a'),
-            0.6,
-            { opacity: '1' },
-            {
-                opacity: '0',
-                delay: 0,
-                ease: Power2.easeOut,
-                onComplete: function () {},
-            }
-        );
-        TweenMax.fromTo(
-            $('.p-header__nav-list.nav-list01'),
-            0.2,
-            { opacity: '0' },
-            {
-                //opacity: '0',
-                delay: 0.2,
-                ease: Power2.easeOut,
-                // onComplete: function () {
-                //     $('.l-body').removeClass('open');
-                // },
-            }
-        );
-        TweenMax.fromTo(
-            $('.p-header__nav'),
-            0.8,
-            { 'padding-top': '0px' },
-            {
-                'padding-top': '0px',
-                //opacity: '0',
-                //display: 'none',
-                delay: 0,
-                ease: Power2.easeOut,
-                onComplete: function () {
-                    $('.l-body').removeClass('open');
-                },
-            }
-        );
         // TweenMax.fromTo(
-        //     $('.p-header__nav-container'),
-        //     0.4,
+        //     $('.p-header__nav-list.nav-list02 a'),
+        //     0.6,
         //     { opacity: '1' },
         //     {
-        //         opacity: '0',
-        //         delay: 0.2,
+        //         //delay: 0,
+        //         ease: Power2.easeOut,
+        //         onComplete: function () {},
+        //     }
+        // );
+        // TweenMax.fromTo(
+        //     $('.p-header__nav-list.nav-list01'),
+        //     0.2,
+        //     { opacity: '1' },
+        //     {
+        //         ease: Power2.easeOut,
+        //     }
+        // );
+        // TweenMax.fromTo(
+        //     $('.p-header__nav'),
+        //     0.4,
+        //     {},
+        //     {
+        //         //'padding-top': '0px',
+        //         //opacity: '0',
+        //         //display: 'none',
+        //         delay: 0,
         //         ease: Power2.easeOut,
         //         onComplete: function () {
         //             $('.l-body').removeClass('open');
         //         },
         //     }
         // );
+        TweenMax.fromTo(
+            $('.p-header__nav-container'),
+            0.4,
+            {},
+            {
+                'right': '-200px',
+                // opacity: '0',
+                // delay: 0.2,
+                ease: Power2.easeOut,
+                onComplete: function () {
+                    $('.l-body').removeClass('open');
+                },
+            }
+        );
     }
 }
 
@@ -150,13 +223,13 @@ const mediaQueryList = window.matchMedia('(min-width: 960px)');
 const listener = (event) => {
     if (event.matches) {
         // 960px以上
-        console.log('PC用ブレークポイント用処理');
+        //console.log('PC用ブレークポイント用処理');
         $('.l-body').removeClass('open');
         $('.l-body').removeClass('sp');
         $('.l-body').addClass('pc');
     } else {
         // 960px未満
-        console.log('SP用ブレークポイント用処理');
+        //console.log('SP用ブレークポイント用処理');
         $('.l-body').removeClass('open');
         $('.l-body').addClass('sp');
         $('.l-body').removeClass('pc');
