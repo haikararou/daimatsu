@@ -203,26 +203,29 @@ p-product
         justify-content: space-between;
         padding: 3rem 0 0 0;
         @include inc.mq(tabl) {
-            padding: 3rem 64px 0 0;
+            padding: 0 64px 0 0;
         }
         &---ph {
             width: 100%;
-            margin-bottom: 4rem;
+            //margin-bottom: 4rem;
             @include inc.mq(tabl) {
                 width: 51.43%;
-            }
-            img {
-                width: 100%;
-                height: auto;
-                @include inc.mq(tabl) {
+                .sticky {
                     position: sticky;
                     top: 100px;
                 }
             }
+            h1
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
         &---txt {
+            @include inc.sizing(padding-top, tabl, 80px, spl, 64px);
             width: 100%;
             @include inc.mq(tabl) {
+                @include inc.sizing(padding-top, wide, 160px, tabl, 124px);
                 width: calc( 100% - (51.43% + 8.57%));
             }
         }

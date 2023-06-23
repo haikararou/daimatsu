@@ -64,25 +64,30 @@ c-text
   // }
 }
 
-// #news .c-text {
-//   &--h1 {
-//     @include inc.sizing(margin-bottom, wide, 195px, spl, 100px);//2 お知らせ一覧
-//   }
-// }
-// #news.post .c-text {
-//   &--h1 {
-//     @include inc.sizing(margin-bottom, wide, 100px, spl, 56px);//2 お知らせ一覧
-//   }
-// }
-// #product .c-text {
-//   &--h1 {
-//     @include inc.sizing(margin-bottom, wide, 195px, spl, 75px);//4 商品カテゴリ一覧
-//   }
-// }
-// #about .c-text,
-// #contact .c-text,
-// #privacy .c-text {
-//   &--h1 {
-//     @include inc.sizing(margin-bottom, wide, 128px, spl, 48px);//7 会社概要 8 お問い合わせ 9 プライバシーポリシー
-//   }
-// }
+#news .c-text {
+  &--h1 {
+    @include inc.sizing(margin-bottom, wide, 195px, spl, 100px);//2 お知らせ一覧
+  }
+}
+#news.post .c-text {
+  &--h1 {
+    @include inc.sizing(margin-bottom, wide, 100px, spl, 56px);//2 お知らせ一覧
+  }
+}
+#product .c-text {
+  &--h1 {
+    @include inc.sizing(margin-bottom, wide, 195px, spl, 75px);//4 商品カテゴリ一覧
+  }
+}
+#product.post .c-text {
+  &--h1 {
+    @include inc.sizing(margin-bottom, wide, 96px, spl, 48px);//4 商品カテゴリ一覧
+  }
+}
+#about .c-text,
+#contact .c-text,
+#privacy .c-text {
+  &--h1 {
+    @include inc.sizing(margin-bottom, wide, 128px, spl, 48px);//7 会社概要 8 お問い合わせ 9 プライバシーポリシー
+  }
+}

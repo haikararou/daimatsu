@@ -7,14 +7,9 @@ html {
   @include inc.sizingRem(font-size, wide, 16px, tabl, 14px);
 }
 
-
 .l-wrapper {
   max-width: calc(82rem + 4rem); //1312
-  //max-width: calc(98rem + 4rem); //1568
-  //width: 90%;
-  //max-width: 1568px;
   width: 100%;
-  //padding: 0 1rem;
   @include inc.sizing(padding-left, tabl, 65px, sp, 24px);
   @include inc.sizing(padding-right, tabl, 64px, sp, 24px);
   margin: 0 auto;
@@ -25,8 +20,6 @@ html {
   }
   @include inc.mq(tabl) {
     width:100%;
-    //padding: 0 8rem;
-    //padding: 0 2rem;
     @include inc.sizing(padding-left, wide, 32px, tabl, 64px);
     @include inc.sizing(padding-right, wide, 32px, tabl, 64px);
   }
@@ -37,8 +30,6 @@ html {
   padding: 0;
   margin: 0 auto;
   @include inc.mq(tabl) {
-    //width:100%;
-    //padding: 0 2rem;
     @include inc.sizing(padding-left, wide, 32px, tabl, 64px);
     @include inc.sizing(padding-right, wide, 32px, tabl, 64px);
   }
@@ -46,14 +37,11 @@ html {
 .l-wrapper3 {
   max-width: calc(62rem + 4rem); //992
   width: 100%;
-  //padding: 0 1rem;
   @include inc.sizing(padding-left, tabl, 65px, sp, 24px);
   @include inc.sizing(padding-right, tabl, 64px, sp, 24px);
   margin: 0 auto;
   @include inc.mq(tabl) {
     width:100%;
-    //padding: 0 10rem;
-    //padding: 0 2rem;
     @include inc.sizing(padding-left, wide, 32px, tabl, 64px);
     @include inc.sizing(padding-right, wide, 32px, tabl, 64px);
   }
@@ -61,14 +49,11 @@ html {
 .l-wrapper4 {
   max-width: calc(58rem + 4rem); //928
   width: 100%;
-  //padding: 0 1rem;
   @include inc.sizing(padding-left, tabl, 65px, sp, 24px);
   @include inc.sizing(padding-right, tabl, 64px, sp, 24px);
   margin: 0 auto;
   @include inc.mq(tabl) {
     width:100%;
-    //padding: 0 12rem;
-    //padding: 0 2rem;
     @include inc.sizing(padding-left, wide, 32px, tabl, 64px);
     @include inc.sizing(padding-right, wide, 32px, tabl, 64px);
   }
@@ -116,18 +101,15 @@ html {
     @include inc.mq(tabl) {
       max-width: calc(82rem + 4rem);
       width:100%;
-      //padding: 0 2rem;
       @include inc.sizing(padding-left, wide, 32px, tabl, 64px);
       @include inc.sizing(padding-right, wide, 32px, tabl, 64px);
     }
   }
 }
 #product.category .l-wrapper3 {
-  //max-width: 1120px;
   max-width: calc(70rem + 4rem);
   width: 100%;
   padding: 0;
-  //padding-right: 4rem;
   margin: 0 auto;
   @include inc.mq(tab) {
     @include inc.sizing(padding-left, wide, 32px, tab, 32px);
@@ -136,18 +118,13 @@ html {
 }
 
 #product.post .l-wrapper2 {
-  //max-width: calc(70rem + 4rem); //1120
   position: relative;
   max-width: 1120px;
   width: 100%;
-  //padding: 0;
   @include inc.sizing(padding-left, tabl, 65px, sp, 24px);
   @include inc.sizing(padding-right, tabl, 64px, sp, 24px);
   margin: 0 auto;
   @include inc.mq(tabl) {
-    //width:100%;
-    //padding: 0 2rem;
-    //@include inc.sizing(padding-left, wide, 32px, tabl, 64px);
     @include inc.sizing(padding-right, wide, 64px, tabl, 64px);
   }
 }
@@ -158,4 +135,3 @@ html {
     padding: 0 2rem;
   }
 }
-
