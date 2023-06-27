@@ -28,10 +28,10 @@ p-product
                 padding: 0;
                 display:flex; flex-direction:column; justify-content:center;
             }
-            a {
-                display: block;
-                @include inc.sizing(margin-top, wide, 80px, tabl, 24px);
-            }
+            // a {
+            //     display: block;
+            //     @include inc.sizing(margin-top, wide, 80px, tabl, 24px);
+            // }
         }
         &---ph {
             width: 100%;
@@ -256,65 +256,62 @@ p-product
 
 
 @media (hover: hover) {
-    .pc .p-product__top .a-effect {
-        display: inline-block;
-        position: relative;
-        width: 4.7rem;
-        -webkit-transition: all 0.1s ease-out;
-        transition: all 0.1s ease-out;
-        z-index: 0;
-        cursor: pointer;
-    }
+    // .pc .p-product__top .a-effect {
+    //     display: inline-block;
+    //     position: relative;
+    //     width: 4.7rem;
+    //     -webkit-transition: all 0.1s ease-out;
+    //     transition: all 0.1s ease-out;
+    //     z-index: 0;
+    //     cursor: pointer;
+    // }
     .pc .p-product__top:hover .p-product__top---ph img {
         transform: scale(1.1);
     }
-    .pc .p-product__top:hover .a-effect::before {
-        -webkit-transition: all 0.1s ease-out;
-        transition: all 0.1s ease-out;
-        content: "";
-        height: 1px;
-        width: .5rem;
-        position: absolute;
-        display: block;
-        bottom: -8px;
-        left: 50%;
-        margin-left: -.5rem;
-        background-color: inc.$color-grn;
-        -webkit-transform: scale(0, 1);
-        transform: scale(0, 1);
-        -webkit-transform-origin: right top;
-        transform-origin: right top;
-    }
-    .pc .p-product__top:hover .a-effect::after {
-        -webkit-transition: all 0.1s ease-out;
-        transition: all 0.1s ease-out;
-        content: "";
-        height: 1px;
-        width: .5rem;
-        position: absolute;
-        display: block;
-        bottom: -8px;
-        left: 50%;
-        background-color: inc.$color-grn;
-        -webkit-transform: scale(0, 1);
-        transform: scale(0, 1);
-        -webkit-transform-origin: left top;
-        transform-origin: left top;
-    }
+    // .pc .p-product__top:hover .a-effect::before {
+    //     -webkit-transition: all 0.1s ease-out;
+    //     transition: all 0.1s ease-out;
+    //     content: "";
+    //     height: 1px;
+    //     width: .5rem;
+    //     position: absolute;
+    //     display: block;
+    //     bottom: -8px;
+    //     left: 50%;
+    //     margin-left: -.5rem;
+    //     background-color: inc.$color-grn;
+    //     -webkit-transform: scale(0, 1);
+    //     transform: scale(0, 1);
+    //     -webkit-transform-origin: right top;
+    //     transform-origin: right top;
+    // }
+    // .pc .p-product__top:hover .a-effect::after {
+    //     -webkit-transition: all 0.1s ease-out;
+    //     transition: all 0.1s ease-out;
+    //     content: "";
+    //     height: 1px;
+    //     width: .5rem;
+    //     position: absolute;
+    //     display: block;
+    //     bottom: -8px;
+    //     left: 50%;
+    //     background-color: inc.$color-grn;
+    //     -webkit-transform: scale(0, 1);
+    //     transform: scale(0, 1);
+    //     -webkit-transform-origin: left top;
+    //     transform-origin: left top;
+    // }
     @include inc.mq(tabl) {
-        .pc .p-product__top:hover .a-effect::before {
-            -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-        }
-        .pc .p-product__top:hover .a-effect::after {
-            -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-        }
+        // .pc .p-product__top:hover .a-effect::before {
+        //     -webkit-transform: scale(1, 1);
+        //     transform: scale(1, 1);
+        // }
+        // .pc .p-product__top:hover .a-effect::after {
+        //     -webkit-transform: scale(1, 1);
+        //     transform: scale(1, 1);
+        // }
     }
 }
-
-
-
 
 .expansion-img figure {
     cursor: pointer;
@@ -330,8 +327,6 @@ p-product
 .expansion-img:hover figure img {
     transform: scale(1.1); /* 拡大 */
 }
-
-
 
 #home .p-product {
     &__top {

@@ -422,11 +422,18 @@ p-header
   }
 }
 
-
+a {
+  text-decoration: underline;
+  text-underline-offset:0.3rem;
+}
+.underline {
+  text-decoration: underline;
+  text-underline-offset:0.3rem;
+}
 @media (hover: hover) {
   .pc a {
     text-decoration: underline;
-    text-underline-offset:0.2rem;
+    text-underline-offset:0.3rem;
   }
   .pc .a-effect {
     text-decoration: none;

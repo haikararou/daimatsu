@@ -17,16 +17,16 @@ p-breadcrumb
   &__item {
     list-style-type: none;
     position: relative;
+    line-height: 2;
     a {
       text-decoration: underline;
-      //text-underline-offset:0
     }
     & + .p-breadcrumb__item {
       &::before {
           content: "＞";
           position: absolute;
-          left: -17px;
-          top: 0;
+          left: -19px;
+          top: 3px;
           @include inc.sizingRem(font-size, wide, 11px, spl, 9px);
         }
     }
