@@ -20,7 +20,7 @@ p-header
   touch-action: none;
   display: flex;
   justify-content: space-between;
-  padding: 0 6rem 0 2rem;
+  padding: 0 7rem 0 2rem;
   &__logo {
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
@@ -424,7 +424,12 @@ p-header
 
 
 @media (hover: hover) {
+  .pc a {
+    text-decoration: underline;
+    text-underline-offset:0.2rem;
+  }
   .pc .a-effect {
+    text-decoration: none;
     position: relative;
   }
   .pc .a-effect::before {

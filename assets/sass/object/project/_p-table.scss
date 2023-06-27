@@ -26,11 +26,21 @@ p-table
       }
     }
     dd {
+      @include inc.sizingRem(font-size, wide, 16px, spl, 14px);
       width: 100%;
       line-height: 1.6;
       @include inc.mq(tabl) {
         width: 80%;
       }
+    }
+  }
+}
+
+#home .p-dl-table,
+#news .p-dl-table {
+  & dd {
+    a {
+      text-decoration: none;
     }
   }
 }

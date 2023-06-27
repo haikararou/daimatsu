@@ -4,4 +4,120 @@
 p-home
 -----------------------------------------------------*/
 .p-home {
+    &__main {
+        position: relative;
+        figure {
+            width: 100%;
+            padding-left: 30%;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        div {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0%, -60%);
+            -webkit-transform: translate(0%, -60%);
+            -ms-transform: translate(0%, -60%);
+            h1 {
+                @include inc.sizingRem(font-size, wide, 72px, spl, 30px);
+                line-height: 1.4;
+                font-weight: 400;
+                font-family: "Futo Go B101";
+                @include inc.sizing(margin-bottom, wide, 48px, tabl, 24px);
+            }
+        }
+    }
+    &__lead {
+        margin-top: -64px;
+        position: relative;
+        z-index: 1;
+        &---flx {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            &____ph {
+                width: 41.46%;
+                margin-left: 7.3%;
+            }
+            &____txt {
+                width: 41.46%;
+                padding: 5.6rem 3rem;
+                background: inc.$color-wht;
+                h2 {
+                    font-weight: 400;
+                    font-family: "Futo Go B101";
+                    @include inc.sizingRem(font-size, wide, 39px, spl, 18px);
+                    line-height: 1.6;
+                    @include inc.sizing(margin-bottom, wide, 48px, tabl, 24px);
+                }
+                p {
+                    line-height: 2.8;
+                }
+                p + p {
+                    margin-top: 4rem;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+    &__strength {
+        margin-top: 192px;
+        &---title {
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+            font-weight: 400;
+            font-family: "Futo Go B101";
+            @include inc.sizingRem(font-size, wide, 39px, spl, 22px);
+        }
+        &---list {
+            margin-top: -128px;
+            width: 89%;
+            margin-left: 11%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 6%;
+            justify-content: space-between;
+            &____block {
+                width: 27.27%;
+                padding-left: 1rem;
+                border-left: 1px solid inc.$color-grn3;
+                h3 {
+                    @include inc.sizingRem(font-size, wide, 26px, spl, 18px);
+                    line-height: 1;
+                    @include inc.sizing(margin-bottom, wide, 48px, tabl, 24px);
+                }
+                p {
+                    @include inc.sizing(margin-bottom, wide, 72px, tabl, 24px);
+                }
+                figure {
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+    &__news {
+        position: relative;
+        padding-top: 170px;
+        &---title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+            font-weight: 400;
+            font-family: "Futo Go B101";
+            @include inc.sizingRem(font-size, wide, 39px, spl, 22px);
+        }
+        &---list {
+            width: 80%;
+            margin-left: 20%;
+        }
+    }
 }

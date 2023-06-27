@@ -7,9 +7,6 @@ c-text
   &--h1 {
     @include inc.sizingRem(font-size, wide, 40px, spl, 25px);
     @include inc.sizing(line-height, wide, 80px, spl, 50px);
-    //@include inc.sizing(margin-bottom, wide, 195px, spl, 100px);//2 お知らせ一覧
-    //@include inc.sizing(margin-bottom, wide, 195px, spl, 75px);//4 商品カテゴリ一覧
-    //@include inc.sizing(margin-bottom, wide, 128px, spl, 48px);//7 会社概要 8 お問い合わせ 9 プライバシーポリシー
     font-weight: 400;
     font-family: "Futo Go B101";
     span {
@@ -23,9 +20,9 @@ c-text
       @include inc.sizing(margin-bottom, wide, 100px, spl, 56px);//2 お知らせ一覧
     }
     & + p {
-      padding: 1.5rem 0 0 2rem;
+      padding: 0rem 0 0 2rem;
       @include inc.mq(tab) {
-        padding: 2rem 0 0 4rem;
+        padding: 0rem 0 0 6rem;
       }
     }
   }
@@ -35,33 +32,6 @@ c-text
     @include inc.sizing(margin-bottom, wide, 24px, spl, 24px);
     font-weight: 500;
   }
-  // &--h3 {
-  //   @include inc.sizingRem(font-size, wide, 20px, spl, 16px);
-  //   @include inc.sizing(line-height, wide, 30px, spl, 24px);
-  //   @include inc.sizing(margin-bottom, wide, 16px, spl, 12px);
-  //   @include inc.sizing(padding-left, wide, 16px, spl, 12px);
-  //   font-weight: 500;
-  //   padding-bottom: 3px;
-  //   line-height: 1;
-  //   &.--peopel {
-  //     border: none;
-  //     padding-left: 0;
-  //     font-weight: 700;
-  //   }
-  // }
-  // &--h2 + &--h3 {
-  //   margin-top: 40px;
-  //   @include inc.mq(tabs) {
-  //     margin-top: 54px;
-  //   }
-  // }
-  // &--h4 {
-  //   @include inc.sizingRem(font-size, wide, 18px, spl, 14px);
-  //   @include inc.sizing(line-height, wide, 32px, spl, 24px);
-  //   @include inc.sizing(margin-bottom, wide, 16px, spl, 12px);
-  //   @include inc.sizing(padding-bottom, wide, 16px, spl, 12px);
-  //   font-weight: 700;
-  // }
 }
 
 #news .c-text {
@@ -77,6 +47,11 @@ c-text
 #product .c-text {
   &--h1 {
     @include inc.sizing(margin-bottom, wide, 195px, spl, 75px);//4 商品カテゴリ一覧
+  }
+}
+#product.category .c-text {
+  &--h1 {
+    @include inc.sizing(margin-bottom, wide, 56px, spl, 32px);//4 商品カテゴリ一覧
   }
 }
 #product.post .c-text {

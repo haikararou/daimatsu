@@ -19,6 +19,7 @@ p-breadcrumb
     position: relative;
     a {
       text-decoration: underline;
+      //text-underline-offset:0
     }
     & + .p-breadcrumb__item {
       &::before {
