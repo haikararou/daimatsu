@@ -1377,18 +1377,18 @@ p-header
 
 a {
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 0.4rem;
 }
 
 .underline {
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 0.4rem;
 }
 
 @media (hover: hover) {
   .pc a {
     text-decoration: underline;
-    text-underline-offset: 0.3rem;
+    text-underline-offset: 0.4rem;
   }
   .pc .a-effect {
     text-decoration: none;
@@ -1882,7 +1882,9 @@ p-form
   .p-form__inner dt .p-form__req {
     position: absolute;
     right: 0;
-    top: 11px;
+    top: 50%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
     margin: 0;
   }
 }
@@ -1892,7 +1894,7 @@ p-form
 @media screen and (min-width: 960px) {
   .p-form__inner dt {
     width: calc(100% - (72% + 4rem));
-    padding: 0.5rem 2rem 0 0;
+    padding: 0 2rem 0 0;
   }
   .p-form__inner dt br {
     display: block;
@@ -1971,6 +1973,7 @@ p-form
 .p-form__input---radio {
   margin-right: clamp(24px, 0.79vw + 19.6px, 32px);
   padding-left: clamp(0px, 1.59vw - 8.9px, 16px);
+  height: 100%;
 }
 .p-form__input---radio input[type=radio] {
   position: absolute;
@@ -1978,6 +1981,17 @@ p-form
 }
 .p-form__input---radio input[type=radio] + .radio-label {
   position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-left: clamp(32px, 0.79vw + 27.6px, 40px);
 }
 .p-form__input---radio input[type=radio] + .radio-label:before {
@@ -1989,7 +2003,6 @@ p-form
   width: clamp(26px, 0.99vw + 16.5px, 32px);
   height: clamp(26px, 0.99vw + 16.5px, 32px);
   top: clamp(-1px, -0.49vw + 3.7px, -4px);
-  position: relative;
   margin-right: 1rem;
   vertical-align: top;
   cursor: pointer;
@@ -1998,6 +2011,9 @@ p-form
   transition: all 250ms ease;
   position: absolute;
   left: 0;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
 }
 .p-form__input---radio input[type=radio]:checked + .radio-label:before {
   background-color: #186225;

@@ -36,7 +36,8 @@ p-form
         @include inc.mq(tabl) {
           position: absolute;
           right: 0;
-          top: 11px;
+          top: 50%;
+          transform: translate(0%, -50%);
           margin: 0;
         }
       }
@@ -45,7 +46,8 @@ p-form
       }
       @include inc.mq(tabl) {
         width: calc(100% - (72% + 4rem));
-        padding: .5rem 2rem 0 0;
+        //padding: .5rem 2rem 0 0;
+        padding: 0 2rem 0 0;
         br {
           display: block;
         }
@@ -104,11 +106,16 @@ p-form
     &---radio {
       @include inc.sizing(margin-right, wide, 32px, spl, 24px);
       @include inc.sizing(padding-left, wide, 16px, spl, 0px);
+      height: 100%;
       input[type="radio"] {
         position: absolute;
         opacity: 0;
         + .radio-label {
           position: relative;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           @include inc.sizing(padding-left, wide, 40px, spl, 32px);
           &:before {
             content: '';
@@ -119,7 +126,7 @@ p-form
             @include inc.sizing(width, wide, 32px, tabl, 26px);
             @include inc.sizing(height, wide, 32px, tabl, 26px);
             @include inc.sizing(top, wide, -4px, tabl, -1px);
-            position: relative;
+            //position: relative;
             margin-right: 1rem;
             vertical-align: top;
             cursor: pointer;
@@ -127,6 +134,8 @@ p-form
             transition: all 250ms ease;
             position: absolute;
             left: 0;
+            top: 50%;
+            transform: translate(0%, -50%);
           }
         }
         &:checked {
