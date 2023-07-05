@@ -17,7 +17,7 @@ p-about
         justify-content: space-between;
         flex-flow: column;
         &---ph {
-            padding-left: 4rem;
+            //padding-left: 4rem;
             @include inc.mq(tabl) {
                 padding-left: 0;
             }
@@ -28,7 +28,7 @@ p-about
             }
         }
         &---p {
-            padding: 0 4rem;
+            //padding: 0 4rem;
             width:100%;
             h2 {
                 display: block;

@@ -20,9 +20,9 @@ c-text
       @include inc.sizing(margin-bottom, wide, 100px, spl, 56px);//2 お知らせ一覧
     }
     & + p {
-      padding: 0rem 0 0 2rem;
+      @include inc.sizing(padding-left, tabl, 96px, spl, 25px);
       @include inc.mq(tab) {
-        padding: 0rem 0 0 6rem;
+        padding-left: 96px;
       }
     }
   }

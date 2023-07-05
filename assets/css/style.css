@@ -49,13 +49,8 @@ html {
 @media screen and (min-width: 960px) {
   .l-wrapper {
     max-width: 100%;
-    padding: 0 64px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .l-wrapper {
-    max-width: 1536px;
-    padding: 0 128px;
+    padding-left: clamp(70px, 9.54vw - 21.6px, 128px);
+    padding-right: clamp(70px, 9.54vw - 21.6px, 128px);
   }
 }
 @media screen and (min-width: 1568px) {
@@ -69,81 +64,41 @@ html {
   max-width: 1120px;
   width: 100%;
   margin: 0 auto;
+  padding-left: clamp(25px, 11.25vw - 38px, 70px);
+  padding-right: clamp(25px, 11.25vw - 38px, 70px);
 }
-@media screen and (min-width: 1280px) {
-  .l-wrapper2 {
-    padding: 0;
-  }
-}
-@media screen and (min-width: 1568px) {
-  .l-wrapper2 {
-    padding: 0;
-  }
-}
-
 @media screen and (min-width: 960px) {
-  #home .l-wrapper2 {
-    max-width: 1184px;
-    padding: 0;
+  .l-wrapper2 {
+    padding-left: clamp(0px, -11.51vw + 180.5px, 70px);
   }
 }
 
 .l-wrapper3 {
   max-width: 992px;
   width: 100%;
-  padding-left: clamp(25px, 11.25vw - 38px, 70px);
-  padding-right: clamp(25px, 11.25vw - 38px, 70px);
+  padding-left: clamp(50px, 22.5vw - 76px, 140px);
+  padding-right: clamp(50px, 22.5vw - 76px, 140px);
   margin: 0 auto;
 }
 @media screen and (min-width: 960px) {
   .l-wrapper3 {
-    padding-left: clamp(0px, -21.88vw + 280px, 70px);
-    padding-right: clamp(0px, -21.88vw + 280px, 70px);
+    padding-left: clamp(0px, -43.75vw + 560px, 140px);
+    padding-right: clamp(0px, -43.75vw + 560px, 140px);
   }
-}
-@media screen and (min-width: 1280px) {
-  .l-wrapper3 {
-    padding: 0;
-  }
-}
-@media screen and (min-width: 1568px) {
-  .l-wrapper3 {
-    padding: 0;
-  }
-}
-
-#home .l-wrapper3 {
-  max-width: 1120px;
 }
 
 .l-wrapper4 {
   max-width: 928px;
   width: 100%;
-  padding-left: clamp(25px, 11.25vw - 38px, 70px);
-  padding-right: clamp(25px, 11.25vw - 38px, 70px);
+  padding-left: clamp(50px, 22.5vw - 76px, 140px);
+  padding-right: clamp(50px, 22.5vw - 76px, 140px);
   margin: 0 auto;
 }
 @media screen and (min-width: 960px) {
   .l-wrapper4 {
-    padding: 0;
-    padding-left: clamp(0px, -21.88vw + 280px, 70px);
-    padding-right: clamp(0px, -21.88vw + 280px, 70px);
+    padding-left: clamp(0px, -43.75vw + 560px, 140px);
+    padding-right: clamp(0px, -43.75vw + 560px, 140px);
   }
-}
-@media screen and (min-width: 1280px) {
-  .l-wrapper4 {
-    padding: 0;
-  }
-}
-@media screen and (min-width: 1568px) {
-  .l-wrapper4 {
-    padding: 0;
-  }
-}
-
-#home .l-wrapper4 {
-  max-width: 1280px;
-  padding-right: 32px;
 }
 
 #about .l-wrapper.lead {
@@ -151,10 +106,18 @@ html {
   width: 100%;
   padding: 0;
 }
+#about .l-wrapper.lead .l-wrapper4 {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  padding-left: clamp(50px, 22.5vw - 76px, 140px);
+}
 @media screen and (min-width: 960px) {
-  #about .l-wrapper.lead {
-    max-width: 82rem;
+  #about .l-wrapper.lead .l-wrapper4 {
+    max-width: 928px;
     width: 100%;
+    padding-left: clamp(0px, -43.75vw + 560px, 140px);
+    padding-right: clamp(0px, -43.75vw + 560px, 140px);
   }
 }
 
@@ -165,7 +128,7 @@ html {
 }
 @media screen and (min-width: 960px) {
   #product .l-wrapper.lead {
-    max-width: 82rem;
+    max-width: 998px;
     width: 100%;
   }
 }
@@ -178,9 +141,6 @@ html {
   }
 }
 
-#contact .l-wrapper4 {
-  padding: 0;
-}
 /*
 l-section
 -----------------------------------------------------*/
@@ -321,11 +281,11 @@ c-text
   margin-bottom: clamp(56px, 4.37vw + 31.5px, 100px);
 }
 .c-text--h1 + p {
-  padding: 0rem 0 0 2rem;
+  padding-left: clamp(25px, 17.75vw - 74.4px, 96px);
 }
 @media screen and (min-width: 768px) {
   .c-text--h1 + p {
-    padding: 0rem 0 0 6rem;
+    padding-left: 96px;
   }
 }
 .c-text--h2 {
@@ -1770,9 +1730,6 @@ p-about
       -ms-flex-flow: column;
           flex-flow: column;
 }
-.p-about--philosophy---ph {
-  padding-left: 4rem;
-}
 @media screen and (min-width: 960px) {
   .p-about--philosophy---ph {
     padding-left: 0;
@@ -1783,7 +1740,6 @@ p-about
   margin-bottom: clamp(32px, 4vw + 9.6px, 48px);
 }
 .p-about--philosophy---p {
-  padding: 0 4rem;
   width: 100%;
 }
 .p-about--philosophy---p h2 {
@@ -2214,7 +2170,6 @@ p-pagenav
   text-align: center;
   color: #104327;
   padding: 0 0 0.5rem;
-  border-bottom: 1px solid #104327;
 }
 
 /*
