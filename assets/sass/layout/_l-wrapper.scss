@@ -17,15 +17,12 @@ html {
     width: 100%;
     padding: 0;
   }
-  border: 1px solid red;
   @include inc.mq(tabl) {
     max-width: 100%;
     @include inc.sizing(padding-left, wide, 128px, tabl, 70px);
     @include inc.sizing(padding-right, wide, 128px, tabl, 70px);
-    border: 1px solid blue;
   }
   @include inc.mq(wide) {
-    border: 1px solid green;
     max-width: calc(1312px + (128px * 2));
     padding: 0 128px;
   }

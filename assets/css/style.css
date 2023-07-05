@@ -40,7 +40,6 @@ html {
   padding-left: clamp(25px, 11.25vw - 38px, 70px);
   padding-right: clamp(25px, 11.25vw - 38px, 70px);
   margin: 0 auto;
-  border: 1px solid red;
 }
 .l-wrapper.lead {
   max-width: 100%;
@@ -52,12 +51,10 @@ html {
     max-width: 100%;
     padding-left: clamp(70px, 9.54vw - 21.6px, 128px);
     padding-right: clamp(70px, 9.54vw - 21.6px, 128px);
-    border: 1px solid blue;
   }
 }
 @media screen and (min-width: 1568px) {
   .l-wrapper {
-    border: 1px solid green;
     max-width: 1568px;
     padding: 0 128px;
   }
@@ -1594,21 +1591,58 @@ p-home
 .p-home__main {
   position: relative;
 }
+.p-home__main---wrapper {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+@media screen and (min-width: 960px) {
+  .p-home__main---wrapper {
+    max-width: 100%;
+    padding-left: clamp(70px, 9.54vw - 21.6px, 128px);
+    padding-right: clamp(70px, 9.54vw - 21.6px, 128px);
+  }
+}
+@media screen and (min-width: 1568px) {
+  .p-home__main---wrapper {
+    max-width: 1568px;
+    padding: 0 128px;
+  }
+}
 .p-home__main figure {
   width: 100%;
-  padding-left: 30%;
+  padding-left: 0;
+}
+@media screen and (min-width: 960px) {
+  .p-home__main figure {
+    padding-left: 30%;
+  }
 }
 .p-home__main figure img {
   width: 100%;
   height: auto;
 }
 .p-home__main div {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate(0%, -60%);
-  -webkit-transform: translate(0%, -60%);
-  -ms-transform: translate(0%, -60%);
+  background: #fff;
+  padding-top: clamp(50px, 11.5vw - 14.4px, 96px);
+  padding-left: clamp(25px, 9.75vw - 29.6px, 64px);
+  padding-right: clamp(25px, 9.75vw - 29.6px, 64px);
+  margin-right: clamp(25px, 21.75vw - 96.8px, 112px);
+  margin-top: clamp(-50px, -11.5vw + 14.4px, -96px);
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 960px) {
+  .p-home__main div {
+    padding: 0;
+    background: none;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0%, -60%);
+    -webkit-transform: translate(0%, -60%);
+    -ms-transform: translate(0%, -60%);
+  }
 }
 .p-home__main div h1 {
   font-size: clamp(1.875rem, 4.17vw + 0.4125rem, 4.5rem);
@@ -1618,9 +1652,30 @@ p-home
   margin-bottom: clamp(24px, 3.95vw - 13.9px, 48px);
 }
 .p-home__lead {
-  margin-top: -64px;
+  width: 100%;
+  padding: 100px 0 0 0;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+@media screen and (min-width: 960px) {
+  .p-home__lead {
+    max-width: 100%;
+    padding: 0;
+    padding-left: clamp(70px, 9.54vw - 21.6px, 128px);
+    padding-right: clamp(70px, 9.54vw - 21.6px, 128px);
+  }
+}
+@media screen and (min-width: 1568px) {
+  .p-home__lead {
+    max-width: 1568px;
+    padding: 0 128px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .p-home__lead {
+    margin-top: -64px;
+  }
 }
 .p-home__lead---flx {
   display: -webkit-box;
@@ -1636,13 +1691,34 @@ p-home
           align-items: flex-end;
 }
 .p-home__lead---flx____ph {
-  width: 41.46%;
-  margin-left: 7.3%;
+  width: 100%;
+  padding-left: clamp(100px, 15.48vw + 13.3px, 256px);
+  margin-bottom: 50px;
+}
+.p-home__lead---flx____ph img {
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 960px) {
+  .p-home__lead---flx____ph {
+    width: 41.46%;
+    margin-left: 7.3%;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
 }
 .p-home__lead---flx____txt {
-  width: 41.46%;
-  padding: 5.6rem 3rem;
-  background: #fff;
+  width: 100%;
+  padding-left: clamp(50px, 4.56vw + 24.5px, 96px);
+  padding-right: clamp(50px, 4.56vw + 24.5px, 96px);
+}
+@media screen and (min-width: 960px) {
+  .p-home__lead---flx____txt {
+    width: 41.46%;
+    padding: 5.6rem 3rem 0;
+    padding-bottom: clamp(0px, 31.58vw - 303.2px, 192px);
+    background: #fff;
+  }
 }
 .p-home__lead---flx____txt h2 {
   font-weight: 400;

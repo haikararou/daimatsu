@@ -3,24 +3,58 @@
 /*
 p-home
 -----------------------------------------------------*/
+
+
 .p-home {
     &__main {
+        &---wrapper {
+            width: 100%;
+            // @include inc.sizing(padding-left, tabl, 70px, spl, 25px);
+            // @include inc.sizing(padding-right, tabl, 70px, spl, 25px);
+            padding: 0;
+            margin: 0 auto;
+            @include inc.mq(tabl) {
+                max-width: 100%;
+                @include inc.sizing(padding-left, wide, 128px, tabl, 70px);
+                @include inc.sizing(padding-right, wide, 128px, tabl, 70px);
+            }
+            @include inc.mq(wide) {
+                max-width: calc(1312px + (128px * 2));
+                padding: 0 128px;
+            }
+        }
         position: relative;
         figure {
             width: 100%;
-            padding-left: 30%;
+            padding-left: 0;
+            @include inc.mq(tabl) {
+                padding-left: 30%;
+            }
             img {
                 width: 100%;
                 height: auto;
             }
         }
         div {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translate(0%, -60%);
-            -webkit-transform: translate(0%, -60%);
-            -ms-transform: translate(0%, -60%);
+            background: inc.$color-wht;
+            @include inc.sizing(padding-top, tabl, 96px, spl, 50px);
+            //@include inc.sizing(padding-bottom, tabl, 96px, spl, 50px);
+            @include inc.sizing(padding-left, tabl, 64px, spl, 25px);
+            @include inc.sizing(padding-right, tabl, 64px, spl, 25px);
+            @include inc.sizing(margin-right, tabl, 112px, spl, 25px);
+            @include inc.sizing(margin-top, tabl, -96px, spl, -50px);
+            position: relative;
+            z-index: 1;
+            @include inc.mq(tabl) {
+                padding: 0;
+                background: none;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(0%, -60%);
+                -webkit-transform: translate(0%, -60%);
+                -ms-transform: translate(0%, -60%);
+            }
             h1 {
                 @include inc.sizingRem(font-size, wide, 72px, spl, 30px);
                 line-height: 1.4;
@@ -31,7 +65,24 @@ p-home
         }
     }
     &__lead {
-        margin-top: -64px;
+        width: 100%;
+        // @include inc.sizing(padding-left, tabl, 70px, spl, 25px);
+        // @include inc.sizing(padding-right, tabl, 70px, spl, 25px);
+        padding: 100px 0 0 0;
+        margin: 0 auto;
+        @include inc.mq(tabl) {
+            max-width: 100%;
+            padding: 0;
+            @include inc.sizing(padding-left, wide, 128px, tabl, 70px);
+            @include inc.sizing(padding-right, wide, 128px, tabl, 70px);
+        }
+        @include inc.mq(wide) {
+            max-width: calc(1312px + (128px * 2));
+            padding: 0 128px;
+        }
+        @include inc.mq(tabl) {
+            margin-top: -64px;
+        }
         position: relative;
         z-index: 1;
         &---flx {
@@ -40,13 +91,30 @@ p-home
             justify-content: space-between;
             align-items: flex-end;
             &____ph {
-                width: 41.46%;
-                margin-left: 7.3%;
+                width: 100%;
+                @include inc.sizing(padding-left, wide, 256px, spl, 100px);
+                margin-bottom: 50px;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                @include inc.mq(tabl) {
+                    width: 41.46%;
+                    margin-left: 7.3%;
+                    margin-bottom: 0;
+                    padding-left: 0;
+                }
             }
             &____txt {
-                width: 41.46%;
-                padding: 5.6rem 3rem;
-                background: inc.$color-wht;
+                width: 100%;
+                @include inc.sizing(padding-left, wide, 96px, spl, 50px);
+                @include inc.sizing(padding-right, wide, 96px, spl, 50px);
+                @include inc.mq(tabl) {
+                    width: 41.46%;
+                    padding: 5.6rem 3rem 0;
+                    @include inc.sizing(padding-bottom, wide, 192px, tabl, 0px);
+                    background: inc.$color-wht;
+                }
                 h2 {
                     font-weight: 400;
                     font-family: "Futo Go B101";
