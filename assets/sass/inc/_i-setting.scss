@@ -21,15 +21,10 @@ $breakpoints: (
   lap: 1025px,
   desk: 1201px,
   vr: 1280px,
+  vrl: 1380px,
   wide: 1568px,
   full: 1700px,
 );
-
-// 640 40
-// 928 58
-// 992 62
-// 1056 66
-// 1312 82
 
 //====================================
 //  Color
@@ -76,7 +71,6 @@ body {
 //font-family: 'Noto Sans JP', sans-serif;
 //font-family: "太ゴB101";
 //font-family: "Futo Go B101";
-
 
 a[href^="tel:"] {
 	pointer-events: none;

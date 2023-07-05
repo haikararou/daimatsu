@@ -65,26 +65,52 @@ p-home
         }
     }
     &__strength {
-        margin-top: 192px;
+        position: relative;
+        max-width: 1184px;
+        width: 100%;
+        margin: 0 auto;
+        @include inc.sizing(margin-top, wide, 190px, spl, 100px);
+        @include inc.sizing(padding-top, wide, 160px, spl, 75px);
+        @include inc.sizing(padding-left, tabl, 64px, spl, 25px);
+        @include inc.sizing(padding-right, tabl, 64px, spl, 25px);
+        @include inc.mq(tabl) {
+            @include inc.sizing(padding-left, tabl, 64px, vr, 0px);
+            @include inc.sizing(padding-right, tabl, 64px, vr, 0px);
+        }
         &---title {
+            position: absolute;
+            top: 0;
+            @include inc.sizing(left, tabl, 64px, spl, 25px);
             -ms-writing-mode: tb-rl;
             writing-mode: vertical-rl;
             font-weight: 400;
             font-family: "Futo Go B101";
             @include inc.sizingRem(font-size, wide, 39px, spl, 22px);
+            @include inc.mq(tabl) {
+                @include inc.sizing(left, tabl, 64px, vr, 0px);
+            }
         }
         &---list {
-            margin-top: -128px;
-            width: 89%;
-            margin-left: 11%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0 6%;
+            width: 100%;
+            margin: 0 auto;
+            @include inc.sizing(padding-left, tabl, 144px, spl, 60px);
+            @include inc.sizing(padding-right, tabl, 96px, spl, 25px);
+                @include inc.mq(tabl) {
+                width: 89%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0 6%;
+                margin-left: 11%;
+                padding: 0;
+            }
             justify-content: space-between;
             &____block {
-                width: 27.27%;
-                padding-left: 1rem;
-                border-left: 1px solid inc.$color-grn3;
+                width: 100%;
+                @include inc.mq(tabl) {
+                    width: 27.27%;
+                    padding-left: 1rem;
+                    border-left: 1px solid inc.$color-grn3;
+                }
                 h3 {
                     @include inc.sizingRem(font-size, wide, 26px, spl, 18px);
                     line-height: 1;
@@ -99,25 +125,77 @@ p-home
                         height: auto;
                     }
                 }
+                & + & {
+                    margin-top: 100px;
+                    @include inc.mq(tabl) {
+                        margin-top: 0;
+                    }
+                }
             }
         }
     }
-    &__news {
+    &__product {
+        max-width: 1184px;
+        width: 100%;
+        margin: 0 auto;
+        @include inc.sizing(margin-top, wide, 211px, spl, 100px);
+        @include inc.sizing(padding-top, wide, 160px, spl, 75px);
+        @include inc.mq(tabl) {
+            @include inc.sizing(padding-left, tabl, 64px, vr, 32px);
+            @include inc.sizing(padding-right, tabl, 64px, vr, 32px);
+        }
         position: relative;
-        padding-top: 170px;
         &---title {
             position: absolute;
             top: 0;
-            left: 0;
+            @include inc.sizing(right, tabl, 64px, spl, 25px);
             -ms-writing-mode: tb-rl;
             writing-mode: vertical-rl;
             font-weight: 400;
             font-family: "Futo Go B101";
             @include inc.sizingRem(font-size, wide, 39px, spl, 22px);
+            @include inc.mq(tabl) {
+                @include inc.sizing(right, tabl, 64px, vr, 0px);
+            }
+        }
+    }
+    &__news {
+        max-width: 1312px;
+        margin: 0 auto;
+        @include inc.sizing(margin-top, wide, 245px, spl, 100px);
+        @include inc.sizing(padding-top, wide, 160px, spl, 75px);
+        @include inc.sizing(padding-left, tabl, 224px, spl, 75px);
+        @include inc.sizing(padding-right, tabl, 96px, spl, 25px);
+        position: relative;
+        @include inc.mq(tabl) {
+            @include inc.sizing(padding-left, tabl, 64px, wide, 0px);
+            @include inc.sizing(padding-right, tabl, 64px, wide, 0px);
+        }
+        &---title {
+            position: absolute;
+            top: 0;
+            @include inc.sizing(left, tabl, 64px, spl, 25px);
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+            font-weight: 400;
+            font-family: "Futo Go B101";
+            @include inc.sizingRem(font-size, wide, 39px, spl, 22px);
+            @include inc.mq(tabl) {
+                @include inc.sizing(left, tabl, 64px, wide, 0px);
+            }
         }
         &---list {
-            width: 80%;
-            margin-left: 20%;
+            width: 100%;
+            margin-left: 0;
+            @include inc.mq(tabl) {
+                width: 80%;
+                margin-left: 20%;
+            }
+        }
+        &---more {
+            display: flex;
+            flex-direction:row-reverse;
+            @include inc.sizing(margin-top, tabl, 64px, spl, 52px);
         }
     }
 }

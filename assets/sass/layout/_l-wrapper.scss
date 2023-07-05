@@ -17,12 +17,15 @@ html {
     width: 100%;
     padding: 0;
   }
+  border: 1px solid red;
   @include inc.mq(tabl) {
     max-width: 100%;
     @include inc.sizing(padding-left, wide, 128px, tabl, 70px);
     @include inc.sizing(padding-right, wide, 128px, tabl, 70px);
+    border: 1px solid blue;
   }
   @include inc.mq(wide) {
+    border: 1px solid green;
     max-width: calc(1312px + (128px * 2));
     padding: 0 128px;
   }
@@ -39,13 +42,6 @@ html {
   }
 }
 
-// #home .l-wrapper2 {
-//   @include inc.mq(tabl) {
-//     max-width: 1184px;
-//     padding: 0;
-//   }
-// }
-
 .l-wrapper3 {
   max-width: 992px;
   width: 100%;
@@ -57,10 +53,6 @@ html {
     @include inc.sizing(padding-right, tabl, 140px, vr, 0px);
   }
 }
-
-// #home .l-wrapper3 {
-//   max-width: 1120px;
-// }
 
 .l-wrapper4 {
   max-width: 928px;
@@ -74,10 +66,20 @@ html {
   }
 }
 
-// #home .l-wrapper4 {
-//   max-width: 1280px;
-//   padding-right: 32px;
-// }
+.l-wrapper5 {
+  max-width: 1088px;
+  width: 100%;
+  @include inc.sizing(padding-left, tabl, 64px, spl, 50px);
+  @include inc.sizing(padding-right, tabl, 64px, spl, 50px);
+  margin: 0 auto;
+  @include inc.mq(tabl) {
+    padding: 0 64px;
+  }
+  @include inc.mq(lap) {
+    @include inc.sizing(padding-left, lap, 64px, wide, 32px);
+    @include inc.sizing(padding-right, lap, 64px, wide, 0px);
+  }
+}
 
 #about .l-wrapper {
   &.lead {

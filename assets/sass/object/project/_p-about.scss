@@ -17,18 +17,15 @@ p-about
         justify-content: space-between;
         flex-flow: column;
         &---ph {
-            //padding-left: 4rem;
             @include inc.mq(tabl) {
                 padding-left: 0;
             }
-            //margin-bottom: 48px;
             img {
                 width: 100%;
                 @include inc.sizing(margin-bottom, tabl, 48px, spl, 32px);
             }
         }
         &---p {
-            //padding: 0 4rem;
             width:100%;
             h2 {
                 display: block;

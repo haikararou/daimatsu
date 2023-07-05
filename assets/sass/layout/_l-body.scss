@@ -10,9 +10,5 @@ l-body
   @include inc.sizingRem(font-size, wide, 16px, tabl, 14px);
   @include inc.sizingRem(font-size, tabl, 14px, sp, 12px);
   color: inc.$color-grn;
-  // padding-top: 60px;
-  // @include inc.mq(tabl) {
-  //   padding-top: 100px;
-  // }
 }
 
