@@ -28,6 +28,9 @@ p-product
                 padding: 0;
                 display:flex; flex-direction:column; justify-content:center;
             }
+            p + p {
+                @include inc.sizing(margin-top, wide, 64px, spl, 24px);
+            }
         }
         &---ph {
             width: 100%;
@@ -289,6 +292,7 @@ p-product
             @include inc.sizing(padding-right, tabl, 144px, spl, 75px);
             @include inc.mq(tabl) {
                 width: 40%;
+                //width: 34.15%;
                 display: block;
                 padding: 0;
             }
@@ -304,8 +308,9 @@ p-product
             margin-top: 2rem;
             @include inc.mq(tabl) {
                 padding: 0;
-                padding-left: 4rem;
+                //padding-left: 4rem;
                 width: 51.43%;
+                //width: 43.90%;
                 margin: 56px 0 0;
                 overflow: hidden;
                 cursor: pointer;
@@ -331,10 +336,12 @@ p-product
                 flex-direction:row;
                 .p-product__top---txt {
                     width: 34.28%;
+                    //width: 29.27%;
                     text-align: right;
                 }
                 .p-product__top---ph {
                     width: 57.14%;
+                    //width: 48.78%;
                     padding-right: 0rem;
                 }
             }
