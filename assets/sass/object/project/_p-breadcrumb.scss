@@ -6,10 +6,10 @@ p-breadcrumb
 .p-breadcrumb {
   position: relative;
   width: 100%;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   @include inc.sizingRem(font-size, wide, 12px, spl, 10px);
   @include inc.sizing(margin-top, wide, 64px, spl, 26px);
-  @include inc.sizing(margin-bottom, wide, 64px, spl, 50px);
+  @include inc.sizing(margin-bottom, wide, 48px, spl, 32px);
   &__container {
     display: flex;
     gap: 28px;

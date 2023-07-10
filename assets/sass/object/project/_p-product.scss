@@ -24,7 +24,7 @@ p-product
             width: 100%;
             padding: 0 4rem;
             @include inc.mq(tabl) {
-                width: calc(100% - (61.29% + 4rem));
+                width: calc(100% - (58% + 4rem));
                 padding: 0;
                 display:flex; flex-direction:column; justify-content:center;
             }
@@ -38,7 +38,7 @@ p-product
             margin-top: 2rem;
             @include inc.mq(tabl) {
                 padding: 0;
-                max-width: 61.29%;
+                max-width: 58%;
                 width: 100%;
                 margin: 0;
                 overflow: hidden;
@@ -94,6 +94,9 @@ p-product
             h2 {
                 @include inc.sizing(margin-top, wide, 42px, tabl, 28px);
                 @include inc.sizingRem(font-size, wide, 26px, spl, 14px);
+            }
+            a {
+                text-decoration: none;
             }
         }
     }

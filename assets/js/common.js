@@ -1,42 +1,11 @@
 /*------------------------------------------------------------------
 ヘッダー制御
 /*------------------------------------------------------------------*/
-// const headerScroll = () => {
-//     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//     let windowWidth = window.innerWidth;
-//     let element = document.getElementsByClassName('scroll');
-//     if ( scrollTop <= 130) {
-//         $('.p-header__nav-container').css('right','-200px');
-//     }
-//     if (scrollTop <= 150) {
-//         $('.l-body').removeClass('scroll');
-//         $('.l-body').removeClass('open');
-//         modalopen = false;
-//         $('.p-header__nav-list.nav-list01').css('opacity','1');
-//         $('.p-header__nav-list.nav-list02 a').css('opacity','1');
-//     } else if (scrollTop > 150) {
-//         $('.l-body').addClass('scroll');
-//         if( element.classList.contains('scroll') == false ){
-//             $('.p-header__nav-list.nav-list01').css('opacity','0');
-//             $('.p-header__nav-list.nav-list02 a').css('opacity','0');
-//         }
-//     }
-// };
-// window.addEventListener("scroll", function () {
-//     headerScroll();
-// });
-
-
-
-
-
 $(function() {
     let target = $('.l-footer'); // 追従要素
     let targetPoint = target.offset().top; // 追従要素の初期位置
-    // console.log(targetPoint);
     $(window).on('load scroll', function() {
         let windowScrolltop = $(window).scrollTop() + 50;
-        // console.log(windowScrolltop);
         if (windowScrolltop >= targetPoint) {
             $('.l-body.pc').addClass('reversal');
         } else {
@@ -46,25 +15,6 @@ $(function() {
 });
 
 
-
-/*------------------------------------------------------------------
-読み込み時処理
-/*------------------------------------------------------------------*/
-// $(function() {
-//     $(window).on('load scroll', function(){
-//         if ($(this).scrollTop() > 150) {
-//             $('.l-body').addClass('scroll');
-//             $('.p-header__nav-list.nav-list01').css('opacity','0');
-//             $('.p-header__nav-list.nav-list02 a').css('opacity','0');
-//         } else {
-//             $('.l-body').removeClass('scroll');
-//             $('.l-body').removeClass('open');
-//             modalopen = false;
-//             $('.p-header__nav-list.nav-list01').css('opacity','1');
-//             $('.p-header__nav-list.nav-list02 a').css('opacity','1');
-//         }
-//     });
-// });
 
 /*------------------------------------------------------------------
 メニュー開閉
@@ -222,10 +172,10 @@ const listener = (event) => {
                 $('.p-header__nav-list.nav-list02 a').css('opacity','1');
             } else if (scrollTop > 150) {
                 $('.l-body').addClass('scroll');
-                if( element.classList.contains('scroll') == false ){
-                    $('.p-header__nav-list.nav-list01').css('opacity','0');
-                    $('.p-header__nav-list.nav-list02 a').css('opacity','0');
-                }
+                // if( element.classList.contains('scroll') == false ){
+                //     $('.p-header__nav-list.nav-list01').css('opacity','0');
+                //     $('.p-header__nav-list.nav-list02 a').css('opacity','0');
+                // }
             }
         };
         window.addEventListener("scroll", function () {
@@ -245,5 +195,3 @@ const listener = (event) => {
 mediaQueryList.addEventListener("change", listener);
 // 初期化処理
 listener(mediaQueryList);
-
-

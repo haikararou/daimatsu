@@ -6,18 +6,18 @@ p-header
 .p-header {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  overflow: hidden;
+  //overflow: hidden;
   height: 60px!important;
   border-bottom: 1px solid inc.$color-grn3;
   @include inc.mq(tabl) {
     height: 100px!important;
     border: none;
   }
-  overscroll-behavior: contain;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  touch-action: none;
+  // overscroll-behavior: contain;
+  // overflow-y: scroll;
+  // scrollbar-width: none;
+  // -ms-overflow-style: none;
+  // touch-action: none;
   display: flex;
   justify-content: space-between;
   padding: 0 7rem 0 2rem;
