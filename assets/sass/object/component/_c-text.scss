@@ -60,6 +60,7 @@ c-text
 #product.post .c-text {
   &--h1 {
     @include inc.sizing(margin-bottom, wide, 96px, spl, 48px);//4 商品カテゴリ一覧
+    line-height: 1.4;
   }
 }
 #about .c-text,

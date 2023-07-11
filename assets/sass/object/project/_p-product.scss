@@ -224,8 +224,26 @@ p-product
             @include inc.mq(tabl) {
                 width: 51.43%;
                 .sticky {
+                    //height: 100%;
+                    //border: 1px solid red;
                     position: sticky;
                     top: 100px;
+                }
+                // .sticky01 {
+                //     position: sticky;
+                //     top: 100px;
+                // }
+                // .sticky02 {
+                //     position: sticky;
+                //     top: 160px;
+                // }
+                figure {
+                    -webkit-transition: all 0.3s ease-out;
+                    transition: all 0.3s ease-out;
+                    img {
+                        width: auto;
+                        height: auto;
+                    }
                 }
             }
             h1
@@ -235,10 +253,10 @@ p-product
             }
         }
         &---txt {
-            @include inc.sizing(padding-top, tabl, 80px, spl, 64px);
+            //@include inc.sizing(padding-top, tabl, 80px, spl, 64px);
             width: 100%;
             @include inc.mq(tabl) {
-                @include inc.sizing(padding-top, wide, 160px, tabl, 124px);
+                //@include inc.sizing(padding-top, wide, 160px, tabl, 124px);
                 width: calc( 100% - (51.43% + 8.57%));
             }
         }

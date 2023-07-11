@@ -156,7 +156,6 @@ const listener = (event) => {
         $('.l-body').removeClass('sp');
         $('.l-body').addClass('pc');
 
-
         const headerScroll = () => {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             let windowWidth = window.innerWidth;
@@ -182,7 +181,6 @@ const listener = (event) => {
             headerScroll();
         });
 
-
     } else {
         // 960px未満
         //console.log('SP用ブレークポイント用処理');
@@ -195,3 +193,22 @@ const listener = (event) => {
 mediaQueryList.addEventListener("change", listener);
 // 初期化処理
 listener(mediaQueryList);
+
+
+
+/*------------------------------------------------------------------
+stickyを検知する
+// /*------------------------------------------------------------------*/
+// const select = document.querySelector('.sticky');
+// const observer = new window.IntersectionObserver( (entry) => {
+//   if (entry[100].isIntersecting){
+//     document.querySelector('.c-text--h1').classList.add('hover');
+//   } else {
+//     document.querySelector('.c-text--h1').classList.remove('hover');
+//   }
+// });
+// observer.observe(select);
+
+
+
+
