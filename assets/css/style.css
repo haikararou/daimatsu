@@ -1630,6 +1630,13 @@ p-home
   padding: 0;
   margin: 0 auto;
 }
+@media screen and (min-width: 768px) {
+  .p-home__main---wrapper {
+    max-width: 100%;
+    padding-left: clamp(51px, 25.52vw - 145px, 100px);
+    padding-right: clamp(51px, 25.52vw - 145px, 100px);
+  }
+}
 @media screen and (min-width: 960px) {
   .p-home__main---wrapper {
     max-width: 1312px;
@@ -1646,6 +1653,11 @@ p-home
 .p-home__main figure {
   width: 100%;
   padding-left: 0;
+}
+@media screen and (min-width: 768px) {
+  .p-home__main figure {
+    padding-left: 27.93%;
+  }
 }
 @media screen and (min-width: 960px) {
   .p-home__main figure {
@@ -1666,13 +1678,20 @@ p-home
   position: relative;
   z-index: 1;
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 768px) {
   .p-home__main div {
     padding: 0;
     background: none;
     position: absolute;
     left: 0;
     top: 50%;
+    transform: translate(0%, -24%);
+    -webkit-transform: translate(0%, -24%);
+    -ms-transform: translate(0%, -24%);
+  }
+}
+@media screen and (min-width: 960px) {
+  .p-home__main div {
     transform: translate(0%, -30%);
     -webkit-transform: translate(0%, -30%);
     -ms-transform: translate(0%, -30%);
@@ -1689,10 +1708,15 @@ p-home
   letter-spacing: 0.2rem;
   font-size: clamp(1.875rem, 3.75vw + 0.5625rem, 2.8125rem);
   line-height: clamp(41px, 4.75vw + 14.4px, 60px);
-  line-height: 1.4;
   font-weight: 400;
   font-family: "Futo Go B101";
   margin-bottom: clamp(24px, 3.95vw - 13.9px, 48px);
+}
+@media screen and (min-width: 768px) {
+  .p-home__main div h1 {
+    font-size: clamp(2.375rem, 3.65vw + 0.625rem, 2.8125rem);
+    line-height: clamp(51px, 4.69vw + 15px, 60px);
+  }
 }
 @media screen and (min-width: 960px) {
   .p-home__main div h1 {
@@ -1701,9 +1725,15 @@ p-home
   }
 }
 .p-home__main div p {
-  line-height: clamp(28px, 2.14vw + 7.4px, 41px);
-  font-size: clamp(0.75rem, 0.66vw + 0.35625rem, 1rem);
-  letter-spacing: 0.04rem;
+  font-size: 12px;
+  line-height: 28px;
+}
+@media screen and (min-width: 960px) {
+  .p-home__main div p {
+    line-height: clamp(28px, 2.14vw + 7.4px, 41px);
+    font-size: clamp(0.75rem, 0.66vw + 0.35625rem, 1rem);
+    letter-spacing: 0.04rem;
+  }
 }
 .p-home__lead {
   width: 100%;
@@ -1712,25 +1742,27 @@ p-home
   position: relative;
   z-index: 1;
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 768px) {
   .p-home__lead {
     max-width: 1312px;
     width: 100%;
     padding: 0;
-    max-width: 1312px;
+    padding-left: clamp(80px, 31.25vw - 160px, 140px);
+    padding-right: clamp(50px, 26.04vw - 150px, 100px);
+    margin-top: clamp(-30px, 15.63vw - 150px, 0px);
+  }
+}
+@media screen and (min-width: 960px) {
+  .p-home__lead {
     padding-left: clamp(140px, 13.82vw + 7.3px, 224px);
     padding-right: clamp(100px, 4.61vw + 55.7px, 128px);
+    margin-top: clamp(-64px, -10.53vw + 101.1px, 0px);
   }
 }
 @media screen and (min-width: 1568px) {
   .p-home__lead {
     max-width: 1568px;
     padding: 0 128px 0 224px;
-  }
-}
-@media screen and (min-width: 960px) {
-  .p-home__lead {
-    margin-top: clamp(-64px, -10.53vw + 101.1px, 0px);
   }
 }
 .p-home__lead---flx {
@@ -1754,9 +1786,17 @@ p-home
   width: 100%;
   height: auto;
 }
+@media screen and (min-width: 768px) {
+  .p-home__lead---flx____ph {
+    padding-left: 30px;
+    width: clamp(294px, 29.17vw + 70px, 350px);
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+}
 @media screen and (min-width: 960px) {
   .p-home__lead---flx____ph {
-    padding-left: clamp(100px, 15.48vw + 13.3px, 256px);
+    padding-left: clamp(40px, 35.53vw - 301.1px, 256px);
     width: clamp(350px, 31.91vw + 43.7px, 544px);
     margin-bottom: 0;
     padding-left: 0;
@@ -1766,6 +1806,17 @@ p-home
   width: 100%;
   padding-left: clamp(50px, 4.56vw + 24.5px, 96px);
   padding-right: clamp(50px, 4.56vw + 24.5px, 96px);
+}
+@media screen and (min-width: 768px) {
+  .p-home__lead---flx____txt {
+    width: 50.94%;
+    padding: 96px 96px 0;
+    padding-top: clamp(40px, 9.21vw - 48.4px, 96px);
+    padding-left: clamp(40px, 9.21vw - 48.4px, 96px);
+    padding-right: clamp(40px, 9.21vw - 48.4px, 96px);
+    padding-bottom: clamp(0px, 23.03vw - 221.1px, 140px);
+    background: #fff;
+  }
 }
 @media screen and (min-width: 960px) {
   .p-home__lead---flx____txt {

@@ -4,13 +4,17 @@
 p-home
 -----------------------------------------------------*/
 
-
 .p-home {
     &__main {
         &---wrapper {
             width: 100%;
             padding: 0;
             margin: 0 auto;
+            @include inc.mq(tab) {
+                max-width: 100%;
+                @include inc.sizing(padding-left, tabl, 100px, tab, 51px);
+                @include inc.sizing(padding-right, tabl, 100px, tab, 51px);
+            }
             @include inc.mq(tabl) {
                 max-width: 1312px;
                 @include inc.sizing(padding-left, wide, 128px, tabl, 100px);
@@ -25,6 +29,9 @@ p-home
         figure {
             width: 100%;
             padding-left: 0;
+            @include inc.mq(tab) {
+                padding-left: 27.93%;
+            }
             @include inc.mq(tabl) {
                 padding-left: 30%;
             }
@@ -42,12 +49,17 @@ p-home
             @include inc.sizing(margin-top, tabl, -96px, spl, -50px);
             position: relative;
             z-index: 1;
-            @include inc.mq(tabl) {
+            @include inc.mq(tab) {
                 padding: 0;
                 background: none;
                 position: absolute;
                 left: 0;
                 top: 50%;
+                transform: translate(0%, -24%);
+                -webkit-transform: translate(0%, -24%);
+                -ms-transform: translate(0%, -24%);
+            }
+            @include inc.mq(tabl) {
                 transform: translate(0%, -30%);
                 -webkit-transform: translate(0%, -30%);
                 -ms-transform: translate(0%, -30%);
@@ -61,19 +73,27 @@ p-home
                 letter-spacing: .2rem;
                 @include inc.sizingRem(font-size, tabl, 45px, spl, 30px);
                 @include inc.sizing(line-height, tabl, 60px, spl, 41px);
-                line-height: 1.4;
+                //line-height: 1.4;
                 font-weight: 400;
                 font-family: "Futo Go B101";
                 @include inc.sizing(margin-bottom, wide, 48px, tabl, 24px);
+                @include inc.mq(tab) {
+                    @include inc.sizingRem(font-size, tabl, 45px, tab, 38px);
+                    @include inc.sizing(line-height, tabl, 60px, tab, 51px);
+                }
                 @include inc.mq(tabl) {
                     @include inc.sizingRem(font-size, wide, 72px, tabl, 45px);
                     @include inc.sizing(line-height, wide, 100px, tabl, 60px);
                 }
             }
             p {
-                @include inc.sizing(line-height, wide, 41px, tabl, 28px);
-                @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
-                letter-spacing: .04rem;
+                font-size: 12px;
+                line-height: 28px;
+                @include inc.mq(tabl) {
+                    @include inc.sizing(line-height, wide, 41px, tabl, 28px);
+                    @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
+                    letter-spacing: .04rem;
+                }
             }
         }
     }
@@ -81,20 +101,25 @@ p-home
         width: 100%;
         padding: 100px 0 0 0;
         margin: 0 auto;
-        @include inc.mq(tabl) {
+        @include inc.mq(tab) {
             max-width: 1312px;
             width: 100%;
             padding: 0;
-            max-width: 1312px;
+            @include inc.sizing(padding-left, tabl, 140px, tab, 80px);
+            @include inc.sizing(padding-right, tabl, 100px, tab, 50px);
+            @include inc.sizing(margin-top, tabl, 0px, tab, -30px);
+        }
+        @include inc.mq(tabl) {
+            // max-width: 1312px;
+            // width: 100%;
+            // padding: 0;
             @include inc.sizing(padding-left, wide, 224px, tabl, 140px);
             @include inc.sizing(padding-right, wide, 128px, tabl, 100px);
+            @include inc.sizing(margin-top, tabl, 0px, wide, -64px);
         }
         @include inc.mq(wide) {
             max-width: calc(1312px + (128px * 2));
             padding: 0 128px 0 224px;
-        }
-        @include inc.mq(tabl) {
-            @include inc.sizing(margin-top, tabl, 0px, wide, -64px);
         }
         position: relative;
         z-index: 1;
@@ -110,8 +135,16 @@ p-home
                     width: 100%;
                     height: auto;
                 }
+                @include inc.mq(tab) {
+                    padding-left: 30px;
+                    //@include inc.sizing(padding-left, tab, 30px, spl, 100px);
+                    @include inc.sizing(width, tabl, 350px, tab, 294px,);
+                    margin-bottom: 0;
+                    padding-left: 0;
+                }
                 @include inc.mq(tabl) {
-                    @include inc.sizing(padding-left, wide, 256px, spl, 100px);
+                    //@include inc.sizing(padding-left, wide, 256px, spl, 100px);
+                    @include inc.sizing(padding-left, wide, 256px, tabl, 40px);
                     @include inc.sizing(width, wide, 544px, tabl, 350px);
                     margin-bottom: 0;
                     padding-left: 0;
@@ -121,6 +154,15 @@ p-home
                 width: 100%;
                 @include inc.sizing(padding-left, wide, 96px, spl, 50px);
                 @include inc.sizing(padding-right, wide, 96px, spl, 50px);
+                @include inc.mq(tab) {
+                    width: 50.94%;
+                    padding: 96px 96px 0;
+                    @include inc.sizing(padding-top, wide, 96px, tabl, 40px);
+                    @include inc.sizing(padding-left, wide, 96px, tabl, 40px);
+                    @include inc.sizing(padding-right, wide, 96px, tabl, 40px);
+                    @include inc.sizing(padding-bottom, wide, 140px, tabl, 0px);
+                    background: inc.$color-wht;
+                }
                 @include inc.mq(tabl) {
                     width: 44.82%;
                     padding: 96px 96px 0;
