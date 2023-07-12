@@ -21,6 +21,11 @@ p-header
   display: flex;
   justify-content: space-between;
   padding: 0 7rem 0 2rem;
+  @include inc.mq(tabl) {
+    padding: 0 0 0 2rem;
+    @include inc.sizing(padding-right, wide, 112px, tabl, 32px);
+
+  }
   &__logo {
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
@@ -116,7 +121,8 @@ p-header
   top: 0;
   right: 0;
   height: 100px;
-  width: 128px;
+  //width: 128px;
+  @include inc.sizing(width, wide, 128px, tabl, 100px);
   //z-index: 101;
   z-index: -1;
   align-items: center;
@@ -125,7 +131,8 @@ p-header
   transition: all .4s ease-out;
   &---button {
     display: block;
-    width: 127px;
+    //width: 127px;
+    @include inc.sizing(width, wide, 127px, tabl, 99px);
     margin: 0 0 0 1px;
     height: 100px;
     position: fixed;
@@ -141,6 +148,7 @@ p-header
     justify-content:center;
     align-items:center;
     width: 64px;
+    //@include inc.sizing(width, wide, 64px, tabl, 50px);
     height: 24px;
     margin: 0 auto;
     transform: translateZ(0);
@@ -149,6 +157,7 @@ p-header
       transition: transform 0.2s ease-out;
       content: "";
       width: 64px;
+      //@include inc.sizing(width, wide, 64px, tabl, 50px);
       display: block;
       border: 1px solid inc.$color-grn;
       height: 1px!important;
@@ -175,18 +184,22 @@ p-header
 //==  PC  ========================//
 .pc .p-header__burger {
   height: 100px;
-  width: 128px;
+  //width: 128px;
+  @include inc.sizing(width, wide, 128px, tabl, 100px);
   z-index: -1;
   &---button {
-    width: 127px;
+    //width: 127px;
+    @include inc.sizing(width, wide, 127px, tabl, 99px);
     margin: 0 0 0 1px;
     height: 100px;
   }
   &---design {
     width: 64px;
+    //@include inc.sizing(width, wide, 64px, tabl, 50px);
     height: 24px;
     & > span {
       width: 64px;
+      //@include inc.sizing(width, wide, 64px, tabl, 50px);
     }
     & > span:nth-child(2) {
       margin-top: 8px;
@@ -252,7 +265,8 @@ p-header
   .p-header__nav-container {
     border-left: 1px solid rgba(16, 67, 39, 0.0);
     padding-top: 133px;
-    width: 128px;
+    //width: 128px;
+    @include inc.sizing(width, wide, 128px, tabl, 100px);
     position: fixed;
     opacity: 1;
     top:0;
@@ -266,6 +280,7 @@ p-header
         opacity: 0;
         margin: 0 auto;
         width: 64px;
+        //@include inc.sizing(width, wide, 64px, tabl, 50px);
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -276,6 +291,7 @@ p-header
           a {
             display: block;
             padding: 2rem 0;
+            @include inc.sizingRem(font-size, wide, 16px, tabl, 14px);
           }
           &:first-child {
             display: block;
@@ -287,7 +303,8 @@ p-header
       }
       .p-header__nav-list.nav-list02 {
         border: none;
-        width: 128px;
+        //width: 128px;
+        @include inc.sizing(width, wide, 128px, tabl, 100px);
         margin: 64px auto 0;
         .p-header__nav-item {
           text-align: center;
@@ -491,8 +508,8 @@ a {
     }
   }
   .pc.open .p-header__nav-list.nav-list01 .p-header__nav-item:hover a {
-    background: inc.$color-grn2;
-    color:inc.$color-wht;
+    background: inc.$color-grn3;
+    //color:inc.$color-wht;
   }
 }
 
