@@ -292,7 +292,7 @@ p-product
 #home .p-product {
     &__top {
         position:relative;
-        @include inc.mq(tabl) {
+        @include inc.mq(min) {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -308,12 +308,13 @@ p-product
         }
         &---txt {
             width: 100%;
-            //padding: 0;
-            @include inc.sizing(padding-left, tabl, 96px, spl, 50px);
-            @include inc.sizing(padding-right, tabl, 144px, spl, 75px);
-            @include inc.mq(tabl) {
+            padding: 0 13.6%;
+            @include inc.mq(min) {
+            // @include inc.sizing(padding-left, tabl, 96px, min, 50px);
+            // @include inc.sizing(padding-right, tabl, 144px, min, 75px);
+            }
+            @include inc.mq(min) {
                 width: 40%;
-                //width: 34.15%;
                 display: block;
                 padding: 0;
             }
@@ -325,13 +326,12 @@ p-product
         &---ph {
             width: 100%;
             padding: 0;
-            @include inc.sizing(padding-right, tabl, 144px, spl, 75px);
-            margin-top: 2rem;
-            @include inc.mq(tabl) {
+            padding-right: 20%;
+            //@include inc.sizing(padding-right, tabl, 144px, spl, 75px);
+            margin-top: 42px;
+            @include inc.mq(min) {
                 padding: 0;
-                //padding-left: 4rem;
                 width: 51.43%;
-                //width: 43.90%;
                 margin: 56px 0 0;
                 overflow: hidden;
                 cursor: pointer;
@@ -348,21 +348,18 @@ p-product
             }
             .p-product__top---ph {
                 width: 100%;
-                //padding-left: 0;
-                padding: 0;
-                //padding-right: 4rem;
-                @include inc.sizing(padding-right, tabl, 144px, spl, 75px);
+                padding-right: 20%;
+                // padding: 0;
+                // @include inc.sizing(padding-right, tabl, 144px, spl, 75px);
             }
-            @include inc.mq(tabl) {
+            @include inc.mq(min) {
                 flex-direction:row;
                 .p-product__top---txt {
                     width: 34.28%;
-                    //width: 29.27%;
                     text-align: right;
                 }
                 .p-product__top---ph {
                     width: 57.14%;
-                    //width: 48.78%;
                     padding-right: 0rem;
                 }
             }
