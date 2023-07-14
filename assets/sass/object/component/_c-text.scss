@@ -23,9 +23,15 @@ c-text
       @include inc.sizing(margin-bottom, wide, 100px, spl, 56px);//2 お知らせ一覧
     }
     & + p {
-      @include inc.sizing(padding-left, tabl, 96px, spl, 25px);
+      padding-left: 6.6%;
+      @include inc.mq(min) {
+        @include inc.sizing(padding-left, tab, 25px, min, 25px);
+      }
       @include inc.mq(tab) {
-        padding-left: 96px;
+        @include inc.sizing(padding-left, tabl, 64px, tab, 25px);
+      }
+      @include inc.mq(tabl) {
+        @include inc.sizing(padding-left, wide, 96px, tabl, 64px);
       }
     }
   }

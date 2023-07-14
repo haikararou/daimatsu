@@ -8,25 +8,13 @@ html {
 }
 
 .l-wrapper {
-  border: 1px solid red;
   width: 100%;
-  // @include inc.sizing(padding-left, tabl, 70px, spl, 25px);
-  // @include inc.sizing(padding-right, tabl, 70px, spl, 25px);
   margin: 0 auto;
   padding: 0 6.6%;
   &.lead {
     max-width: 100%;
     width: 100%;
   }
-  // @include inc.mq(tabl) {
-  //   max-width: 100%;
-  //   @include inc.sizing(padding-left, wide, 128px, tabl, 70px);
-  //   @include inc.sizing(padding-right, wide, 128px, tabl, 70px);
-  // }
-  // @include inc.mq(wide) {
-  //   max-width: calc(1312px + (128px * 2));
-  //   padding: 0 128px;
-  // }
   @include inc.mq(min) {
     padding: 0;
     @include inc.sizing(max-width, tab, 666px, min, 538px);
@@ -43,25 +31,23 @@ html {
   max-width: 1120px;
   width: 100%;
   margin: 0 auto;
-  @include inc.sizing(padding-left, tabl, 70px, spl, 25px);
-  @include inc.sizing(padding-right, tabl, 70px, spl, 25px);
+  padding: 0 6.6%;
+  @include inc.mq(min) {
+    padding: 0;
+    @include inc.sizing(max-width, tab, 615px, min, 488px);
+  }
+  @include inc.mq(tab) {
+    @include inc.sizing(max-width, tabl, 698px, tab, 615px);
+  }
   @include inc.mq(tabl) {
-    @include inc.sizing(padding-left, tabl, 70px, wide, 0px);
+    @include inc.sizing(max-width, wide, 1120px, tabl, 698px);
   }
 }
 
 .l-wrapper3 {
-  border: 1px solid red;
-  //max-width: 992px;
   padding: 0 13.6%;
   width: 100%;
-  // @include inc.sizing(padding-left, tabl, 140px, spl, 50px);
-  // @include inc.sizing(padding-right, tabl, 140px, spl, 50px);
   margin: 0 auto;
-  // @include inc.mq(tabl) {
-  //   @include inc.sizing(padding-left, tabl, 140px, vr, 0px);
-  //   @include inc.sizing(padding-right, tabl, 140px, vr, 0px);
-  // }
   @include inc.mq(min) {
     padding: 0;
     @include inc.sizing(max-width, tab, 486px, min, 434px);
@@ -75,7 +61,6 @@ html {
 }
 
 .l-wrapper4 {
-  border: 1px solid red;
   padding: 0 13.6%;
   width: 100%;
   margin: 0 auto;
@@ -96,16 +81,26 @@ html {
   padding: 0 13.6%;
   width: 100%;
   margin: 0 auto;
+  // @include inc.mq(min) {
+  //   padding: 0;
+  //   @include inc.sizing(max-width, tab, 486px, min, 434px);
+  // }
+  // @include inc.mq(tab) {
+  //   @include inc.sizing(max-width, tabl, 680px, tab, 486px);
+  // }
+  // @include inc.mq(tabl) {
+  //   @include inc.sizing(max-width, wide, 1120px, tabl, 680px);
+  // }
   @include inc.mq(min) {
     padding: 0;
-    @include inc.sizing(max-width, tab, 486px, min, 434px);
+    @include inc.sizing(max-width, tab, 615px, min, 488px);
   }
   @include inc.mq(tab) {
-    @include inc.sizing(max-width, tabl, 680px, tab, 486px);
+    @include inc.sizing(max-width, tabl, 698px, tab, 615px);
   }
   @include inc.mq(tabl) {
-    @include inc.sizing(max-width, wide, 928px, tabl, 680px);
-  }  
+    @include inc.sizing(max-width, wide, 1120px, tabl, 698px);
+  }
 }
 
 #contact .l-wrapper4 {
@@ -120,7 +115,7 @@ html {
   width: 100%;
   padding: 0;
   @include inc.mq(min) {
-    padding: 0;
+    //padding: 0;
     @include inc.sizing(max-width, tab, 486px, min, 434px);
   }
   @include inc.mq(tab) {
@@ -131,21 +126,11 @@ html {
   }
 }
 
-// #product .l-wrapper {
-//   &.lead {
-//     max-width: 100%;
-//     width: 100%;
-//     padding: 0;
-//     @include inc.mq(tabl) {
-//       max-width: 998px;
-//       width:100%;
-//     }
-//     .l-wrapper3 {
-//       padding: 0;
-//       @include inc.mq(tabl) {
-//         width:100%;
-//       }
-//     }
-//   }
-// }
+#product .lead .l-wrapper3 {
+  padding: 0;
+  @include inc.mq(min) {
+    width:100%;
+  }
+}
+
 

@@ -6,7 +6,7 @@ p-product
 .p-product {
     &__top {
         position:relative;
-        @include inc.mq(tabl) {
+        @include inc.mq(min) {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -22,9 +22,9 @@ p-product
         }
         &---txt {
             width: 100%;
-            padding: 0 4rem;
-            @include inc.mq(tabl) {
-                width: calc(100% - (58% + 4rem));
+            padding: 0 13.6%;
+            @include inc.mq(min) {
+                width: 32.2%;
                 padding: 0;
                 display:flex; flex-direction:column; justify-content:center;
             }
@@ -34,12 +34,11 @@ p-product
         }
         &---ph {
             width: 100%;
-            padding-left: 4rem;
+            padding-left: 13.6%;
             margin-top: 2rem;
-            @include inc.mq(tabl) {
+            @include inc.mq(min) {
                 padding: 0;
-                max-width: 58%;
-                width: 100%;
+                width: 58%;
                 margin: 0;
                 overflow: hidden;
                 cursor: pointer;
@@ -57,15 +56,18 @@ p-product
             .p-product__top---ph {
                 width: 100%;
                 padding-left: 0;
-                padding-right: 4rem;
+                padding-right: 13.6%;
             }
-            @include inc.mq(tabl) {
+            @include inc.mq(min) {
                 flex-direction:row;
                 .p-product__top---txt {
                     text-align: right;
+                    p {
+                        margin-left: -64px;
+                    }
                 }
                 .p-product__top---ph {
-                    width: 61.29%;
+                    width: 58%;
                     padding-right: 0rem;
                 }
             }
@@ -205,7 +207,6 @@ p-product
             line-height: 1;
             margin-left: 3px;
             margin-right: 3px;
-            //vertical-align: none;
             @include inc.mq(tabl) {
                 vertical-align: text-bottom;
             }
@@ -221,7 +222,7 @@ p-product
         padding: 3rem 0 0 0;
         &---ph {
             width: 100%;
-            @include inc.mq(tabl) {
+            @include inc.mq(min) {
                 width: 51.43%;
                 .sticky {
                     //height: 100%;
@@ -253,10 +254,8 @@ p-product
             }
         }
         &---txt {
-            //@include inc.sizing(padding-top, tabl, 80px, spl, 64px);
             width: 100%;
-            @include inc.mq(tabl) {
-                //@include inc.sizing(padding-top, wide, 160px, tabl, 124px);
+            @include inc.mq(min) {
                 width: calc( 100% - (51.43% + 8.57%));
             }
         }
@@ -310,8 +309,6 @@ p-product
             width: 100%;
             padding: 0 13.6%;
             @include inc.mq(min) {
-            // @include inc.sizing(padding-left, tabl, 96px, min, 50px);
-            // @include inc.sizing(padding-right, tabl, 144px, min, 75px);
             }
             @include inc.mq(min) {
                 width: 40%;
@@ -327,7 +324,6 @@ p-product
             width: 100%;
             padding: 0;
             padding-right: 20%;
-            //@include inc.sizing(padding-right, tabl, 144px, spl, 75px);
             margin-top: 42px;
             @include inc.mq(min) {
                 padding: 0;
@@ -349,8 +345,6 @@ p-product
             .p-product__top---ph {
                 width: 100%;
                 padding-right: 20%;
-                // padding: 0;
-                // @include inc.sizing(padding-right, tabl, 144px, spl, 75px);
             }
             @include inc.mq(min) {
                 flex-direction:row;
