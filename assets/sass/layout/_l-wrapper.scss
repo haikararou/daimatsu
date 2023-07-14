@@ -8,23 +8,34 @@ html {
 }
 
 .l-wrapper {
+  border: 1px solid red;
   width: 100%;
-  @include inc.sizing(padding-left, tabl, 70px, spl, 25px);
-  @include inc.sizing(padding-right, tabl, 70px, spl, 25px);
+  // @include inc.sizing(padding-left, tabl, 70px, spl, 25px);
+  // @include inc.sizing(padding-right, tabl, 70px, spl, 25px);
   margin: 0 auto;
+  padding: 0 6.6%;
   &.lead {
     max-width: 100%;
     width: 100%;
+  }
+  // @include inc.mq(tabl) {
+  //   max-width: 100%;
+  //   @include inc.sizing(padding-left, wide, 128px, tabl, 70px);
+  //   @include inc.sizing(padding-right, wide, 128px, tabl, 70px);
+  // }
+  // @include inc.mq(wide) {
+  //   max-width: calc(1312px + (128px * 2));
+  //   padding: 0 128px;
+  // }
+  @include inc.mq(min) {
     padding: 0;
+    @include inc.sizing(max-width, tab, 666px, min, 538px);
+  }
+  @include inc.mq(tab) {
+    @include inc.sizing(max-width, tabl, 820px, tab, 666px);
   }
   @include inc.mq(tabl) {
-    max-width: 100%;
-    @include inc.sizing(padding-left, wide, 128px, tabl, 70px);
-    @include inc.sizing(padding-right, wide, 128px, tabl, 70px);
-  }
-  @include inc.mq(wide) {
-    max-width: calc(1312px + (128px * 2));
-    padding: 0 128px;
+    @include inc.sizing(max-width, wide, 1312px, tabl, 820px);
   }
 }
 
@@ -40,79 +51,101 @@ html {
 }
 
 .l-wrapper3 {
-  max-width: 992px;
+  border: 1px solid red;
+  //max-width: 992px;
+  padding: 0 13.6%;
   width: 100%;
-  @include inc.sizing(padding-left, tabl, 140px, spl, 50px);
-  @include inc.sizing(padding-right, tabl, 140px, spl, 50px);
+  // @include inc.sizing(padding-left, tabl, 140px, spl, 50px);
+  // @include inc.sizing(padding-right, tabl, 140px, spl, 50px);
   margin: 0 auto;
+  // @include inc.mq(tabl) {
+  //   @include inc.sizing(padding-left, tabl, 140px, vr, 0px);
+  //   @include inc.sizing(padding-right, tabl, 140px, vr, 0px);
+  // }
+  @include inc.mq(min) {
+    padding: 0;
+    @include inc.sizing(max-width, tab, 486px, min, 434px);
+  }
+  @include inc.mq(tab) {
+    @include inc.sizing(max-width, tabl, 680px, tab, 486px);
+  }
   @include inc.mq(tabl) {
-    @include inc.sizing(padding-left, tabl, 140px, vr, 0px);
-    @include inc.sizing(padding-right, tabl, 140px, vr, 0px);
+    @include inc.sizing(max-width, wide, 992px, tabl, 680px);
   }
 }
 
 .l-wrapper4 {
-  max-width: 928px;
+  border: 1px solid red;
+  padding: 0 13.6%;
   width: 100%;
-  @include inc.sizing(padding-left, tabl, 140px, spl, 50px);
-  @include inc.sizing(padding-right, tabl, 140px, spl, 50px);
   margin: 0 auto;
+  @include inc.mq(min) {
+    padding: 0;
+    @include inc.sizing(max-width, tab, 486px, min, 434px);
+  }
+  @include inc.mq(tab) {
+    @include inc.sizing(max-width, tabl, 680px, tab, 486px);
+  }
   @include inc.mq(tabl) {
-    @include inc.sizing(padding-left, tabl, 140px, vr, 0px);
-    @include inc.sizing(padding-right, tabl, 140px, vr, 0px);
+    @include inc.sizing(max-width, wide, 928px, tabl, 680px);
   }
 }
 
 .l-wrapper5 {
-  max-width: 1088px;
+  border: 1px solid red;
+  padding: 0 13.6%;
   width: 100%;
-  @include inc.sizing(padding-left, tabl, 64px, spl, 50px);
-  @include inc.sizing(padding-right, tabl, 64px, spl, 50px);
   margin: 0 auto;
+  @include inc.mq(min) {
+    padding: 0;
+    @include inc.sizing(max-width, tab, 486px, min, 434px);
+  }
+  @include inc.mq(tab) {
+    @include inc.sizing(max-width, tabl, 680px, tab, 486px);
+  }
   @include inc.mq(tabl) {
-    padding: 0 64px;
-  }
-  @include inc.mq(lap) {
-    @include inc.sizing(padding-left, lap, 64px, wide, 32px);
-    @include inc.sizing(padding-right, lap, 64px, wide, 0px);
+    @include inc.sizing(max-width, wide, 928px, tabl, 680px);
+  }  
+}
+
+#contact .l-wrapper4 {
+  padding: 0 6.6%;
+  @include inc.mq(min) {
+    padding: 0;
   }
 }
 
-#about .l-wrapper {
-  &.lead {
-    max-width: 100%;
-    width: 100%;
+#about .lead .l-wrapper4 {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  @include inc.mq(min) {
     padding: 0;
-    .l-wrapper4 {
-      max-width: 100%;
-      width: 100%;
-      padding: 0;
-      @include inc.sizing(padding-left, tabl, 140px, spl, 50px);
-      @include inc.mq(tabl) {
-        max-width: 928px;
-        width: 100%;
-        @include inc.sizing(padding-left, tabl, 140px, vr, 0px);
-        @include inc.sizing(padding-right, tabl, 140px, vr, 0px);
-      }
-    }
+    @include inc.sizing(max-width, tab, 486px, min, 434px);
+  }
+  @include inc.mq(tab) {
+    @include inc.sizing(max-width, tabl, 680px, tab, 486px);
+  }
+  @include inc.mq(tabl) {
+    @include inc.sizing(max-width, wide, 928px, tabl, 680px);
   }
 }
 
-#product .l-wrapper {
-  &.lead {
-    max-width: 100%;
-    width: 100%;
-    padding: 0;
-    @include inc.mq(tabl) {
-      max-width: 998px;
-      width:100%;
-    }
-    .l-wrapper3 {
-      padding: 0;
-      @include inc.mq(tabl) {
-        width:100%;
-      }
-    }
-  }
-}
+// #product .l-wrapper {
+//   &.lead {
+//     max-width: 100%;
+//     width: 100%;
+//     padding: 0;
+//     @include inc.mq(tabl) {
+//       max-width: 998px;
+//       width:100%;
+//     }
+//     .l-wrapper3 {
+//       padding: 0;
+//       @include inc.mq(tabl) {
+//         width:100%;
+//       }
+//     }
+//   }
+// }
 

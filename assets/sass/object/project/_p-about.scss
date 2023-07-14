@@ -5,7 +5,7 @@ p-about
 -----------------------------------------------------*/
 .sp_none {
     display: none;
-    @include inc.mq(tabl) {
+    @include inc.mq(min) {
         display: block;
     }
 }
@@ -17,7 +17,8 @@ p-about
         justify-content: space-between;
         flex-flow: column;
         &---ph {
-            @include inc.mq(tabl) {
+            padding-left: 13.6%;
+            @include inc.mq(min) {
                 padding-left: 0;
             }
             img {
@@ -26,6 +27,7 @@ p-about
             }
         }
         &---p {
+            padding-left: 13.6%;
             width:100%;
             h2 {
                 display: block;
@@ -34,7 +36,7 @@ p-about
                 line-height: 2.8;
             }
         }
-        @include inc.mq(tabl) {
+        @include inc.mq(min) {
             flex-flow: wrap;
             flex-direction:row-reverse;
             &---ph {
@@ -67,7 +69,7 @@ p-about
         &---add {
             padding: .5rem 0 0 0;
             margin: 0;
-            @include inc.mq(tabl) {
+            @include inc.mq(min) {
                 text-align: right;
             }
         }
