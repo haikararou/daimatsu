@@ -13,7 +13,7 @@ html { scroll-behavior: smooth;}
   top: 0;
   height: 60px;
   background-color: inc.$color-wht;
-  @include inc.mq(tabl) {
+  @include inc.mq(tab) {
     height: 100px;
   }
 }

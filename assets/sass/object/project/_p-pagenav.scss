@@ -10,7 +10,7 @@ p-pagenav
     align-items: center;
     gap: .5rem;
     @include inc.sizing(padding-top, wide, 80px, spl, 48px);
-    @include inc.mq(tabl) {
+    @include inc.mq(min) {
         gap: 1rem;
     }
     span,

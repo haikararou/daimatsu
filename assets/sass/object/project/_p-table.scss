@@ -9,7 +9,7 @@ p-table
     border-bottom: 1px solid inc.$color-grn3;
     padding: 1.5rem 0;
     display: block;
-    @include inc.mq(tabl) {
+    @include inc.mq(min) {
       padding: 2rem 0;
       display: flex;
       flex-wrap: wrap;
@@ -19,7 +19,7 @@ p-table
       width: 100%;
       margin: 0 0 .5rem;
       padding: 0;
-      @include inc.mq(tabl) {
+      @include inc.mq(min) {
         width: 20%;
         margin: 0;
         padding: 0.25rem 0 0 0;
@@ -29,7 +29,7 @@ p-table
       @include inc.sizingRem(font-size, wide, 16px, spl, 14px);
       width: 100%;
       line-height: 1.6;
-      @include inc.mq(tabl) {
+      @include inc.mq(min) {
         width: 80%;
       }
     }
@@ -55,7 +55,7 @@ p-table
       width: 20%;
       margin: 0 0 .5rem;
       padding: 0;
-      @include inc.mq(tabl) {
+      @include inc.mq(min) {
         width: 25%;
         margin: 0;
       }
@@ -63,7 +63,7 @@ p-table
     dd {
       width: 80%;
       line-height: 1.6;
-      @include inc.mq(tabl) {
+      @include inc.mq(min) {
         width: 75%;
       }
     }

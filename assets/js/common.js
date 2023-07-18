@@ -14,8 +14,6 @@ $(function() {
     });
 });
 
-
-
 /*------------------------------------------------------------------
 メニュー開閉
 /*------------------------------------------------------------------*/
@@ -68,7 +66,7 @@ function drowerChange(bl) {
         );
         TweenMax.fromTo(
             $('.p-header__nav-item01'),
-            2,
+            1,
             {opacity: '0',},
             {
                 opacity: '1',
@@ -78,7 +76,7 @@ function drowerChange(bl) {
         );
         TweenMax.fromTo(
             $('.p-header__nav-item02'),
-            2,
+            1,
             {opacity: '0',},
             {
                 opacity: '1',
@@ -88,7 +86,7 @@ function drowerChange(bl) {
         );
         TweenMax.fromTo(
             $('.p-header__nav-item03'),
-            2,
+            1,
             {opacity: '0',},
             {
                 opacity: '1',
@@ -98,7 +96,7 @@ function drowerChange(bl) {
         );
         TweenMax.fromTo(
             $('.p-header__nav-item04'),
-            2,
+            1,
             {opacity: '0',},
             {
                 opacity: '1',
@@ -108,7 +106,7 @@ function drowerChange(bl) {
         );
         TweenMax.fromTo(
             $('.p-header__nav-item05'),
-            2,
+            1,
             {opacity: '0',},
             {
                 opacity: '1',
@@ -147,7 +145,7 @@ function drowerChange(bl) {
 /*------------------------------------------------------------------
 リサイズ処理
 /*------------------------------------------------------------------*/
-const mediaQueryList = window.matchMedia('(min-width: 960px)');
+const mediaQueryList = window.matchMedia('(min-width: 768px)');
 const listener = (event) => {
     if (event.matches) {
         // 960px以上
@@ -162,6 +160,7 @@ const listener = (event) => {
             let element = document.getElementsByClassName('scroll');
             if ( scrollTop <= 130) {
                 $('.p-header__nav-container').css('right','-200px');
+                $('.p-header__nav-list.nav-list01').css('opacity','0');
             }
             if (scrollTop <= 150) {
                 $('.l-body').removeClass('scroll');
@@ -171,10 +170,10 @@ const listener = (event) => {
                 $('.p-header__nav-list.nav-list02 a').css('opacity','1');
             } else if (scrollTop > 150) {
                 $('.l-body').addClass('scroll');
-                // if( element.classList.contains('scroll') == false ){
-                //     $('.p-header__nav-list.nav-list01').css('opacity','0');
-                //     $('.p-header__nav-list.nav-list02 a').css('opacity','0');
-                // }
+                if( element.classList.contains('scroll') == false ){
+                    $('.p-header__nav-list.nav-list01').css('opacity','0');
+                    $('.p-header__nav-list.nav-list02 a').css('opacity','0');
+                }
             }
         };
         window.addEventListener("scroll", function () {
@@ -193,22 +192,6 @@ const listener = (event) => {
 mediaQueryList.addEventListener("change", listener);
 // 初期化処理
 listener(mediaQueryList);
-
-
-
-/*------------------------------------------------------------------
-stickyを検知する
-// /*------------------------------------------------------------------*/
-// const select = document.querySelector('.sticky');
-// const observer = new window.IntersectionObserver( (entry) => {
-//   if (entry[100].isIntersecting){
-//     document.querySelector('.c-text--h1').classList.add('hover');
-//   } else {
-//     document.querySelector('.c-text--h1').classList.remove('hover');
-//   }
-// });
-// observer.observe(select);
-
 
 
 

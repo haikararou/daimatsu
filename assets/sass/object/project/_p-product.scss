@@ -80,7 +80,7 @@ p-product
         width: 100%;
         margin: 0 auto;
         gap: 0 4.61%;
-        @include inc.mq(tab) {
+        @include inc.mq(min) {
             gap: 0 9.09%;
         }
         padding: 0;
@@ -90,7 +90,7 @@ p-product
             @include inc.sizing(margin-top, wide, 128px, tabl, 52px);
             padding: 0;
             width: 47.69%;
-            @include inc.mq(tab) {
+            @include inc.mq(min) {
                 width: 27.27%;
             }
             h2 {
@@ -114,7 +114,7 @@ p-product
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(8, 1fr);
-        @include inc.mq(tabl) {
+        @include inc.mq(min) {
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(6, 1fr);
         }
@@ -128,7 +128,7 @@ p-product
             text-align: center;
             color: inc.$color-grn3;
             padding: .6rem .2rem;
-            @include inc.mq(tabl) {
+            @include inc.mq(min) {
                 padding: .1rem .3rem;
             }
             display:flex; flex-direction:column; justify-content:center; align-items:center;
@@ -163,7 +163,7 @@ p-product
         .div27 { grid-area: 8 / 2 / 9 / 3; }
         .div28 { grid-area: 8 / 3 / 9 / 4; }
         .div29 { grid-area: 8 / 4 / 9 / 5; }
-        @include inc.mq(tabl) {
+        @include inc.mq(min) {
             .div1 { grid-area: 1 / 1 / 2 / 3; }
             .div2 { grid-area: 1 / 3 / 2 / 4; }
             .div3 { grid-area: 1 / 4 / 2 / 5; }
@@ -207,7 +207,7 @@ p-product
             line-height: 1;
             margin-left: 3px;
             margin-right: 3px;
-            @include inc.mq(tabl) {
+            @include inc.mq(min) {
                 vertical-align: text-bottom;
             }
         }
@@ -225,25 +225,16 @@ p-product
             @include inc.mq(min) {
                 width: 51.43%;
                 .sticky {
-                    //height: 100%;
-                    //border: 1px solid red;
                     position: sticky;
                     top: 100px;
                 }
-                // .sticky01 {
-                //     position: sticky;
-                //     top: 100px;
-                // }
-                // .sticky02 {
-                //     position: sticky;
-                //     top: 160px;
-                // }
                 figure {
                     -webkit-transition: all 0.3s ease-out;
                     transition: all 0.3s ease-out;
                     img {
                         width: auto;
                         height: auto;
+                        aspect-ratio: 4 / 3!important;
                     }
                 }
             }

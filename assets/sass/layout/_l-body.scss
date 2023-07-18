@@ -7,10 +7,10 @@ l-body
   position: relative;
   width: 100%;
   -webkit-font-smoothing: antialiased;
-  @include inc.sizingRem(font-size, wide, 16px, tabl, 16px);
+  @include inc.sizingRem(font-size, wide, 16px, tab, 16px);
   @include inc.sizingRem(font-size, tabl, 16px, sp, 12px);
   color: inc.$color-grn;
-  background: url(../img/dummy/top/bg.png) repeat 50% 0;
+  //background: url(../img/dummy/top/bg.png) repeat 50% 0;
 }
 
 .l-body.sp.open {

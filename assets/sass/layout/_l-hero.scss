@@ -19,16 +19,16 @@ l-hero
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    @include inc.sizing(padding-right, wide, 96px, tabl, 64px);
+    @include inc.sizing(padding-right, wide, 96px, tab, 64px);
     &---txt {
         width: 100%;
-        @include inc.mq(tabl) {
+        @include inc.mq(tab) {
             width: 48.78%;
         }
     }
     &---ph {
         display: none;
-        @include inc.mq(tabl) {
+        @include inc.mq(tab) {
             display: block;
             @include inc.sizing(margin-top, wide, 64px, spl, 26px);
             width: 48.78%;

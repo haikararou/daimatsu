@@ -9,7 +9,7 @@ p-header
   //overflow: hidden;
   height: 60px!important;
   border-bottom: 1px solid inc.$color-grn3;
-  @include inc.mq(tabl) {
+  @include inc.mq(tab) {
     height: 100px!important;
     border: none;
   }
@@ -21,10 +21,9 @@ p-header
   display: flex;
   justify-content: space-between;
   padding: 0 7rem 0 2rem;
-  @include inc.mq(tabl) {
+  @include inc.mq(tab) {
     padding: 0 0 0 2rem;
-    @include inc.sizing(padding-right, wide, 112px, tabl, 32px);
-
+    @include inc.sizing(padding-right, wide, 112px, tab, 32px);
   }
   &__logo {
     -webkit-transition: all 0.3s ease-out;
@@ -36,18 +35,19 @@ p-header
     flex-direction: column;
     height: auto;
     width: 100px;
-    @include inc.mq(tabl) {
+    
+    @include inc.mq(tab) {
       height: 100px;
-      width: 256px;
+      @include inc.sizing(width, tabl, 256px, tab, 160px);
     }
+    // @include inc.mq(tabl) {
+    //   height: 100px;
+    //   width: 256px;
+    // }
     & > a {
       -webkit-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out;
       width: 100%;
-      //height: 12px;
-      @include inc.mq(tabl) {
-        //height: 30px;
-      }
     }
   }
 
@@ -59,7 +59,7 @@ p-header
     width: 33rem;
     opacity: 0;
     position: static;
-    @include inc.mq(tabl) {
+    @include inc.mq(tab) {
       display: flex;
       margin-left: auto;
       margin-right: 0;
@@ -73,7 +73,7 @@ p-header
     justify-content: space-between;
     opacity: 0;
     //padding-top: 40px;
-    @include inc.mq(tabl) {
+    @include inc.mq(tab) {
       opacity: 1;
       padding-top: 0;
     }
@@ -122,7 +122,7 @@ p-header
   right: 0;
   height: 100px;
   //width: 128px;
-  @include inc.sizing(width, wide, 128px, tabl, 100px);
+  @include inc.sizing(width, wide, 128px, tab, 100px);
   //z-index: 101;
   z-index: -1;
   align-items: center;
@@ -132,7 +132,7 @@ p-header
   &---button {
     display: block;
     //width: 127px;
-    @include inc.sizing(width, wide, 127px, tabl, 99px);
+    @include inc.sizing(width, wide, 127px, tab, 99px);
     margin: 0 0 0 1px;
     height: 100px;
     position: fixed;
@@ -185,21 +185,19 @@ p-header
 .pc .p-header__burger {
   height: 100px;
   //width: 128px;
-  @include inc.sizing(width, wide, 128px, tabl, 100px);
+  @include inc.sizing(width, wide, 128px, tab, 100px);
   z-index: -1;
   &---button {
     //width: 127px;
-    @include inc.sizing(width, wide, 127px, tabl, 99px);
+    @include inc.sizing(width, wide, 127px, tab, 99px);
     margin: 0 0 0 1px;
     height: 100px;
   }
   &---design {
     width: 64px;
-    //@include inc.sizing(width, wide, 64px, tabl, 50px);
     height: 24px;
     & > span {
       width: 64px;
-      //@include inc.sizing(width, wide, 64px, tabl, 50px);
     }
     & > span:nth-child(2) {
       margin-top: 8px;
@@ -217,7 +215,7 @@ p-header
   width: 82px;
   opacity: 1;
   z-index: 101;
-  @include inc.mq(tabl) {
+  @include inc.mq(tab) {
     opacity: 0;
   }
   &---button {
@@ -266,7 +264,7 @@ p-header
     border-left: 1px solid rgba(16, 67, 39, 0.0);
     padding-top: 133px;
     //width: 128px;
-    @include inc.sizing(width, wide, 128px, tabl, 100px);
+    @include inc.sizing(width, wide, 128px, tab, 100px);
     position: fixed;
     opacity: 1;
     top:0;
@@ -280,7 +278,7 @@ p-header
         opacity: 0;
         margin: 0 auto;
         width: 64px;
-        //@include inc.sizing(width, wide, 64px, tabl, 50px);
+        //@include inc.sizing(width, wide, 64px, tab, 50px);
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -291,7 +289,7 @@ p-header
           a {
             display: block;
             padding: 2rem 0;
-            @include inc.sizingRem(font-size, wide, 16px, tabl, 14px);
+            @include inc.sizingRem(font-size, wide, 16px, tab, 14px);
           }
           &:first-child {
             display: block;
@@ -304,7 +302,7 @@ p-header
       .p-header__nav-list.nav-list02 {
         border: none;
         //width: 128px;
-        @include inc.sizing(width, wide, 128px, tabl, 100px);
+        @include inc.sizing(width, wide, 128px, tab, 100px);
         margin: 64px auto 0;
         .p-header__nav-item {
           text-align: center;
@@ -497,7 +495,7 @@ a {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
   }
-  @include inc.mq(tabl) {
+  @include inc.mq(tab) {
     .pc .a-effect.a-active::before {
       -webkit-transform: scale(1, 1);
       transform: scale(1, 1);

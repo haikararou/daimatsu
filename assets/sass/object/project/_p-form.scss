@@ -33,7 +33,7 @@ p-form
       .p-form__req {
         position: static;
         margin: 0 0 0 .5rem;
-        @include inc.mq(tabl) {
+        @include inc.mq(min) {
           position: absolute;
           right: 0;
           top: 50%;
@@ -44,7 +44,7 @@ p-form
       br {
         display: none;
       }
-      @include inc.mq(tabl) {
+      @include inc.mq(min) {
         width: calc(100% - (72% + 4rem));
         //padding: .5rem 2rem 0 0;
         padding: 0 2rem 0 0;
@@ -58,7 +58,7 @@ p-form
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
-      @include inc.mq(tabl) {
+      @include inc.mq(min) {
         width: 72%;
       }
     }
@@ -143,7 +143,7 @@ p-form
             &:before {
               background-color: inc.$color-grn2;
               box-shadow: inset 0 0 0 6px inc.$color-wht;
-              @include inc.mq(tabl) {
+              @include inc.mq(min) {
                 box-shadow: inset 0 0 0 5px inc.$color-wht;
               }
             }
@@ -177,7 +177,7 @@ p-form
     }
     &---comment {
       text-align: left;
-      @include inc.mq(tabl) {
+      @include inc.mq(min) {
         text-align: center;
       }
     }
@@ -195,7 +195,7 @@ p-form
     &---reCAPTCHA {
       @include inc.sizingRem(font-size, wide, 14px, spl, 12px);
       text-align: left;
-      @include inc.mq(tabl) {
+      @include inc.mq(min) {
         text-align: center;
       }
     }
