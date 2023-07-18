@@ -22,6 +22,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="../assets/js/animation.gsap.min.js"></script>
 <script src="../assets/js/TweenMax.min.js"></script>
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="utf-8"></script>
+<script src="../assets/js/jquery.autoKana.js"></script>
 <link rel="icon" href="../assets/img/favicon.ico" type="image/png"/>
 <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?unuUwK49-8s%3D" charset="utf-8"></script>
 </head>
@@ -80,18 +82,18 @@
       <dl>
         <div class="p-form__inner">
           <dt>お名前<span class="p-form__req">必須</span></dt>
-          <dd><input class="p-form__input---text" value="" type="text" placeholder="例）山田太郎"></dd>
+          <dd><input class="p-form__input---text" value="" type="text" name="name" placeholder="例）山田太郎"></dd>
         </div>
         <div class="p-form__inner">
           <dt>お名前（ふりがな）<span class="p-form__req">必須</span></dt>
-          <dd><input class="p-form__input---text" value="" type="text" placeholder="例）やまだたろう"></dd>
+          <dd><input class="p-form__input---text" value="" type="text" name="kana" placeholder="例）やまだたろう"></dd>
         </div>
         <div class="p-form__inner">
           <dt>ご住所</dt>
           <dd>
-            <div class="p-form__block">〒<input type="text" name="zip" value="" size="40" class="p-form__input---text2" id="zip" /></div>
+            <div class="p-form__block">〒<input type="text" name="zip" onKeyUp="AjaxZip3.zip2addr(this,'','address1','address2');" value="" size="40" class="p-form__input---text2" id="zip"></div>
             <div class="p-form__block">
-              <select name="pref" class="p-form__input---select">
+              <select name="address1" class="p-form__input---select">
                 <option value="">都道府県</option>
                 <option value="北海道">北海道</option>
                 <option value="青森県">青森県</option>
@@ -142,7 +144,7 @@
                 <option value="沖縄県">沖縄県</option>
               </select>
             </div>
-            <div class="p-form__block"><input class="p-form__input---text" value="" type="text"></div>
+            <div class="p-form__block"><input class="p-form__input---text" name="address2" value="" type="text"></div>
           </dd>
         </div>
         <div class="p-form__inner">
@@ -231,3 +233,9 @@
 
 </body>
 </html>
+
+<script>
+$(function() {
+  $.fn.autoKana('input[name="name"] ', 'input[name="kana"]', {katakana:true});
+});
+</script>
