@@ -27,6 +27,9 @@ p-form
     justify-content: space-between;
     padding: 1rem 0;
     dt {
+      div {
+        display: inline-block;
+      }
       width: 100%;
       position: relative;
       padding: 0 0 1rem 0;
@@ -41,15 +44,50 @@ p-form
           margin: 0;
         }
       }
+      .p-form__br {
+        display: inline-block;
+      }
       br {
         display: none;
       }
       @include inc.mq(min) {
-        width: calc(100% - (72% + 4rem));
-        //padding: .5rem 2rem 0 0;
-        padding: 0 2rem 0 0;
+        @include inc.sizing(width, tab, 150px, min, 130px);
+        padding: 0 2.6rem 0 0;
         br {
           display: block;
+        }
+      }
+      @include inc.mq(tab) {
+        @include inc.sizing(width, tabl, 160px, tab, 150px);
+      }
+      @include inc.mq(tabl) {
+        @include inc.sizing(width, vr, 180px, tabl, 160px);
+      }
+      @include inc.mq(vr) {
+        @include inc.sizing(width, wide, 195px, vr, 180px);
+      }
+    }
+    &---middle {
+      @include inc.mq(min) {
+        dt {
+          display:flex; flex-direction:column; justify-content:center;
+          }
+      }
+    }
+    &---top {
+      dt {
+        @include inc.mq(min) {
+          padding-top: 1rem;
+        }
+        .p-form__req {
+          position: static;
+          margin: 0 0 0 .5rem;
+          @include inc.mq(min) {
+            position: absolute;
+            right: 0;
+            top: 1.8rem;
+            margin: 0;
+          }
         }
       }
     }
@@ -59,7 +97,16 @@ p-form
       flex-wrap: wrap;
       align-items: flex-start;
       @include inc.mq(min) {
-        width: 72%;
+        @include inc.sizing(width, tab, 300px, min, 280px);
+      }
+      @include inc.mq(tab) {
+        @include inc.sizing(width, tabl, 460px, tab, 300px);
+      }
+      @include inc.mq(tabl) {
+        @include inc.sizing(width, vr, 560px, tabl, 460px);
+      }
+      @include inc.mq(vr) {
+        @include inc.sizing(width, wide, 668px, vr, 560px);
       }
     }
   }
@@ -197,6 +244,9 @@ p-form
       text-align: left;
       @include inc.mq(min) {
         text-align: center;
+      }
+      a {
+        text-decoration: none;
       }
     }
   }

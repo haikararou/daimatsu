@@ -15,7 +15,9 @@ p-pagenav
     }
     span,
     a {
-        text-decoration: none!important;
+        //text-decoration: none!important;
+        text-decoration: underline 1px inc.$color-grn;
+        text-underline-offset:0.9em;
         border: none;
         display: inline-block;
         border: 1px solid inc.$color-wht;
@@ -83,6 +85,7 @@ p-pagenav
             position: absolute;
             top: 0;
             list-style-type: none;
+            line-height: 1;
             &.prev {
                 left: 0;
             }
@@ -97,6 +100,7 @@ p-pagenav
                 text-align: center;
                 color: inc.$color-grn;
                 padding: 0 0 .5rem;
+                line-height: 1;
             }
         }
     }

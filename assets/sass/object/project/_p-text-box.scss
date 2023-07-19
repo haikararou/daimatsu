@@ -7,6 +7,15 @@ p {
   margin: 0;
   padding: 0;
   line-height: 200%;
+  @include inc.sizing(margin-bottom, wide, 72px, tabl, 24px);
+  line-height: 2.2;
+  font-size: 14px;
+  @include inc.mq(min) {
+      @include inc.sizingRem(font-size, tabl, 12px, min, 10px);
+  }
+  @include inc.mq(tabl) {
+      @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
+  }
 }
 
 ul.list--dot {

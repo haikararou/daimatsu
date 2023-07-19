@@ -19,7 +19,7 @@ p-breadcrumb
     position: relative;
     line-height: 2;
     a {
-      text-decoration: underline;
+      text-decoration: none;
     }
     & + .p-breadcrumb__item {
       &::before {

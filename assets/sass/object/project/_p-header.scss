@@ -432,16 +432,16 @@ p-header
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: underline 1px inc.$color-grn;
   text-underline-offset:0.9em;
 }
 .underline {
-  text-decoration: underline;
+  text-decoration: underline 1px inc.$color-grn;
   text-underline-offset:0.9em;
 }
 @media (hover: hover) {
   .pc a {
-    text-decoration: underline;
+    text-decoration: underline 1px inc.$color-grn;
     text-underline-offset:0.9em;
   }
   .pc .a-effect {

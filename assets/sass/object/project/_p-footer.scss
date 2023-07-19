@@ -13,7 +13,7 @@ p-footer
     height: auto;
     padding: 72px 0;
     position: relative;
-    @include inc.mq(tab) {
+    @include inc.mq(min) {
       padding: 0;
       height: 30.5rem;
     }
@@ -22,7 +22,7 @@ p-footer
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 2.5rem 0;
-      @include inc.mq(tab) {
+      @include inc.mq(min) {
         gap: 0 2rem;
       }
       &-item {
@@ -33,7 +33,7 @@ p-footer
         @include inc.sizingRem(font-size, tabl, 15px, spl, 14px);
         //font-size: 14px;
         font-family: "Futo Go B101";
-        @include inc.mq(tab) {
+        @include inc.mq(min) {
           @include inc.sizingRem(font-size, wide, 16px, tabl, 15px);
           //font-size: 16px;
           width: calc(50% - 1rem);
@@ -50,8 +50,10 @@ p-footer
           height: 5rem;
           color: inc.$color-wht;
           font-size: 24px;
-          @include inc.sizingRem(font-size, tabl, 32px, spl, 24px);
-          @include inc.mq(tab) {
+          @include inc.mq(min) {
+            @include inc.sizingRem(font-size, tabl, 32px, min, 20px);
+          }
+          @include inc.mq(tabl) {
             @include inc.sizingRem(font-size, wide, 36px, tabl, 32px);
           }
           display:flex; flex-direction:column; justify-content:center; align-items:center;
@@ -61,16 +63,14 @@ p-footer
           span {
             font-family: 'Noto Sans JP';
             display: block;
-            //font-size: 10px;
+            font-size: 10px;
             font-weight: 400;
             letter-spacing: 0;
-            @include inc.sizingRem(font-size, tabl, 14px, spl, 10px);
-            @include inc.mq(tab) {
+            @include inc.mq(min) {
               font-size: 14px;
-              //@include inc.sizingRem(font-size, wide, 36px, tabl, 14px);
             }
           }
-          @include inc.mq(tab) {
+          @include inc.mq(min) {
             margin-top: 1rem;
             height: 10rem;
             //font-size: 36px;
@@ -101,11 +101,15 @@ p-footer
             font-family: "Futo Go B101";
             position: relative;
             color: inc.$color-grn2;
-            padding-left: 18px;
-            //font-size: 15px;
-            @include inc.sizingRem(font-size, tabl, 20px, spl, 15px);
+            //padding-left: 18px;
+            @include inc.sizing(padding-left, min, 8px, sps, 16px);
+            font-size: 15px;
+            //@include inc.sizingRem(font-size, min, 20px, spl, 15px);
+            @include inc.mq(min) {
+              @include inc.sizingRem(font-size, tab, 20px, min, 13px);
+            }
             @include inc.mq(tab) {
-              @include inc.sizingRem(font-size, wide, 24px, tabl, 20px);
+              @include inc.sizingRem(font-size, tabl, 25px, tab, 20px);
             }
             &::before {
               -webkit-transition: all 0.1s ease-out;
@@ -116,8 +120,10 @@ p-footer
               height: 18px;
               background: url(../img/icon/mail.svg) no-repeat 50% 50% /contain;
               position: absolute;
-              left: -18px;
-              top: 3px;
+              //left: -18px;
+              @include inc.sizing(left, min, -8px, sps, -16px);
+              @include inc.sizing(top, min, 4px, sps, 1px);
+              //top: 3px;
             }
           }
           @media (hover: hover) {
@@ -131,7 +137,35 @@ p-footer
               }
             }
           }
+          @include inc.mq(min) {
+            margin-top: 1rem;
+            height: 10rem;
+            span {
+              padding-left: 18px;
+              font-size: 13px;
+              &::before {
+                width: 20px;
+                height: 13px;
+                left: -18px;
+                top: 6px;
+              }
+            }
+          }
           @include inc.mq(tab) {
+            margin-top: 1rem;
+            height: 10rem;
+            span {
+              padding-left: 19px;
+              font-size: 20px;
+              &::before {
+                width: 32px;
+                height: 22px;
+                left: -19px;
+                top: 6px;
+              }
+            }
+          }
+          @include inc.mq(tabl) {
             margin-top: 1rem;
             height: 10rem;
             span {

@@ -137,7 +137,8 @@ p-home
             justify-content: space-between;
             align-items: flex-end;
             &____ph {
-                padding-left: 95px;
+                //padding-left: 95px;
+                padding-left: 0;
                 @include inc.sizing(padding-left, min, 116px, sp, 95px);
                 width: 100%;
                 margin-bottom: 50px;
@@ -148,6 +149,8 @@ p-home
                 @include inc.mq(min) {
                     width: 42%;
                     margin-bottom: 0;
+                    padding-left: 0;
+                    //@include inc.sizing(padding-left, min, 116px, sp, 95px);
                 }
                 @include inc.mq(tab) {
                     width: 46.23%;
@@ -281,13 +284,28 @@ p-home
                     @include inc.sizing(padding-left, wide, 32px, tabl, 21px);
                 }
                 h3 {
-                    @include inc.sizingRem(font-size, wide, 26px, spl, 18px);
+                    font-weight: 500;
+                    //@include inc.sizingRem(font-size, wide, 26px, spl, 18px);
                     line-height: 1;
                     @include inc.sizing(margin-bottom, wide, 48px, tabl, 24px);
+                    font-size: 18px;
+                    @include inc.mq(tab) {
+                        @include inc.sizingRem(font-size, tabl, 18px, tab, 16px);
+                    }
+                    @include inc.mq(tabl) {
+                        @include inc.sizingRem(font-size, wide, 26px, tabl, 18px);
+                    }
                 }
                 p {
                     @include inc.sizing(margin-bottom, wide, 72px, tabl, 24px);
-                    line-height: 2.2;
+                    // line-height: 2.2;
+                    // font-size: 14px;
+                    // @include inc.mq(min) {
+                    //     @include inc.sizingRem(font-size, tabl, 12px, min, 10px);
+                    // }
+                    // @include inc.mq(tabl) {
+                    //     @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
+                    // }
                 }
                 figure {
                     margin-top: auto;
@@ -351,6 +369,15 @@ p-home
                 @include inc.sizing(right, wide, -48px, tabl, -40px,);
             }
         }
+        p .br_min {
+            display: none;
+            @include inc.mq(min) {
+                display: block;
+            }
+            @include inc.mq(tab) {
+                display: none;
+            }
+        }
         p + p {
             @include inc.sizing(margin-top, wide, 64px, spl, 24px);
         }
@@ -407,6 +434,24 @@ p-home
             }
             @include inc.mq(tabl) {
                 @include inc.sizing(width, wide, 1024px, tabl, 611px);
+            }
+            dt {
+                font-size: 12px;
+                @include inc.mq(min) {
+                    font-size: 10px;
+                }
+                @include inc.mq(tabl) {
+                    @include inc.sizingRem(font-size, wide, 14px, tabl, 10px);
+                }
+            }
+            dd a {
+                font-size: 14px;
+                @include inc.mq(min) {
+                    font-size: 10px;
+                }
+                @include inc.mq(tabl) {
+                    @include inc.sizingRem(font-size, wide, 16px, tabl, 10px);
+                }
             }
         }
         &---more {
