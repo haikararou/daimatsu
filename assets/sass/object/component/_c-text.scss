@@ -63,10 +63,24 @@ c-text
     @include inc.sizing(margin-bottom, wide, 56px, spl, 32px);//4 商品カテゴリ一覧
   }
 }
-#product.post .c-text {
+#product.post .p-product__post---ph .c-text {
   &--h1 {
-    @include inc.sizing(margin-bottom, wide, 96px, spl, 48px);//4 商品カテゴリ一覧
+    display: block;
+    margin-bottom: 48px;//4 商品カテゴリ一覧
     line-height: 1.4;
+    @include inc.mq(min) {
+      display: none;
+    }
+  }
+}
+#product.post .p-product__post---txt .c-text {
+  &--h1 {
+    display: none;
+    @include inc.mq(min) {
+      display: block;
+      @include inc.sizing(margin-bottom, wide, 96px, min, 48px);
+      line-height: 1.4;
+    }
   }
 }
 #about .c-text,

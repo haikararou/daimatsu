@@ -74,14 +74,13 @@
     <div class="p-product__post">
       <div class="p-product__post---ph">
         <div class="sticky">
-          <h1 class="c-text--h1">お知らせのタイトル お知らせのタイトル お知らせのタイトル</h1>
-          <figure id="container"><img src="../assets/img/dummy/product/post.jpg" alt=""></figure>
+          <h1 class="c-text--h1 sticky01">お知らせのタイトル お知らせのタイトル お知らせのタイトル</h1>
+          <figure id="container" class="sticky02"><img src="../assets/img/dummy/product/post.jpg" alt=""></figure>
         </div>
       </div>
       <div class="p-product__post---txt" id="aside">
         <div class="p-text-box">
-          <!-- <div class="takasa"></div> -->
-          <h1 class="c-text--h1">お知らせのタイトル お知らせのタイトル お知らせのタイトル</h1>
+          <div class="takasa"></div>
           <h2 class="c-text--h2">商品情報</h2>
           <dl class="p-dl-table">
             <div>
@@ -221,4 +220,74 @@
 </body>
 </html>
 
+<script>
+$(function() {
+  $(window).on('load scroll resize', function() {
+    var takasa = $('.c-text--h1').outerHeight(true);
+    $('.takasa').css('height', takasa);
+  });
+});
 
+
+(function(){//スクロール後に処理実行
+var newEvent = new $.Event("scrollstop"),
+timer;
+function newEventTrigger(){
+if (timer) clearTimeout(timer);
+timer = setTimeout(function(){
+$(window).trigger(newEvent)
+}, 200);
+}
+$(window).on("scroll", newEventTrigger);
+})();
+
+(function(){//リサイズ後に処理実行
+var newEvent = new $.Event("resizestop"),
+timer;
+function newEventTrigger(){
+if (timer) clearTimeout(timer);
+timer = setTimeout(function(){
+$(window).trigger(newEvent)
+}, 300);
+}
+$(window).on("resize", newEventTrigger);
+})();
+
+
+const mediaQueryList2 = window.matchMedia('(min-width: 620px)');
+const listener2 = (event2) => {
+    if (event2.matches) {
+        // 960px以上
+        $(function() {
+          $(window).on("load scrollstop resizestop", function() {
+            var takasa = $('.c-text--h1').outerHeight(true);
+            var maxheight = $(window).height();
+            var position = $('.sticky').offset().top;
+            var height = maxheight - 70;
+            var img = (height - takasa) + "px";
+            var sticky = $('.sticky').outerHeight(true);
+
+            console.log('c-text--h1の高さ = ' + takasa);
+            console.log('ウィンドウの高さ = ' + maxheight);
+            console.log('stickyの位置 = ' + position);
+            console.log('ウィンドウの高さ - 100 = ' + height);
+            console.log('(ウィンドウの高さ - 100) - (c-text--h1の高さ) = ' + img);
+
+            if (maxheight <= 600){
+              $('.sticky02 img').css({'max-height':img,'width':'auto','aspect-ratio':'4/3'});
+              $('.p-product__post---ph .sticky').css({'position':'sticky','top':'70px'});
+              $('.c-text--h1').css({'margin-bottom':'5vh'});
+            } else {
+              $('.sticky02 img').css({'max-height':auto,'width':'100%','aspect-ratio':'4/3'});
+            }
+          });
+        });
+
+    } else {
+        // 960px未満
+    }
+};
+mediaQueryList2.addEventListener("change", listener2);
+listener2(mediaQueryList2);
+
+</script>

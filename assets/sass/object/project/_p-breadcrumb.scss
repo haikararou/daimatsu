@@ -26,8 +26,8 @@ p-breadcrumb
           content: "＞";
           position: absolute;
           left: -19px;
-          top: 3px;
-          @include inc.sizingRem(font-size, wide, 11px, spl, 9px);
+          top: 0px;
+          @include inc.sizingRem(font-size, wide, 9px, spl, 8px);
         }
     }
   }

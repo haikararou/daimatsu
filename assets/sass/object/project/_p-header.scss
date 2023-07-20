@@ -159,8 +159,10 @@ p-header
       width: 64px;
       //@include inc.sizing(width, wide, 64px, tabl, 50px);
       display: block;
-      border: 1px solid inc.$color-grn;
+      //border: 1px solid inc.$color-grn;
       height: 1px!important;
+      background-color: inc.$color-grn;
+      margin-top: -3px;
     }
     & > span:nth-child(2) {
       margin-top: 8px;

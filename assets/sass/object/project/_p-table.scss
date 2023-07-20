@@ -29,8 +29,13 @@ p-table
       @include inc.sizingRem(font-size, wide, 16px, spl, 14px);
       width: 100%;
       line-height: 1.6;
+      font-size: 14px;
       @include inc.mq(min) {
+        @include inc.sizingRem(font-size, tabl, 12px, min, 10px);
         width: 80%;
+      }
+      @include inc.mq(tabl) {
+        @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
       }
     }
   }
@@ -63,6 +68,7 @@ p-table
     dd {
       width: 80%;
       line-height: 1.6;
+      font-size: 14px;
       @include inc.mq(min) {
         width: 75%;
       }
