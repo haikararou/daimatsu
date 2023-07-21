@@ -51,7 +51,10 @@ p-footer
           color: inc.$color-wht;
           font-size: 24px;
           @include inc.mq(min) {
-            @include inc.sizingRem(font-size, tabl, 32px, min, 20px);
+            @include inc.sizingRem(font-size, tab, 20px, min, 20px);
+          }
+          @include inc.mq(tab) {
+            @include inc.sizingRem(font-size, tabl, 32px, tab, 20px);
           }
           @include inc.mq(tabl) {
             @include inc.sizingRem(font-size, wide, 36px, tabl, 32px);
@@ -66,7 +69,15 @@ p-footer
             font-size: 10px;
             font-weight: 400;
             letter-spacing: 0;
+            margin-top: -3px;
             @include inc.mq(min) {
+              font-size: 10px;
+              margin-top: 0px;
+            }
+            @include inc.mq(tab) {
+              @include inc.sizingRem(font-size, tabl, 14px, tab, 10px);
+            }
+            @include inc.mq(tabl) {
               font-size: 14px;
             }
           }
@@ -121,8 +132,8 @@ p-footer
               background: url(../img/icon/mail.svg) no-repeat 50% 50% /contain;
               position: absolute;
               //left: -18px;
-              @include inc.sizing(left, min, -8px, sps, -16px);
-              @include inc.sizing(top, min, 4px, sps, 1px);
+              @include inc.sizing(left, min, -20px, sps, -24px);
+              @include inc.sizing(top, min, 3px, sps, 2px);
               //top: 3px;
             }
           }
@@ -143,11 +154,16 @@ p-footer
             span {
               padding-left: 18px;
               font-size: 13px;
+              //@include inc.sizingRem(font-size, tab, 13px, min, 20px);
               &::before {
-                width: 20px;
-                height: 13px;
-                left: -18px;
-                top: 6px;
+                @include inc.sizing(width, tab, 20px, min, 20px);
+                @include inc.sizing(height, tab, 13px, min, 13px);
+                @include inc.sizing(left, tab, -10px, min, -10px);
+                @include inc.sizing(top, tab, 4px, min, 3px);
+                // width: 20px;
+                // height: 13px;
+                // left: -18px;
+                // top: 6px;
               }
             }
           }
@@ -156,12 +172,17 @@ p-footer
             height: 10rem;
             span {
               padding-left: 19px;
-              font-size: 20px;
+              //font-size: 20px;
+              @include inc.sizingRem(font-size, tabl, 20px, tab, 13px);
               &::before {
-                width: 32px;
-                height: 22px;
-                left: -19px;
-                top: 6px;
+                @include inc.sizing(width, tabl, 32px, tab, 20px);
+                @include inc.sizing(height, tabl, 32px, tab, 13px);
+                @include inc.sizing(left, tabl, -22px, tab, -10px);
+                @include inc.sizing(top, tabl, -2px, tab, 4px);
+                // width: 32px;
+                // height: 22px;
+                // left: -19px;
+                // top: 6px;
               }
             }
           }
@@ -170,12 +191,17 @@ p-footer
             height: 10rem;
             span {
               padding-left: 21px;
-              font-size: 24px;
+              //font-size: 24px;
+              @include inc.sizingRem(font-size, wide, 24px, tabl, 20px);
               &::before {
-                width: 34px;
-                height: 24px;
-                left: -21px;
-                top: 8px;
+                @include inc.sizing(width, wide, 34px, tabl, 32px);
+                @include inc.sizing(height, wide, 22px, tabl, 32px);
+                @include inc.sizing(left, wide, -24px, tabl, -22px);
+                @include inc.sizing(top, wide, 7px, tabl, -2px);
+                // width: 34px;
+                // height: 24px;
+                // left: -21px;
+                // top: 8px;
               }
             }
           }
