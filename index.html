@@ -22,6 +22,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="./assets/js/animation.gsap.min.js"></script>
 <script src="./assets/js/TweenMax.min.js"></script>
+<script src="./assets/js/intersectionObserve.js" defer></script>
 <link rel="icon" href="./assets/img/favicon.ico" type="image/png"/>
 <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?unuUwK49-8s%3D" charset="utf-8"></script>
 </head>
@@ -60,11 +61,11 @@
       </div>
   </header>
 
-<main class="l-main">
+<main class="l-main" id="main">
   <section class="p-home__main---wrapper">
     <div class="p-home__main">
-      <figure><img src="./assets/img/dummy/top/ph001.jpg" alt="" width="928" height="696"></figure>
-      <div>
+      <figure id="ViewIn"><div><img src="./assets/img/dummy/top/ph001.jpg" alt="" width="928" height="696"></div></figure>
+      <div class="p-home__main---txt">
         <h1>おいしい笑顔の<br>ために</h1>
         <p>株式会社ダイマツは<br>
           野菜・きのこ・山菜を使用した、<br>
@@ -74,7 +75,7 @@
   </section>
   <section class="p-home__lead">
     <div class="p-home__lead---flx">
-      <figure class="p-home__lead---flx____ph"><picture><source media="(min-width: 619px)" srcset="./assets/img/dummy/top/ph002.jpg"><img src="./assets/img/dummy/top/ph008.jpg" width="544" height="724"></picture></figure>
+      <figure class="p-home__lead---flx____ph" id="ViewIn"><picture><source media="(min-width: 619px)" srcset="./assets/img/dummy/top/ph002.jpg"><img src="./assets/img/dummy/top/ph008.jpg" width="544" height="724"></picture></figure>
       <div class="p-home__lead---flx____txt">
         <h2>こころを込めて<br>食卓へ</h2>
         <p>豊かな自然が息づく信州。<br>
@@ -85,7 +86,7 @@
           安全安心はもとより、品質の高い商品をご提供して、<br>
           心豊かになるような食卓づくりのお役に立てることを願っています。<br>
           お客様に喜んでいただける商品の製造に日々励んでいます。</p>
-          <p><a href="">工場案内を見る</a></p>
+          <p><a href="./information/" class="underline">工場案内を見る</a></p>
       </div>
     </div>
   </section>
@@ -96,17 +97,17 @@
         <div class="p-home__strength---list____block">
           <h3>開発力</h3>
           <p>バリエーションに富んだ商品群は150品目にのぼります。オリジナリティを大切に、お客様の嗜好に沿った商品開発に努めています。</p>
-          <figure><img src="./assets/img/dummy/top/ph003.jpg" alt="" width="256" height="256"></figure>
+          <figure id="ViewIn"><img src="./assets/img/dummy/top/ph003.jpg" alt="" width="256" height="256"></figure>
         </div>
         <div class="p-home__strength---list____block">
           <h3>量産力</h3>
           <p>充実した最新機械設備を使用して、迅速かつ高い量産性を発揮します。<br>細心の衛生管理のもとに、効率的な生産を目指しています。</p>
-          <figure><img src="./assets/img/dummy/top/ph004.jpg" alt="" width="256" height="256"></figure>
+          <figure id="ViewIn"><img src="./assets/img/dummy/top/ph004.jpg" alt="" width="256" height="256"></figure>
         </div>
         <div class="p-home__strength---list____block">
           <h3>提案力</h3>
           <p>お客様のニーズにお応えし、お役に立てる商品をご提案いたします。伝統を踏まえつつ、次代に向けた食文化の提案を発信してまいります。</p>
-          <figure><img src="./assets/img/dummy/top/ph005.jpg" alt="" width="256" height="256"></figure>
+          <figure id="ViewIn"><img src="./assets/img/dummy/top/ph005.jpg" alt="" width="256" height="256"></figure>
         </div>
       </div>
     </div>
@@ -117,19 +118,19 @@
       <h2 class="p-home__product---title">商品紹介</h2>
       <div class="l-wrapper3000">
         <div class="p-product__top">
-          <a href="./product/category_c.html"></a>
+          <!-- <a href="./product/category_c.html"></a> -->
           <div class="p-product__top---txt">
             <h2>業務用商品</h2>
             <p>季節の惣菜から通年の定番商品まで<br>
               幅広い品揃えをご覧ください。<br>
               商品開発など、<br>
               お気軽にお問い合わせください。</p>
-              <p><span class="underline">一覧を見る</span></p>
+              <a href="./product/category_c.html" class="underline">一覧を見る</a>
           </div>
-          <figure class="p-product__top---ph"><img src="./assets/img/dummy/top/ph006.jpg" alt=""></figure>
+          <figure class="p-product__top---ph" id="ViewIn"><img src="./assets/img/dummy/top/ph006.jpg" alt=""></figure>
         </div>
         <div class="p-product__top even">
-          <a href="./product/category_c.html"></a>
+          <!-- <a href="./product/category_c.html"></a> -->
           <div class="p-product__top---txt">
             <h2>ご家庭用商品</h2>
             <p>食卓にもう一品！<br>
@@ -137,9 +138,9 @@
               毎日の忙しい暮らしの中で、<br>
               「手間をかけずにおいしく食べたい」<br class="br_min">を実現。<br>
               ご購入総額5,250円（税込）<br class="br_min">以上で送料サービス。</p>
-              <p><span class="underline">一覧を見る</span></p>
+              <a href="./product/category_c.html" class="underline">一覧を見る</a>
           </div>
-          <figure class="p-product__top---ph"><img src="./assets/img/dummy/top/ph007.jpg" alt=""></figure>
+          <figure class="p-product__top---ph" id="ViewIn"><img src="./assets/img/dummy/top/ph007.jpg" alt=""></figure>
         </div>
       </div>
     </div>
@@ -152,22 +153,22 @@
         <dl class="p-dl-table">
           <div>
             <dt>2021年4月16日</dt>
-            <dd><a href="post.html">ここに新着タイトルがはいります</a></dd>
+            <dd><a href="post.html" class="underline2">ここに新着タイトルがはいります</a></dd>
           </div>
           <div>
             <dt>2021年4月16日</dt>
-            <dd><a href="post.html">ここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいります</a></dd>
+            <dd><a href="post.html" class="underline2">ここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいります</a></dd>
           </div>
           <div>
             <dt>2021年4月16日</dt>
-            <dd><a href="post.html">ここに新着タイトルがはいります</a></dd>
+            <dd><a href="post.html" class="underline2">ここに新着タイトルがはいります</a></dd>
           </div>
           <div>
             <dt>2021年4月16日</dt>
-            <dd><a href="post.html">ここに新着タイトルがはいります</a></dd>
+            <dd><a href="post.html" class="underline2">ここに新着タイトルがはいります</a></dd>
           </div>
         </dl>
-        <div class="p-home__news---more"><a href="./news/">一覧を見る</a></div>
+        <div class="p-home__news---more"><a href="./news/" class="underline">一覧を見る</a></div>
       </div>
     </div>
   <!-- </section> -->
@@ -180,7 +181,7 @@
       <div class="p-footer__banner-inner l-wrapper">
         <ul class="p-footer__banner-list">
           <li class="p-footer__banner-list-item">お電話でのお問い合わせは<a href="tel:0120-014-700" class="p-footer__banner-list-item-green">0120-014-700<span>営業時間 8:30〜17:00（平日）</span></a></li>
-          <li class="p-footer__banner-list-item">メールでのお問い合わせは<a href="./contact" class="p-footer__banner-list-item-white"><span>お問い合わせフォーム</span></a></li>
+          <li class="p-footer__banner-list-item">メールでのお問い合わせは<a href="./contact" class="p-footer__banner-list-item-white underline4"><span>お問い合わせフォーム</span></a></li>
         </ul>
       </div>
     </div>

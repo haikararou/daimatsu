@@ -15,9 +15,9 @@ p-pagenav
     }
     span,
     a {
-        //text-decoration: none!important;
-        text-decoration: underline 1px inc.$color-grn;
-        text-underline-offset:0.9em;
+        text-decoration: none!important;
+        // text-decoration: underline 1px inc.$color-grn;
+        // text-underline-offset:0.9em;
         border: none;
         display: inline-block;
         border: 1px solid inc.$color-wht;
@@ -101,6 +101,7 @@ p-pagenav
                 color: inc.$color-grn;
                 padding: 0 0 .5rem;
                 line-height: 1;
+                //text-decoration: none;
             }
         }
     }

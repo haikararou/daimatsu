@@ -33,12 +33,17 @@ p-home
             @include inc.mq(min) {
                 padding-left: 29.24%;
             }
+            div {
+                overflow: hidden;
+            }
             img {
                 width: 100%;
                 height: auto;
+                opacity: 0;
+                transform: scale(1.2);
             }
         }
-        div {
+        &---txt {
             background: inc.$color-wht;
             padding-top: 50px;
             //padding-left: 25px;
@@ -137,20 +142,23 @@ p-home
             justify-content: space-between;
             align-items: flex-end;
             &____ph {
-                //padding-left: 95px;
                 padding-left: 0;
                 @include inc.sizing(padding-left, min, 116px, sp, 95px);
                 width: 100%;
                 margin-bottom: 50px;
+                overflow: hidden;
+                position: relative;
                 img {
                     width: 100%;
                     height: auto;
+                    opacity: 0;
+                    transform: scale(1.2);
                 }
                 @include inc.mq(min) {
                     width: 42%;
                     margin-bottom: 0;
                     padding-left: 0;
-                    //@include inc.sizing(padding-left, min, 116px, sp, 95px);
+                    aspect-ratio: 3 / 4;
                 }
                 @include inc.mq(tab) {
                     width: 46.23%;
@@ -309,9 +317,12 @@ p-home
                 }
                 figure {
                     margin-top: auto;
+                    overflow: hidden;
+                    position: relative;
                     img {
                         width: 100%;
                         height: auto;
+                        opacity: 0;
                     }
                 }
                 & + & {
@@ -459,5 +470,23 @@ p-home
             flex-direction:row-reverse;
             @include inc.sizing(margin-top, tabl, 64px, spl, 52px);
         }
+    }
+}
+
+
+
+.show-in img {
+    animation-name: show-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes show-in {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }

@@ -174,12 +174,12 @@ p-header
 }
 .reversal .p-header__burger---design {
   & > span {
-    border: 1px solid inc.$color-wht;
+    background-color: inc.$color-wht;
   }
 }
 .reversal.open .p-header__burger---design {
   & > span {
-    border: 1px solid inc.$color-grn;
+    background-color: inc.$color-grn;
   }
 }
 
@@ -433,19 +433,144 @@ p-header
   }
 }
 
-a {
-  text-decoration: underline 1px inc.$color-grn;
-  text-underline-offset:0.9em;
+// a {
+//   text-decoration: underline 1px inc.$color-grn;
+//   text-underline-offset:0.9em;
+// }
+// .underline {
+//   text-decoration: underline 1px inc.$color-grn;
+//   text-underline-offset:0.9em;
+// }
+
+a.underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
 }
-.underline {
-  text-decoration: underline 1px inc.$color-grn;
-  text-underline-offset:0.9em;
+a.underline::before {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: inc.$color-grn;
+  transform: scale(1, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+  transition-delay: 250ms;
 }
-@media (hover: hover) {
-  .pc a {
-    text-decoration: underline 1px inc.$color-grn;
-    text-underline-offset:0.9em;
+@media (hover: hover) and (pointer: fine) {
+  a.underline:hover::before {
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition-delay: 0ms;
   }
+}
+a.underline::after {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: inc.$color-grn;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform .3s;
+}
+@media (hover: hover) and (pointer: fine) {
+  a.underline:hover::after {
+    transition-delay: 250ms;
+    transform-origin: left top;
+    transform: scale(1, 1);
+  }
+}
+
+a.underline2 {
+  background: -webkit-gradient(linear, left top, right top, from(inc.$color-grn), to(inc.$color-grn)) no-repeat 100% 100%/0 1px;
+  background: -webkit-linear-gradient(left, inc.$color-grn, inc.$color-grn) no-repeat 100% 100%/0 1px;
+  background: linear-gradient(90deg, inc.$color-grn, inc.$color-grn) no-repeat 100% 100%/0 1px;
+  -webkit-transition: background-size 0.4s;
+  transition: background-size 0.4s;
+  padding-bottom: 2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  a.underline2:hover {
+    background-size: 100% 1px;
+    background-position: 0 100%;
+  }
+}
+
+a.underline3 h2 {
+  background: -webkit-gradient(linear, left top, right top, from(inc.$color-grn), to(inc.$color-grn)) no-repeat 100% 100%/0 1px;
+  background: -webkit-linear-gradient(left, inc.$color-grn, inc.$color-grn) no-repeat 100% 100%/0 1px;
+  background: linear-gradient(90deg, inc.$color-grn, inc.$color-grn) no-repeat 100% 100%/0 1px;
+  -webkit-transition: background-size 0.4s;
+  transition: background-size 0.4s;
+  padding-bottom: 2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  a.underline3:hover h2 {
+    background-size: 100% 1px;
+    background-position: 0 100%;
+  }
+}
+
+a.underline4 span {
+  background: -webkit-gradient(linear, left top, right top, from(inc.$color-grn2), to(inc.$color-grn2)) no-repeat 100% 100%/0 1px;
+  background: -webkit-linear-gradient(left, inc.$color-grn2, inc.$color-grn2) no-repeat 100% 100%/0 1px;
+  background: linear-gradient(90deg, inc.$color-grn2, inc.$color-grn2) no-repeat 100% 100%/0 1px;
+  -webkit-transition: background-size 0.4s;
+  transition: background-size 0.4s;
+  padding-bottom: 2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  a.underline4:hover span {
+    background-size: 100% 1px;
+    background-position: 0 100%;
+  }
+}
+
+
+// @-webkit-keyframes hide-line {
+//   to {
+//     -webkit-clip-path: inset(0 0 -5px 100%);
+//     clip-path: inset(0 0 -5px 100%);
+//   }
+// }
+// @keyframes hide-line {
+//   to {
+//     -webkit-clip-path: inset(0 0 -5px 100%);
+//     clip-path: inset(0 0 -5px 100%);
+//   }
+// }
+// @-webkit-keyframes show-line {
+//   from {
+//     -webkit-clip-path: inset(0% 100% -5px 0);
+//             clip-path: inset(0% 100% -5px 0);
+//   }
+// }
+// @keyframes show-line {
+//   from {
+//     -webkit-clip-path: inset(0% 100% -5px 0);
+//     clip-path: inset(0% 100% -5px 0);
+//   }
+// }
+
+
+
+
+
+
+
+
+@media (hover: hover) {
+  // .pc a {
+  //   text-decoration: underline 1px inc.$color-grn;
+  //   text-underline-offset:0.9em;
+  // }
   .pc .a-effect {
     text-decoration: none;
     position: relative;
@@ -484,10 +609,12 @@ a {
     transform-origin: left top;
   }
   .pc.open .a-effect::before {
-    display: none;
+    //display: none;
+    bottom: 20px;
   }
   .pc.open .a-effect::after {
-    display: none;
+    //display: none;
+    bottom: 20px;
   }
   .pc .a-effect:hover::before {
     -webkit-transform: scale(1, 1);
@@ -507,9 +634,8 @@ a {
       transform: scale(1, 1);
     }
   }
-  .pc.open .p-header__nav-list.nav-list01 .p-header__nav-item:hover a {
-    background: inc.$color-grn3;
-    //color:inc.$color-wht;
-  }
+  // .pc.open .p-header__nav-list.nav-list01 .p-header__nav-item:hover a {
+  //   background: inc.$color-grn3;
+  // }
 }
 

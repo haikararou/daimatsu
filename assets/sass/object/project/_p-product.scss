@@ -12,14 +12,14 @@ p-product
             justify-content: space-between;
             flex-direction:row-reverse;
         }
-        a{
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            z-index: 1;
-        }
+        // a{
+        //     position:absolute;
+        //     top:0;
+        //     left:0;
+        //     width:100%;
+        //     height:100%;
+        //     z-index: 1;
+        // }
         &---txt {
             margin-top: -0.5rem;
             width: 100%;
@@ -27,7 +27,7 @@ p-product
             @include inc.mq(min) {
                 width: 32.2%;
                 padding: 0;
-                display:flex; flex-direction:column; justify-content:center;
+                //display:flex; flex-direction:column; justify-content:center;
             }
             h2 {
                 font-size: 18px;
@@ -69,6 +69,7 @@ p-product
                 img {
                     height: auto;
                     transition: transform .6s ease;
+                    opacity: 0;
                 }
             }
         }
@@ -126,6 +127,7 @@ p-product
                 width: 27.27%;
             }
             h2 {
+                display: inline-block;
                 @include inc.sizing(margin-top, wide, 42px, tabl, 28px);
                 @include inc.sizingRem(font-size, wide, 26px, spl, 14px);
             }
@@ -313,7 +315,7 @@ p-product
     transition: transform .6s ease; /* ゆっくり変化させる */
 }
 .expansion-img:hover figure img {
-    transform: scale(1.1); /* 拡大 */
+    transform: scale(1.2); /* 拡大 */
 }
 
 #home .p-product {
@@ -325,14 +327,14 @@ p-product
             justify-content: space-between;
             flex-direction:row-reverse;
         }
-        a{
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            z-index: 1;
-        }
+        // a{
+        //     position:absolute;
+        //     top:0;
+        //     left:0;
+        //     width:100%;
+        //     height:100%;
+        //     z-index: 1;
+        // }
         &---txt {
             width: 100%;
             margin-top: -.5rem;
@@ -341,10 +343,10 @@ p-product
                 display: block;
                 padding: 0;
             }
-            a {
-                display: block;
-                @include inc.sizing(margin-top, wide, 80px, tabl, 24px);
-            }
+            // a {
+            //     display: block;
+            //     @include inc.sizing(margin-top, wide, 80px, tabl, 24px);
+            // }
             h2 {
                 font-size: 18px;
                 @include inc.mq(min) {
@@ -388,7 +390,8 @@ p-product
                 cursor: pointer;
                 img {
                     height: auto;
-                    transition: transform .6s ease;
+                    opacity: 0;
+                    //transition: transform .6s ease;
                 }
             }
         }

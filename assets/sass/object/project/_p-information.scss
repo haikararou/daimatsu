@@ -7,15 +7,15 @@ p-information
 .p-information {
     &__lead {
         font-size: 14px;
-        line-height: 1.6;
+        line-height: 2;
         margin-bottom: 75px;
         @include inc.sizing(margin-top, wide, 128px, min, 54px);
         @include inc.mq(min) {
             @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
-            @include inc.sizingRem(font-size, tabl, 18px, min, 16px);
+            @include inc.sizingRem(font-size, tabl, 16px, min, 14px);
         }
         @include inc.mq(tabl) {
-            @include inc.sizingRem(font-size, wide, 20px, tabl, 18px);
+            @include inc.sizingRem(font-size, wide, 18px, tabl, 16px);
         }
     }
     &__txt {
@@ -51,9 +51,11 @@ p-information
         figure {
             width: calc((100% - 16px) / 2);
             display: block;
+            overflow: hidden;
             img {
                 width: 100%;
                 height: auto;
+                opacity: 0;
             }
         }
         @include inc.mq(min) {
@@ -101,10 +103,11 @@ p-information
         margin-bottom: 75px;
         figure {
             width: 100%;
-            display: block;
+            display: block;overflow: hidden;
             img {
                 width: 100%;
                 height: auto;
+                opacity: 0;
             }
         }
         @include inc.mq(min) {
@@ -160,12 +163,14 @@ p-information
         figure {
             width: calc((100% - 16px) / 2);
             display: block;
+            overflow: hidden;
             &:nth-child(3) {
                 width: 100%;
             }
             img {
                 width: 100%;
                 height: auto;
+                opacity: 0;
             }
         }
         @include inc.mq(min) {

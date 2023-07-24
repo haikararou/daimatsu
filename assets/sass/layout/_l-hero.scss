@@ -29,11 +29,13 @@ l-hero
     &---ph {
         display: none;
         @include inc.mq(tab) {
+            overflow: hidden;
             display: block;
             @include inc.sizing(margin-top, wide, 64px, spl, 26px);
             width: 48.78%;
             aspect-ratio: 16 / 8.4;
             img {
+                opacity: 0;
                 width: 100%;
                 height: auto;
             }

@@ -18,10 +18,12 @@ p-about
         flex-flow: column;
         &---ph {
             padding-left: 13.6%;
+            overflow: hidden;
             @include inc.mq(min) {
                 padding-left: 0;
             }
             img {
+                opacity: 0;
                 width: 100%;
                 @include inc.sizing(margin-bottom, tabl, 48px, spl, 32px);
             }

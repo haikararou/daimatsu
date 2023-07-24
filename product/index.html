@@ -22,6 +22,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="../assets/js/animation.gsap.min.js"></script>
 <script src="../assets/js/TweenMax.min.js"></script>
+<script src="../assets/js/intersectionObserve.js" defer></script>
 <link rel="icon" href="../assets/img/favicon.ico" type="image/png"/>
 <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?unuUwK49-8s%3D" charset="utf-8"></script>
 </head>
@@ -76,19 +77,19 @@
     <section class="l-wrapper4">
       <div class="p-text-box">
         <div class="p-product__top">
-          <a href="./category_c.html"></a>
+          <!-- <a href="./category_c.html"></a> -->
           <div class="p-product__top---txt">
             <h2>業務用商品</h2>
             <p>季節の惣菜から通年の定番商品まで<br>
               幅広い品揃えをご覧ください。<br>
               商品開発など、<br>
               お気軽にお問い合わせください。</p>
-              <p><span class="underline">一覧を見る</span></p>
+              <a href="./category_c.html" class="underline">一覧を見る</a>
           </div>
-          <figure class="p-product__top---ph"><img src="../assets/img/dummy/product/ph001.jpg" alt=""></figure>
+          <figure class="p-product__top---ph" id="ViewIn"><img src="../assets/img/dummy/product/ph001.jpg" alt=""></figure>
         </div>
         <div class="p-product__top even">
-          <a href="./category_c.html"></a>
+          <!-- <a href="./category_c.html"></a> -->
           <div class="p-product__top---txt">
             <h2>ご家庭用商品</h2>
             <p>食卓にもう一品！<br>
@@ -98,9 +99,9 @@
               実現。<br>
               ご購入総額5,250円（税込）以上で<br>
               送料サービス。</p>
-              <p><span class="underline">一覧を見る</span></p>
+              <a href="./category_c.html" class="underline">一覧を見る</a>
           </div>
-          <figure class="p-product__top---ph"><img src="../assets/img/dummy/product/ph002.jpg" alt=""></figure>
+          <figure class="p-product__top---ph" id="ViewIn"><img src="../assets/img/dummy/product/ph002.jpg" alt=""></figure>
         </div>
       </div>
     </section>
