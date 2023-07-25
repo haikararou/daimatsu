@@ -1688,7 +1688,6 @@ p {
   margin: 0;
   padding: 0;
   line-height: 200%;
-  margin-bottom: clamp(24px, 7.89vw - 51.7px, 72px);
   line-height: 2.2;
   font-size: 14px;
 }
@@ -2923,6 +2922,8 @@ p-pagenav
 }
 .wp-pagenavi span,
 .wp-pagenavi a {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   text-decoration: none !important;
   border: none;
   display: inline-block;
