@@ -40,7 +40,7 @@ p-home
                 width: 100%;
                 height: auto;
                 opacity: 0;
-                transform: scale(1.2);
+                transform: scale(1.08);
             }
         }
         &---txt {
@@ -152,7 +152,7 @@ p-home
                     width: 100%;
                     height: auto;
                     opacity: 0;
-                    transform: scale(1.2);
+                    transform: scale(1.08);
                 }
                 @include inc.mq(min) {
                     width: 42%;
@@ -477,13 +477,13 @@ p-home
 
 .show-in img {
     animation-name: show-in;
-    animation-duration: 1s;
+    animation-duration: 2.4s;
     animation-fill-mode: forwards;
 }
 @keyframes show-in {
     0% {
         opacity: 0;
-        transform: scale(1.2);
+        transform: scale(1.08);
     }
     100% {
         opacity: 1;

@@ -314,11 +314,13 @@ l-hero
 }
 @media screen and (min-width: 768px) {
   .l-hero__product---ph {
-    overflow: hidden;
+    width: 48.78%;
     display: block;
     margin-top: clamp(26px, 3.63vw + 7.1px, 64px);
-    width: 48.78%;
+  }
+  .l-hero__product---ph figure {
     aspect-ratio: 16/8.4;
+    overflow: hidden;
   }
   .l-hero__product---ph img {
     opacity: 0;
@@ -1895,8 +1897,8 @@ p-home
   width: 100%;
   height: auto;
   opacity: 0;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
 }
 .p-home__main---txt {
   background: #fff;
@@ -2029,8 +2031,8 @@ p-home
   width: 100%;
   height: auto;
   opacity: 0;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
 }
 @media screen and (min-width: 620px) {
   .p-home__lead---flx____ph {
@@ -2444,8 +2446,8 @@ p-home
 .show-in img {
   -webkit-animation-name: show-in;
           animation-name: show-in;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 2.4s;
+          animation-duration: 2.4s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -2453,8 +2455,8 @@ p-home
 @-webkit-keyframes show-in {
   0% {
     opacity: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
   }
   100% {
     opacity: 1;
@@ -2466,8 +2468,8 @@ p-home
 @keyframes show-in {
   0% {
     opacity: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
   }
   100% {
     opacity: 1;
@@ -3108,6 +3110,10 @@ p-product
   width: 100%;
   padding-left: 13.6%;
   margin-top: 2rem;
+}
+.p-product__top---ph figure {
+  aspect-ratio: 4/3;
+  overflow: hidden;
 }
 @media screen and (min-width: 620px) {
   .p-product__top---ph {

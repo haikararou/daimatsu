@@ -60,6 +60,10 @@ p-product
             width: 100%;
             padding-left: 13.6%;
             margin-top: 2rem;
+            figure {
+                aspect-ratio: 4 / 3;
+                overflow: hidden;
+            }
             @include inc.mq(min) {
                 padding: 0;
                 width: 58%;

@@ -170,13 +170,13 @@ const listener = (event) => {
                 $('.p-header__nav-list.nav-list02 a').css('opacity','1');
             } else if (scrollTop > 150) {
                 $('.l-body').addClass('scroll');
-                if( element.classList.contains('scroll') == false ){
-                    $('.p-header__nav-list.nav-list01').css('opacity','0');
-                    $('.p-header__nav-list.nav-list02 a').css('opacity','0');
-                }
+                //if( element.classList.contains('scroll') == false ){
+                //     $('.p-header__nav-list.nav-list01').css('opacity','0');
+                //     $('.p-header__nav-list.nav-list02 a').css('opacity','0');
+                // }
             }
         };
-        window.addEventListener("scroll", function () {
+        window.addEventListener('scroll', function () {
             headerScroll();
         });
 
@@ -189,7 +189,7 @@ const listener = (event) => {
         $('.l-body').removeClass('reversal');
     }
 };
-mediaQueryList.addEventListener("change", listener);
+mediaQueryList.addEventListener('change', listener);
 // 初期化処理
 listener(mediaQueryList);
 

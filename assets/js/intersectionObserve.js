@@ -17,8 +17,8 @@ const ViewInCardEvent = () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show-in');
-            } else {
-                entry.target.classList.remove('show-in');
+            // } else {
+            //     entry.target.classList.remove('show-in');
             }
         });
     };
