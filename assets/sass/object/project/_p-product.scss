@@ -287,7 +287,7 @@ p-product
         }
         &---txt {
             width: 100%;
-            margin-top: 74px;
+            margin-top: 50px;
             @include inc.mq(min) {
                 width: calc( 100% - (51.43% + 8.57%));
                 margin-top: -.5rem;
@@ -295,9 +295,12 @@ p-product
         }
     }
     &__annotation {
-        @include inc.sizingRem(font-size, wide, 12px, spl, 11px);
-        line-height: 1.6;
+        font-size: 16px;
+        line-height: 2;
         margin-top: 2rem;
+        @include inc.mq(min) {
+            @include inc.sizingRem(font-size, wide, 18px, min, 16px);
+        }
     }
 }
 

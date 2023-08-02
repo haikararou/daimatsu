@@ -408,14 +408,32 @@ c-text
   }
 }
 
+#product.post .p-product__post---txt____lead {
+  margin-bottom: 75px;
+}
+@media screen and (min-width: 620px) {
+  #product.post .p-product__post---txt____lead {
+    margin-bottom: clamp(75px, 5.59vw + 40.3px, 128px);
+  }
+}
 #product.post .p-product__post---txt .c-text--h1 {
   display: none;
 }
 @media screen and (min-width: 620px) {
   #product.post .p-product__post---txt .c-text--h1 {
     display: block;
-    margin-bottom: clamp(48px, 5.06vw + 16.7px, 96px);
+    margin-bottom: clamp(48px, 1.69vw + 37.5px, 64px);
     line-height: 1.4;
+  }
+}
+#product.post .p-product__post---txt .c-text--h1 + p {
+  padding: 0;
+  font-size: 16px;
+  line-height: 2;
+}
+@media screen and (min-width: 620px) {
+  #product.post .p-product__post---txt .c-text--h1 + p {
+    font-size: clamp(1rem, 0.21vw + 0.91875rem, 1.125rem);
   }
 }
 
@@ -1787,26 +1805,33 @@ p-table
 #product.post .p-dl-table div {
   border-bottom: 1px solid rgba(16, 67, 39, 0.2);
   padding: 1.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 #product.post .p-dl-table div dt {
-  font-size: clamp(0.6875rem, 0.29vw + 0.59375rem, 0.875rem);
-  width: 20%;
+  font-size: 14px;
+  width: 25%;
   margin: 0 0 0.5rem;
   padding: 0;
 }
 @media screen and (min-width: 620px) {
   #product.post .p-dl-table div dt {
+    font-size: clamp(0.875rem, 0.21vw + 0.79375rem, 1rem);
     width: 25%;
     margin: 0;
   }
 }
 #product.post .p-dl-table div dd {
-  width: 80%;
+  width: 75%;
   line-height: 1.6;
-  font-size: 14px;
+  font-size: 16px;
 }
 @media screen and (min-width: 620px) {
   #product.post .p-dl-table div dd {
+    font-size: clamp(1rem, 0.21vw + 0.91875rem, 1.125rem);
     width: 75%;
   }
 }
@@ -3980,7 +4005,7 @@ p-product
 }
 .p-product__post---txt {
   width: 100%;
-  margin-top: 74px;
+  margin-top: 50px;
 }
 @media screen and (min-width: 620px) {
   .p-product__post---txt {
@@ -3989,9 +4014,14 @@ p-product
   }
 }
 .p-product__annotation {
-  font-size: clamp(0.6875rem, 0.1vw + 0.65rem, 0.75rem);
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 2;
   margin-top: 2rem;
+}
+@media screen and (min-width: 620px) {
+  .p-product__annotation {
+    font-size: clamp(1rem, 0.21vw + 0.91875rem, 1.125rem);
+  }
 }
 
 @media (hover: hover) {

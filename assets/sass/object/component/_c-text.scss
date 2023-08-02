@@ -73,13 +73,29 @@ c-text
     }
   }
 }
-#product.post .p-product__post---txt .c-text {
-  &--h1 {
-    display: none;
+#product.post .p-product__post---txt {
+  &____lead {
+    margin-bottom: 75px;
     @include inc.mq(min) {
-      display: block;
-      @include inc.sizing(margin-bottom, wide, 96px, min, 48px);
-      line-height: 1.4;
+      @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
+    }
+  }
+  & .c-text {
+    &--h1 {
+      display: none;
+      @include inc.mq(min) {
+        display: block;
+        @include inc.sizing(margin-bottom, wide, 64px, min, 48px);
+        line-height: 1.4;
+      }
+      & + p {
+        padding: 0;
+        font-size: 16px;
+        line-height: 2;
+        @include inc.mq(min) {
+          @include inc.sizingRem(font-size, wide, 18px, min, 16px);
+        }
+      }
     }
   }
 }
