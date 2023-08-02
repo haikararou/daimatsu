@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+@use "../../inc/" as inc;
+/*
+p-breadcrumb
+-----------------------------------------------------*/
+.p-breadcrumb {
+  position: relative;
+  width: 100%;
+  //overflow-x: hidden;
+  @include inc.sizingRem(font-size, wide, 12px, spl, 10px);
+  @include inc.sizing(margin-top, wide, 64px, spl, 26px);
+  @include inc.sizing(margin-bottom, wide, 48px, spl, 32px);
+  &__container {
+    display: flex;
+    gap: 28px;
+  }
+  &__item {
+    list-style-type: none;
+    position: relative;
+    line-height: 2;
+    a {
+      text-decoration: none;
+    }
+    & + .p-breadcrumb__item {
+      &::before {
+          content: "＞";
+          position: absolute;
+          left: -19px;
+          top: 2px;
+          @include inc.sizingRem(font-size, wide, 9px, spl, 8px);
+        }
+    }
+  }
+}

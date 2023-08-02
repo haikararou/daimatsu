@@ -1,0 +1,253 @@
+@charset 'UTF-8';
+@use "../../inc/" as inc;
+/*
+p-form
+-----------------------------------------------------*/
+.p-form {
+  &__req {
+    background: inc.$color-grn2;
+    color: inc.$color-wht;
+    line-height: 1;
+    display: inline-block;
+    font-size: 11px;
+    padding: 0.2rem 0.3rem 0.3rem;
+    line-height: 1;
+    margin-right: 3px;
+    vertical-align: text-bottom;
+  }
+  &__block {
+    width: 100%;
+    & + & {
+      margin-top: 1rem;
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+    dt {
+      div {
+        display: inline-block;
+      }
+      width: 100%;
+      position: relative;
+      padding: 0 0 1rem 0;
+      .p-form__req {
+        position: static;
+        margin: 0 0 0 .5rem;
+        @include inc.mq(min) {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translate(0%, -50%);
+          margin: 0;
+        }
+      }
+      .p-form__br {
+        display: inline-block;
+      }
+      br {
+        display: none;
+      }
+      @include inc.mq(min) {
+        @include inc.sizing(width, tab, 150px, min, 130px);
+        padding: 0 2.6rem 0 0;
+        br {
+          display: block;
+        }
+      }
+      @include inc.mq(tab) {
+        @include inc.sizing(width, tabl, 160px, tab, 150px);
+      }
+      @include inc.mq(tabl) {
+        @include inc.sizing(width, vr, 180px, tabl, 160px);
+      }
+      @include inc.mq(vr) {
+        @include inc.sizing(width, wide, 195px, vr, 180px);
+      }
+    }
+    &---middle {
+      @include inc.mq(min) {
+        dt {
+          display:flex; flex-direction:column; justify-content:center;
+          }
+      }
+    }
+    &---top {
+      dt {
+        @include inc.mq(min) {
+          padding-top: 1rem;
+        }
+        .p-form__req {
+          position: static;
+          margin: 0 0 0 .5rem;
+          @include inc.mq(min) {
+            position: absolute;
+            right: 0;
+            top: 1.8rem;
+            margin: 0;
+          }
+        }
+      }
+    }
+    dd {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      @include inc.mq(min) {
+        @include inc.sizing(width, tab, 300px, min, 280px);
+      }
+      @include inc.mq(tab) {
+        @include inc.sizing(width, tabl, 460px, tab, 300px);
+      }
+      @include inc.mq(tabl) {
+        @include inc.sizing(width, vr, 560px, tabl, 460px);
+      }
+      @include inc.mq(vr) {
+        @include inc.sizing(width, wide, 668px, vr, 560px);
+      }
+    }
+  }
+
+  &__input {
+    &---text {
+      background-color: inc.$color-grn4;
+      line-height: 1;
+      padding: 1rem;
+      width: 100%;
+      border: none;
+      &::placeholder {
+        color: inc.$color-grn5;
+        font-weight: 400;
+      }
+    }
+    &---text2 {
+      background-color: inc.$color-grn4;
+      line-height: 1;
+      padding: 1em;
+      width: 10rem;
+      border: none;
+      margin-left: .5rem;
+    }
+    &---select {
+      border: 1px solid inc.$color-grn3;
+      line-height: 1;
+      border-radius: 5px;
+      padding: 1rem 1.5rem;
+      max-width: 24rem;
+      width: 100%;
+      position: relative;
+      background: url(../img/icon/arw-bottom.svg) no-repeat right 1rem center;
+      background-size: 13px 13px;
+    }
+    &---text3 {
+      background-color: inc.$color-grn4;
+      padding: 1rem;
+      border: none;
+      width: 100%;
+      border: none;
+      @include inc.sizing(height, wide, 192px, spl, 144px);
+    }
+    &---radio {
+      @include inc.sizing(margin-right, wide, 32px, spl, 24px);
+      @include inc.sizing(padding-left, wide, 16px, spl, 0px);
+      height: 100%;
+      input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        + .radio-label {
+          position: relative;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          @include inc.sizing(padding-left, wide, 40px, spl, 32px);
+          &:before {
+            content: '';
+            background: inc.$color-wht;
+            border-radius: 100%;
+            border: 1px solid darken(inc.$color-wht, 25%);
+            display: inline-block;
+            @include inc.sizing(width, wide, 32px, tabl, 26px);
+            @include inc.sizing(height, wide, 32px, tabl, 26px);
+            @include inc.sizing(top, wide, -4px, tabl, -1px);
+            //position: relative;
+            margin-right: 1rem;
+            vertical-align: top;
+            cursor: pointer;
+            text-align: center;
+            transition: all 250ms ease;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0%, -50%);
+          }
+        }
+        &:checked {
+          + .radio-label {
+            &:before {
+              background-color: inc.$color-grn2;
+              box-shadow: inset 0 0 0 6px inc.$color-wht;
+              @include inc.mq(min) {
+                box-shadow: inset 0 0 0 5px inc.$color-wht;
+              }
+            }
+          }
+        }
+        &:focus {
+          + .radio-label {
+            &:before {
+              outline: none;
+              border-color: inc.$color-grn2;
+            }
+          }
+        }
+        &:disabled {
+          + .radio-label {
+            &:before {
+              box-shadow: inset 0 0 0 4px inc.$color-grn2;
+              border-color: darken(inc.$color-grn2, 25%);
+              background: darken(inc.$color-grn2, 25%);
+            }
+          }
+        }
+        + .radio-label {
+          &:empty {
+            &:before {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+    &---comment {
+      text-align: left;
+      @include inc.mq(min) {
+        text-align: center;
+      }
+    }
+    &---submit {
+      background: inc.$color-grn2!important;
+      color: inc.$color-wht!important;
+      width: 100%;
+      border: none;
+      @include inc.sizing(height, wide, 96px, spl, 80px);
+      line-height: 1;
+      text-align: center;
+      margin: 1.5rem auto 1rem;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+    }
+    &---reCAPTCHA {
+      @include inc.sizingRem(font-size, wide, 14px, spl, 12px);
+      text-align: left;
+      @include inc.mq(min) {
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

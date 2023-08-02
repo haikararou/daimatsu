@@ -1,0 +1,492 @@
+@charset 'UTF-8';
+@use "../../inc/" as inc;
+/*
+p-home
+-----------------------------------------------------*/
+
+.p-home {
+    &__main {
+        &---wrapper {
+            width: 100%;
+            padding: 0;
+            margin: 0 auto;
+            @include inc.mq(min) {
+                @include inc.sizing(max-width, tab, 768px, min, 620px);
+                @include inc.sizing(padding-left, tab, 51px, min, 25px);
+                @include inc.sizing(padding-right, tab, 51px, min, 25px);
+            }
+            @include inc.mq(tab) {
+                @include inc.sizing(max-width, tabl, 960px, tab, 768px);
+                @include inc.sizing(padding-left, tabl, 100px, tab, 51px);
+                @include inc.sizing(padding-right, tabl, 100px, tab, 51px);
+            }
+            @include inc.mq(tabl) {
+                @include inc.sizing(max-width, wide, 1568px, tabl, 960px);
+                @include inc.sizing(padding-left, wide, 128px, tabl, 100px);
+                @include inc.sizing(padding-right, wide, 128px, tabl, 100px);
+            }
+        }
+        position: relative;
+        figure {
+            width: 100%;
+            padding-left: 0;
+            @include inc.mq(min) {
+                padding-left: 29.24%;
+            }
+            div {
+                overflow: hidden;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                opacity: 0;
+                transform: scale(1.08);
+            }
+        }
+        &---txt {
+            background: inc.$color-wht;
+            padding-top: 50px;
+            //padding-left: 25px;
+            padding-left: 6.6%;
+            //padding-right: 25px;
+            padding-right: 6.6%;
+            margin-right: 6.6%;
+            margin-top: -50px;
+            //@include inc.sizing(padding-top, min, 96px, sp, 50px);
+            // @include inc.sizing(padding-left, min, 64px, sp, 25px);
+            // @include inc.sizing(padding-right, min, 64px, sp, 25px);
+            //@include inc.sizing(margin-right, min, 112px, sp, 25px);
+            //@include inc.sizing(margin-top, min, -96px, sp, -50px);
+            position: relative;
+            z-index: 1;
+            @include inc.mq(min) {
+                padding: 0;
+                background: none;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(0%, -20%);
+                -webkit-transform: translate(0%, -20%);
+                -ms-transform: translate(0%, -20%);
+            }
+            @include inc.mq(tab) {
+                transform: translate(0%, -30%);
+                -webkit-transform: translate(0%, -30%);
+                -ms-transform: translate(0%, -30%);
+            }
+            @include inc.mq(tabl) {
+                transform: translate(0%, -40%);
+                -webkit-transform: translate(0%, -40%);
+                -ms-transform: translate(0%, -40%);
+            }
+            @include inc.mq(wide) {
+                transform: translate(0%, -46%);
+                -webkit-transform: translate(0%, -46%);
+                -ms-transform: translate(0%, -46%);
+            }
+            h1 {
+                letter-spacing: .2rem;
+                @include inc.sizingRem(font-size, tabl, 45px, spl, 30px);
+                @include inc.sizing(line-height, tabl, 60px, spl, 41px);
+                font-weight: 400;
+                font-family: "Futo Go B101";
+                @include inc.sizing(margin-bottom, wide, 48px, tabl, 24px);
+                @include inc.mq(tab) {
+                    @include inc.sizingRem(font-size, tabl, 45px, tab, 38px);
+                    @include inc.sizing(line-height, tabl, 60px, tab, 51px);
+                }
+                @include inc.mq(tabl) {
+                    @include inc.sizingRem(font-size, wide, 72px, tabl, 45px);
+                    @include inc.sizing(line-height, wide, 100px, tabl, 60px);
+                }
+            }
+            p {
+                font-size: 12px;
+                line-height: 28px;
+                @include inc.mq(tabl) {
+                    @include inc.sizing(line-height, wide, 41px, tabl, 28px);
+                    @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
+                    letter-spacing: .04rem;
+                }
+            }
+        }
+    }
+    &__lead {
+        width: 100%;
+        padding: 100px 0 0 0;
+        margin: 0 auto;
+        @include inc.mq(min) {
+            padding: 0;
+            @include inc.sizing(max-width, tab, 768px, min, 620px);
+            @include inc.sizing(padding-left, tab, 81px, min, 51px);
+            @include inc.sizing(padding-right, tab, 51px, min, 25px);
+            @include inc.sizing(margin-top, tab, -30px, min, -20px);
+        }
+        @include inc.mq(tab) {
+            @include inc.sizing(max-width, tabl, 960px, tab, 768px);
+            @include inc.sizing(padding-left, tabl, 140px, tab, 81px);
+            @include inc.sizing(padding-right, tabl, 100px, tab, 51px);
+            @include inc.sizing(margin-top, tabl, 0px, tab, -30px);
+        }
+        @include inc.mq(tabl) {
+            @include inc.sizing(max-width, wide, 1568px, tabl, 960px);
+            @include inc.sizing(padding-left, wide, 224px, tabl, 140px);
+            @include inc.sizing(padding-right, wide, 128px, tabl, 100px);
+            @include inc.sizing(margin-top, tabl, 0px, wide, -64px);
+        }
+        position: relative;
+        z-index: 1;
+        &---flx {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            &____ph {
+                padding-left: 0;
+                @include inc.sizing(padding-left, min, 116px, sp, 95px);
+                width: 100%;
+                margin-bottom: 50px;
+                overflow: hidden;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: auto;
+                    opacity: 0;
+                    transform: scale(1.08);
+                }
+                @include inc.mq(min) {
+                    width: 42%;
+                    margin-bottom: 0;
+                    padding-left: 0;
+                    aspect-ratio: 3 / 4;
+                }
+                @include inc.mq(tab) {
+                    width: 46.23%;
+                }
+                @include inc.mq(tabl) {
+                    width: 48.61%;
+                }
+                @include inc.mq(wide) {
+                    width: 544px;
+                }
+            }
+            &____txt {
+                width: 100%;
+                padding-left: 13.6%;
+                padding-right: 13.6%;
+                @include inc.mq(min) {
+                    width: 52%;
+                    @include inc.sizing(padding-top, tab, 60px, min, 40px);
+                    @include inc.sizing(padding-left, tab, 60px, min, 40px);
+                    @include inc.sizing(padding-right, tab, 60px, min, 40px);
+                    padding-bottom: 0px;
+                    background: inc.$color-wht;
+                }
+                @include inc.mq(tab) {
+                    width: 50.94%;
+                    @include inc.sizing(padding-top, tabl, 62px, tab, 60px);
+                    @include inc.sizing(padding-left, tab, 60px, tabl, 40px);
+                    @include inc.sizing(padding-right, tab, 60px, tabl, 40px);
+                    padding-bottom: 0px;
+                    background: inc.$color-wht;
+                }
+                @include inc.mq(tabl) {
+                    width: 44.82%;
+                    @include inc.sizing(padding-top, wide, 96px, tabl, 62px);
+                    @include inc.sizing(padding-left, wide, 96px, tabl, 40px);
+                    @include inc.sizing(padding-right, wide, 96px, tabl, 40px);
+                    @include inc.sizing(padding-bottom, wide, 140px, tabl, 0px);
+                    background: inc.$color-wht;
+                }
+                h2 {
+                    font-weight: 400;
+                    font-family: "Futo Go B101";
+                    @include inc.sizingRem(font-size, wide, 39px, spl, 18px);
+                    line-height: 1.6;
+                    @include inc.sizing(margin-bottom, wide, 48px, tabl, 24px);
+                }
+                p {
+                    line-height: 3;
+                    @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
+                    @include inc.mq(min) {
+                        @include inc.sizing(line-height, tabl, 35px, min, 26px);
+                    }
+                    @include inc.mq(tabl) {
+                        @include inc.sizing(line-height, wide, 46px, tabl, 35px);
+                    }
+                }
+                p + p {
+                    @include inc.sizingRem(margin-top, wide, 64px, tabl, 24px);
+                    line-height: 1;
+                }
+            }
+        }
+    }
+    &__strength {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 100px;
+        padding-top: 75px;
+        @include inc.mq(min) {
+            @include inc.sizing(margin-top, tab, 160px, min, 112px);
+            @include inc.sizing(padding-top, tab, 60px, min, 32px);
+            @include inc.sizing(max-width, tab, 606px, min, 494px);
+            @include inc.sizing(padding-left, tab, 60px, min, 32px);
+        }
+        @include inc.mq(tab) {
+            @include inc.sizing(margin-top, tabl, 186px, tab, 160px);
+            @include inc.sizing(padding-top, tabl, 93px, tab, 60px);
+            @include inc.sizing(max-width, tabl, 680px, tab, 606px);
+            @include inc.sizing(padding-left, tabl, 45px, tab, 60px);
+        }
+        @include inc.mq(tabl) {
+            @include inc.sizing(margin-top, wide, 190px, tabl, 186px);
+            @include inc.sizing(padding-top, wide, 160px, tabl, 93px);
+            @include inc.sizing(max-width, wide, 1120px, tabl, 680px);
+            @include inc.sizing(padding-left, wide, 64px, tabl, 45px);
+        }
+        &---title {
+            position: absolute;
+            top: 0;
+            @include inc.sizing(left, tabl, 64px, spl, 25px);
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+            font-weight: 400;
+            font-family: "Futo Go B101";
+            line-height: 1;
+            @include inc.sizingRem(font-size, wide, 39px, spl, 22px);
+            letter-spacing: 0.128em;
+            left: 6.6%;
+            @include inc.mq(min) {
+                left: -2.4rem;
+            }
+        }
+        &---list {
+            width: 100%;
+            padding-left: 20%;
+            padding-right: 13.6%;
+            @include inc.mq(min) {
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            @include inc.mq(tabl) {
+            }
+            justify-content: space-between;
+            &____block {
+                width: 100%;
+                @include inc.mq(min) {
+                    @include inc.sizing(width, tab, 138px, min, 112px);
+                    @include inc.sizing(padding-left, tab, 18px, min, 9px);
+                    border-left: 1px solid inc.$color-grn3;
+                    display: flex;
+                    flex-direction: column;
+                }
+                @include inc.mq(tab) {
+                    @include inc.sizing(width, tabl, 183px, tab, 138px);
+                    @include inc.sizing(padding-left, tabl, 21px, tab, 18px);
+                }
+                @include inc.mq(tabl) {
+                    @include inc.sizing(width, wide, 288px, tabl, 183px);
+                    @include inc.sizing(padding-left, wide, 32px, tabl, 21px);
+                }
+                h3 {
+                    font-weight: 500;
+                    //@include inc.sizingRem(font-size, wide, 26px, spl, 18px);
+                    line-height: 1;
+                    @include inc.sizing(margin-bottom, wide, 48px, tabl, 24px);
+                    font-size: 18px;
+                    @include inc.mq(tab) {
+                        @include inc.sizingRem(font-size, tabl, 18px, tab, 16px);
+                    }
+                    @include inc.mq(tabl) {
+                        @include inc.sizingRem(font-size, wide, 26px, tabl, 18px);
+                    }
+                }
+                p {
+                    @include inc.sizing(margin-bottom, wide, 72px, tabl, 24px);
+                    // line-height: 2.2;
+                    // font-size: 14px;
+                    // @include inc.mq(min) {
+                    //     @include inc.sizingRem(font-size, tabl, 12px, min, 10px);
+                    // }
+                    // @include inc.mq(tabl) {
+                    //     @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
+                    // }
+                }
+                figure {
+                    margin-top: auto;
+                    overflow: hidden;
+                    position: relative;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        opacity: 0;
+                    }
+                }
+                & + & {
+                    margin-top: 100px;
+                    @include inc.mq(min) {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    &__product {
+        &---wrapper {
+            width: 100%;
+            margin: 100px auto 0;
+            @include inc.mq(min) {
+                @include inc.sizing(max-width, tab, 606px, min, 494px);
+                @include inc.sizing(margin-top, tab, 149px, min, 132px);
+                padding-top: 75px;
+            }
+            @include inc.mq(tab) {
+                @include inc.sizing(max-width, tabl, 680px, tab, 606px);
+                @include inc.sizing(margin-top, tabl, 153px, tab, 149px);
+                @include inc.sizing(padding-top, tabl, 91px, tab, 75px);
+            }
+            @include inc.mq(tabl) {
+                @include inc.sizing(max-width, wide, 1120px, tabl, 680px);
+                @include inc.sizing(margin-top, wide, 256px, tabl, 153px);
+                @include inc.sizing(padding-top, wide, 160px, tabl, 91px);
+            }
+        }
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        &---title {
+            position: absolute;
+            top: 0;
+            right: 6.6%;
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+            font-weight: 400;
+            font-family: "Futo Go B101";
+            line-height: 1;
+            @include inc.sizingRem(font-size, wide, 39px, spl, 22px);
+            @include inc.mq(min) {
+                top: -75px;
+                @include inc.sizing(right, tab, -32px, min, -28px);
+            }
+            @include inc.mq(tab) {
+                @include inc.sizing(top, tabl, -91px, tab, -75px);
+                @include inc.sizing(right, tabl, -40px, tab, -32px,);
+            }
+            @include inc.mq(tabl) {
+                @include inc.sizing(top, wide, -160px, tabl, -91px);
+                @include inc.sizing(right, wide, -48px, tabl, -40px,);
+            }
+        }
+        p .br_min {
+            display: none;
+            @include inc.mq(min) {
+                display: block;
+            }
+            @include inc.mq(tab) {
+                display: none;
+            }
+        }
+        p + p {
+            @include inc.sizing(margin-top, wide, 64px, spl, 24px);
+        }
+    }
+    &__news {
+        max-width: 1312px;
+        margin: 0 auto;
+        @include inc.sizing(margin-top, wide, 245px, spl, 100px);
+        @include inc.sizing(padding-top, wide, 160px, spl, 75px);
+        padding-left: 20%;
+        padding-right: 6.6%;
+        position: relative;
+        @include inc.mq(min) {
+            padding: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            @include inc.sizing(max-width, tab, 666px, min, 555px);
+        }
+        @include inc.mq(tab) {
+            @include inc.sizing(max-width, tabl, 760px, tab, 666px);
+        }
+        @include inc.mq(tabl) {
+            @include inc.sizing(max-width, wide, 1312px, tabl, 760px);
+        }
+        &---title {
+            position: absolute;
+            top: 0;
+            @include inc.sizing(left, tabl, 64px, spl, 25px);
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+            font-weight: 400;
+            font-family: "Futo Go B101";
+            line-height: 1;
+            left: 6.6%;
+            @include inc.sizingRem(font-size, wide, 39px, spl, 22px);
+            @include inc.mq(min) {
+                @include inc.sizing(left, tab, 0px, min, -12px);
+            }
+            @include inc.mq(tab) {
+                @include inc.sizing(left, tabl, 68px, tab, 0px);
+            }
+            @include inc.mq(tabl) {
+                @include inc.sizing(left, wide, 48px, tabl, 68px);
+            }
+        }
+        &---list {
+            width: 100%;
+            margin-left: 0;
+            @include inc.mq(min) {
+                @include inc.sizing(width, tab, 558px, min, 452px);
+            }
+            @include inc.mq(tab) {
+                @include inc.sizing(width, tabl, 611px, tab, 558px);
+            }
+            @include inc.mq(tabl) {
+                @include inc.sizing(width, wide, 1024px, tabl, 611px);
+            }
+            dt {
+                font-size: 12px;
+                @include inc.mq(min) {
+                    font-size: 10px;
+                }
+                @include inc.mq(tabl) {
+                    @include inc.sizingRem(font-size, wide, 14px, tabl, 10px);
+                }
+            }
+            dd a {
+                font-size: 14px;
+                @include inc.mq(min) {
+                    font-size: 10px;
+                }
+                @include inc.mq(tabl) {
+                    @include inc.sizingRem(font-size, wide, 16px, tabl, 10px);
+                }
+            }
+        }
+        &---more {
+            display: flex;
+            flex-direction:row-reverse;
+            @include inc.sizing(margin-top, tabl, 64px, spl, 52px);
+        }
+    }
+}
+
+
+
+.show-in img {
+    animation-name: show-in;
+    animation-duration: 2.4s;
+    animation-fill-mode: forwards;
+}
+@keyframes show-in {
+    0% {
+        opacity: 0;
+        transform: scale(1.08);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

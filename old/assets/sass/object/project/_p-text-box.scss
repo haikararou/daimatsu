@@ -30,10 +30,7 @@ ul.list--dot {
   }
 }
 
-p + p,
-p + figure,
-figure + p,
-figure + figure {
+p + p {
   @include inc.sizing(margin-top, wide, 32px, spl, 24px);
 }
 .p-text-box {

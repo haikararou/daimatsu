@@ -1734,10 +1734,7 @@ ul.list--dot li + li {
   margin-top: 0.5rem;
 }
 
-p + p,
-p + figure,
-figure + p,
-figure + figure {
+p + p {
   margin-top: clamp(24px, 0.76vw + 20.1px, 32px);
 }
 

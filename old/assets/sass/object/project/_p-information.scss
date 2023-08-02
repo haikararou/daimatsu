@@ -1,0 +1,216 @@
+@charset 'UTF-8';
+@use "../../inc/" as inc;
+/*
+p-information
+-----------------------------------------------------*/
+
+.p-information {
+    &__lead {
+        font-size: 14px;
+        line-height: 2;
+        margin-bottom: 75px;
+        @include inc.sizing(margin-top, wide, 128px, min, 54px);
+        @include inc.mq(min) {
+            @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
+            @include inc.sizingRem(font-size, tabl, 16px, min, 14px);
+        }
+        @include inc.mq(tabl) {
+            @include inc.sizingRem(font-size, wide, 18px, tabl, 16px);
+        }
+    }
+    &__txt {
+        font-size: 14px;
+        line-height: 2;
+        margin-bottom: 75px;
+        @include inc.mq(min) {
+            @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
+            @include inc.sizingRem(font-size, tabl, 16px, min, 14px);
+        }
+        @include inc.mq(tabl) {
+            @include inc.sizingRem(font-size, wide, 18px, tabl, 16px);
+        }
+        &---right {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            div {
+                width: 558px;
+            }
+        }
+    }
+    &__ph01 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 75px;
+        padding-left: 13.6%;
+        padding-right: 25px;
+        figure {
+            width: calc((100% - 16px) / 2);
+            display: block;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: auto;
+                opacity: 0;
+            }
+        }
+        @include inc.mq(min) {
+            gap: 16px;
+            @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
+            @include inc.sizing(padding-left, tab, 130px, min, 90px);
+            padding-right: 16px;
+            figure {
+                width: calc((100% - 32px) / 3);
+            }
+        }
+        @include inc.mq(tab) {
+            gap: 24px;
+            @include inc.sizing(padding-left, tabl, 130px, tab, 130px);
+            padding-right: 24px;
+            figure {
+                width: calc((100% - 48px) / 3);
+            }
+        }
+        @include inc.mq(tabl) {
+            gap: 32px;
+            @include inc.sizing(padding-left, wide, 320px, tabl, 130px);
+            padding-right: 32px;
+            figure {
+                width: calc((100% - 64px) / 3);
+            }
+        }
+        @include inc.mq(wide) {
+            max-width: 1568px;
+            gap: 32px;
+            padding-left: 320px;
+            padding-right: 32px;
+        }
+    }
+    &__ph02 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        gap: 16px;
+        padding-left: 25px;
+        padding-right: 13.6%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 75px;
+        figure {
+            width: 100%;
+            display: block;overflow: hidden;
+            img {
+                width: 100%;
+                height: auto;
+                opacity: 0;
+            }
+        }
+        @include inc.mq(min) {
+            gap: 16px;
+            @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
+            @include inc.sizing(padding-right, tab, 130px, min, 90px);
+            padding-left: 16px;
+            figure {
+                width: calc((100% - 32px) / 3);
+                &:nth-child(2) {
+                    width: calc((((100% - 32px) / 3) * 2) + 16px);
+                }
+            }
+        }
+        @include inc.mq(tab) {
+            gap: 24px;
+            @include inc.sizing(padding-right, tabl, 130px, tab, 130px);
+            padding-left: 24px;
+            figure {
+                width: calc((100% - 48px) / 3);
+                &:nth-child(2) {
+                    width: calc((((100% - 48px) / 3) * 2) + 24px);
+                }
+            }
+        }
+        @include inc.mq(tabl) {
+            gap: 32px;
+            @include inc.sizing(padding-right, wide, 320px, tabl, 130px);
+            padding-left: 32px;
+            figure {
+                width: calc((100% - 64px) / 3);
+                &:nth-child(2) {
+                    width: calc((((100% - 64px) / 3) * 2) + 32px);
+                }
+            }
+        }
+        @include inc.mq(wide) {
+            max-width: 1568px;
+            gap: 32px;
+            padding-left: 32px;
+            padding-right: 320px;
+        }
+    }
+    &__ph03 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+        padding-left: 13.6%;
+        padding-right: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        figure {
+            width: calc((100% - 16px) / 2);
+            display: block;
+            overflow: hidden;
+            &:nth-child(3) {
+                width: 100%;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                opacity: 0;
+            }
+        }
+        @include inc.mq(min) {
+            gap: 16px;
+            @include inc.sizing(padding-left, tab, 130px, min, 90px);
+            padding-right: 16px;
+            figure {
+                width: calc((100% - 32px) / 3);
+                &:nth-child(3) {
+                    width: calc((100% - 32px) / 3);
+                }
+            }
+        }
+        @include inc.mq(tab) {
+            gap: 24px;
+            @include inc.sizing(padding-left, tabl, 130px, tab, 130px);
+            padding-right: 24px;
+            figure {
+                width: calc((100% - 48px) / 3);
+                &:nth-child(3) {
+                    width: calc((100% - 48px) / 3);
+                }
+            }
+        }
+        @include inc.mq(tabl) {
+            gap: 32px;
+            @include inc.sizing(padding-left, wide, 320px, tabl, 130px);
+            padding-right: 32px;
+            figure {
+                width: calc((100% - 64px) / 3);
+                &:nth-child(3) {
+                    width: calc((100% - 64px) / 3);
+                }
+            }
+        }
+        @include inc.mq(wide) {
+            max-width: 1568px;
+            gap: 32px;
+            padding-left: 320px;
+            padding-right: 32px;
+        }
+    }
+}

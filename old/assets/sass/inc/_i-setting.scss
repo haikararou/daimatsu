@@ -1,0 +1,78 @@
+@charset 'UTF-8';
+//@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Questrial&display=swap');
+
+/*
+i-setting
+-----------------------------------------------------*/
+
+//====================================
+//  Viewport
+//====================================
+// Contentの幅
+$content-width: 375px !default;
+// ブレークポイントの設定
+$breakpoints: (
+  sps: 320px,
+  sp: 375px,
+  spl: 520px,
+  min: 620px,
+  tab: 768px,
+  tabl: 960px,
+  lap: 1025px,
+  desk: 1201px,
+  vr: 1280px,
+  vrl: 1380px,
+  wide: 1568px,
+  full: 1700px,
+);
+
+//====================================
+//  Color
+//====================================
+
+// ベースカラー　背景色
+$color-wht: #fff;
+$color-grn: #104327; //本文
+$color-grn2: #186225; //アクセントカラー
+$color-grn3: rgba(16,67,39,.2); //罫線
+$color-grn4: #EFF4F1; //フォームカラー
+$color-grn5: #75897E;
+$color-gry: #707070;
+$color-blk: #171717;
+
+//====================================
+//  リンクカラー
+//====================================
+a, img, a img {
+  border:none;
+  outline:none;
+  text-decoration: none;
+  color: #104327;
+}
+
+//====================================
+//  Font
+//====================================
+body {
+  font-family: 'Noto Sans JP',"游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "MS Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: 400;
+}
+//Zen Kaku Gothic New
+//Regular 400
+//Medium 500
+//Bold 700
+
+//font-family: 'Aboreto', cursive;
+//Regular 400
+//font-family: 'Montserrat', sans-serif;
+//font-family: 'Shippori Mincho', serif;
+
+//font-family: 'Questrial', sans-serif;
+//font-family: 'Noto Sans JP', sans-serif;
+//font-family: "太ゴB101";
+//font-family: "Futo Go B101";
+
+a[href^="tel:"] {
+	pointer-events: none;
+}
