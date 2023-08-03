@@ -39,7 +39,7 @@
 					<li class="p-header__nav-item p-header__nav-item05"><a href="<?php echo home_url('/news'); ?>" class="a-effect<?php if(is_post_type_archive('news') || is_tax('news_cat') || is_singular('news')): ?> a-active<?php endif; ?>">お知らせ</a></li>
 				</ul>
 				<ul class="p-header__nav-list nav-list02">
-					<li class="p-header__nav-item"><a href="<?php echo home_url('/contact'); ?>" class="a-effect"><span>お問い合わせ</span></a></li>
+					<li class="p-header__nav-item"><a href="<?php echo home_url('/contact'); ?>" class="a-effect<?php if(is_page('contact')): ?> a-active<?php endif; ?>"><span>お問い合わせ</span></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -52,8 +52,14 @@
 <body class="l-body index" id="news">
 <?php elseif(is_singular('news')): ?>
 <body class="l-body post" id="news">
+<?php elseif(is_page('information')): ?>
+<body class="l-body" id="information">
+<?php elseif(is_page('about')): ?>
+<body class="l-body" id="about">
 <?php elseif(is_page('contact')): ?>
-<body class="l-body" id="home">
+<body class="l-body" id="contact">
+<?php elseif(is_page('privacy')): ?>
+<body class="l-body" id="privacy">
 <?php else: ?>
 <body class="l-body" id="home">
 <?php endif; ?>

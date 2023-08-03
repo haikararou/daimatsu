@@ -46,5 +46,8 @@
 <script src="<?php bloginfo('template_url') ?>/assets/js/common.js"></script>
 
 <?php wp_footer(); ?>
+<?php if(is_page('contact')): ?>
+<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+<?php endif; ?>
 </body>
 </html>

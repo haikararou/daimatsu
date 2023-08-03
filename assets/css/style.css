@@ -1734,13 +1734,15 @@ ul.list--dot li + li {
   margin-top: 0.5rem;
 }
 
-p + p,
-p + figure,
-figure + p,
-figure + figure {
+.p-text-box p + p,
+.p-text-box p + figure,
+.p-text-box figure + p,
+.p-text-box figure + figure {
   margin-top: clamp(24px, 0.76vw + 20.1px, 32px);
 }
-
+.p-text-box .p-text-box + .p-text-box {
+  margin-top: clamp(48px, 4.58vw + 24.2px, 96px);
+}
 .p-text-box + .p-text-box {
   margin-top: clamp(48px, 4.58vw + 24.2px, 96px);
 }
@@ -1807,7 +1809,7 @@ p-table
 }
 #product.post .p-dl-table div {
   border-bottom: 1px solid rgba(16, 67, 39, 0.2);
-  padding: 1.5rem 0;
+  padding: 1.3rem 0 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1816,26 +1818,37 @@ p-table
 }
 #product.post .p-dl-table div dt {
   font-size: 14px;
-  width: 25%;
+  width: 33%;
   margin: 0 0 0.5rem;
+  line-height: 2;
   padding: 0;
 }
 @media screen and (min-width: 620px) {
   #product.post .p-dl-table div dt {
     font-size: clamp(0.875rem, 0.21vw + 0.79375rem, 1rem);
-    width: 25%;
+    width: 42%;
     margin: 0;
   }
 }
+@media screen and (min-width: 960px) {
+  #product.post .p-dl-table div dt {
+    width: 33%;
+  }
+}
 #product.post .p-dl-table div dd {
-  width: 75%;
+  width: 67%;
   line-height: 1.6;
   font-size: 16px;
 }
 @media screen and (min-width: 620px) {
   #product.post .p-dl-table div dd {
     font-size: clamp(1rem, 0.21vw + 0.91875rem, 1.125rem);
-    width: 75%;
+    width: 58%;
+  }
+}
+@media screen and (min-width: 960px) {
+  #product.post .p-dl-table div dd {
+    width: 67%;
   }
 }
 
@@ -2812,75 +2825,6 @@ p-form
   border: none;
   height: clamp(144px, 4.58vw + 120.2px, 192px);
 }
-.p-form__input---radio {
-  margin-right: clamp(24px, 0.76vw + 20.1px, 32px);
-  padding-left: clamp(0px, 1.53vw - 8px, 16px);
-  height: 100%;
-}
-.p-form__input---radio input[type=radio] {
-  position: absolute;
-  opacity: 0;
-}
-.p-form__input---radio input[type=radio] + .radio-label {
-  position: relative;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-left: clamp(32px, 0.76vw + 28.1px, 40px);
-}
-.p-form__input---radio input[type=radio] + .radio-label:before {
-  content: "";
-  background: #fff;
-  border-radius: 100%;
-  border: 1px solid #bfbfbf;
-  display: inline-block;
-  width: clamp(26px, 0.99vw + 16.5px, 32px);
-  height: clamp(26px, 0.99vw + 16.5px, 32px);
-  top: clamp(-4px, -0.49vw + 3.7px, -1px);
-  margin-right: 1rem;
-  vertical-align: top;
-  cursor: pointer;
-  text-align: center;
-  -webkit-transition: all 250ms ease;
-  transition: all 250ms ease;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translate(0%, -50%);
-          transform: translate(0%, -50%);
-}
-.p-form__input---radio input[type=radio]:checked + .radio-label:before {
-  background-color: #186225;
-  -webkit-box-shadow: inset 0 0 0 6px #fff;
-          box-shadow: inset 0 0 0 6px #fff;
-}
-@media screen and (min-width: 620px) {
-  .p-form__input---radio input[type=radio]:checked + .radio-label:before {
-    -webkit-box-shadow: inset 0 0 0 5px #fff;
-            box-shadow: inset 0 0 0 5px #fff;
-  }
-}
-.p-form__input---radio input[type=radio]:focus + .radio-label:before {
-  outline: none;
-  border-color: #186225;
-}
-.p-form__input---radio input[type=radio]:disabled + .radio-label:before {
-  -webkit-box-shadow: inset 0 0 0 4px #186225;
-          box-shadow: inset 0 0 0 4px #186225;
-  border-color: black;
-  background: black;
-}
-.p-form__input---radio input[type=radio] + .radio-label:empty:before {
-  margin-right: 0;
-}
 .p-form__input---comment {
   text-align: left;
 }
@@ -2923,6 +2867,73 @@ p-form
 }
 .p-form__input---reCAPTCHA a {
   text-decoration: none;
+}
+
+.wpcf7-list-item {
+  margin: 0;
+  margin-right: clamp(24px, 0.76vw + 20.1px, 32px);
+  height: 100%;
+}
+.wpcf7-list-item input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+.wpcf7-list-item input[type=radio]:checked + span:before {
+  background-color: #186225;
+  -webkit-box-shadow: inset 0 0 0 6px #fff;
+          box-shadow: inset 0 0 0 6px #fff;
+}
+@media screen and (min-width: 620px) {
+  .wpcf7-list-item input[type=radio]:checked + span:before {
+    -webkit-box-shadow: inset 0 0 0 5px #fff;
+            box-shadow: inset 0 0 0 5px #fff;
+  }
+}
+.wpcf7-list-item input[type=radio]:focus span:before {
+  outline: none;
+  border-color: #186225;
+}
+.wpcf7-list-item input[type=radio]:disabled span:before {
+  -webkit-box-shadow: inset 0 0 0 4px #186225;
+          box-shadow: inset 0 0 0 4px #186225;
+  border-color: black;
+  background: black;
+}
+.wpcf7-list-item span {
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: clamp(32px, 0.76vw + 28.1px, 40px);
+}
+.wpcf7-list-item span:before {
+  content: "";
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #bfbfbf;
+  display: inline-block;
+  width: clamp(26px, 0.99vw + 16.5px, 32px);
+  height: clamp(26px, 0.99vw + 16.5px, 32px);
+  top: clamp(-4px, -0.49vw + 3.7px, -1px);
+  margin-right: 1rem;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
 }
 
 /*
@@ -4017,12 +4028,21 @@ p-product
   }
 }
 .p-product__annotation {
-  font-size: 16px;
+  font-size: 10px;
   line-height: 2;
   margin-top: 2rem;
 }
 @media screen and (min-width: 620px) {
   .p-product__annotation {
+    font-size: clamp(0.625rem, 0vw + 0.625rem, 0.625rem);
+  }
+}
+.p-product__annotation2 {
+  font-size: 16px;
+  line-height: 2;
+}
+@media screen and (min-width: 620px) {
+  .p-product__annotation2 {
     font-size: clamp(1rem, 0.21vw + 0.91875rem, 1.125rem);
   }
 }

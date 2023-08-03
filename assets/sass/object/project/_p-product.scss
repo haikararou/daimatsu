@@ -295,9 +295,17 @@ p-product
         }
     }
     &__annotation {
-        font-size: 16px;
+        font-size: 10px;
         line-height: 2;
         margin-top: 2rem;
+        @include inc.mq(min) {
+            @include inc.sizingRem(font-size, wide, 10px, min, 10px);
+        }
+    }
+    &__annotation2 {
+        font-size: 16px;
+        line-height: 2;
+        //margin-top: 2rem;
         @include inc.mq(min) {
             @include inc.sizingRem(font-size, wide, 18px, min, 16px);
         }

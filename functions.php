@@ -309,3 +309,34 @@ add_filter('wpcf7_form_tag', 'my_form_tag_filter', 10);
 //   });
 // }
 // add_action( 'lzb/handlebars/object', 'my_custom_lazyblock_handlebars_helper' );
+
+
+
+
+/*-----------------------------------------
+* Contact Form 7でメールアドレスの再入力チェック
+-------------------------------------------*/
+add_filter( 'wpcf7_validate_email', 'wpcf7_validate_email_filter_confrim', 11, 2 );
+add_filter( 'wpcf7_validate_email*', 'wpcf7_validate_email_filter_confrim', 11, 2 );
+function wpcf7_validate_email_filter_confrim( $result, $tag ) {
+  $type = $tag['type'];
+  $name = $tag['name'];
+  if ( 'email' == $type || 'email*' == $type ) {
+    if (preg_match('/(.*)_confirm$/', $name, $matches)){ //確認用メルアド入力フォーム名を ○○○_confirm としています。
+      $target_name = $matches[1];
+        $posted_value = trim( (string) $_POST[$name] ); //前後空白の削除
+        $posted_target_value = trim( (string) $_POST[$target_name] ); //前後空白の削除
+      if ($posted_value != $posted_target_value) {
+        $result->invalidate( $tag,"確認用のメールアドレスが一致していません");
+      }
+    }
+  }
+  return $result;
+}
+
+
+// Contact Form 7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+  return false;
+}

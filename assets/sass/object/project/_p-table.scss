@@ -54,27 +54,34 @@ p-table
   border-top: 1px solid inc.$color-grn3;
   div {
     border-bottom: 1px solid inc.$color-grn3;
-    padding: 1.5rem 0;
+    padding: 1.3rem 0 1.5rem;
     display: flex;
     flex-wrap: wrap;
     dt {
       font-size: 14px;
-      width: 25%;
+      width: 33%;
       margin: 0 0 .5rem;
+      line-height: 2;
       padding: 0;
       @include inc.mq(min) {
         @include inc.sizingRem(font-size, wide, 16px, min, 14px);
-        width: 25%;
+        width: 42%;
         margin: 0;
+      }
+      @include inc.mq(tabl) {
+        width: 33%;
       }
     }
     dd {
-      width: 75%;
+      width: 67%;
       line-height: 1.6;
       font-size: 16px;
       @include inc.mq(min) {
         @include inc.sizingRem(font-size, wide, 18px, min, 16px);
-        width: 75%;
+        width: 58%;
+      }
+      @include inc.mq(tabl) {
+        width: 67%;
       }
     }
   }

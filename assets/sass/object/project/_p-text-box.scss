@@ -30,14 +30,26 @@ ul.list--dot {
   }
 }
 
-p + p,
-p + figure,
-figure + p,
-figure + figure {
-  @include inc.sizing(margin-top, wide, 32px, spl, 24px);
-}
+// p + p,
+// p + figure,
+// figure + p,
+// figure + figure {
+//   @include inc.sizing(margin-top, wide, 32px, spl, 24px);
+// }
 .p-text-box {
+  p + p,
+  p + figure,
+  figure + p,
+  figure + figure {
+    @include inc.sizing(margin-top, wide, 32px, spl, 24px);
+  }
+  .p-text-box {
+    & + .p-text-box {
+      @include inc.sizing(margin-top, wide, 96px, spl, 48px);
+    }
+  }
   & + .p-text-box {
     @include inc.sizing(margin-top, wide, 96px, spl, 48px);
   }
 }
+
