@@ -90,44 +90,17 @@ get_header(); ?>
 		<h2 class="p-home__news---title">お知らせ</h2>
 		<div class="p-home__news---list">
 			<dl class="p-dl-table">
+			<?php $news_posts = get_posts('post_type=news&posts_per_page=5'); if ( !empty($news_posts) ): ?>
+			<?php foreach ( $news_posts as $post ): setup_postdata($post); ?>
 				<div>
-					<dt>2021年4月16日</dt>
-					<dd><a href="post.html" class="underline2">ここに新着タイトルがはいります</a></dd>
+					<dt><?php the_time('Y年m月d日') ?></dt>
+					<dd><a href="<?php the_permalink();?>" class="underline2"><?php the_title(); ?></a></dd>
 				</div>
-				<div>
-					<dt>2021年4月16日</dt>
-					<dd><a href="post.html" class="underline2">ここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいりますここに新着タイトルがはいります</a></dd>
-				</div>
-				<div>
-					<dt>2021年4月16日</dt>
-					<dd><a href="post.html" class="underline2">ここに新着タイトルがはいります</a></dd>
-				</div>
-				<div>
-					<dt>2021年4月16日</dt>
-					<dd><a href="post.html" class="underline2">ここに新着タイトルがはいります</a></dd>
-				</div>
+			<?php endforeach; wp_reset_postdata(); ?>
+			<?php endif; ?>
 			</dl>
 			<p class="p-home__news---more"><a href="<?php echo home_url('/news'); ?>" class="underline">一覧を見る</a></p>
 		</div>
 	</div>
-
-<!--
-	<section class="c-section  p-index__news">
-		<div class="c-section__wrapper">
-			<h2>新着情報</h2>
-			<div class="p-news__index__list">
-				<ul>
-				<?php $news_posts = get_posts('post_type=news&posts_per_page=5'); if ( !empty($news_posts) ): ?>
-				<?php foreach ( $news_posts as $post ): setup_postdata($post); ?>
-					<li><a href="<?php the_permalink();?>"><dl><dt><?php the_time('Y年m月d日') ?><span><?php $terms = get_the_terms($post->ID,'news_cat'); if($terms){echo $terms[0]->name;} ?></span</dt><dd><?php the_title(); ?></dd></dl></a></li>
-				<?php endforeach; wp_reset_postdata(); ?>
-				<?php endif; ?>
-				</ul>
-			</div>
-			<div class="p-index__more"><a href="<?php echo home_url('/news'); ?>" class="c-arw">一覧を見る</a></div>
-		</div>
-	</section>
--->
-
 
 <?php get_footer(); ?>

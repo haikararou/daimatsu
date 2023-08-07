@@ -257,6 +257,7 @@ p-form
   margin: 0;
   @include inc.sizing(margin-right, wide, 32px, spl, 24px);
   //@include inc.sizing(padding-left, wide, 16px, spl, 0px);
+  margin-top: 10px;
   height: 100%;
   input[type="radio"] {
     position: absolute;
@@ -318,4 +319,8 @@ p-form
       transform: translate(0%, -50%);
     }
   }
+}
+
+.wpcf7-form-control-wrap {
+  width: 100%;
 }

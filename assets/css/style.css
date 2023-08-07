@@ -2919,6 +2919,7 @@ p-form
 .wpcf7-list-item {
   margin: 0;
   margin-right: clamp(24px, 0.76vw + 20.1px, 32px);
+  margin-top: 10px;
   height: 100%;
 }
 .wpcf7-list-item input[type=radio] {
@@ -2981,6 +2982,10 @@ p-form
   top: 50%;
   -webkit-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
+}
+
+.wpcf7-form-control-wrap {
+  width: 100%;
 }
 
 /*
