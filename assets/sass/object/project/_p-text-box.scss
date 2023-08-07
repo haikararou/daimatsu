@@ -53,3 +53,53 @@ ul.list--dot {
   }
 }
 
+.wp-block-lazyblock-content-block + .wp-block-lazyblock-content-block {
+  @include inc.sizing(margin-top, wide, 96px, spl, 48px);
+}
+* + .wp-block-lazyblock-content-block {
+  @include inc.sizing(margin-top, wide, 96px, spl, 48px);
+}
+figure + .wp-block-lazyblock-content-block,
+.wp-block-lazyblock-content-block + figure {
+  @include inc.sizing(margin-top, wide, 32px, spl, 24px);
+}
+
+.wp-block-lazyblock-content-block h2 {
+  @include inc.sizingRem(font-size, wide, 26px, spl, 18px);
+  @include inc.sizing(line-height, wide, 48px, spl, 32px);
+  @include inc.sizing(margin-bottom, wide, 24px, spl, 24px);
+  font-weight: 500;
+}
+
+.wp-block-lazyblock-content-block h3 {
+  @include inc.sizingRem(font-size, wide, 22px, spl, 16px);
+  @include inc.sizing(line-height, wide, 32px, spl, 24px);
+  @include inc.sizing(margin-bottom, wide, 18px, spl, 18px);
+  font-weight: 500;
+}
+
+* + .wp-block-lazyblock-h2 {
+  @include inc.sizing(margin-top, wide, 64px, spl, 32px);
+}
+* + .wp-block-lazyblock-h3 {
+  @include inc.sizing(margin-top, wide, 64px, spl, 32px);
+}
+
+
+.wp-block-lazyblock-products-lead {}
+
+// .wp-block-lazyblock-products-info {
+//   @include inc.sizing(margin-top, wide, 32px, spl, 24px);
+// }
+
+.wp-block-lazyblock-products-component {
+  @include inc.sizing(margin-top, wide, 96px, spl, 48px);
+}
+
+.wp-block-lazyblock-products-allergy {
+  @include inc.sizing(margin-top, wide, 96px, spl, 48px);
+}
+
+.wp-block-lazyblock-products-code {
+  @include inc.sizing(margin-top, wide, 96px, spl, 48px);
+}

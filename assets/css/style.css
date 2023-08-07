@@ -1747,6 +1747,53 @@ ul.list--dot li + li {
   margin-top: clamp(48px, 4.58vw + 24.2px, 96px);
 }
 
+.wp-block-lazyblock-content-block + .wp-block-lazyblock-content-block {
+  margin-top: clamp(48px, 4.58vw + 24.2px, 96px);
+}
+
+* + .wp-block-lazyblock-content-block {
+  margin-top: clamp(48px, 4.58vw + 24.2px, 96px);
+}
+
+figure + .wp-block-lazyblock-content-block,
+.wp-block-lazyblock-content-block + figure {
+  margin-top: clamp(24px, 0.76vw + 20.1px, 32px);
+}
+
+.wp-block-lazyblock-content-block h2 {
+  font-size: clamp(1.125rem, 0.76vw + 0.88125rem, 1.625rem);
+  line-height: clamp(32px, 1.53vw + 24px, 48px);
+  margin-bottom: clamp(24px, 0vw + 24px, 24px);
+  font-weight: 500;
+}
+
+.wp-block-lazyblock-content-block h3 {
+  font-size: clamp(1rem, 0.57vw + 0.81875rem, 1.375rem);
+  line-height: clamp(24px, 0.76vw + 20.1px, 32px);
+  margin-bottom: clamp(18px, 0vw + 18px, 18px);
+  font-weight: 500;
+}
+
+* + .wp-block-lazyblock-h2 {
+  margin-top: clamp(32px, 3.05vw + 16.2px, 64px);
+}
+
+* + .wp-block-lazyblock-h3 {
+  margin-top: clamp(32px, 3.05vw + 16.2px, 64px);
+}
+
+.wp-block-lazyblock-products-component {
+  margin-top: clamp(48px, 4.58vw + 24.2px, 96px);
+}
+
+.wp-block-lazyblock-products-allergy {
+  margin-top: clamp(48px, 4.58vw + 24.2px, 96px);
+}
+
+.wp-block-lazyblock-products-code {
+  margin-top: clamp(48px, 4.58vw + 24.2px, 96px);
+}
+
 /*
 p-table
 -----------------------------------------------------*/

@@ -112,16 +112,25 @@ global $wp_query;
 if(is_singular('news')) {
 $page_template = dirname( __FILE__ ) . "/news/single.php";
 }
+else if(is_singular('products')) {
+$page_template = dirname( __FILE__ ) . "/products/single.php";
+}
 
 //archive
 else if(is_post_type_archive('news')){
 $page_template = dirname( __FILE__ ) . "/news/archive.php";
 }
+else if(is_post_type_archive('products')){
+$page_template = dirname( __FILE__ ) . "/products/archive.php";
+}
 
 //taxonomy
-// else if(is_tax('news_cat')){
-// $page_template = dirname( __FILE__ ) . "/news/taxonomy.php";
-// }
+else if(is_tax('products_cat','commercial')){
+$page_template = dirname( __FILE__ ) . "/products/taxonomy-products_cat-commercial.php";
+}
+else if(is_tax('products_cat','household')){
+$page_template = dirname( __FILE__ ) . "/products/taxonomy-products_cat-household.php";
+}
 
 return $page_template;
 }
@@ -174,7 +183,7 @@ $img_url = wp_get_attachment_image_src($img_id, 'thumbnail', true);
 $first_img = $img_url[0];
 } else {
 // 記事内で画像がなかった時のための画像を指定（ディレクトリ先や画像名称は任意）
-$first_img = esc_url(get_template_directory_uri()) . "/assets/img/noImage.png";
+$first_img = esc_url(get_template_directory_uri()) . "/assets/img/no_image.png";
 }
 }
 return $first_img;
@@ -339,4 +348,19 @@ function wpcf7_validate_email_filter_confrim( $result, $tag ) {
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
   return false;
+}
+
+
+
+// Contact Form 7 お問い合わせ完了ページに遷移
+add_action('wp_footer', 'redirect_to_thanks_page');
+function redirect_to_thanks_page() {
+  $homeUrl = home_url();
+  echo <<< EOD
+    <script>
+      document.addEventListener( 'wpcf7mailsent', function( event ) {
+        location = '{$homeUrl}/contact/thanks/';
+      }, false );
+    </script>
+  EOD;
 }

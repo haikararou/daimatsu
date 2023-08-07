@@ -1,77 +1,47 @@
 <?php get_header(); ?>
 
-<nav class="l-breadcrumbs">
-	<div class="c-wrapper">
-		<ul>
-			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
-		</ul>
+<main class="l-main">
+	<section class="l-wrapper">
+	<div class="p-breadcrumb">
+	<ul class="p-breadcrumb__container">
+	<li class="p-breadcrumb__item"><a href="<?php echo home_url('/'); ?>">Home</a></li>
+	<li class="p-breadcrumb__item">商品紹介</li>
+	</ul>
 	</div>
-</nav>
-
-<div class="c-herohead">
-	<div class="c-wrapper">
-		<h1>製品紹介</h1>
+	<div class="l-hero">
+	<h1 class="c-text--h1">商品紹介</h1>
 	</div>
-</div>
-
-<main class="l-main" role="main">
-	<div class="l-main__wrapper">
-		<div class="l-main__inner">
-
-			<nav class="l-main__nav c-localnav">
-				<?php
-				$tax_name = 'products_cat'; //タクソノミーを指定
-				$terms = get_terms( $tax_name, array('parent' => 0),'hide_empty=0');
-				?>
-				<ul>
-				<?php foreach($terms as $term): ?>
-				<?php if($term->parent == 0): ?>
-				<li><a href="#<?php echo $term->slug ?>"><?php echo $term->name ?></a></li>
-				<?php endif; ?>
-				<?php endforeach; ?>
-				</ul>
-			</nav>
-
-			<div class="l-main__cont">
-			<?php // タームの親・子の一覧にタームに紐づく投稿一覧を表示する方法
-			$categories = get_terms('products_cat','parent=0');
-			foreach ( $categories as $cat ) {
-				echo '<section id="'.$cat->slug.'" class="c-section">';
-				echo '<h2>'.esc_html($cat->name).'</h2>'; // 親タームタイトル
-			$children = get_terms('products_cat','hierarchical=0&parent='.$cat->term_id);
-			if($children){ // 子タームの有無
-				foreach ( $children as $child ) {
-				echo '<div class="c-thumbnail" id="'.$child->slug.'">';
-				echo '<h3>' . esc_html($child->name) . '</h3>'; // 子タームタイトル
-				$catslug = $child->slug;
-				$args = array(
-					'post_type' => 'products',
-					'products_cat' => $catslug ,
-					'posts_per_page' => -1,
-				);
-				$myquery = new WP_Query( $args );
-			?>
-			<?php if ( $myquery->have_posts()): ?>
-				<ul>
-			<?php while($myquery->have_posts()): $myquery->the_post(); ?>
-				<li>
-					<?php if(get_field('link')): ?><a target="_blank" rel="nofollow" href="<?php the_field('link'); ?>"><?php else: ?><a rel="nofollow" href="<?php the_permalink();?>"><?php endif; ?>
-						<figure><img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>"></figure>
-						<div class="c-thumbnail__txt"><span><?php the_title(); ?></span></div>
-					</a>
-				</li>
-			<?php endwhile; ?>
-			</ul>
+	</section>
+	<section class="lead">
+		<section class="l-wrapper4">
+			<div class="p-text-box">
+				<div class="p-product__top">
+					<div class="p-product__top---txt">
+						<h2>業務用商品</h2>
+						<p>季節の惣菜から通年の定番商品まで<br>
+						幅広い品揃えをご覧ください。<br>
+						商品開発など、<br>
+						お気軽にお問い合わせください。</p>
+						<p><a href="<?php echo home_url('/products/commercial'); ?>" class="underline">一覧を見る</a></p>
+					</div>
+					<div class="p-product__top---ph"><figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/product/ph001.jpg" alt=""></figure></div>
+				</div>
+				<div class="p-product__top even">
+					<div class="p-product__top---txt">
+						<h2>ご家庭用商品</h2>
+						<p>食卓にもう一品！<br>
+						あったかごはんにぴったり！<br>
+						毎日の忙しい暮らしの中で、<br>
+						「手間をかけずにおいしく食べたい」を<br>
+						実現。<br>
+						ご購入総額5,250円（税込）以上で<br>
+						送料サービス。</p>
+						<p><a href="<?php echo home_url('/products/household'); ?>" class="underline">一覧を見る</a></p>
+					</div>
+					<div class="p-product__top---ph"><figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/product/ph002.jpg" alt=""></figure></div>
+				</div>
 			</div>
-			<?php endif; ?>
-			<?php wp_reset_postdata(); ?>
-			<?php } //子タームに紐づく記事一覧の表示終了 ?>
-			<?php } // 子ターム終了 ?>
-			</section>
-			<?php } // 親ターム終了 ?>
-		</div>
-
-	</div>
-</div>
+		</section>
+	</section>
 
 <?php get_footer(); ?>

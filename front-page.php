@@ -66,7 +66,7 @@ get_header(); ?>
 						幅広い品揃えをご覧ください。<br>
 						商品開発など、<br>
 						お気軽にお問い合わせください。</p>
-						<p><a href="<?php echo home_url(); ?>/product/category_c" class="underline">一覧を見る</a></p>
+						<p><a href="<?php echo home_url('/products/commercial'); ?>" class="underline">一覧を見る</a></p>
 					</div>
 					<figure class="p-product__top---ph" id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/top/ph006.jpg" alt=""></figure>
 				</div>
@@ -78,7 +78,7 @@ get_header(); ?>
 						毎日の忙しい暮らしの中で、<br>
 						「手間をかけずにおいしく食べたい」<br class="br_min">を実現。<br>
 						ご購入総額5,250円（税込）<br class="br_min">以上で送料サービス。</p>
-						<p><a href="<?php echo home_url(); ?>/product/category_c" class="underline">一覧を見る</a></p>
+						<p><a href="<?php echo home_url('/products/household'); ?>" class="underline">一覧を見る</a></p>
 					</div>
 					<figure class="p-product__top---ph" id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/top/ph007.jpg" alt=""></figure>
 				</div>

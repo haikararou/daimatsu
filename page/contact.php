@@ -3,7 +3,7 @@
 Template Name: お問い合わせ
  */
 get_header(); ?>
-<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+
 <main class="l-main">
   <section class="l-wrapper">
     <div class="p-breadcrumb">

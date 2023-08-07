@@ -19,7 +19,7 @@
 			<div class="p-footer__inner-sitemap">
 				<div class="p-footer__inner-list">
 					<ul class="p-footer__list">
-						<li class="p-footer__list-item div1"><a href="<?php echo home_url('/product'); ?>" class="a-effect<?php if(is_post_type_archive('product') || is_tax('product_cat') || is_singular('product')): ?> a-active<?php endif; ?>">商品紹介</a></li>
+						<li class="p-footer__list-item div1"><a href="<?php echo home_url('/products'); ?>" class="a-effect<?php if(is_post_type_archive('products') || is_tax('products_cat') || is_singular('products')): ?> a-active<?php endif; ?>">商品紹介</a></li>
 						<li class="p-footer__list-item div2"><a href="<?php echo home_url('/information'); ?>" class="a-effect<?php if(is_page('information')): ?> a-active<?php endif; ?>">工場案内</a></li>
 						<li class="p-footer__list-item div3"><a href="<?php echo home_url('/about'); ?>" class="a-effect<?php if(is_page('about')): ?> a-active<?php endif; ?>">会社概要</a></li>
 						<li class="p-footer__list-item div4"><a href="<?php echo home_url('/contact'); ?>" class="a-effect<?php if(is_page('contact')): ?> a-active<?php endif; ?>">お問い合わせ</a></li>
