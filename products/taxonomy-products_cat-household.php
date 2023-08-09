@@ -12,18 +12,23 @@
 					</ul>
 				</div>
 				<h1 class="c-text--h1">ご家庭向け商品一覧</h1>
-				<p>
-				季節の惣菜から通年の定番商品まで<br>
-				幅広い品揃えをご覧ください。<br>
-				商品開発など、お気軽にお問い合わせください。
-				</p>
+				<?php if ( have_posts() ): ?>
+					<p>
+					季節の惣菜から通年の定番商品まで<br>
+					幅広い品揃えをご覧ください。<br>
+					商品開発など、お気軽にお問い合わせください。
+					</p>
+				<?php else : ?>
+					<p>現在準備中です。</p>
+				<?php endif; ?>
 			</div>
-			<div class="l-hero__product---ph"><figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/product/household/main.jpg" alt=""></figure></div>
+			<div class="l-hero__product---ph"><figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/products/household.jpg" alt=""></figure></div>
 		</div>
 	</section>
 	<section class="l-wrapper2">
 		<div class="p-text-box">
 			<ul class="p-product__list">
+
 			<?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
 				<li>
 					<a href="<?php the_permalink();?>" class="expansion-img underline3">
@@ -38,8 +43,8 @@
 			<div class="p-product__bnr">
 				<a href="" target="_blank">
 					<picture>
-						<source media="(min-width: 620px)" srcset="<?php bloginfo('template_url') ?>/assets/img/dummy/product/household/bnr.jpg">
-						<img src="<?php bloginfo('template_url') ?>/assets/img/dummy/product/household/bnr_sp.jpg" alt="">
+						<source media="(min-width: 620px)" srcset="<?php bloginfo('template_url') ?>/assets/img/products/bnr.jpg">
+						<img src="<?php bloginfo('template_url') ?>/assets/img/products/bnr_sp.jpg" alt="">
 					</picture>
 				</a>
 			</div>

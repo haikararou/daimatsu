@@ -136,21 +136,24 @@ add_filter('term_link', 'my_custom_post_type_permalinks_set',11,3);
 /*-----------------------------------------------------------------------------------
 カスタム投稿のアーカイブページの記事数を設定する。
 -----------------------------------------------------------------------------------*/
-// add_action('pre_get_posts', 'my_pre_get_posts');
-// function my_pre_get_posts($query) {
-// 	if(!is_admin() && $query->is_main_query()) {
-// 		if (is_post_type_archive('works') || is_tax('works_cat') || is_tax('works_tag')) {
-// 			$query->set('posts_per_page', -1);
-// 		}
-// 		if (is_post_type_archive('member')) {
-// 			$query->set('posts_per_page', -1);
-// 		}
-// 		if (is_tax()) {
-// 			$query->set('orderby', 'menu_order');
-// 			$query->set('order', 'asc');
-// 		}
-// 	}
-// }
+add_action('pre_get_posts', 'my_pre_get_posts');
+function my_pre_get_posts($query) {
+	if(!is_admin() && $query->is_main_query()) {
+		if (is_tax('products_cat','commercial')) {
+			$query->set('posts_per_page', 12);
+		}
+		if (is_tax('products_cat','household')) {
+			$query->set('posts_per_page', 100);
+		}
+		// if (is_post_type_archive('member')) {
+		// 	$query->set('posts_per_page', -1);
+		// }
+		if (is_tax()) {
+			$query->set('orderby', 'menu_order');
+			$query->set('order', 'asc');
+		}
+	}
+}
 
 
 /*-----------------------------------------------------------------------------------

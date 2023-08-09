@@ -69,7 +69,6 @@ p-product
                 width: 58%;
                 margin: 0;
                 overflow: hidden;
-                cursor: pointer;
                 img {
                     height: auto;
                     transition: transform .6s ease;
@@ -330,7 +329,7 @@ p-product
     transition: transform .6s ease; /* ゆっくり変化させる */
 }
 .expansion-img:hover figure img {
-    transform: scale(1.2); /* 拡大 */
+    transform: scale(1.08); /* 拡大 */
 }
 
 #home .p-product {

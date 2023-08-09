@@ -24,12 +24,12 @@ get_header(); ?>
     </div>
   </section>
   <section class="p-information__ph01">
-    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img01-01.jpg" alt=""></figure>
-    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img01-02.jpg" alt=""></figure>
-    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img01-03.jpg" alt=""></figure>
-    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img01-04.jpg" alt=""></figure>
-    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img01-05.jpg" alt=""></figure>
-    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img01-06.jpg" alt=""></figure>
+    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/information/img01-01.jpg" alt=""></figure>
+    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/information/img01-02.jpg" alt=""></figure>
+    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/information/img01-03.jpg" alt=""></figure>
+    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/information/img01-04.jpg" alt=""></figure>
+    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/information/img01-05.jpg" alt=""></figure>
+    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/information/img01-06.jpg" alt=""></figure>
   </section>
 
   <section class="l-wrapper4">
@@ -42,11 +42,11 @@ get_header(); ?>
   <section class="p-information__ph02">
     <figure id="ViewIn">
       <picture>
-        <source media="(min-width: 620px)" srcset="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img02-01.jpg">
-        <img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img02-01sp.jpg" alt="">
+        <source media="(min-width: 620px)" srcset="<?php bloginfo('template_url') ?>/assets/img/information/img02-01.jpg">
+        <img src="<?php bloginfo('template_url') ?>/assets/img/information/img02-01sp.jpg" alt="">
       </picture>
     </figure>
-    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img02-02.jpg" alt=""></figure>
+    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/information/img02-02.jpg" alt=""></figure>
   </section>
 
   <section class="l-wrapper4">
@@ -57,12 +57,12 @@ get_header(); ?>
     </div>
   </section>
   <section class="p-information__ph03">
-    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img03-01.jpg" alt=""></figure>
-    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img03-02.jpg" alt=""></figure>
+    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/information/img03-01.jpg" alt=""></figure>
+    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/information/img03-02.jpg" alt=""></figure>
     <figure id="ViewIn">
       <picture>
-        <source media="(min-width: 620px)" srcset="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img03-03.jpg">
-        <img src="<?php bloginfo('template_url') ?>/assets/img/dummy/information/img03-03sp.jpg" alt="">
+        <source media="(min-width: 620px)" srcset="<?php bloginfo('template_url') ?>/assets/img/information/img03-03.jpg">
+        <img src="<?php bloginfo('template_url') ?>/assets/img/information/img03-03sp.jpg" alt="">
       </picture>
     </figure>
   </section>

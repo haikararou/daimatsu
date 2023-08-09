@@ -62,7 +62,7 @@
 <body class="l-body" id="information">
 <?php elseif(is_page('about')): ?>
 <body class="l-body" id="about">
-<?php elseif(is_page('contact')): ?>
+<?php elseif(is_page('contact') || is_page('thanks')): ?>
 <body class="l-body" id="contact">
 <?php elseif(is_page('privacy')): ?>
 <body class="l-body" id="privacy">

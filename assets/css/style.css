@@ -3212,7 +3212,6 @@ p-product
     width: 58%;
     margin: 0;
     overflow: hidden;
-    cursor: pointer;
   }
   .p-product__top---ph img {
     height: auto;
@@ -4121,8 +4120,8 @@ p-product
 }
 
 .expansion-img:hover figure img {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2); /* 拡大 */
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08); /* 拡大 */
 }
 
 #home .p-product__top {

@@ -20,7 +20,7 @@ get_header(); ?>
     <section class="l-wrapper4">
       <div class="p-about--philosophy">
         <figure class="p-about--philosophy---ph" id="ViewIn">
-          <img src="<?php bloginfo('template_url') ?>/assets/img/dummy/about/ph001.jpg" alt="" width="544" height="auto">
+          <img src="<?php bloginfo('template_url') ?>/assets/img/about/ph001.jpg" alt="" width="544" height="auto">
         </figure>
         <div class="p-about--philosophy---p">
           <h2 class="c-text--h2">理念</h2>
