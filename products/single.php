@@ -6,6 +6,11 @@
 			<ul class="p-breadcrumb__container">
 				<li class="p-breadcrumb__item"><a href="<?php echo home_url('/'); ?>">Home</a></li>
 				<li class="p-breadcrumb__item"><a href="<?php echo home_url('/products'); ?>">商品紹介</a></li>
+				<?php if ( is_object_in_term($post->ID, 'products_cat','commercial')) : ?>
+				<li class="p-breadcrumb__item"><a href="<?php echo home_url('/products/category/commercial/'); ?>">業務用商品一覧</a></li>
+				<?php else: ?>
+				<li class="p-breadcrumb__item"><a href="<?php echo home_url('/products/category/household/'); ?>">ご家庭用商品</a></li>
+				<?php endif; ?>
 				<li class="p-breadcrumb__item"><?php the_title(); ?></li>
 			</ul>
 		</div>

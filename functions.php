@@ -220,7 +220,7 @@ remove_filter('term_description','wpautop');
 * 管理画面にカテゴリーを表示
 -------------------------------------------*/
 function add_custom_column( $defaults ) {
-$defaults['news_cat'] = 'カテゴリ';
+$defaults['products_cat'] = 'カテゴリ';
 return $defaults;
 }
 add_filter('manage_news_posts_columns', 'add_custom_column');
@@ -234,7 +234,7 @@ $news_cat_links[] = $term->name;
 echo join( ", ", $news_cat_links );
 }
 }
-add_action('manage_news_posts_custom_column', 'add_custom_column_id', 10, 2);
+add_action('manage_news_posts_columns', 'add_custom_column', 10, 2);
 
 
 

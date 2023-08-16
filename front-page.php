@@ -18,7 +18,7 @@ get_header(); ?>
 	</section>
 	<section class="p-home__lead">
 		<div class="p-home__lead---flx">
-			<figure class="p-home__lead---flx____ph" id="ViewIn"><picture><source media="(min-width: 619px)" srcset="<?php bloginfo('template_url') ?>/assets/img/top/ph002.jpg"><img src="<?php bloginfo('template_url') ?>/assets/img/top/ph008.jpg" width="544" height="724"></picture></figure>
+			<figure class="p-home__lead---flx____ph" id="ViewIn"><picture><source media="(min-width: 619px)" srcset="<?php bloginfo('template_url') ?>/assets/img/top/ph008.jpg"><img src="<?php bloginfo('template_url') ?>/assets/img/top/ph002.jpg" width="544" height="724"></picture></figure>
 			<div class="p-home__lead---flx____txt">
 				<h2>こころを込めて<br>食卓へ</h2>
 				<p>豊かな自然が息づく信州。<br>

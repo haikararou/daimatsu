@@ -47,6 +47,7 @@ l-hero
 
 #about .l-hero,
 #contact .l-hero,
-#privacy .l-hero {
+#privacy .l-hero,
+#notfound .l-hero {
     @include inc.sizing(margin-bottom, wide, 128px, spl, 48px);//7 会社概要 8 お問い合わせ 9 プライバシーポリシー
 }

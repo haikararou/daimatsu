@@ -66,6 +66,8 @@
 <body class="l-body" id="contact">
 <?php elseif(is_page('privacy')): ?>
 <body class="l-body" id="privacy">
+<?php elseif(is_404()): ?>
+<body class="l-body" id="notfound">
 <?php else: ?>
 <body class="l-body" id="home">
 <?php endif; ?>
