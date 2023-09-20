@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+@use "../../inc/" as inc;
+/*
+p-contact
+-----------------------------------------------------*/
+.p-contact {
+  &__tel {
+    @include inc.sizing(width, wide, 639px, sp, 325px);
+    @include inc.sizing(height, wide, 192px, sp, 115px);
+  }
+}

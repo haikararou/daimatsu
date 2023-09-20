@@ -27,7 +27,8 @@ html {
   }
 }
 
-.l-wrapper2 {//商品紹介 - 商品カテゴリ / 商品詳細
+.l-wrapper2 {
+  //商品のご案内 - 商品カテゴリ / 商品詳細
   max-width: 1120px;
   width: 100%;
   margin: 0 auto;
@@ -118,8 +119,6 @@ html {
 #product .lead .l-wrapper3 {
   padding: 0;
   @include inc.mq(min) {
-    width:100%;
+    width: 100%;
   }
 }
-
-

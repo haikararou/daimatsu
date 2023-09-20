@@ -4,442 +4,458 @@
 p-product
 -----------------------------------------------------*/
 .p-product {
-    &__top {
-        position:relative;
-        @include inc.mq(min) {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            flex-direction:row-reverse;
-        }
-        // a{
-        //     position:absolute;
-        //     top:0;
-        //     left:0;
-        //     width:100%;
-        //     height:100%;
-        //     z-index: 1;
-        // }
-        &---txt {
-            margin-top: -0.5rem;
-            width: 100%;
-            padding: 0 13.6%;
-            @include inc.mq(min) {
-                width: 32.2%;
-                padding: 0;
-                //display:flex; flex-direction:column; justify-content:center;
-            }
-            h2 {
-                font-size: 18px;
-                margin-bottom: 24px;
-                @include inc.mq(min) {
-                    @include inc.sizingRem(font-size, tab, 20px, min, 18px);
-                    @include inc.sizing(margin-bottom, tabl, 64px, min, 24px);
-                }
-                @include inc.mq(tab) {
-                    @include inc.sizingRem(font-size, tabl, 24px, tab, 20px);
-                }
-                @include inc.mq(tabl) {
-                    @include inc.sizingRem(font-size, wide, 32px, tabl, 24px);
-                }
-            }
-            p {
-                font-size: 14px;
-                @include inc.mq(min) {
-                    @include inc.sizingRem(font-size, wide, 16px, min, 14px);
-                }
-            }
-            p + p {
-                margin-top: 24px;
-                @include inc.mq(min) {
-                    @include inc.sizing(margin-top, wide, 64px, min, 24px);
-                }
-            }
-        }
-        &---ph {
-            width: 100%;
-            padding-left: 13.6%;
-            margin-top: 2rem;
-            figure {
-                aspect-ratio: 4 / 3;
-                overflow: hidden;
-            }
-            @include inc.mq(min) {
-                padding: 0;
-                width: 58%;
-                margin: 0;
-                overflow: hidden;
-                img {
-                    height: auto;
-                    transition: transform .6s ease;
-                    opacity: 0;
-                }
-            }
-        }
-        &:nth-child(2) {
-            margin-top: 100px;
-            //@include inc.sizing(margin-top, wide, 280px, tabl, 100px);
-            .p-product__top---txt {
-                text-align: left;
-            }
-            .p-product__top---ph {
-                width: 100%;
-                padding-left: 0;
-                padding-right: 13.6%;
-            }
-            @include inc.mq(min) {
-                @include inc.sizing(margin-top, tab, 132px, min, 100px);
-                flex-direction:row;
-                .p-product__top---txt {
-                    text-align: right;
-                    // p {
-                    //     margin-left: -64px;
-                    // }
-                }
-                .p-product__top---ph {
-                    width: 58%;
-                    padding-right: 0rem;
-                }
-            }
-            @include inc.mq(tab) {
-                @include inc.sizing(margin-top, tabl, 160px, tab, 132px);
-            }
-            @include inc.mq(tabl) {
-                @include inc.sizing(margin-top, wide, 280px, tabl, 160px);
-            }
-        }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 66rem;
+    width: 100%;
+    margin: 0 auto;
+    gap: 0 4.61%;
+    @include inc.mq(min) {
+      gap: 0 9.09%;
     }
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 66rem;
+    padding: 0;
+    li {
+      list-style-type: none;
+      margin: 0;
+      @include inc.sizing(margin-top, wide, 128px, tabl, 52px);
+      padding: 0;
+      width: 47.69%;
+      @include inc.mq(min) {
+        width: 27.27%;
+      }
+      h2 {
+        //display: inline-block;
+        display: inline;
+        //@include inc.sizing(margin-top, wide, 42px, tabl, 28px);
+        @include inc.sizingRem(font-size, wide, 26px, spl, 14px);
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  &__bnr {
+    max-width: calc(800px + 4rem);
+    @include inc.sizing(padding-top, wide, 112px, tabl, 64px);
+    @include inc.sizing(padding-left, wide, 32px, spl, 14px);
+    @include inc.sizing(padding-right, wide, 32px, spl, 14px);
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__allergy {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    @include inc.mq(min) {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    border-top: 1px solid inc.$color-grn3;
+    border-left: 1px solid inc.$color-grn3;
+    div {
+      border-right: 1px solid inc.$color-grn3;
+      border-bottom: 1px solid inc.$color-grn3;
+      text-align: center;
+      color: inc.$color-grn3;
+      padding: 0.6rem 0.2rem;
+      @include inc.mq(min) {
+        padding: 0.1rem 0.3rem;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include inc.sizingRem(font-size, wide, 14px, spl, 12px);
+    }
+    .div1 {
+      grid-area: 1 / 1 / 2 / 4;
+    }
+    .div2 {
+      grid-area: 1 / 4 / 2 / 5;
+    }
+    .div3 {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    .div4 {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+    .div5 {
+      grid-area: 2 / 3 / 3 / 4;
+    }
+    .div6 {
+      grid-area: 2 / 4 / 3 / 5;
+    }
+    .div7 {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+    .div8 {
+      grid-area: 3 / 2 / 4 / 3;
+    }
+    .div9 {
+      grid-area: 3 / 3 / 4 / 4;
+    }
+    .div10 {
+      grid-area: 3 / 4 / 4 / 5;
+    }
+    .div11 {
+      grid-area: 4 / 1 / 5 / 2;
+    }
+    .div12 {
+      grid-area: 4 / 2 / 5 / 3;
+    }
+    .div13 {
+      grid-area: 4 / 3 / 5 / 4;
+    }
+    .div14 {
+      grid-area: 4 / 4 / 5 / 5;
+    }
+    .div15 {
+      grid-area: 5 / 1 / 6 / 2;
+    }
+    .div16 {
+      grid-area: 5 / 2 / 6 / 3;
+    }
+    .div17 {
+      grid-area: 5 / 3 / 6 / 4;
+    }
+    .div18 {
+      grid-area: 5 / 4 / 6 / 5;
+    }
+    .div19 {
+      grid-area: 6 / 1 / 7 / 2;
+    }
+    .div20 {
+      grid-area: 6 / 2 / 7 / 3;
+    }
+    .div21 {
+      grid-area: 6 / 3 / 7 / 4;
+    }
+    .div22 {
+      grid-area: 6 / 4 / 7 / 5;
+    }
+    .div23 {
+      grid-area: 7 / 1 / 8 / 2;
+    }
+    .div24 {
+      grid-area: 7 / 2 / 8 / 3;
+    }
+    .div25 {
+      grid-area: 7 / 3 / 8 / 4;
+    }
+    .div26 {
+      grid-area: 7 / 4 / 8 / 5;
+    }
+    .div27 {
+      grid-area: 8 / 1 / 9 / 2;
+    }
+    .div28 {
+      grid-area: 8 / 2 / 9 / 3;
+    }
+    .div29 {
+      grid-area: 8 / 3 / 9 / 4;
+    }
+    .div30 {
+      grid-area: 8 / 4 / 9 / 5;
+    }
+    @include inc.mq(min) {
+      .div1 {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+      .div2 {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+      .div3 {
+        grid-area: 1 / 3 / 2 / 4;
+      }
+      .div4 {
+        grid-area: 1 / 4 / 2 / 5;
+      }
+      .div5 {
+        grid-area: 1 / 5 / 2 / 6;
+      }
+      .div6 {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+      .div7 {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+      .div8 {
+        grid-area: 2 / 3 / 3 / 4;
+      }
+      .div9 {
+        grid-area: 2 / 4 / 3 / 5;
+      }
+      .div10 {
+        grid-area: 2 / 5 / 3 / 6;
+      }
+      .div11 {
+        grid-area: 3 / 1 / 4 / 2;
+      }
+      .div12 {
+        grid-area: 3 / 2 / 4 / 3;
+      }
+      .div13 {
+        grid-area: 3 / 3 / 4 / 4;
+      }
+      .div14 {
+        grid-area: 3 / 4 / 4 / 5;
+      }
+      .div15 {
+        grid-area: 3 / 5 / 4 / 6;
+      }
+      .div16 {
+        grid-area: 4 / 1 / 5 / 2;
+      }
+      .div17 {
+        grid-area: 4 / 2 / 5 / 3;
+      }
+      .div18 {
+        grid-area: 4 / 3 / 5 / 4;
+      }
+      .div19 {
+        grid-area: 4 / 4 / 5 / 5;
+      }
+      .div20 {
+        grid-area: 4 / 5 / 5 / 6;
+      }
+      .div21 {
+        grid-area: 5 / 1 / 6 / 2;
+      }
+      .div22 {
+        grid-area: 5 / 2 / 6 / 3;
+      }
+      .div23 {
+        grid-area: 5 / 3 / 6 / 4;
+      }
+      .div24 {
+        grid-area: 5 / 4 / 6 / 5;
+      }
+      .div25 {
+        grid-area: 5 / 5 / 6 / 6;
+      }
+      .div26 {
+        grid-area: 6 / 1 / 7 / 2;
+      }
+      .div27 {
+        grid-area: 6 / 2 / 7 / 3;
+      }
+      .div28 {
+        grid-area: 6 / 3 / 7 / 4;
+      }
+      .div29 {
+        grid-area: 6 / 4 / 7 / 5;
+      }
+      .div30 {
+        grid-area: 6 / 5 / 7 / 6;
+      }
+    }
+    .active {
+      background: inc.$color-grn;
+      color: inc.$color-wht;
+    }
+    &---active {
+      background: inc.$color-grn;
+      color: inc.$color-wht;
+      display: inline-block;
+      font-size: 11px;
+      padding: 0.2rem 0.3rem 0.3rem;
+      line-height: 1;
+      margin-left: 3px;
+      margin-right: 3px;
+      @include inc.mq(min) {
+        vertical-align: text-bottom;
+      }
+    }
+    & + p {
+      margin-top: 0.5rem;
+    }
+  }
+  &__post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    //padding: 64px 0 0 0;
+    @include inc.mq(min) {
+      padding: 64px 0 0 0;
+    }
+    &---ph {
+      width: 100%;
+      @include inc.mq(min) {
+        width: 51.43%;
+        .sticky {
+          position: sticky;
+          top: 100px;
+        }
+        figure {
+          -webkit-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+          img {
+            width: auto;
+            height: auto;
+            aspect-ratio: 4 / 3 !important;
+          }
+        }
+      }
+      h1 img {
         width: 100%;
-        margin: 0 auto;
-        gap: 0 4.61%;
-        @include inc.mq(min) {
-            gap: 0 9.09%;
-        }
-        padding: 0;
-        li {
-            list-style-type: none;
-            margin: 0;
-            @include inc.sizing(margin-top, wide, 128px, tabl, 52px);
-            padding: 0;
-            width: 47.69%;
-            @include inc.mq(min) {
-                width: 27.27%;
-            }
-            h2 {
-                //display: inline-block;
-                display: inline;
-                //@include inc.sizing(margin-top, wide, 42px, tabl, 28px);
-                @include inc.sizingRem(font-size, wide, 26px, spl, 14px);
-            }
-            a {
-                text-decoration: none;
-            }
-        }
+        height: auto;
+      }
     }
-    &__bnr {
-        max-width: calc(800px + 4rem);
-        @include inc.sizing(padding-top, wide, 112px, tabl, 64px);
-        @include inc.sizing(padding-left, wide, 32px, spl, 14px);
-        @include inc.sizing(padding-right, wide, 32px, spl, 14px);
-        width: 100%;
-        margin: 0 auto;
+    &---txt {
+      width: 100%;
+      margin-top: 50px;
+      @include inc.mq(min) {
+        width: calc(100% - (51.43% + 8.57%));
+        margin-top: -0.5rem;
+      }
     }
-    &__allergy {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(8, 1fr);
-        @include inc.mq(min) {
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-        }
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        border-top: 1px solid inc.$color-grn3;
-        border-left: 1px solid inc.$color-grn3;
-        div {
-            border-right: 1px solid inc.$color-grn3;
-            border-bottom: 1px solid inc.$color-grn3;
-            text-align: center;
-            color: inc.$color-grn3;
-            padding: .6rem .2rem;
-            @include inc.mq(min) {
-                padding: .1rem .3rem;
-            }
-            display:flex; flex-direction:column; justify-content:center; align-items:center;
-            @include inc.sizingRem(font-size, wide, 14px, spl, 12px);
-        }
-        .div1 { grid-area: 1 / 1 / 2 / 4; }
-        .div2 { grid-area: 1 / 4 / 2 / 5; }
-        .div3 { grid-area: 2 / 1 / 3 / 2; }
-        .div4 { grid-area: 2 / 2 / 3 / 3; }
-        .div5 { grid-area: 2 / 3 / 3 / 4; }
-        .div6 { grid-area: 2 / 4 / 3 / 5; }
-        .div7 { grid-area: 3 / 1 / 4 / 2; }
-        .div8 { grid-area: 3 / 2 / 4 / 3; }
-        .div9 { grid-area: 3 / 3 / 4 / 4; }
-        .div10 { grid-area: 3 / 4 / 4 / 5; }
-        .div11 { grid-area: 4 / 1 / 5 / 2; }
-        .div12 { grid-area: 4 / 2 / 5 / 3; }
-        .div13 { grid-area: 4 / 3 / 5 / 4; }
-        .div14 { grid-area: 4 / 4 / 5 / 5; }
-        .div15 { grid-area: 5 / 1 / 6 / 2; }
-        .div16 { grid-area: 5 / 2 / 6 / 3; }
-        .div17 { grid-area: 5 / 3 / 6 / 4; }
-        .div18 { grid-area: 5 / 4 / 6 / 5; }
-        .div19 { grid-area: 6 / 1 / 7 / 2; }
-        .div20 { grid-area: 6 / 2 / 7 / 3; }
-        .div21 { grid-area: 6 / 3 / 7 / 4; }
-        .div22 { grid-area: 6 / 4 / 7 / 5; }
-        .div23 { grid-area: 7 / 1 / 8 / 2; }
-        .div24 { grid-area: 7 / 2 / 8 / 3; }
-        .div25 { grid-area: 7 / 3 / 8 / 4; }
-        .div26 { grid-area: 7 / 4 / 8 / 5; }
-        .div27 { grid-area: 8 / 1 / 9 / 2; }
-        .div28 { grid-area: 8 / 2 / 9 / 3; }
-        .div29 { grid-area: 8 / 3 / 9 / 4; }
-        .div30 { grid-area: 8 / 4 / 9 / 5; }
-        @include inc.mq(min) {
-            .div1 { grid-area: 1 / 1 / 2 / 2; }
-            .div2 { grid-area: 1 / 2 / 2 / 3; }
-            .div3 { grid-area: 1 / 3 / 2 / 4; }
-            .div4 { grid-area: 1 / 4 / 2 / 5; }
-            .div5 { grid-area: 1 / 5 / 2 / 6; }
-            .div6 { grid-area: 2 / 1 / 3 / 2; }
-            .div7 { grid-area: 2 / 2 / 3 / 3; }
-            .div8 { grid-area: 2 / 3 / 3 / 4; }
-            .div9 { grid-area: 2 / 4 / 3 / 5; }
-            .div10 { grid-area: 2 / 5 / 3 / 6; }
-            .div11 { grid-area: 3 / 1 / 4 / 2; }
-            .div12 { grid-area: 3 / 2 / 4 / 3; }
-            .div13 { grid-area: 3 / 3 / 4 / 4; }
-            .div14 { grid-area: 3 / 4 / 4 / 5; }
-            .div15 { grid-area: 3 / 5 / 4 / 6; }
-            .div16 { grid-area: 4 / 1 / 5 / 2; }
-            .div17 { grid-area: 4 / 2 / 5 / 3; }
-            .div18 { grid-area: 4 / 3 / 5 / 4; }
-            .div19 { grid-area: 4 / 4 / 5 / 5; }
-            .div20 { grid-area: 4 / 5 / 5 / 6; }
-            .div21 { grid-area: 5 / 1 / 6 / 2; }
-            .div22 { grid-area: 5 / 2 / 6 / 3; }
-            .div23 { grid-area: 5 / 3 / 6 / 4; }
-            .div24 { grid-area: 5 / 4 / 6 / 5; }
-            .div25 { grid-area: 5 / 5 / 6 / 6; }
-            .div26 { grid-area: 6 / 1 / 7 / 2; }
-            .div27 { grid-area: 6 / 2 / 7 / 3; }
-            .div28 { grid-area: 6 / 3 / 7 / 4; }
-            .div29 { grid-area: 6 / 4 / 7 / 5; }
-            .div30 { grid-area: 6 / 5 / 7 / 6; }
-        }
-        .active {
-            background: inc.$color-grn;
-            color: inc.$color-wht;
-        }
-        &---active {
-            background: inc.$color-grn;
-            color: inc.$color-wht;
-            display: inline-block;
-            font-size: 11px;
-            padding: 0.2rem 0.3rem 0.3rem;
-            line-height: 1;
-            margin-left: 3px;
-            margin-right: 3px;
-            @include inc.mq(min) {
-                vertical-align: text-bottom;
-            }
-        }
-        & + p {
-            margin-top: .5rem;
-        }
+  }
+  &__annotation {
+    font-size: 10px;
+    line-height: 2;
+    margin-top: 2rem;
+    @include inc.mq(min) {
+      @include inc.sizingRem(font-size, wide, 10px, min, 10px);
     }
-    &__post {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        //padding: 64px 0 0 0;
-        @include inc.mq(min) {
-            padding: 64px 0 0 0;
-        }
-        &---ph {
-            width: 100%;
-            @include inc.mq(min) {
-                width: 51.43%;
-                .sticky {
-                    position: sticky;
-                    top: 100px;
-                }
-                figure {
-                    -webkit-transition: all 0.3s ease-out;
-                    transition: all 0.3s ease-out;
-                    img {
-                        width: auto;
-                        height: auto;
-                        aspect-ratio: 4 / 3!important;
-                    }
-                }
-            }
-            h1
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
-        &---txt {
-            width: 100%;
-            margin-top: 50px;
-            @include inc.mq(min) {
-                width: calc( 100% - (51.43% + 8.57%));
-                margin-top: -.5rem;
-            }
-        }
+  }
+  &__annotation2 {
+    font-size: 16px;
+    line-height: 2;
+    //margin-top: 2rem;
+    @include inc.mq(min) {
+      @include inc.sizingRem(font-size, wide, 18px, min, 16px);
     }
-    &__annotation {
-        font-size: 10px;
-        line-height: 2;
-        margin-top: 2rem;
-        @include inc.mq(min) {
-            @include inc.sizingRem(font-size, wide, 10px, min, 10px);
-        }
-    }
-    &__annotation2 {
-        font-size: 16px;
-        line-height: 2;
-        //margin-top: 2rem;
-        @include inc.mq(min) {
-            @include inc.sizingRem(font-size, wide, 18px, min, 16px);
-        }
-    }
+  }
 }
 
-
 @media (hover: hover) {
-    .pc .p-product__top:hover .p-product__top---ph img {
-        transform: scale(1.1);
-    }
+  .pc .p-product__top:hover .p-product__top---ph img {
+    transform: scale(1.1);
+  }
 }
 
 .expansion-img figure {
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    @include inc.sizing(margin-bottom, wide, 42px, tabl, 28px);
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  @include inc.sizing(margin-bottom, wide, 42px, tabl, 28px);
 }
 .expansion-img figure img {
-    height: auto;
-    transition: transform .6s ease; /* ゆっくり変化させる */
+  height: auto;
+  transition: transform 0.6s ease; /* ゆっくり変化させる */
 }
 .expansion-img:hover figure img {
-    transform: scale(1.08); /* 拡大 */
+  transform: scale(1.08); /* 拡大 */
 }
 
 #home .p-product {
-    &__top {
-        position:relative;
-        @include inc.mq(min) {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            flex-direction:row-reverse;
-        }
-        // a{
-        //     position:absolute;
-        //     top:0;
-        //     left:0;
-        //     width:100%;
-        //     height:100%;
-        //     z-index: 1;
-        // }
-        &---txt {
-            width: 100%;
-            margin-top: -.5rem;
-            @include inc.mq(min) {
-                width: 40%;
-                display: block;
-                padding: 0;
-            }
-            // a {
-            //     display: block;
-            //     @include inc.sizing(margin-top, wide, 80px, tabl, 24px);
-            // }
-            h2 {
-                font-size: 18px;
-                @include inc.mq(min) {
-                    font-size: 16px;
-                    @include inc.sizing(margin-bottom, tabl, 40px, min, 30px);
-                }
-                @include inc.mq(tab) {
-                    @include inc.sizingRem(font-size, tabl, 20px, tab, 16px);
-                }
-                @include inc.mq(tabl) {
-                    @include inc.sizingRem(font-size, wide, 26px, tabl, 20px);
-                    margin-bottom: 40px;
-                }
-            }
-            p {
-                font-size: 14px;
-                @include inc.mq(min) {
-                    font-size: 10px;
-                }
-                @include inc.mq(tab) {
-                    @include inc.sizingRem(font-size, tabl, 12px, tab, 10px);
-                }
-                @include inc.mq(tabl) {
-                    @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
-                }
-            }
-            p + p {
-                @include inc.sizing(margin-top, wide, 64px, spl, 24px);
-            }
-        }
-        &---ph {
-            width: 100%;
-            padding: 0;
-            padding-right: 20%;
-            //margin-top: .8rem;
-            @include inc.mq(min) {
-                padding: 0;
-                width: 51.43%;
-                //margin: 56px 0 0;
-                overflow: hidden;
-                cursor: pointer;
-                img {
-                    height: auto;
-                    opacity: 0;
-                    //transition: transform .6s ease;
-                }
-            }
-        }
-        &:nth-child(2) {
-            margin-top: 100px;
-            .p-product__top---txt {
-                text-align: left;
-            }
-            .p-product__top---ph {
-                width: 100%;
-                padding-right: 20%;
-            }
-            @include inc.mq(min) {
-                @include inc.sizing(margin-top, tab, 132px, min, 100px);
-                flex-direction:row;
-                .p-product__top---txt {
-                    width: 34.28%;
-                    text-align: right;
-                }
-                .p-product__top---ph {
-                    width: 57.14%;
-                    padding-right: 0rem;
-                }
-            }
-            @include inc.mq(tab) {
-                @include inc.sizing(margin-top, tabl, 160px, tab, 132px);
-            }
-            @include inc.mq(tabl) {
-                @include inc.sizing(margin-top, wide, 260px, tabl, 160px);
-            }
-        }
+  &__top {
+    position: relative;
+    @include inc.mq(min) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-direction: row-reverse;
     }
+    // a{
+    //     position:absolute;
+    //     top:0;
+    //     left:0;
+    //     width:100%;
+    //     height:100%;
+    //     z-index: 1;
+    // }
+    &---txt {
+      width: 100%;
+      margin-top: -0.5rem;
+      @include inc.mq(min) {
+        width: 40%;
+        display: block;
+        padding: 0;
+      }
+      // a {
+      //     display: block;
+      //     @include inc.sizing(margin-top, wide, 80px, tabl, 24px);
+      // }
+      h2 {
+        font-size: 18px;
+        @include inc.mq(min) {
+          font-size: 16px;
+          @include inc.sizing(margin-bottom, tabl, 40px, min, 30px);
+        }
+        @include inc.mq(tab) {
+          @include inc.sizingRem(font-size, tabl, 20px, tab, 16px);
+        }
+        @include inc.mq(tabl) {
+          @include inc.sizingRem(font-size, wide, 26px, tabl, 20px);
+          margin-bottom: 40px;
+        }
+      }
+      p {
+        font-size: 14px;
+        @include inc.mq(min) {
+          font-size: 10px;
+        }
+        @include inc.mq(tab) {
+          @include inc.sizingRem(font-size, tabl, 12px, tab, 10px);
+        }
+        @include inc.mq(tabl) {
+          @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
+        }
+      }
+      p + p {
+        @include inc.sizing(margin-top, wide, 64px, spl, 24px);
+      }
+    }
+    &---ph {
+      width: 100%;
+      padding: 0;
+      padding-right: 20%;
+      //margin-top: .8rem;
+      @include inc.mq(min) {
+        padding: 0;
+        width: 51.43%;
+        //margin: 56px 0 0;
+        overflow: hidden;
+        cursor: pointer;
+        img {
+          height: auto;
+          opacity: 0;
+          //transition: transform .6s ease;
+        }
+      }
+    }
+    &:nth-child(2) {
+      margin-top: 100px;
+      .p-product__top---txt {
+        text-align: left;
+      }
+      .p-product__top---ph {
+        width: 100%;
+        padding-right: 20%;
+      }
+      @include inc.mq(min) {
+        @include inc.sizing(margin-top, tab, 132px, min, 100px);
+        flex-direction: row;
+        .p-product__top---txt {
+          width: 34.28%;
+          text-align: right;
+        }
+        .p-product__top---ph {
+          width: 57.14%;
+          padding-right: 0rem;
+        }
+      }
+      @include inc.mq(tab) {
+        @include inc.sizing(margin-top, tabl, 160px, tab, 132px);
+      }
+      @include inc.mq(tabl) {
+        @include inc.sizing(margin-top, wide, 260px, tabl, 160px);
+      }
+    }
+  }
 }

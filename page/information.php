@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 工場案内
+Template Name: 工場のご案内
  */
 get_header(); ?>
 
@@ -9,11 +9,11 @@ get_header(); ?>
         <div class="p-breadcrumb">
             <ul class="p-breadcrumb__container">
                 <li class="p-breadcrumb__item"><a href="<?php echo home_url('/'); ?>">Home</a></li>
-                <li class="p-breadcrumb__item">工場案内</li>
+                <li class="p-breadcrumb__item">工場のご案内</li>
             </ul>
         </div>
         <div class="l-hero">
-            <h1 class="c-text--h1">工場案内</h1>
+            <h1 class="c-text--h1">工場のご案内</h1>
         </div>
     </section>
 
