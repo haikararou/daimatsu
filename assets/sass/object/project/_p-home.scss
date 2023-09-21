@@ -63,12 +63,15 @@ p-home
       z-index: 1;
       width: 100%;
       @include inc.sizing(height, wide, 506px, sp, 211px);
-      @include inc.sizing(margin-top, wide, -189px, sp, 55px);
+      @include inc.sizing(margin-top, tab, -90px, sp, -55px);
       background: linear-gradient(
         rgba(255, 255, 255, 0) 0%,
         #fff 23.65%,
         #fff 100%
       );
+      @include inc.mq(tab) {
+        @include inc.sizing(margin-top, wide, -189px, tab, -90px);
+      }
     }
   }
   &__lead {
@@ -94,12 +97,17 @@ p-home
     position: relative;
     width: 100%;
     margin: 0 auto;
-    margin-top: 100px;
-    padding-top: 75px;
+    @include inc.sizing(margin-top, wide, 137px, sp, 159px);
+
     &--list {
       display: flex;
       flex-direction: column;
       gap: 75px;
+      & > div:nth-child(2) {
+        @include inc.mq(tab) {
+          @include inc.sizing(margin-top, wide, 64px, sp, 50px);
+        }
+      }
       @include inc.mq(spl) {
         flex-direction: row;
         justify-content: center;
@@ -125,7 +133,7 @@ p-home
           z-index: -1;
           transform: translateX(-50%);
           left: 50%;
-          @include inc.sizing(margin-top, wide, -73px, sp, -59px);
+          @include inc.sizing(margin-top, wide, -65px, sp, -50px);
         }
       }
       & > p {
@@ -161,8 +169,8 @@ p-home
     &--container {
       display: flex;
       flex-direction: column;
-      @include inc.sizing(margin-bottom, wide, 64px, sp, 50px);
       margin: 0 auto;
+      margin-bottom: inc.size(wide, 64px, sp, 50px) !important;
       @include inc.mq(spl) {
         flex-direction: row;
         justify-content: center;
@@ -202,40 +210,27 @@ p-home
         }
       }
     }
+    & > div {
+      margin: 0 auto;
+    }
   }
   &__news {
-    max-width: 1312px;
+    width: 100%;
     margin: 0 auto;
-    @include inc.sizing(margin-top, wide, 245px, spl, 100px);
-    @include inc.sizing(padding-top, wide, 160px, spl, 75px);
-    padding-left: 20%;
-    padding-right: 6.6%;
+    @include inc.sizing(margin-top, wide, 319px, sp, 200px);
     position: relative;
-    @include inc.mq(min) {
-      padding: 0;
-      display: flex;
-      flex-direction: row-reverse;
-      @include inc.sizing(max-width, tab, 666px, min, 555px);
-    }
-    @include inc.mq(tab) {
-      @include inc.sizing(max-width, tabl, 760px, tab, 666px);
-    }
-    @include inc.mq(tabl) {
-      @include inc.sizing(max-width, wide, 1312px, tabl, 760px);
-    }
-    &---title {
+    &--title {
+      @include inc.sizing(margin-bottom, wide, 64px, sp, 50px);
     }
     &---list {
       width: 100%;
-      margin-left: 0;
-      @include inc.mq(min) {
-        @include inc.sizing(width, tab, 558px, min, 452px);
-      }
+      margin: 0 auto;
+      @include inc.sizing(width, tab, 500px, sp, 275px);
       @include inc.mq(tab) {
-        @include inc.sizing(width, tabl, 611px, tab, 558px);
+        @include inc.sizing(width, tabl, 580px, tab, 500px);
       }
       @include inc.mq(tabl) {
-        @include inc.sizing(width, wide, 1024px, tabl, 611px);
+        @include inc.sizing(width, wide, 992px, tabl, 580px);
       }
       dt {
         font-size: 12px;
@@ -257,8 +252,8 @@ p-home
       }
     }
     &---more {
-      display: flex;
-      flex-direction: row-reverse;
+      margin: 0 auto;
+      text-align: center;
       @include inc.sizing(margin-top, tabl, 64px, spl, 52px);
     }
   }

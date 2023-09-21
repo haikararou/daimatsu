@@ -4,18 +4,16 @@
 l-header
 -----------------------------------------------------*/
 
-html { scroll-behavior: smooth;}
-
+html {
+  scroll-behavior: smooth;
+}
 .l-header {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   width: 100%;
   top: 0;
-  height: 60px;
+  @include inc.sizing(height, wide, 100px, sp, 60px);
   background-color: inc.$color-wht;
-  @include inc.mq(tab) {
-    height: 100px;
-  }
 }
 
 .sp .l-header {

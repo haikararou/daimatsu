@@ -19,9 +19,6 @@
                         商品開発など、お気軽にお問い合わせください。
                     </p>
                 </div>
-                <div class="l-hero__product---ph">
-                    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/product/commercial/main.jpg" alt=""></figure>
-                </div>
             <?php else : ?>
                 <div class="l-hero__product---txt">
                     <div class="p-breadcrumb">
@@ -37,9 +34,6 @@
                         幅広い品揃えをご覧ください。<br>
                         商品開発など、お気軽にお問い合わせください。
                     </p>
-                </div>
-                <div class="l-hero__product---ph">
-                    <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/dummy/product/household/main.jpg" alt=""></figure>
                 </div>
             <?php endif; ?>
         </div>

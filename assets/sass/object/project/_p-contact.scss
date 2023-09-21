@@ -7,5 +7,30 @@ p-contact
   &__tel {
     @include inc.sizing(width, wide, 639px, sp, 325px);
     @include inc.sizing(height, wide, 192px, sp, 115px);
+    @include inc.sizing(padding-top, wide, 42px, sp, 22px);
+    @include inc.sizing(padding-bottom, wide, 42px, sp, 22px);
+    @include inc.sizing(border-radius, wide, 30px, sp, 20px);
+    background-color: inc.$color-grn6;
+    & > p {
+      color: inc.$color-grn2;
+      text-align: center;
+      &:first-child {
+        @include inc.sizingRem(font-size, wide, 18px, sp, 12px);
+        @include inc.sizing(line-height, wide, 26px, sp, 17px);
+        margin-bottom: 3px;
+      }
+      &:nth-child(2) {
+        @include inc.sizingRem(font-size, wide, 38px, sp, 26px);
+        @include inc.sizing(line-height, wide, 55px, sp, 37px);
+        margin-bottom: 0;
+        letter-spacing: 0.1em;
+      }
+      &:last-child {
+        @include inc.sizingRem(font-size, wide, 16px, sp, 10px);
+        @include inc.sizing(line-height, wide, 36px, sp, 23px);
+        margin-bottom: 0;
+        letter-spacing: 0.1em;
+      }
+    }
   }
 }

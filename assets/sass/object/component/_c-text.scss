@@ -5,10 +5,10 @@ c-text
 -----------------------------------------------------*/
 .c-text {
   &--h1 {
-    @include inc.sizingRem(font-size, wide, 40px, spl, 25px);
-    @include inc.sizing(line-height, wide, 80px, spl, 50px);
+    @include inc.sizingRem(font-size, wide, 40px, sp, 26px);
+    @include inc.sizing(line-height, wide, 47px, sp, 29px);
     //line-height: 1;
-    font-weight: 400;
+    font-weight: 500;
     span {
       @include inc.sizingRem(font-size, wide, 16px, spl, 14px);
       @include inc.sizing(margin-top, wide, 16px, spl, 8px);

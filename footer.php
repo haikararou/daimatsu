@@ -11,8 +11,19 @@
         <div class="p-footer__banner">
             <div class="p-footer__banner-inner l-wrapper">
                 <ul class="p-footer__banner-list">
-                    <li class="p-footer__banner-list-item">お電話でのお問い合わせは<a href="tel:0120-014-700" class="p-footer__banner-list-item-green">0120-014-700<span>営業時間 8:30〜17:00（平日）</span></a></li>
-                    <li class="p-footer__banner-list-item">メールでのお問い合わせは<a href="<?php echo home_url('/contact'); ?>" class="p-footer__banner-list-item-white underline4"><span>お問い合わせフォーム</span></a></li>
+                    <li class="p-footer__banner-list-item">
+                        <a href="tel:0120-014-700" class="p-footer__banner-list-item-tel">
+                            <p>お電話でのお問い合わせは</p>
+                            <p>0120-014-700</p>
+                            <p>営業時間 8:30〜17:00（平日）</p>
+                        </a>
+                    </li>
+                    <li class="p-footer__banner-list-item">
+                        <a href="<?php echo home_url('/contact'); ?>" class="p-footer__banner-list-item-mail underline4">
+                            <p>メールでのお問い合わせは</p>
+                            <p>お問い合わせフォーム</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

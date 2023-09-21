@@ -24,9 +24,6 @@
                             お気軽にお問い合わせください。</p>
                         <p><a href="<?php echo home_url('/products/category/commercial/'); ?>" class="underline">一覧を見る</a></p>
                     </div>
-                    <div class="p-product__top---ph">
-                        <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/products/ph001.jpg" alt=""></figure>
-                    </div>
                 </div>
                 <div class="p-product__top even">
                     <div class="p-product__top---txt">
@@ -39,9 +36,6 @@
                             ご購入総額5,250円（税込）以上で<br>
                             送料サービス。</p>
                         <p><a href="<?php echo home_url('/products/category/household/'); ?>" class="underline">一覧を見る</a></p>
-                    </div>
-                    <div class="p-product__top---ph">
-                        <figure id="ViewIn"><img src="<?php bloginfo('template_url') ?>/assets/img/products/ph002.jpg" alt=""></figure>
                     </div>
                 </div>
             </div>

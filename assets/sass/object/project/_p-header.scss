@@ -7,10 +7,9 @@ p-header
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   //overflow: hidden;
-  height: 60px!important;
+  height: inc.size(wide, 100px, sp, 60px);
   border-bottom: 1px solid inc.$color-grn3;
   @include inc.mq(tab) {
-    height: 100px!important;
     border: none;
   }
   // overscroll-behavior: contain;
@@ -35,15 +34,11 @@ p-header
     flex-direction: column;
     height: auto;
     width: 100px;
-    
+    height: inc.size(wide, 100px, sp, 60px);
     @include inc.mq(tab) {
-      height: 100px;
       @include inc.sizing(width, tabl, 256px, tab, 160px);
     }
-    // @include inc.mq(tabl) {
-    //   height: 100px;
-    //   width: 256px;
-    // }
+
     & > a {
       -webkit-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out;
@@ -51,12 +46,13 @@ p-header
     }
   }
 
-  &__nav-container { //グローバルナビ
+  &__nav-container {
+    //グローバルナビ
     display: none;
-    @include inc.sizingRem(font-size, wide, 16px, spl, 13px);
+    @include inc.sizingRem(font-size, wide, 18px, spl, 14px);
     font-weight: 400;
-    height: 100px;
-    width: 33rem;
+    height: inc.size(wide, 100px, sp, 60px);
+    @include inc.sizing(width, wide, 650px, tab, 496px);
     opacity: 0;
     position: static;
     @include inc.mq(tab) {
@@ -82,14 +78,15 @@ p-header
     padding: 0;
     display: flex;
     justify-content: space-between;
+    @include inc.sizing(gap, wide, 32px, sp, 25px);
     a {
       text-decoration: none;
     }
     &.nav-list01 {
       opacity: 1;
-      width: 24rem; //384
+      @include inc.sizing(width, wide, 512px, tab, 371px);
       padding-right: 1.4rem;
-      .p-header__nav-item:first-child{
+      .p-header__nav-item:first-child {
         display: none;
       }
     }
@@ -108,7 +105,7 @@ p-header
     list-style-type: none;
     line-height: 1;
     a {
-      line-height: 1;
+      line-height: 1.2em;
     }
   }
 }
@@ -127,8 +124,8 @@ p-header
   z-index: -1;
   align-items: center;
   opacity: 0;
-  -webkit-transition: all .4s ease-out;
-  transition: all .4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
   &---button {
     display: block;
     //width: 127px;
@@ -143,10 +140,10 @@ p-header
       cursor: pointer;
     }
     position: relative;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 64px;
     //@include inc.sizing(width, wide, 64px, tabl, 50px);
     height: 24px;
@@ -160,7 +157,7 @@ p-header
       //@include inc.sizing(width, wide, 64px, tabl, 50px);
       display: block;
       //border: 1px solid inc.$color-grn;
-      height: 1px!important;
+      height: 1px !important;
       background-color: inc.$color-grn;
       margin-top: -3px;
     }
@@ -263,13 +260,13 @@ p-header
     z-index: 101;
   }
   .p-header__nav-container {
-    border-left: 1px solid rgba(16, 67, 39, 0.0);
+    border-left: 1px solid rgba(16, 67, 39, 0);
     padding-top: 133px;
     //width: 128px;
     @include inc.sizing(width, wide, 128px, tab, 100px);
     position: fixed;
     opacity: 1;
-    top:0;
+    top: 0;
     right: -200px;
     height: auto;
     z-index: 10;
@@ -310,14 +307,20 @@ p-header
           text-align: center;
           height: 114px;
           a {
-            display:flex; flex-direction:column; justify-content:center; align-items:center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             height: 100%;
             position: relative;
             background: inc.$color-grn2;
             span {
               color: inc.$color-wht;
               font-size: 12px;
-              display:flex; flex-direction:column; justify-content:end; align-items:center;
+              display: flex;
+              flex-direction: column;
+              justify-content: end;
+              align-items: center;
               height: 48px;
               background: url(../img/icon/mail-wht.svg) no-repeat 50% 0% / 34px;
             }
@@ -376,7 +379,8 @@ p-header
       margin: 0 auto;
       padding-top: 60px;
       padding-bottom: 60px;
-      @media (orientation: landscape) {/* 横向き */
+      @media (orientation: landscape) {
+        /* 横向き */
         padding-top: 20px;
         padding-bottom: 50px;
       }
@@ -387,12 +391,15 @@ p-header
         line-height: 1;
         @include inc.sizingRem(font-size, tab, 16px, spl, 14px);
         height: 70px;
-        display:flex; flex-direction:column; justify-content:center; align-items:center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         border-bottom: 1px solid inc.$color-grn3;
-        &:first-child{
+        &:first-child {
           display: flex;
         }
-        &:last-child{
+        &:last-child {
           border-bottom: none;
         }
       }
@@ -412,7 +419,10 @@ p-header
         a {
           height: 80px;
           background: inc.$color-wht;
-          display:flex; flex-direction:column; justify-content:center; align-items:center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           span {
             position: relative;
             padding-left: 18px;
@@ -422,7 +432,7 @@ p-header
               display: block;
               width: 28px;
               height: 18px;
-              background: url(../img/icon/mail.svg) no-repeat 50% 50% /contain;
+              background: url(../img/icon/mail.svg) no-repeat 50% 50% / contain;
               position: absolute;
               left: -18px;
             }
@@ -452,13 +462,13 @@ a.underline::before {
   position: absolute;
   bottom: -8px;
   left: 0;
-  content: '';
+  content: "";
   width: 100%;
   height: 1px;
   background: inc.$color-grn;
   transform: scale(1, 1);
   transform-origin: left top;
-  transition: transform .3s;
+  transition: transform 0.3s;
   transition-delay: 250ms;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -472,13 +482,13 @@ a.underline::after {
   position: absolute;
   bottom: -8px;
   left: 0;
-  content: '';
+  content: "";
   width: 100%;
   height: 1px;
   background: inc.$color-grn;
   transform: scale(0, 1);
   transform-origin: right top;
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 @media (hover: hover) and (pointer: fine) {
   a.underline:hover::after {
@@ -489,9 +499,18 @@ a.underline::after {
 }
 
 a.underline2 {
-  background: -webkit-gradient(linear, left top, right top, from(inc.$color-grn), to(inc.$color-grn)) no-repeat 100% 100%/0 1px;
-  background: -webkit-linear-gradient(left, inc.$color-grn, inc.$color-grn) no-repeat 100% 100%/0 1px;
-  background: linear-gradient(90deg, inc.$color-grn, inc.$color-grn) no-repeat 100% 100%/0 1px;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(inc.$color-grn),
+      to(inc.$color-grn)
+    )
+    no-repeat 100% 100%/0 1px;
+  background: -webkit-linear-gradient(left, inc.$color-grn, inc.$color-grn)
+    no-repeat 100% 100%/0 1px;
+  background: linear-gradient(90deg, inc.$color-grn, inc.$color-grn) no-repeat
+    100% 100%/0 1px;
   -webkit-transition: background-size 0.4s;
   transition: background-size 0.4s;
   padding-bottom: 2px;
@@ -504,9 +523,18 @@ a.underline2 {
 }
 
 a.underline3 h2 {
-  background: -webkit-gradient(linear, left top, right top, from(inc.$color-grn), to(inc.$color-grn)) no-repeat 100% 100%/0 1px;
-  background: -webkit-linear-gradient(left, inc.$color-grn, inc.$color-grn) no-repeat 100% 100%/0 1px;
-  background: linear-gradient(90deg, inc.$color-grn, inc.$color-grn) no-repeat 100% 100%/0 1px;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(inc.$color-grn),
+      to(inc.$color-grn)
+    )
+    no-repeat 100% 100%/0 1px;
+  background: -webkit-linear-gradient(left, inc.$color-grn, inc.$color-grn)
+    no-repeat 100% 100%/0 1px;
+  background: linear-gradient(90deg, inc.$color-grn, inc.$color-grn) no-repeat
+    100% 100%/0 1px;
   -webkit-transition: background-size 0.4s;
   transition: background-size 0.4s;
   padding-bottom: 2px;
@@ -519,9 +547,18 @@ a.underline3 h2 {
 }
 
 a.underline4 span {
-  background: -webkit-gradient(linear, left top, right top, from(inc.$color-grn2), to(inc.$color-grn2)) no-repeat 100% 100%/0 1px;
-  background: -webkit-linear-gradient(left, inc.$color-grn2, inc.$color-grn2) no-repeat 100% 100%/0 1px;
-  background: linear-gradient(90deg, inc.$color-grn2, inc.$color-grn2) no-repeat 100% 100%/0 1px;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(inc.$color-grn2),
+      to(inc.$color-grn2)
+    )
+    no-repeat 100% 100%/0 1px;
+  background: -webkit-linear-gradient(left, inc.$color-grn2, inc.$color-grn2)
+    no-repeat 100% 100%/0 1px;
+  background: linear-gradient(90deg, inc.$color-grn2, inc.$color-grn2) no-repeat
+    100% 100%/0 1px;
   -webkit-transition: background-size 0.4s;
   transition: background-size 0.4s;
   padding-bottom: 2px;
@@ -532,7 +569,6 @@ a.underline4 span {
     background-position: 0 100%;
   }
 }
-
 
 // @-webkit-keyframes hide-line {
 //   to {
@@ -559,13 +595,6 @@ a.underline4 span {
 //   }
 // }
 
-
-
-
-
-
-
-
 @media (hover: hover) {
   // .pc a {
   //   text-decoration: underline 1px inc.$color-grn;
@@ -580,12 +609,12 @@ a.underline4 span {
     transition: all 0.1s ease-out;
     content: "";
     height: 1px;
-    width: .5rem;
+    width: 0.5rem;
     position: absolute;
     display: block;
     bottom: -8px;
     left: 50%;
-    margin-left: -.5rem;
+    margin-left: -0.5rem;
     background-color: inc.$color-grn;
     -webkit-transform: scale(0, 1);
     transform: scale(0, 1);
@@ -597,7 +626,7 @@ a.underline4 span {
     transition: all 0.1s ease-out;
     content: "";
     height: 1px;
-    width: .5rem;
+    width: 0.5rem;
     position: absolute;
     display: block;
     bottom: -8px;
@@ -638,4 +667,3 @@ a.underline4 span {
   //   background: inc.$color-grn3;
   // }
 }
-
