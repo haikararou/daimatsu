@@ -16,27 +16,27 @@
         <section class="l-wrapper4">
             <div class="p-text-box">
                 <div class="p-product__top">
-                    <div class="p-product__top---txt">
-                        <h2>業務用商品</h2>
-                        <p>季節の惣菜から通年の定番商品まで<br>
-                            幅広い品揃えをご覧ください。<br>
-                            商品開発など、<br>
-                            お気軽にお問い合わせください。</p>
-                        <p><a href="<?php echo home_url('/products/category/commercial/'); ?>" class="underline">一覧を見る</a></p>
+                    <div class="p-product__top--text">
+                        <a href="<?php echo home_url('/products/category/commercial/'); ?>" class="underline3">
+                            <h3>業務用商品</h3>
+                            <p>季節の惣菜から通年の定番商品まで幅広い品揃えをご覧ください。商品開発など、お気軽にお問い合わせください。</p>
+                            <h4>一覧を見る</h4>
+                        </a>
+                    </div>
+                    <div class="p-product__top--text">
+                        <a href="<?php echo home_url('/products/category/household/'); ?>" class="underline3">
+                            <h3>ご家庭用商品</h3>
+                            <p>食卓にもう一品！あったかごはんにぴったり！毎日の忙しい暮らしの中で、「手間をかけずにおいしく食べたい」を実現。</p>
+                            <h4>一覧を見る</h4>
+                        </a>
                     </div>
                 </div>
-                <div class="p-product__top even">
-                    <div class="p-product__top---txt">
-                        <h2>ご家庭用商品</h2>
-                        <p>食卓にもう一品！<br>
-                            あったかごはんにぴったり！<br>
-                            毎日の忙しい暮らしの中で、<br>
-                            「手間をかけずにおいしく食べたい」を<br>
-                            実現。<br>
-                            ご購入総額5,250円（税込）以上で<br>
-                            送料サービス。</p>
-                        <p><a href="<?php echo home_url('/products/category/household/'); ?>" class="underline">一覧を見る</a></p>
-                    </div>
+                <div class="p-contact__tel">
+                    <a href="tel:0120-014-700">
+                        <p>お電話でのお問い合わせは</p>
+                        <p>0120-014-700</p>
+                        <p>営業時間 8:30〜17:00（平日）</p>
+                    </a>
                 </div>
             </div>
         </section>

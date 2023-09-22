@@ -42,7 +42,7 @@
         <div class="p-text-box">
             <ul class="p-product__list">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <li>
+                        <li class="p-product__item">
                             <a href="<?php the_permalink(); ?>" class="expansion-img underline3">
                                 <figure><img src="<?php if (has_post_thumbnail()) : ?><?php echo wp_get_attachment_url(get_post_thumbnail_id($post_id)); ?><?php else : ?><?php echo catch_that_image(); ?>" alt=""><?php endif; ?></figure>
                                 <h2><?php the_title(); ?></h2>

@@ -210,7 +210,7 @@ p-header
 .sp .p-header__burger {
   -webkit-transition: all 0s ease-out;
   transition: all 0s ease-out;
-  height: 60px;
+  @include inc.sizing(height, wide, 100px, sp, 60px);
   width: 82px;
   opacity: 1;
   z-index: 101;
@@ -288,7 +288,8 @@ p-header
           a {
             display: block;
             padding: 2rem 0;
-            @include inc.sizingRem(font-size, wide, 16px, tab, 14px);
+            font-weight: 500; //Medium
+            @include inc.sizingRem(font-size, wide, 18px, tab, 16px);
           }
           &:first-child {
             display: block;
@@ -377,7 +378,7 @@ p-header
     &.nav-list01 {
       width: 10rem;
       margin: 0 auto;
-      padding-top: 60px;
+      padding-top: 30px;
       padding-bottom: 60px;
       @media (orientation: landscape) {
         /* 横向き */
@@ -389,7 +390,8 @@ p-header
         width: 100%;
         text-align: center;
         line-height: 1;
-        @include inc.sizingRem(font-size, tab, 16px, spl, 14px);
+        font-weight: 500; //Medium
+        @include inc.sizingRem(font-size, wide, 18px, tab, 16px);
         height: 70px;
         display: flex;
         flex-direction: column;
@@ -541,6 +543,30 @@ a.underline3 h2 {
 }
 @media (hover: hover) and (pointer: fine) {
   a.underline3:hover h2 {
+    background-size: 100% 1px;
+    background-position: 0 100%;
+  }
+}
+
+a.underline3 h4 {
+  background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(inc.$color-wht),
+      to(inc.$color-wht)
+    )
+    no-repeat 100% 100%/0 1px;
+  background: -webkit-linear-gradient(left, inc.$color-wht, inc.$color-wht)
+    no-repeat 100% 100%/0 1px;
+  background: linear-gradient(90deg, inc.$color-wht, inc.$color-wht) no-repeat
+    100% 100%/0 1px;
+  -webkit-transition: background-size 0.4s;
+  transition: background-size 0.4s;
+  padding-bottom: 2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  a.underline3:hover h4 {
     background-size: 100% 1px;
     background-position: 0 100%;
   }

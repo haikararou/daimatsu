@@ -5,15 +5,21 @@ p-contact
 -----------------------------------------------------*/
 .p-contact {
   &__tel {
-    @include inc.sizing(width, wide, 639px, sp, 325px);
+    @include inc.sizing(width, wide, 639px, sp, 325px, no);
     @include inc.sizing(height, wide, 192px, sp, 115px);
-    @include inc.sizing(padding-top, wide, 42px, sp, 22px);
+    @include inc.sizing(padding-top, wide, 40px, sp, 20px);
     @include inc.sizing(padding-bottom, wide, 42px, sp, 22px);
     @include inc.sizing(border-radius, wide, 30px, sp, 20px);
     background-color: inc.$color-grn6;
-    & > p {
+    & > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    & > a > p {
       color: inc.$color-grn2;
       text-align: center;
+      margin-top: 0 !important;
       &:first-child {
         @include inc.sizingRem(font-size, wide, 18px, sp, 12px);
         @include inc.sizing(line-height, wide, 26px, sp, 17px);

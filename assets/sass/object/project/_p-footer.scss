@@ -33,14 +33,16 @@ p-footer
         color: inc.$color-grn2;
         @include inc.sizing(border-radius, wide, 30px, sp, 20px);
         @include inc.sizing(height, wide, 192px, sp, 115px);
-        @include inc.sizing(padding-top, wide, 44px, sp, 21px);
         @include inc.mq(min) {
           width: calc(50% - 1rem);
         }
         & > a {
+          display: block;
+          @include inc.sizing(padding-top, wide, 44px, sp, 21px);
           text-decoration: none !important;
           align-items: center;
           height: 100%;
+          width: 100%;
         }
         &-tel {
           -webkit-transition: all 0.1s ease-out;
@@ -76,7 +78,7 @@ p-footer
               position: relative;
               @include inc.sizingRem(font-size, wide, 28px, sp, 15px);
               @include inc.sizing(line-height, wide, 40px, sp, 21px);
-              @include inc.sizing(padding-left, wide, 50px, sp, 36px);
+              @include inc.sizing(padding-left, wide, 50px, sp, 32px);
               letter-spacing: 0.027em;
               font-weight: 500; //Medium
               width: fit-content;
@@ -112,12 +114,12 @@ p-footer
     }
   }
   &__inner-list {
-    max-width: 15rem;
+    max-width: 19rem;
     width: 80%;
+    margin: 0 auto 0 inc.size(tab, 226px, sp, 65px, noClamp);
     @include inc.mq(sp) {
       width: 70%;
     }
-    margin: 0 auto;
     @include inc.mq(tab) {
       max-width: none;
       @include inc.sizing(width, wide, 273px, sp, 216px);

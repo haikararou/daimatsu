@@ -6,6 +6,23 @@ p-home
 
 .p-home {
   &__main {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      @include inc.sizing(height, wide, 506px, sp, 211px);
+      @include inc.sizing(margin-top, tab, -115px, sp, -75px);
+      background: linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        #fff 23.65%,
+        #fff 100%
+      );
+      @include inc.mq(tab) {
+        @include inc.sizing(margin-top, wide, -189px, tab, -90px);
+      }
+    }
     &---wrapper {
       width: 100%;
       padding: 0;
@@ -14,14 +31,33 @@ p-home
     position: relative;
     & > figure {
       width: 100%;
+      height: auto;
       padding-left: 0;
+      aspect-ratio: 375/297;
+      @include inc.mq(tab) {
+        aspect-ratio: 1568/780;
+      }
       & > div {
+        width: 100%;
+        height: 100%;
         overflow: hidden;
+        position: relative;
         & > img {
-          width: 100%;
+          position: absolute;
+          display: block;
+          @include inc.sizing(top, tab, -30px, sp, 0px, noClamp);
+          @include inc.sizing(left, tab, -246px, sp, -130px, noClamp);
+          max-width: none !important;
+          @include inc.sizing(width, tab, 1315px, sp, 642px, noClamp);
           height: auto;
           opacity: 0;
-          transform: scale(1.02);
+          transform: scale(1.02) translateX(-50%);
+          @include inc.mq(tab) {
+            top: 0;
+            left: 0;
+            width: 100%;
+            transform: scale(1.02) translateX(0%);
+          }
         }
       }
     }
@@ -56,23 +92,6 @@ p-home
         }
       }
     }
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      @include inc.sizing(height, wide, 506px, sp, 211px);
-      @include inc.sizing(margin-top, tab, -90px, sp, -55px);
-      background: linear-gradient(
-        rgba(255, 255, 255, 0) 0%,
-        #fff 23.65%,
-        #fff 100%
-      );
-      @include inc.mq(tab) {
-        @include inc.sizing(margin-top, wide, -189px, tab, -90px);
-      }
-    }
   }
   &__lead {
     width: 100%;
@@ -98,24 +117,28 @@ p-home
     width: 100%;
     margin: 0 auto;
     @include inc.sizing(margin-top, wide, 137px, sp, 159px);
-
     &--list {
       display: flex;
       flex-direction: column;
       gap: 75px;
-      & > div:nth-child(2) {
-        @include inc.mq(tab) {
-          @include inc.sizing(margin-top, wide, 64px, sp, 50px);
-        }
-      }
+      align-items: center;
       @include inc.mq(spl) {
+        align-items: normal;
         flex-direction: row;
         justify-content: center;
         @include inc.sizing(gap, wide, 64px, sp, 25px);
       }
+      & > div:nth-child(2) {
+        @include inc.mq(spl) {
+          @include inc.sizing(margin-top, wide, 64px, sp, 50px);
+        }
+      }
     }
     &--block {
-      @include inc.sizing(width, wide, 256px, sp, 150px);
+      @include inc.sizing(width, tab, 500px, sp, 275px);
+      @include inc.mq(tab) {
+        @include inc.sizing(width, wide, 256px, sp, 150px);
+      }
       & > h3 {
         position: relative;
         @include inc.sizingRem(font-size, wide, 32px, sp, 22px);
@@ -128,12 +151,16 @@ p-home
           position: absolute;
           background-color: inc.$color-ltg;
           border-radius: 999px;
-          @include inc.sizing(width, wide, 192px, sp, 150px);
-          @include inc.sizing(height, wide, 192px, sp, 150px);
+          @include inc.sizing(margin-top, wide, -65px, sp, -50px);
+          @include inc.sizing(width, wide, 192px, spl, 150px);
+          @include inc.sizing(height, wide, 192px, spl, 150px);
           z-index: -1;
           transform: translateX(-50%);
           left: 50%;
-          @include inc.sizing(margin-top, wide, -65px, sp, -50px);
+          @include inc.mq(spl) {
+            @include inc.sizing(width, wide, 192px, sp, 150px);
+            @include inc.sizing(height, wide, 192px, sp, 150px);
+          }
         }
       }
       & > p {
@@ -154,13 +181,16 @@ p-home
       &::before {
         content: "";
         position: absolute;
-        @include inc.sizing(height, wide, 981px, sp, 1054px);
+        @include inc.sizing(height, tab, 1140px, sp, 1054px);
         background-image: url(../img/bg.webp);
         background-repeat: no-repeat;
         background-size: cover;
         display: block;
         width: 100%;
         z-index: -1;
+        @include inc.mq(tab) {
+          @include inc.sizing(height, wide, 981px, tab, 910px);
+        }
       }
     }
     &--title {
@@ -171,36 +201,41 @@ p-home
       flex-direction: column;
       margin: 0 auto;
       margin-bottom: inc.size(wide, 64px, sp, 50px) !important;
-      @include inc.mq(spl) {
+      gap: 32px;
+      @include inc.mq(tab) {
         flex-direction: row;
         justify-content: center;
         @include inc.sizing(width, wide, 992px, spl, 480px);
-        gap: 32px;
       }
     }
     &--text {
       background-color: inc.$color-grn2;
       @include inc.sizing(border-radius, wide, 30px, sp, 20px);
-      @include inc.sizing(padding, wide, 64px, sp, 50px);
-      @include inc.sizing(padding-top, wide, 55px, sp, 33px);
-      @include inc.sizing(padding-bottom, wide, 55px, sp, 33px);
-      & > h2 {
-        color: inc.$color-wht;
-        text-align: center;
-        font-weight: 500; //Medium
-        @include inc.sizingRem(font-size, wide, 32px, sp, 22px);
-        @include inc.sizing(line-height, wide, 40px, sp, 28px);
-        @include inc.sizing(margin-bottom, wide, 27px, sp, 23px);
-      }
-      & > p {
-        color: inc.$color-wht;
-        @include inc.sizingRem(font-size, wide, 18px, sp, 16px);
-        @include inc.sizing(line-height, wide, 32px, sp, 28px);
-        @include inc.sizing(margin-bottom, wide, 27px, sp, 23px);
-        &:last-child {
+      & > a {
+        @include inc.sizing(padding, wide, 64px, sp, 50px);
+        @include inc.sizing(padding-top, wide, 55px, sp, 33px);
+        @include inc.sizing(padding-bottom, wide, 55px, sp, 33px);
+        display: block;
+        width: 100%;
+        height: 100%;
+        & > h3 {
+          color: inc.$color-wht;
           text-align: center;
+          font-weight: 500; //Medium
+          @include inc.sizingRem(font-size, wide, 32px, sp, 22px);
+          @include inc.sizing(line-height, wide, 40px, sp, 28px);
+          @include inc.sizing(margin-bottom, wide, 27px, sp, 23px);
         }
-        & > a {
+        & > p {
+          color: inc.$color-wht;
+          @include inc.sizingRem(font-size, wide, 18px, sp, 16px);
+          @include inc.sizing(line-height, wide, 32px, sp, 28px);
+          @include inc.sizing(margin-bottom, wide, 27px, sp, 23px);
+        }
+        & > h4 {
+          text-align: center;
+          width: fit-content;
+          margin: 0 auto;
           color: inc.$color-wht;
           @include inc.sizingRem(font-size, wide, 20px, sp, 16px);
           &::before,

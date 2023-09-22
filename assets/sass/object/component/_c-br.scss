@@ -4,4 +4,10 @@
 c-br
 -----------------------------------------------------*/
 .c-br {
+  &--tab {
+    display: block;
+    @include inc.mq(tab) {
+      display: none;
+    }
+  }
 }

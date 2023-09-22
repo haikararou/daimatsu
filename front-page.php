@@ -12,11 +12,11 @@ get_header(); ?>
             </figure>
             <div class="p-home__main--txt">
                 <h1>｢おいしい笑顔」のために……</h1>
-                <p>株式会社ダイマツは野菜・きのこ・山菜をもちいた、漬物・惣菜の製造と販売をおこなっています。</p>
+                <p>株式会社ダイマツは野菜・きのこ・山菜をもちいた、<br class="c-br--tab">漬物・惣菜の製造と販売をおこなっています。</p>
             </div>
         </div>
     </section>
-    <section class="p-home__lead">
+    <section class="p-home__lead l-wrapper2">
         <div class="p-home__lead--txt">
             <h2>こころを込めて食卓へ</h2>
             <p>豊かな自然が息づく信州。<br>
@@ -48,18 +48,21 @@ get_header(); ?>
     <section class="p-home__product--wrapper">
         <div class="p-home__product">
             <h2 class="p-home__product--title c-text--top-h2">商品のご案内</h2>
-            <div class="p-home__product--container">
+            <div class="p-home__product--container l-wrapper">
                 <div class="p-home__product--text">
-                    <h2>業務用商品</h2>
-                    <p>季節の惣菜から通年の定番商品まで幅広い品揃えをご覧ください。商品開発など、お気軽にお問い合わせください。</p>
-                    <p><a href="<?php echo home_url('/products/commercial'); ?>" class="underline">一覧を見る</a></p>
+                    <a href="<?php echo home_url('/products/category/commercial'); ?>" class="underline3">
+                        <h3>業務用商品</h3>
+                        <p>季節の惣菜から通年の定番商品まで幅広い品揃えをご覧ください。商品開発など、お気軽にお問い合わせください。</p>
+                        <h4>一覧を見る</h4>
+                    </a>
                 </div>
                 <div class="p-home__product--text">
-                    <h2>ご家庭用商品</h2>
-                    <p>食卓にもう一品！あったかごはんにぴったり！毎日の忙しい暮らしの中で、「手間をかけずにおいしく食べたい」を実現。</p>
-                    <p><a href="<?php echo home_url('/products/household'); ?>" class="underline">一覧を見る</a></p>
+                    <a href="<?php echo home_url('/products/category/household'); ?>" class="underline3">
+                        <h3>ご家庭用商品</h3>
+                        <p>食卓にもう一品！あったかごはんにぴったり！毎日の忙しい暮らしの中で、「手間をかけずにおいしく食べたい」を実現。</p>
+                        <h4>一覧を見る</h4>
+                    </a>
                 </div>
-                </>
             </div>
             <div class="p-contact__tel">
                 <a href="tel:0120-014-700">
