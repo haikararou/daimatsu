@@ -109,6 +109,18 @@ p-home
       & > p {
         @include inc.sizingRem(font-size, wide, 18px, sp, 16px);
         @include inc.sizing(line-height, wide, 42px, sp, 35px);
+        & > br.min {
+          display: block;
+          @include inc.mq(min) {
+            display: none;
+          }
+        }
+        & > br.desk {
+          display: block;
+          @include inc.mq(desk) {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -181,7 +193,7 @@ p-home
       &::before {
         content: "";
         position: absolute;
-        @include inc.sizing(height, tab, 1140px, sp, 1054px);
+        @include inc.sizing(height, tab, 1000px, sp, 1054px);
         background-image: url(../img/bg.webp);
         background-repeat: no-repeat;
         background-size: cover;
@@ -253,8 +265,11 @@ p-home
   &__news {
     width: 100%;
     margin: 0 auto;
-    @include inc.sizing(margin-top, wide, 319px, sp, 200px);
     position: relative;
+    margin-top: 150px;
+    @include inc.mq(tabl) {
+      @include inc.sizing(margin-top, wide, 300px, tab, 150px);
+    }
     &--title {
       @include inc.sizing(margin-bottom, wide, 64px, sp, 50px);
     }

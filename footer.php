@@ -31,12 +31,12 @@
             <div class="p-footer__inner-sitemap">
                 <div class="p-footer__inner-list">
                     <ul class="p-footer__list">
-                        <li class="p-footer__list-item div1"><a href="<?php echo home_url('/products'); ?>" class="a-effect<?php if (is_post_type_archive('products') || is_tax('products_cat') || is_singular('products')) : ?> a-active<?php endif; ?>">商品のご案内</a></li>
-                        <li class="p-footer__list-item div2"><a href="<?php echo home_url('/information'); ?>" class="a-effect<?php if (is_page('information')) : ?> a-active<?php endif; ?>">工場のご案内</a></li>
-                        <li class="p-footer__list-item div3"><a href="<?php echo home_url('/about'); ?>" class="a-effect<?php if (is_page('about')) : ?> a-active<?php endif; ?>">会社概要</a></li>
-                        <li class="p-footer__list-item div4"><a href="<?php echo home_url('/contact'); ?>" class="a-effect<?php if (is_page('contact')) : ?> a-active<?php endif; ?>">お問い合わせ</a></li>
-                        <li class="p-footer__list-item div5"><a href="<?php echo home_url('/news'); ?>" class="a-effect<?php if (is_post_type_archive('news') || is_tax('news_cat') || is_singular('news')) : ?> a-active<?php endif; ?>">お知らせ</a></li>
-                        <li class="p-footer__list-item div6"><a href="<?php echo home_url('/privacy'); ?>" class="a-effect<?php if (is_page('privacy')) : ?> a-active<?php endif; ?>">プライバシーポリシー</a></li>
+                        <li class="p-footer__list-item div1"><a href="<?php echo home_url('/products'); ?>">商品のご案内</a></li>
+                        <li class="p-footer__list-item div2"><a href="<?php echo home_url('/information'); ?>">工場のご案内</a></li>
+                        <li class="p-footer__list-item div3"><a href="<?php echo home_url('/about'); ?>">会社概要</a></li>
+                        <li class="p-footer__list-item div4"><a href="<?php echo home_url('/contact'); ?>">お問い合わせ</a></li>
+                        <li class="p-footer__list-item div5"><a href="<?php echo home_url('/news'); ?>">お知らせ</a></li>
+                        <li class="p-footer__list-item div6"><a href="<?php echo home_url('/privacy'); ?>">プライバシーポリシー</a></li>
                     </ul>
                 </div>
                 <div class="p-footer__inner-logo">
@@ -48,7 +48,7 @@
                         <span>TEL: 0269-24-1133</span><span>FAX: 0269-24-1033</span>
                     </div>
                     <div class="p-footer__bottom">
-                        <small>Copyright&copy; 2023 DAIMATSU Co;Ltd. All Rights Reserved.<br>おうちdeごはん&copy;</small>
+                        <small>Copyright&copy; 2023 DAIMATSU Co.,Ltd. All Rights Reserved.<br>おうちdeごはん&copy;</small>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ p-header
   // touch-action: none;
   display: flex;
   justify-content: space-between;
-  padding: 0 7rem 0 2rem;
+  padding: 0 7rem 0 1rem;
   @include inc.mq(tab) {
     padding: 0 0 0 2rem;
     @include inc.sizing(padding-right, wide, 112px, tab, 32px);
@@ -33,12 +33,11 @@ p-header
     justify-content: center;
     flex-direction: column;
     height: auto;
-    width: 100px;
     height: inc.size(wide, 100px, sp, 60px);
+    @include inc.sizing(width, sp, 150px, tab, 180px);
     @include inc.mq(tab) {
-      @include inc.sizing(width, tabl, 256px, tab, 160px);
+      @include inc.sizing(width, wide, 256px, tab, 180px);
     }
-
     & > a {
       -webkit-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out;
@@ -262,10 +261,8 @@ p-header
     z-index: 101;
   }
   .p-header__nav-container {
-    border-left: 1px solid rgba(16, 67, 39, 0);
-    padding-top: 108px;
     //width: 128px;
-    @include inc.sizing(width, wide, 128px, tab, 100px);
+    @include inc.sizing(width, wide, 210px, tab, 200px);
     position: fixed;
     opacity: 1;
     top: 0;
@@ -273,13 +270,16 @@ p-header
     height: 100vh;
     overflow: scroll;
     z-index: 10;
-    background: inc.$color-wht;
     .p-header__nav {
+      padding-top: 108px;
       display: block;
+      background: inc.$color-wht;
+      border-left: 1px solid rgba(16, 67, 39, 0.2);
+      height: fit-content;
       .p-header__nav-list.nav-list01 {
         opacity: 0;
         margin: 0 auto;
-        width: 64px;
+        width: 80%;
         //@include inc.sizing(width, wide, 64px, tab, 50px);
         padding: 0;
         display: flex;
@@ -309,8 +309,7 @@ p-header
       }
       .p-header__nav-list.nav-list02 {
         border: none;
-        //width: 128px;
-        @include inc.sizing(width, wide, 128px, tab, 100px);
+        width: 100%;
         margin: 64px auto 0;
         .p-header__nav-item {
           text-align: center;
@@ -341,10 +340,11 @@ p-header
 }
 //==  PCスクロール＆展開  ========================//
 .pc.scroll.open {
-  .p-header__nav-container {
-    border-left: 1px solid rgba(16, 67, 39, 0.2);
+  .p-header__burger {
+    @include inc.sizing(width, wide, 210px, tab, 200px);
   }
   .p-header__burger---button {
+    @include inc.sizing(width, wide, 210px, tab, 200px);
     background: inc.$color-wht;
     transition: background-color 0.4s 0.26s;
   }

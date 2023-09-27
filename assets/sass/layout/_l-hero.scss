@@ -25,7 +25,6 @@ l-hero
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  @include inc.sizing(padding-right, wide, 96px, tab, 64px);
   &---txt {
     width: 100%;
   }

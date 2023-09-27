@@ -132,6 +132,7 @@ p-footer
     margin: 0;
     padding: 0;
     &-item {
+      transition: all 0.2s ease-out;
       font-weight: 500; //Medium
       @include inc.sizingRem(font-size, wide, 18px, sp, 16px);
       line-height: 1.6;
@@ -247,9 +248,8 @@ p-footer
     }
   }
   &__inner-add {
-    max-width: 14rem;
-    width: 70%;
-    @include inc.sizingRem(font-size, wide, 18px, tabl, 12px);
+    width: 100%;
+    @include inc.sizingRem(font-size, wide, 18px, sp, 14px);
     font-weight: 400;
     line-height: 1.8;
     margin: 0 auto;
@@ -262,17 +262,12 @@ p-footer
       font-style: normal;
       display: inline;
       em {
-        padding: 0;
-        display: block;
+        padding-right: 0.4rem;
+        display: inline;
         font-weight: 400;
-        @include inc.mq(tab) {
-          padding-right: 1rem;
-          display: inline;
-        }
       }
     }
     span {
-      @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
       display: block;
       @include inc.mq(tab) {
         display: inline;
@@ -289,11 +284,14 @@ p-footer
       display: block;
       font-weight: 400;
       line-height: 2;
-      @include inc.sizingRem(font-size, wide, 10px, spl, 8px);
+      @include inc.sizingRem(font-size, wide, 14px, sp, 12px);
     }
   }
 }
 @media (hover: hover) {
+  .p-footer__list-item:hover {
+    opacity: 0.8;
+  }
   .p-footer__banner-list-item-mail:hover {
     scale: 1.02;
     transition: scale 0.4s;

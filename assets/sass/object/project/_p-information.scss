@@ -35,7 +35,9 @@ p-information
     @include inc.sizing(margin-bottom, wide, 128px, sp, 75px);
     @include inc.sizing(row-gap, wide, 32px, sp, 16px);
     figure {
+      aspect-ratio: 1/1;
       width: calc((100% - 16px) / 2);
+      height: auto;
       display: block;
       overflow: hidden;
       img {
@@ -71,16 +73,21 @@ p-information
         width: auto;
         opacity: 0;
       }
+      & > picture > img {
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        @include inc.mq(tab) {
+          height: 100%;
+          width: auto;
+        }
+      }
       @include inc.mq(tab) {
         aspect-ratio: 1/1;
         width: calc((100% - 32px) / 3);
         height: auto;
       }
       &:last-child {
-        & > img {
-          width: 100%;
-          height: auto;
-        }
         @include inc.mq(tab) {
           aspect-ratio: 325/169;
           width: calc((100% - 32px) / 3 * 2);
@@ -94,9 +101,10 @@ p-information
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 16px;
-    @include inc.sizing(margin-bottom, wide, 128px, sp, 75px);
     & > figure {
+      aspect-ratio: 1/1;
       width: calc((100% - 16px) / 2);
+      height: auto;
       display: block;
       overflow: hidden;
       & > img {

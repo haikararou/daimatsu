@@ -10,8 +10,6 @@ p-product
     flex-direction: column;
     justify-content: space-between;
     gap: 32px;
-    @include inc.sizing(margin-bottom, wide, 32px, sp, 25px);
-
     @include inc.mq(tab) {
       flex-direction: row;
       @include inc.sizing(gap, wide, 64px, sp, 50px);
@@ -20,6 +18,17 @@ p-product
       margin: 0 auto;
       width: auto;
       @include inc.sizing(max-width, wide, 639px, sp, 325px, no);
+    }
+    &--container {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      gap: 32px;
+      @include inc.mq(tab) {
+        flex-direction: row;
+        justify-content: center;
+        @include inc.sizing(width, wide, 992px, spl, 480px);
+      }
     }
     &--text {
       transition: scale 0.4s;

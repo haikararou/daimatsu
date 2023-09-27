@@ -34,6 +34,18 @@ p-about
       text-align: center;
       @include inc.sizingRem(font-size, wide, 18px, sp, 16px);
       @include inc.sizing(line-height, wide, 40px, sp, 35px);
+      & > br.tabl {
+        display: block;
+        @include inc.mq(tabl) {
+          display: none;
+        }
+      }
+      & > br.spl {
+        display: block;
+        @include inc.mq(spl) {
+          display: none;
+        }
+      }
     }
   }
   &--map {

@@ -11,6 +11,11 @@ p-breadcrumb
   @include inc.sizingRem(font-size, wide, 12px, spl, 10px);
   @include inc.sizing(margin-top, wide, 64px, spl, 26px);
   @include inc.sizing(margin-bottom, wide, 48px, spl, 32px);
+  -ms-overflow-style: none; /* IE, Edge 対応 */
+  scrollbar-width: none; /* Firefox 対応 */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari 対応 */
+  }
   &__container {
     display: flex;
     gap: 28px;

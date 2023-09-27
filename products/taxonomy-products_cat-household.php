@@ -48,16 +48,6 @@
                 endif; ?>
             </ul>
         </div>
-        <div class="p-text-box">
-            <div class="p-product__bnr">
-                <a href="" target="_blank">
-                    <picture>
-                        <source media="(min-width: 620px)" srcset="<?php bloginfo('template_url') ?>/assets/img/products/bnr.jpg">
-                        <img src="<?php bloginfo('template_url') ?>/assets/img/products/bnr_sp.jpg" alt="">
-                    </picture>
-                </a>
-            </div>
-        </div>
     </section>
 
     <?php get_footer(); ?>

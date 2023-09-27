@@ -13,7 +13,7 @@
         </div>
     </section>
     <section class="lead">
-        <section class="l-wrapper4">
+        <section class="l-wrapper p-product__top--container">
             <div class="p-text-box">
                 <div class="p-product__top">
                     <div class="p-product__top--text">
@@ -30,13 +30,6 @@
                             <h4>一覧を見る</h4>
                         </a>
                     </div>
-                </div>
-                <div class="p-contact__tel">
-                    <a href="tel:0120-014-700">
-                        <p>お電話でのお問い合わせは</p>
-                        <p>0120-014-700</p>
-                        <p>営業時間 8:30〜17:00（平日）</p>
-                    </a>
                 </div>
             </div>
         </section>
