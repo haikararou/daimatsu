@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 @use "../../inc/" as inc;
 /*
-p-table
+p-dl-table
 -----------------------------------------------------*/
 .p-dl-table {
   border-top: 1px solid inc.$color-grn3;
@@ -15,9 +15,9 @@ p-table
       flex-wrap: wrap;
     }
     dt {
-      @include inc.sizingRem(font-size, wide, 14px, spl, 11px);
+      @include inc.sizingRem(font-size, wide, 16px, spl, 12px);
       width: 100%;
-      margin: 0 0 .5rem;
+      margin: 0 0 0.5rem;
       padding: 0;
       @include inc.mq(min) {
         width: 20%;
@@ -26,16 +26,11 @@ p-table
       }
     }
     dd {
-      @include inc.sizingRem(font-size, wide, 16px, spl, 14px);
+      @include inc.sizingRem(font-size, wide, 18px, spl, 16px);
       width: 100%;
       line-height: 1.6;
-      font-size: 14px;
       @include inc.mq(min) {
-        @include inc.sizingRem(font-size, tabl, 12px, min, 10px);
         width: 80%;
-      }
-      @include inc.mq(tabl) {
-        @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
       }
     }
   }
@@ -60,7 +55,7 @@ p-table
     dt {
       font-size: 14px;
       width: 33%;
-      margin: 0 0 .5rem;
+      margin: 0 0 0.5rem;
       line-height: 2;
       padding: 0;
       @include inc.mq(min) {

@@ -106,6 +106,9 @@ p-header
     line-height: 1;
     a {
       line-height: 1.2em;
+      & > br {
+        display: none;
+      }
     }
   }
 }
@@ -128,12 +131,10 @@ p-header
   transition: all 0.4s ease-out;
   &---button {
     display: block;
-    //width: 127px;
     @include inc.sizing(width, wide, 127px, tab, 99px);
     margin: 0 0 0 1px;
     height: 100px;
     position: fixed;
-    //background: inc.$color-wht;
   }
   &---design {
     @media (hover: hover) {
@@ -191,6 +192,7 @@ p-header
     @include inc.sizing(width, wide, 127px, tab, 99px);
     margin: 0 0 0 1px;
     height: 100px;
+    transition: background-color 0s;
   }
   &---design {
     width: 64px;
@@ -261,14 +263,15 @@ p-header
   }
   .p-header__nav-container {
     border-left: 1px solid rgba(16, 67, 39, 0);
-    padding-top: 133px;
+    padding-top: 108px;
     //width: 128px;
     @include inc.sizing(width, wide, 128px, tab, 100px);
     position: fixed;
     opacity: 1;
     top: 0;
     right: -200px;
-    height: auto;
+    height: 100vh;
+    overflow: scroll;
     z-index: 10;
     background: inc.$color-wht;
     .p-header__nav {
@@ -281,6 +284,8 @@ p-header
         padding: 0;
         display: flex;
         flex-direction: column;
+        gap: 0;
+        justify-content: flex-start;
         .p-header__nav-item {
           opacity: 0;
           border-bottom: 1px solid inc.$color-grn3;
@@ -288,8 +293,11 @@ p-header
           a {
             display: block;
             padding: 2rem 0;
-            font-weight: 500; //Medium
-            @include inc.sizingRem(font-size, wide, 18px, tab, 16px);
+            font-weight: 400; //Medium
+            @include inc.sizingRem(font-size, wide, 16px, sp, 16px);
+            & > br {
+              display: block;
+            }
           }
           &:first-child {
             display: block;
@@ -335,6 +343,10 @@ p-header
 .pc.scroll.open {
   .p-header__nav-container {
     border-left: 1px solid rgba(16, 67, 39, 0.2);
+  }
+  .p-header__burger---button {
+    background: inc.$color-wht;
+    transition: background-color 0.4s 0.26s;
   }
 }
 
@@ -390,7 +402,7 @@ p-header
         width: 100%;
         text-align: center;
         line-height: 1;
-        font-weight: 500; //Medium
+        font-weight: 400; //Medium
         @include inc.sizingRem(font-size, wide, 18px, tab, 16px);
         height: 70px;
         display: flex;
@@ -572,7 +584,7 @@ a.underline3 h4 {
   }
 }
 
-a.underline4 span {
+a.underline4 > p:last-child {
   background: -webkit-gradient(
       linear,
       left top,
@@ -590,7 +602,7 @@ a.underline4 span {
   padding-bottom: 2px;
 }
 @media (hover: hover) and (pointer: fine) {
-  a.underline4:hover span {
+  a.underline4:hover > p:last-child {
     background-size: 100% 1px;
     background-position: 0 100%;
   }

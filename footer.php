@@ -18,7 +18,7 @@
                             <p>営業時間 8:30〜17:00（平日）</p>
                         </a>
                     </li>
-                    <li class="p-footer__banner-list-item">
+                    <li class="p-footer__banner-list-item p-footer__banner-list-item-mail">
                         <a href="<?php echo home_url('/contact'); ?>" class="p-footer__banner-list-item-mail underline4">
                             <p>メールでのお問い合わせは</p>
                             <p>お問い合わせフォーム</p>

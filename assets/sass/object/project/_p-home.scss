@@ -209,6 +209,7 @@ p-home
       }
     }
     &--text {
+      transition: scale 0.4s;
       background-color: inc.$color-grn2;
       @include inc.sizing(border-radius, wide, 30px, sp, 20px);
       & > a {
@@ -307,5 +308,11 @@ p-home
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@media (hover: hover) {
+  .p-home__product--text:hover {
+    scale: 1.02;
   }
 }

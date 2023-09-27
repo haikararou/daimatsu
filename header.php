@@ -35,8 +35,8 @@
             <nav class="p-header__nav">
                 <ul class="p-header__nav-list nav-list01">
                     <li class="p-header__nav-item p-header__nav-item01"><a href="<?php echo home_url('/'); ?>" class="a-effect">ホーム</a></li>
-                    <li class="p-header__nav-item p-header__nav-item02"><a href="<?php echo home_url('/products'); ?>" class="a-effect<?php if (is_post_type_archive('products') || is_tax('products_cat') || is_singular('products')) : ?> a-active<?php endif; ?>">商品のご案内</a></li>
-                    <li class="p-header__nav-item p-header__nav-item03"><a href="<?php echo home_url('/information'); ?>" class="a-effect<?php if (is_page('information')) : ?> a-active<?php endif; ?>">工場のご案内</a></li>
+                    <li class="p-header__nav-item p-header__nav-item02"><a href="<?php echo home_url('/products'); ?>" class="a-effect<?php if (is_post_type_archive('products') || is_tax('products_cat') || is_singular('products')) : ?> a-active<?php endif; ?>">商品の<br>ご案内</a></li>
+                    <li class="p-header__nav-item p-header__nav-item03"><a href="<?php echo home_url('/information'); ?>" class="a-effect<?php if (is_page('information')) : ?> a-active<?php endif; ?>">工場の<br>ご案内</a></li>
                     <li class="p-header__nav-item p-header__nav-item04"><a href="<?php echo home_url('/about'); ?>" class="a-effect<?php if (is_page('about')) : ?> a-active<?php endif; ?>">会社概要</a></li>
                     <li class="p-header__nav-item p-header__nav-item05"><a href="<?php echo home_url('/news'); ?>" class="a-effect<?php if (is_post_type_archive('news') || is_tax('news_cat') || is_singular('news')) : ?> a-active<?php endif; ?>">お知らせ</a></li>
                 </ul>

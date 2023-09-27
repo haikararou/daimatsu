@@ -293,3 +293,9 @@ p-footer
     }
   }
 }
+@media (hover: hover) {
+  .p-footer__banner-list-item-mail:hover {
+    scale: 1.02;
+    transition: scale 0.4s;
+  }
+}

@@ -3,6 +3,7 @@
 /*
 c-text
 -----------------------------------------------------*/
+
 .c-text {
   &--h1 {
     @include inc.sizingRem(font-size, wide, 40px, sp, 26px);

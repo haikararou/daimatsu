@@ -8,12 +8,9 @@ p-information
   &__lead {
     font-size: 14px;
     line-height: 2;
-    margin-bottom: 75px;
-    @include inc.sizing(margin-top, wide, 128px, min, 54px);
-    @include inc.mq(min) {
-      @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
-      @include inc.sizingRem(font-size, tabl, 16px, min, 14px);
-    }
+    @include inc.sizing(margin-bottom, wide, 128px, sp, 50px);
+    @include inc.sizing(margin-top, wide, 128px, sp, 75px);
+    @include inc.sizingRem(font-size, tabl, 16px, min, 14px);
     @include inc.mq(tabl) {
       @include inc.sizingRem(font-size, wide, 18px, tabl, 16px);
     }
@@ -21,21 +18,12 @@ p-information
   &__txt {
     font-size: 14px;
     line-height: 2;
-    margin-bottom: 75px;
+    @include inc.sizing(margin-bottom, wide, 64px, sp, 25px);
     @include inc.mq(min) {
-      @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
       @include inc.sizingRem(font-size, tabl, 16px, min, 14px);
     }
     @include inc.mq(tabl) {
       @include inc.sizingRem(font-size, wide, 18px, tabl, 16px);
-    }
-    &---right {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row-reverse;
-      div {
-        width: 558px;
-      }
     }
   }
   &__ph01 {
@@ -44,21 +32,18 @@ p-information
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 75px;
+    @include inc.sizing(margin-bottom, wide, 128px, sp, 75px);
     @include inc.sizing(row-gap, wide, 32px, sp, 16px);
     figure {
       width: calc((100% - 16px) / 2);
       display: block;
       overflow: hidden;
       img {
-        width: 100%;
-        height: auto;
+        height: 100%;
+        width: auto;
         opacity: 0;
       }
-    }
-    @include inc.mq(tab) {
-      @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
-      figure {
+      @include inc.mq(tab) {
         width: calc((100% - 64px) / 3);
       }
     }
@@ -69,27 +54,38 @@ p-information
     justify-content: space-between;
     flex-direction: row-reverse;
     gap: 16px;
-    padding-left: 25px;
-    padding-right: 13.6%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 75px;
     @include inc.sizing(row-gap, wide, 32px, sp, 16px);
-
-    figure {
+    @include inc.sizing(margin-bottom, wide, 128px, sp, 75px);
+    & > figure {
       width: 100%;
       display: block;
       overflow: hidden;
-      img {
-        width: 100%;
-        height: auto;
+      aspect-ratio: 325/169;
+      width: 100%;
+      height: auto;
+      & > img {
+        height: 100%;
+        width: auto;
         opacity: 0;
       }
-    }
-    @include inc.mq(tab) {
-      @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
-      figure {
+      @include inc.mq(tab) {
+        aspect-ratio: 1/1;
         width: calc((100% - 32px) / 3);
+        height: auto;
+      }
+      &:last-child {
+        & > img {
+          width: 100%;
+          height: auto;
+        }
+        @include inc.mq(tab) {
+          aspect-ratio: 325/169;
+          width: calc((100% - 32px) / 3 * 2);
+          height: auto;
+        }
       }
     }
   }
@@ -98,27 +94,42 @@ p-information
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 16px;
-    padding-left: 13.6%;
-    padding-right: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    figure {
+    @include inc.sizing(margin-bottom, wide, 128px, sp, 75px);
+    & > figure {
       width: calc((100% - 16px) / 2);
       display: block;
       overflow: hidden;
-      &:nth-child(3) {
-        width: 100%;
-      }
-      img {
-        width: 100%;
-        height: auto;
+      & > img {
         opacity: 0;
+        height: 100%;
+        width: auto;
       }
-    }
-    @include inc.mq(tab) {
-      @include inc.sizing(margin-bottom, wide, 128px, min, 75px);
-      figure {
-        width: calc((100% - 32px) / 3);
+      @include inc.mq(tab) {
+        aspect-ratio: 1/1;
+        width: calc((100% - 64px) / 3);
+        height: auto;
+      }
+      &:last-child {
+        aspect-ratio: 325/169;
+        height: auto;
+        width: 100%;
+        position: relative;
+        @include inc.mq(tab) {
+          aspect-ratio: 1/1;
+          width: calc((100% - 32px) / 3);
+          height: auto;
+        }
+        & > img {
+          width: 100%;
+          height: auto;
+          position: absolute;
+          bottom: -25%;
+          left: 0;
+          @include inc.mq(tab) {
+            position: relative;
+            bottom: 0;
+          }
+        }
       }
     }
   }

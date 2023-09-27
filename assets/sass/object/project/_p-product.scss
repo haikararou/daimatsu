@@ -22,6 +22,7 @@ p-product
       @include inc.sizing(max-width, wide, 639px, sp, 325px, no);
     }
     &--text {
+      transition: scale 0.4s;
       background-color: inc.$color-grn2;
       @include inc.sizing(border-radius, wide, 30px, sp, 20px);
       & > a {
@@ -529,5 +530,10 @@ p-product
         @include inc.sizing(margin-top, wide, 260px, tabl, 160px);
       }
     }
+  }
+}
+@media (hover: hover) {
+  .p-product__top--text:hover {
+    scale: 1.02;
   }
 }
