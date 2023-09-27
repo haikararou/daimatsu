@@ -158,7 +158,7 @@ const listener = (event) => {
       let windowWidth = window.innerWidth;
       let element = document.getElementsByClassName("scroll");
       if (scrollTop <= 130) {
-        $(".p-header__nav-container").css("right", "-200px");
+        $(".p-header__nav-container").css("right", "-240px");
         $(".p-header__nav-list.nav-list01").css("opacity", "0");
       }
       if (scrollTop <= 150) {
