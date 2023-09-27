@@ -2,43 +2,46 @@
 /* ---------------------------------------------------------------------
 テーマでアイキャッチ機能を有効化
 -------------------------------------------------------------------------*/
-add_theme_support( 'post-thumbnails' );
+add_theme_support('post-thumbnails');
 
-update_option( 'medium_crop',true ); // 中サイズのトリミング
-update_option( 'large_crop',true ); // 大サイズのトリミング
+update_option('medium_crop', true); // 中サイズのトリミング
+update_option('large_crop', true); // 大サイズのトリミング
 
 
 /* ---------------------------------------------------------------------
 GutenbergエディタにCSSを適用
 -------------------------------------------------------------------------*/
-function gutenberg_support_setup() {
-  add_theme_support( 'editor-styles' );
-  add_editor_style( 'assets/css/editor-style.css' );
+function gutenberg_support_setup()
+{
+    add_theme_support('editor-styles');
+    add_editor_style('assets/css/editor-style.css');
 }
-add_action( 'after_setup_theme', 'gutenberg_support_setup' );
+add_action('after_setup_theme', 'gutenberg_support_setup');
 
 /* ---------------------------------------------------------------------
 正しいURLを入力しないとログイン画面を表示しないようにする
 -------------------------------------------------------------------------*/
-remove_action( 'template_redirect', 'wp_redirect_admin_locations', 1000 );
+remove_action('template_redirect', 'wp_redirect_admin_locations', 1000);
 
-function remove_redirect_guess_404_permalink( $redirect_url ) {
-    if ( is_404() )
+function remove_redirect_guess_404_permalink($redirect_url)
+{
+    if (is_404())
         return false;
     return $redirect_url;
 }
-add_filter( 'redirect_canonical', 'remove_redirect_guess_404_permalink' );
+add_filter('redirect_canonical', 'remove_redirect_guess_404_permalink');
 
 
 
 /* ---------------------------------------------------------------------
 SVGのアップロードを許可
 -------------------------------------------------------------------------*/
-function add_file_types_to_uploads($file_types){
+function add_file_types_to_uploads($file_types)
+{
 
     $new_filetypes = array();
     $new_filetypes['svg'] = 'image/svg+xml';
-    $file_types = array_merge($file_types, $new_filetypes );
+    $file_types = array_merge($file_types, $new_filetypes);
 
     return $file_types;
 }
@@ -62,9 +65,10 @@ CSS・JSを登録する
 // add_action( 'wp_enqueue_scripts', 'my_enqueue_files' );
 
 // wp_footerにCSS・JSを書き出す
-function my_load_widget_scripts() {
-  wp_register_style( 'wpadminbar', get_template_directory_uri() . '/assets/css/wpadminbar.css');
-  wp_enqueue_style( 'wpadminbar' );
+function my_load_widget_scripts()
+{
+    wp_register_style('wpadminbar', get_template_directory_uri() . '/assets/css/wpadminbar.css');
+    wp_enqueue_style('wpadminbar');
 }
 add_action('wp_footer', 'my_load_widget_scripts');
 
@@ -105,34 +109,32 @@ JSをdeferで読み込む
 /*--------------------------------------
 適用テンプレートのパスを変更
 --------------------------------------*/
-function get_custom_template( $page_template ) {
-global $wp_query;
+function get_custom_template($page_template)
+{
+    global $wp_query;
 
-//single
-if(is_singular('news')) {
-$page_template = dirname( __FILE__ ) . "/news/single.php";
-}
-else if(is_singular('products')) {
-$page_template = dirname( __FILE__ ) . "/products/single.php";
-}
+    //single
+    if (is_singular('news')) {
+        $page_template = dirname(__FILE__) . "/news/single.php";
+    } else if (is_singular('products')) {
+        $page_template = dirname(__FILE__) . "/products/single.php";
+    }
 
-//archive
-else if(is_post_type_archive('news')){
-$page_template = dirname( __FILE__ ) . "/news/archive.php";
-}
-else if(is_post_type_archive('products')){
-$page_template = dirname( __FILE__ ) . "/products/archive.php";
-}
+    //archive
+    else if (is_post_type_archive('news')) {
+        $page_template = dirname(__FILE__) . "/news/archive.php";
+    } else if (is_post_type_archive('products')) {
+        $page_template = dirname(__FILE__) . "/products/archive.php";
+    }
 
-//taxonomy
-else if(is_tax('products_cat','commercial')){
-$page_template = dirname( __FILE__ ) . "/products/taxonomy-products_cat-commercial.php";
-}
-else if(is_tax('products_cat','household')){
-$page_template = dirname( __FILE__ ) . "/products/taxonomy-products_cat-household.php";
-}
+    //taxonomy
+    else if (is_tax('products_cat', 'commercial')) {
+        $page_template = dirname(__FILE__) . "/products/taxonomy-products_cat-commercial.php";
+    } else if (is_tax('products_cat', 'household')) {
+        $page_template = dirname(__FILE__) . "/products/taxonomy-products_cat-household.php";
+    }
 
-return $page_template;
+    return $page_template;
 }
 add_filter('single_template', 'get_custom_template');
 add_filter('archive_template', 'get_custom_template');
@@ -143,16 +145,16 @@ add_filter('archive_template', 'get_custom_template');
 -------------------------------------------------------------------------*/
 
 /*初期設定*/
-include_once( get_template_directory().'/functions/initial-setting.php' );
+include_once(get_template_directory() . '/functions/initial-setting.php');
 
 /*メタタグ類の設定*/
-include_once( get_template_directory().'/functions/meta-setting.php' );
+include_once(get_template_directory() . '/functions/meta-setting.php');
 
 /*カスタム投稿タイプを追加*/
-include_once( get_template_directory().'/functions/custompost.php' );
+include_once(get_template_directory() . '/functions/custompost.php');
 
 /*便利な関数*/
-include_once( get_template_directory().'/functions/utility.php' );
+include_once(get_template_directory() . '/functions/utility.php');
 
 /*ダッシュボードのカスタマイズ*/
 //include_once( get_template_directory().'/functions/dashboard.php' );
@@ -162,46 +164,46 @@ include_once( get_template_directory().'/functions/utility.php' );
 /*-----------------------------------------
 アイキャッチ画像がなかったら記事内の一番目の画像を取得し、さらに画像がなかったら定義した画像を表示する
 -------------------------------------------*/
-function catch_that_image() {
-global $post, $posts;
-$first_img = '';
-ob_start();
-ob_end_clean();
-$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-$first_img = $matches [1] [0];
+function catch_that_image()
+{
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches[1][0];
 
-if(has_post_thumbnail()) {
-$img_id = get_post_thumbnail_id();
-$img_url = wp_get_attachment_image_src($img_id, 'thumbnail', true);
-$first_img = $img_url[0];
+    if (has_post_thumbnail()) {
+        $img_id = get_post_thumbnail_id();
+        $img_url = wp_get_attachment_image_src($img_id, 'thumbnail', true);
+        $first_img = $img_url[0];
+    }
+    if (empty($first_img)) {
+        // アイキャッチ画像があればそちらを表示する
+        if (has_post_thumbnail()) {
+            $img_id = get_post_thumbnail_id();
+            $img_url = wp_get_attachment_image_src($img_id, 'thumbnail', true);
+            $first_img = $img_url[0];
+        } else {
+            // 記事内で画像がなかった時のための画像を指定（ディレクトリ先や画像名称は任意）
+            $first_img = esc_url(get_template_directory_uri()) . "/assets/img/no_image.png";
+        }
+    }
+    return $first_img;
 }
-if(empty($first_img)) {
-// アイキャッチ画像があればそちらを表示する
-if(has_post_thumbnail()) {
-$img_id = get_post_thumbnail_id();
-$img_url = wp_get_attachment_image_src($img_id, 'thumbnail', true);
-$first_img = $img_url[0];
-} else {
-// 記事内で画像がなかった時のための画像を指定（ディレクトリ先や画像名称は任意）
-$first_img = esc_url(get_template_directory_uri()) . "/assets/img/no_image.png";
-}
-}
-return $first_img;
-}
-
-
 
 
 /*-----------------------------------------
 * スラッグの日本語禁止
 -------------------------------------------*/
-function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
-    if ( preg_match( '/(%[0-9a-f]{2})+/', $slug ) ) {
-    $slug = utf8_uri_encode( $post_type ) . '-' . $post_ID;
+function auto_post_slug($slug, $post_ID, $post_status, $post_type)
+{
+    if (preg_match('/(%[0-9a-f]{2})+/', $slug)) {
+        $slug = utf8_uri_encode($post_type) . '-' . $post_ID;
     }
     return $slug;
-    }
-    add_filter( 'wp_unique_post_slug', 'auto_post_slug', 10, 4 );
+}
+add_filter('wp_unique_post_slug', 'auto_post_slug', 10, 4);
 
 
 
@@ -209,9 +211,9 @@ function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
 /*-----------------------------------------
 * 説明文に自動挿入されるpタグを省く
 -------------------------------------------*/
-remove_filter('category_description','wpautop');
-remove_filter('tag_description','wpautop');
-remove_filter('term_description','wpautop');
+remove_filter('category_description', 'wpautop');
+remove_filter('tag_description', 'wpautop');
+remove_filter('term_description', 'wpautop');
 
 
 
@@ -219,35 +221,39 @@ remove_filter('term_description','wpautop');
 /*-----------------------------------------
 * 管理画面にカテゴリーを表示
 -------------------------------------------*/
-function add_custom_column( $defaults ) {
-$defaults['products_cat'] = 'カテゴリ';
-return $defaults;
+function add_custom_column($defaults)
+{
+    $defaults['products_cat'] = 'カテゴリ';
+    return $defaults;
 }
 add_filter('manage_news_posts_columns', 'add_custom_column');
-function add_custom_column_id($column_name, $id) {
-$terms = get_the_terms($id, $column_name);
-if ( $terms && ! is_wp_error( $terms ) ){
-$news_cat_links = array();
-foreach ( $terms as $term ) {
-$news_cat_links[] = $term->name;
-}
-echo join( ", ", $news_cat_links );
-}
+function add_custom_column_id($column_name, $id)
+{
+    $terms = get_the_terms($id, $column_name);
+    if ($terms && !is_wp_error($terms)) {
+        $news_cat_links = array();
+        foreach ($terms as $term) {
+            $news_cat_links[] = $term->name;
+        }
+        echo join(", ", $news_cat_links);
+    }
 }
 add_action('manage_news_posts_columns', 'add_custom_column', 10, 2);
 
 
 
 // カスタム投稿タイプの記事一覧に投稿者の項目を追加する
-function manage_books_columns ($columns) {
-  $columns['author'] = '作成者';
-  return $columns;
+function manage_books_columns($columns)
+{
+    $columns['author'] = '作成者';
+    return $columns;
 }
-function add_books_column ($column, $post_id) {
-  if ('author' == $column) {
-    $value = get_the_term_list($post_id, 'author');
-    echo attribute_escape($value);
-  }
+function add_books_column($column, $post_id)
+{
+    if ('author' == $column) {
+        $value = get_the_term_list($post_id, 'author');
+        echo attribute_escape($value);
+    }
 }
 add_filter('manage_posts_columns', 'manage_books_columns');
 add_action('manage_posts_custom_column', 'add_books_column', 10, 2);
@@ -275,8 +281,9 @@ add_action('manage_posts_custom_column', 'add_books_column', 10, 2);
 /*-----------------------------------------
 * 概要（抜粋）の文字数調整
 -------------------------------------------*/
-function my_excerpt_length($length) {
-return 80;
+function my_excerpt_length($length)
+{
+    return 80;
 }
 add_filter('excerpt_length', 'my_excerpt_length');
 
@@ -295,18 +302,19 @@ add_filter('excerpt_length', 'my_excerpt_length');
 
 
 
-function my_form_tag_filter($tag) {
-  if (!is_array($tag)) {
-    return $tag;
-  }
-  //チェックボックスの場合
-  if (isset($_GET['checked'])) {
-    if ($tag['name'] === 'contact-kinds') { // nameの値を指定
-      // TODO: エラー処理を加えたほうがいい
-      $tag['options'][] = 'default:' . $_GET['checked'];
+function my_form_tag_filter($tag)
+{
+    if (!is_array($tag)) {
+        return $tag;
     }
-  }
-  return $tag;
+    //チェックボックスの場合
+    if (isset($_GET['checked'])) {
+        if ($tag['name'] === 'contact-kinds') { // nameの値を指定
+            // TODO: エラー処理を加えたほうがいい
+            $tag['options'][] = 'default:' . $_GET['checked'];
+        }
+    }
+    return $tag;
 }
 add_filter('wpcf7_form_tag', 'my_form_tag_filter', 10);
 
@@ -325,38 +333,41 @@ add_filter('wpcf7_form_tag', 'my_form_tag_filter', 10);
 /*-----------------------------------------
 * Contact Form 7でメールアドレスの再入力チェック
 -------------------------------------------*/
-add_filter( 'wpcf7_validate_email', 'wpcf7_validate_email_filter_confrim', 11, 2 );
-add_filter( 'wpcf7_validate_email*', 'wpcf7_validate_email_filter_confrim', 11, 2 );
-function wpcf7_validate_email_filter_confrim( $result, $tag ) {
-  $type = $tag['type'];
-  $name = $tag['name'];
-  if ( 'email' == $type || 'email*' == $type ) {
-    if (preg_match('/(.*)_confirm$/', $name, $matches)){ //確認用メルアド入力フォーム名を ○○○_confirm としています。
-      $target_name = $matches[1];
-        $posted_value = trim( (string) $_POST[$name] ); //前後空白の削除
-        $posted_target_value = trim( (string) $_POST[$target_name] ); //前後空白の削除
-      if ($posted_value != $posted_target_value) {
-        $result->invalidate( $tag,"確認用のメールアドレスが一致していません");
-      }
+add_filter('wpcf7_validate_email', 'wpcf7_validate_email_filter_confrim', 11, 2);
+add_filter('wpcf7_validate_email*', 'wpcf7_validate_email_filter_confrim', 11, 2);
+function wpcf7_validate_email_filter_confrim($result, $tag)
+{
+    $type = $tag['type'];
+    $name = $tag['name'];
+    if ('email' == $type || 'email*' == $type) {
+        if (preg_match('/(.*)_confirm$/', $name, $matches)) { //確認用メルアド入力フォーム名を ○○○_confirm としています。
+            $target_name = $matches[1];
+            $posted_value = trim((string) $_POST[$name]); //前後空白の削除
+            $posted_target_value = trim((string) $_POST[$target_name]); //前後空白の削除
+            if ($posted_value != $posted_target_value) {
+                $result->invalidate($tag, "確認用のメールアドレスが一致していません");
+            }
+        }
     }
-  }
-  return $result;
+    return $result;
 }
 
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
-function wpcf7_autop_return_false() {
-  return false;
+function wpcf7_autop_return_false()
+{
+    return false;
 }
 
 
 
 // Contact Form 7 お問い合わせ完了ページに遷移
 add_action('wp_footer', 'redirect_to_thanks_page');
-function redirect_to_thanks_page() {
-  $homeUrl = home_url();
-  echo <<< EOD
+function redirect_to_thanks_page()
+{
+    $homeUrl = home_url();
+    echo <<< EOD
     <script>
       document.addEventListener( 'wpcf7mailsent', function( event ) {
         location = '{$homeUrl}/contact/thanks/';

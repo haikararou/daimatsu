@@ -26,7 +26,10 @@
     <section class="l-wrapper2">
         <div class="p-text-box">
             <ul class="p-product__list">
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <?php
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                if (have_posts()) : while (have_posts()) : the_post();
+                        $current_post_number = $wp_query->current_post + 1 + (($paged - 1) * get_query_var('posts_per_page')); ?>
                         <?php if (get_field('no_page')) : ?>
                             <!-- チェックが入っている時に表示される -->
                             <li class="no_page"></li>
@@ -39,7 +42,7 @@
                                     $image_url = wp_get_attachment_image_src($image_id, true);
                                     ?>
                                     <figure><?php if (has_post_thumbnail()) : ?><img src="<?php echo $image_url[0]; ?>" alt=""><?php else : ?><img src="<?php bloginfo('template_url') ?>/assets/img/no_images.png" alt=""><?php endif; ?></figure>
-                                    <p><?php echo $wp_query->current_post + 1; ?></p>
+                                    <p><?php echo $current_post_number; ?></p>
                                     <h2><?php the_title(); ?></h2>
                                 </a>
                             </li>

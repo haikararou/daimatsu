@@ -17,12 +17,12 @@ get_header(); ?>
         </div>
     </section>
     <section class="l-wrapper0000 lead">
-        <section class="l-wrapper4">
+        <section class="l-wrapper2">
             <div class="p-about--philosophy">
                 <h2 class="c-text--h2">理念</h2>
-                <p>株式会社ダイマツは、<br class="tabl">お客様の<br class="spl">「おいしい笑顔」のために、<br>
-                    たゆみない誠実な仕事を通して、<br class="tabl">健やかで豊かな<br class="spl">食卓づくりに貢献します。<br>
-                    常に学び、成長し、創造し、<br class="tabl">関わるすべての人の<br class="spl">幸せを目指します。
+                <p>株式会社ダイマツは、<br class="tabl">お客様の「おいしい笑顔」のために、<br>
+                    たゆみない誠実な仕事を通して、<br class="tabl">健やかで豊かな食卓づくりに貢献します。<br>
+                    常に学び、成長し、創造し、<br class="tabl">関わるすべての人の幸せを目指します。
                 </p>
             </div>
         </section>

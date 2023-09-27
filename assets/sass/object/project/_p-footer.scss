@@ -216,7 +216,7 @@ p-footer
   }
 
   &__inner-logo {
-    width: 70%;
+    width: 100%;
     margin: 4.5rem auto 0;
     text-align: center;
     @include inc.mq(tab) {
