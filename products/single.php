@@ -16,6 +16,21 @@
         </div>
     </section>
     <section class="l-wrapper5">
+        <div class="p-product__link">
+            <?php
+            $prevpost = get_adjacent_post(false, '', true); //前の記事
+            $nextpost = get_adjacent_post(false, '', false); //次の記事
+            if ($prevpost) : ?>
+                <p class="p-product__link--prev">
+                    <a href="<?php echo get_permalink($nextpost->ID) ?>">前の商品</a>
+                </p>
+            <?php endif;
+            if ($nextpost) : ?>
+                <p class="p-product__link--next">
+                    <a href="<?php echo get_permalink($prevpost->ID) ?>">次の商品</a>
+                </p>
+            <?php endif; ?>
+        </div>
         <div class="p-product__post">
             <div class="p-product__post---ph">
                 <div class="sticky">

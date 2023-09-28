@@ -24,7 +24,7 @@ p-pagenav
     border: 1px solid inc.$color-wht;
     @include inc.sizing(width, wide, 64px, tabl, 32px);
     @include inc.sizing(height, wide, 64px, tabl, 32px);
-    @include inc.sizing(border-radius, wide, 20px, sp, 15px);
+    @include inc.sizing(border-radius, wide, 20px, sp, 10px);
     line-height: 1;
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@ p-pagenav
       background: inc.$color-grn2;
       color: inc.$color-wht;
       border: none;
-      @include inc.sizing(border-radius, wide, 20px, sp, 15px);
+      @include inc.sizing(border-radius, wide, 20px, sp, 10px);
     }
   }
 }

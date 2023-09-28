@@ -103,7 +103,6 @@ p-product
   &__item {
     & > a {
       & > figure {
-        @include inc.sizing(border-radius, wide, 80px, sp, 45px);
         @include inc.sizing(margin-bottom, wide, 14px, sp, 5px);
       }
       & > p {

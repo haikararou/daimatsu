@@ -968,12 +968,13 @@ p-header
   font-size: clamp(0.875rem, 0.38vw + 0.75rem, 1.125rem);
   font-weight: 400;
   height: clamp(60px, 3.35vw + 47.5px, 100px);
-  width: clamp(496px, 19.25vw + 348.2px, 650px);
+  width: clamp(465px, 35vw + 196.2px, 745px);
   opacity: 0;
   position: static;
 }
 @media screen and (min-width: 768px) {
   .p-header__nav-container {
+    font-size: clamp(0.75rem, 0.75vw + 0.3875rem, 1.125rem);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1011,21 +1012,28 @@ p-header
           justify-content: space-between;
   gap: clamp(25px, 0.59vw + 22.7px, 32px);
 }
+@media screen and (min-width: 768px) {
+  .p-header__nav-list {
+    gap: clamp(16px, 2vw + 0.6px, 32px);
+  }
+}
 .p-header__nav-list a {
   text-decoration: none;
 }
 .p-header__nav-list.nav-list01 {
   opacity: 1;
-  width: clamp(371px, 17.63vw + 235.6px, 512px);
-  padding-right: 1.4rem;
-}
-.p-header__nav-list.nav-list01 .p-header__nav-item:first-child {
-  display: none;
+  width: clamp(400px, 22.5vw + 227.2px, 580px);
+  padding-right: 1.2rem;
 }
 .p-header__nav-list.nav-list02 {
   overflow: 1;
-  width: 9rem;
+  width: 8rem;
   border-left: 1px solid rgba(16, 67, 39, 0.2);
+}
+@media screen and (min-width: 768px) {
+  .p-header__nav-list.nav-list02 {
+    width: clamp(115px, 5.63vw + 71.7px, 160px);
+  }
 }
 .p-header__nav-list.nav-list02 .p-header__nav-item {
   width: 100%;
@@ -1561,59 +1569,36 @@ a.underline4 > p:last-child {
     position: relative;
   }
   .pc .a-effect::before {
-    -webkit-transition: all 0.1s ease-out;
-    transition: all 0.1s ease-out;
+    -webkit-transition: transform 2s ease-out;
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
     content: "";
     height: 1px;
-    width: 0.5rem;
+    width: 100%;
     position: absolute;
     display: block;
     bottom: -8px;
-    left: 50%;
-    margin-left: -0.5rem;
+    left: 0;
     background-color: #104327;
     -webkit-transform: scale(0, 1);
     transform: scale(0, 1);
     -webkit-transform-origin: right top;
     transform-origin: right top;
   }
-  .pc .a-effect::after {
-    -webkit-transition: all 0.1s ease-out;
-    transition: all 0.1s ease-out;
-    content: "";
-    height: 1px;
-    width: 0.5rem;
-    position: absolute;
-    display: block;
-    bottom: -8px;
-    left: 50%;
-    background-color: #104327;
-    -webkit-transform: scale(0, 1);
-    transform: scale(0, 1);
-    -webkit-transform-origin: left top;
-    transform-origin: left top;
-  }
   .pc.open .a-effect::before {
-    bottom: 20px;
-  }
-  .pc.open .a-effect::after {
     bottom: 20px;
   }
   .pc .a-effect:hover::before {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
-  }
-  .pc .a-effect:hover::after {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
   }
 }
 @media screen and (hover: hover) and (min-width: 768px) {
   .pc .a-effect.a-active::before {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-  .pc .a-effect.a-active::after {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
   }
@@ -2703,7 +2688,7 @@ p-pagenav
   border: 1px solid #fff;
   width: clamp(32px, 5.26vw - 18.5px, 64px);
   height: clamp(32px, 5.26vw - 18.5px, 64px);
-  border-radius: clamp(15px, 0.42vw + 13.4px, 20px);
+  border-radius: clamp(10px, 0.84vw + 6.8px, 20px);
   line-height: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2774,7 +2759,7 @@ p-pagenav
   background: #186225;
   color: #fff;
   border: none;
-  border-radius: clamp(15px, 0.42vw + 13.4px, 20px);
+  border-radius: clamp(10px, 0.84vw + 6.8px, 20px);
 }
 
 .wp-pager {
@@ -2941,7 +2926,6 @@ p-product
   text-decoration: none;
 }
 .p-product__item > a > figure {
-  border-radius: clamp(45px, 2.93vw + 34.1px, 80px);
   margin-bottom: clamp(5px, 0.75vw + 2.2px, 14px);
 }
 .p-product__item > a > p {
