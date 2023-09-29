@@ -17,6 +17,9 @@
     </section>
     <section class="l-wrapper5">
         <div class="p-product__link">
+        <?php previous_post_link_plus( array('in_same_tax' => true) ); ?>
+        <?php next_post_link_plus( array( 'in_same_tax' => true ) ); ?>
+
             <?php
             $prevpost = get_adjacent_post(false, '', true); //前の記事
             $nextpost = get_adjacent_post(false, '', false); //次の記事
