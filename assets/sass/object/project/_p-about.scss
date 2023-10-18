@@ -4,70 +4,84 @@
 p-about
 -----------------------------------------------------*/
 .sp_none {
-  display: none;
-  @include inc.mq(min) {
-    display: block;
-  }
+    display: none;
+    @include inc.mq(min) {
+        display: block;
+    }
 }
 .p-about {
-  &--philosophy {
-    background-image: url(../img/bg.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    @include inc.sizing(margin-bottom, wide, 96px, spl, 48px);
-    @include inc.sizing(border-radius, wide, 30px, sp, 20px);
-    padding: inc.size(wide, 64px, sp, 50px) inc.size(wide, 32px, sp, 25px);
-    & > h2 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: inc.$color-ltg;
-      color: inc.$color-grn;
-      @include inc.sizing(width, wide, 130px, sp, 100px);
-      @include inc.sizing(height, wide, 130px, sp, 100px);
-      border-radius: 999px;
-      margin: 0 auto inc.size(wide, 32px, sp, 25px) auto;
-      @include inc.sizingRem(font-size, wide, 26px, sp, 22px);
-      @include inc.sizing(line-height, wide, 39px, sp, 30px);
-    }
-    & > p {
-      text-align: center;
-      @include inc.sizingRem(font-size, wide, 18px, sp, 16px);
-      @include inc.sizing(line-height, wide, 40px, sp, 35px);
-      & > br.tabl {
-        display: block;
+    &--philosophy {
+        @include inc.sizing(margin-bottom, wide, 96px, spl, 48px);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-flow: column;
+        &---ph {
+            padding-left: 13.6%;
+            overflow: hidden;
+            @include inc.mq(min) {
+                padding-left: 0;
+            }
+            img {
+                opacity: 0;
+                width: 100%;
+                @include inc.sizing(margin-bottom, tabl, 48px, spl, 32px);
+            }
+        }
+        &---p {
+            padding-left: 13.6%;
+            width:100%;
+            h2 {
+                display: block;
+            }
+            p {
+                line-height: 2.8;
+                font-size: 14px;
+                @include inc.mq(min) {
+                    @include inc.sizingRem(font-size, tabl, 12px, min, 10px);
+                }
+                @include inc.mq(tabl) {
+                    @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
+                }
+            }
+        }
         @include inc.mq(tabl) {
-          display: none;
+            flex-flow: wrap;
+            flex-direction:row-reverse;
+            &---ph {
+                width: 58%;
+                position: static;
+            }
+            &---p {
+                width: calc(100% - (58% + 2rem));
+                padding: 1.5rem 0 0 0;
+                h2 {
+                    display: none;
+                }
+            }
         }
-      }
-      & > br.spl {
-        display: block;
-        @include inc.mq(spl) {
-          display: none;
+    }
+    &--map {
+        margin: 0 0 6rem;
+        @include inc.sizing(margin-bottom, wide, 96px, spl, 64px);
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 75%; /* 比率を4:3に固定 */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
-      }
+        &---add {
+            padding: .5rem 0 0 0;
+            margin: 0;
+            @include inc.mq(min) {
+                text-align: right;
+            }
+        }
     }
-  }
-  &--map {
-    margin: 0 0 6rem;
-    @include inc.sizing(margin-bottom, wide, 96px, spl, 64px);
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 75%; /* 比率を4:3に固定 */
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    &---add {
-      padding: 0.5rem 0 0 0;
-      margin: 0;
-      @include inc.mq(min) {
-        text-align: right;
-      }
-    }
-  }
 }
+

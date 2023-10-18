@@ -7,55 +7,47 @@ l-hero
 }
 
 #news .l-hero {
-  @include inc.sizing(margin-bottom, wide, 195px, spl, 100px); //2 お知らせ一覧
+    @include inc.sizing(margin-bottom, wide, 195px, spl, 100px);//2 お知らせ一覧
 }
 #product .l-hero {
-  @include inc.sizing(
-    margin-bottom,
-    wide,
-    195px,
-    spl,
-    75px
-  ); //4 商品カテゴリ一覧
+    @include inc.sizing(margin-bottom, wide, 195px, spl, 75px);//4 商品カテゴリ一覧
 }
 #product.category .l-hero {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 .l-hero__product {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  &---txt {
-    width: 100%;
-  }
-  &---ph {
-    display: none;
-    @include inc.mq(tab) {
-      width: 48.78%;
-      display: block;
-      @include inc.sizing(margin-top, wide, 64px, spl, 26px);
-      figure {
-        aspect-ratio: 16 / 8.4;
-        overflow: hidden;
-      }
-      img {
-        opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include inc.sizing(padding-right, wide, 96px, tab, 64px);
+    &---txt {
         width: 100%;
-        height: auto;
-      }
+        @include inc.mq(tab) {
+            width: 48.78%;
+        }
     }
-  }
+    &---ph {
+        display: none;
+        @include inc.mq(tab) {
+            width: 48.78%;
+            display: block;
+            @include inc.sizing(margin-top, wide, 64px, spl, 26px);
+            figure {
+                aspect-ratio: 16 / 8.4;
+                overflow: hidden;
+            }
+            img {
+                opacity: 0;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
 }
 
 #about .l-hero,
 #contact .l-hero,
 #privacy .l-hero,
 #notfound .l-hero {
-  @include inc.sizing(
-    margin-bottom,
-    wide,
-    128px,
-    spl,
-    48px
-  ); //7 会社概要 8 お問い合わせ 9 プライバシーポリシー
+    @include inc.sizing(margin-bottom, wide, 128px, spl, 48px);//7 会社概要 8 お問い合わせ 9 プライバシーポリシー
 }

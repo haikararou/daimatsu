@@ -6,8 +6,16 @@ p-text-box
 p {
   margin: 0;
   padding: 0;
-  @include inc.sizingRem(font-size, wide, 18px, sp, 16px);
-  @include inc.sizing(line-height, wide, 32px, sp, 30px);
+  line-height: 200%;
+  //@include inc.sizing(margin-bottom, wide, 72px, tabl, 24px);
+  line-height: 2.2;
+  font-size: 14px;
+  @include inc.mq(min) {
+      @include inc.sizingRem(font-size, tabl, 12px, min, 10px);
+  }
+  @include inc.mq(tabl) {
+      @include inc.sizingRem(font-size, wide, 16px, tabl, 12px);
+  }
 }
 
 ul.list--dot {
@@ -17,7 +25,7 @@ ul.list--dot {
     margin: 0;
     padding: 0;
     & + li {
-      margin-top: 0.5rem;
+      margin-top: .5rem
     }
   }
 }
@@ -77,8 +85,8 @@ figure + .wp-block-lazyblock-content-block,
   @include inc.sizing(margin-top, wide, 64px, spl, 32px);
 }
 
-.wp-block-lazyblock-products-lead {
-}
+
+.wp-block-lazyblock-products-lead {}
 
 // .wp-block-lazyblock-products-info {
 //   @include inc.sizing(margin-top, wide, 32px, spl, 24px);

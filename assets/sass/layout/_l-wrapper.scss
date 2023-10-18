@@ -27,8 +27,7 @@ html {
   }
 }
 
-.l-wrapper2 {
-  //商品のご案内 - 商品カテゴリ / 商品詳細
+.l-wrapper2 {//商品紹介 - 商品カテゴリ / 商品詳細
   max-width: 1120px;
   width: 100%;
   margin: 0 auto;
@@ -99,9 +98,28 @@ html {
     padding: 0;
   }
 }
+
+#about .lead .l-wrapper4 {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  @include inc.mq(min) {
+    //padding: 0;
+    @include inc.sizing(max-width, tab, 486px, min, 434px);
+  }
+  @include inc.mq(tab) {
+    @include inc.sizing(max-width, tabl, 680px, tab, 486px);
+  }
+  @include inc.mq(tabl) {
+    @include inc.sizing(max-width, wide, 928px, tabl, 680px);
+  }
+}
+
 #product .lead .l-wrapper3 {
   padding: 0;
   @include inc.mq(min) {
-    width: 100%;
+    width:100%;
   }
 }
+
+

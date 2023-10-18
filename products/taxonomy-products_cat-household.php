@@ -32,10 +32,14 @@
                         $current_post_number_house = $wp_query->current_post + 1 + (($paged - 1) * get_query_var('posts_per_page')); ?>
                         <?php if (get_field('no_page')) : ?>
                             <!-- チェックが入っている時に表示される -->
-                            <li class="no_page"></li>
+                            <li class="p-product__item--null no_page"></li>
                         <?php else : ?>
                             <!-- チェックが入っていない時に表示される -->
-                            <li class="p-product__item">
+                            <?php if (get_field('item-closed')) : ?>
+                                <li class="p-product__item p-product__item--closed">
+                                <?php else : ?>
+                                <li class="p-product__item">
+                                <?php endif; ?>
                                 <a href="<?php the_permalink(); ?>" class="expansion-img underline3">
                                     <?php
                                     $image_id = get_post_thumbnail_id(); //アイキャッチ画像のURLを取得
@@ -45,9 +49,10 @@
                                     <p><?php echo $current_post_number_house; ?></p>
                                     <h2><?php the_title(); ?></h2>
                                 </a>
-                            </li>
-                        <?php endif; ?>
-                <?php endwhile;
+                                </li>
+
+                            <?php endif; ?>
+                    <?php endwhile;
                 endif; ?>
             </ul>
         </div>
